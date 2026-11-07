@@ -2,12 +2,25 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="تطبيق المُصَلِّي المتقن - الدليل التفاعلي الشامل لترسيخ أركان وواجبات وسنن الصلاة في ذهن وقلب كل مسلم وفق أهل السنة والجماعة وإسلام ويب | إحدى مبادرات AnubisLand">
-  <meta name="author" content="anubisland">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+  <meta name="description" content="تطبيق المُصَلِّي المتقن - الدليل التفاعلي الشامل لصفة صلاة النبي ﷺ وترسيخ الأركان والواجبات والسنن وسجود السهو وفق أهل السنة وإسلام ويب | إحدى مبادرات AnubisLand">
+  <meta name="author" content="AnubisLand">
   <meta name="theme-color" content="#064e3b">
-  <title>تطبيق المُصَلِّي المتقن | ترسيخ أركان وواجبات وسنن الصلاة | AnubisLand</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="المُصَلِّي المتقن">
   
+  <title>تطبيق المُصَلِّي المتقن | صفة صلاة النبي ﷺ والأركان والواجبات | AnubisLand</title>
+  
+  <!-- FAVICON & ICONS SUITE -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- TAILWIND & FONTS -->
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +28,12 @@
   
   <style>
     :root {
-      --font-body: 'Tajawal', sans-serif;
+      --font-body: 'Tajawal', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-quran: 'Amiri', serif;
     }
     body {
       font-family: var(--font-body);
+      -webkit-tap-highlight-color: transparent;
     }
     .font-quran {
       font-family: var(--font-quran);
@@ -44,6 +58,9 @@
       color: #ffffff !important;
       box-shadow: 0 4px 14px 0 rgba(4, 120, 87, 0.39);
     }
+    .active-bottom-tab {
+      color: #fbbf24 !important;
+    }
     .flashcard {
       perspective: 1000px;
     }
@@ -62,38 +79,36 @@
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col selection:bg-emerald-600 selection:text-white">
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col selection:bg-emerald-600 selection:text-white pb-20 md:pb-6">
 
   <!-- TOP HEADER -->
-  <header class="bg-gradient-to-r from-emerald-950 via-emerald-900 to-teal-950 text-white shadow-xl sticky top-0 z-50 border-b border-emerald-700/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-4">
+  <header class="bg-gradient-to-r from-emerald-950 via-emerald-900 to-teal-950 text-white shadow-xl sticky top-0 z-40 border-b border-emerald-700/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center space-x-reverse space-x-3">
-        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-emerald-500 p-0.5 shadow-lg shadow-emerald-950/40">
-          <div class="w-full h-full bg-emerald-900 rounded-2xl flex items-center justify-center">
-            <svg class="w-7 h-7 text-amber-300" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2L2 7v2h20V7L12 2zm-8 9v9h4v-7h4v7h8v-9H4zm6 9v-5h4v5h-4z"/>
-            </svg>
-          </div>
+        <!-- App Logo Icon -->
+        <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-emerald-500 p-0.5 shadow-lg shadow-emerald-950/40 flex-shrink-0">
+          <img src="icons/apple-touch-icon.png" alt="شعار المُصَلِّي المتقن" class="w-full h-full object-cover rounded-2xl" onerror="this.src='favicon.ico'">
         </div>
         <div>
           <div class="flex items-center gap-2">
-            <h1 class="text-xl sm:text-2xl font-black tracking-tight text-white flex items-center gap-1.5">
+            <h1 class="text-lg sm:text-2xl font-black tracking-tight text-white flex items-center gap-1.5">
               <span>تطبيق المُصَلِّي المتقن</span>
-              <span class="text-[11px] bg-amber-400 text-emerald-950 px-2 py-0.5 rounded-full font-extrabold">منهاج النبوة</span>
+              <span class="text-[10px] sm:text-[11px] bg-amber-400 text-emerald-950 px-2 py-0.5 rounded-full font-extrabold">منهاج النبوة</span>
             </h1>
           </div>
-          <div class="flex items-center gap-2 mt-0.5">
-            <p class="text-xs text-emerald-200/90 font-medium">ترسيخ الأركان والواجبات والسنن وصفة صلاة النبي ﷺ | معتمد من إسلام ويب (islamweb.net)</p>
-            <span class="text-emerald-400 text-xs hidden md:inline">•</span>
-            <span class="text-[11px] text-amber-300 font-bold hidden md:inline">إحدى مبادرات AnubisLand</span>
+          <div class="flex items-center gap-2 mt-0.5 text-xs">
+            <p class="text-emerald-200/90 font-medium truncate max-w-[260px] sm:max-w-none">صفة صلاة النبي ﷺ وفقه الأركان والواجبات والسنن | إسلام ويب (islamweb.net)</p>
+            <span class="text-emerald-400 hidden lg:inline">•</span>
+            <span class="text-amber-300 font-bold hidden lg:inline">AnubisLand</span>
           </div>
         </div>
       </div>
 
+      <!-- Quick Action / Status Badges -->
       <div class="flex items-center gap-2 text-xs">
-        <a href="https://github.com/anubisland/Alsalah" target="_blank" rel="noopener" class="hidden sm:flex items-center gap-1.5 bg-emerald-800/80 border border-emerald-600/50 hover:bg-emerald-700/80 px-3 py-1.5 rounded-xl text-emerald-100 transition">
+        <a href="https://github.com/anubisland/Alsalah" target="_blank" rel="noopener" class="hidden sm:flex items-center gap-1.5 bg-emerald-800/80 border border-emerald-600/50 hover:bg-emerald-700/80 px-3 py-1.5 rounded-xl text-emerald-100 transition" title="مستودع الكود على GitHub">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-          <span class="font-bold">AnubisLand / Alsalah</span>
+          <span class="font-bold">AnubisLand</span>
         </a>
         <button onclick="toggleAudioHelp()" id="audioBtn" class="flex items-center gap-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-1.5 rounded-xl transition shadow">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -104,442 +119,373 @@
       </div>
     </div>
 
-    <!-- MAIN NAVIGATION TABS -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <nav class="flex space-x-reverse space-x-1 sm:space-x-2 overflow-x-auto py-2 custom-scrollbar text-sm font-semibold" id="mainNav">
-        <!-- 1. The Anchoring Tab is PRIMARY -->
-        <button onclick="switchTab('anchoring')" class="nav-tab active-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="anchoring">
-          <svg class="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <span class="font-black">ترسيخ الأركان والواجبات والسنن (القلب والعقل)</span>
+    <!-- DESKTOP / TABLET MAIN NAVIGATION TABS -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hidden md:block">
+      <nav class="flex space-x-reverse space-x-1 overflow-x-auto py-2 custom-scrollbar text-sm font-semibold" id="mainNav">
+        <!-- 1. Sifah Tab (صفة صلاة النبي صلى الله عليه وسلم) -->
+        <button onclick="switchTab('sifah')" class="nav-tab active-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white" data-tab="sifah">
+          <svg class="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
+          <span class="font-black">صفة صلاة النبي ﷺ كأنك تراه</span>
         </button>
+        <!-- 2. Anchoring Tab (الأركان والواجبات والسنن) -->
+        <button onclick="switchTab('anchoring')" class="nav-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="anchoring">
+          <svg class="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <span>ترسيخ الأركان والواجبات والسنن</span>
+        </button>
+        <!-- 3. Simulator Tab -->
         <button onclick="switchTab('simulator')" class="nav-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="simulator">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>المحاكي التفاعلي للصلاة</span>
+          <span>المحاكي التفاعلي</span>
         </button>
+        <!-- 4. Postures Gallery -->
         <button onclick="switchTab('postures')" class="nav-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="postures">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-          <span>معرض الهيئات بالصور</span>
+          <span>أطلس الهيئات بالصور</span>
         </button>
+        <!-- 5. Sahw Calculator -->
         <button onclick="switchTab('sahw')" class="nav-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="sahw">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-          <span>حاسبة سجود السهو الذكية</span>
+          <span>حاسبة سجود السهو</span>
         </button>
+        <!-- 6. Common Mistakes -->
         <button onclick="switchTab('mistakes')" class="nav-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="mistakes">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <span>مختبر الأخطاء الشائعة</span>
+          <span>مختبر الأخطاء</span>
         </button>
+        <!-- 7. Quiz -->
         <button onclick="switchTab('quiz')" class="nav-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="quiz">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>اختبار إتقان الصلاة</span>
+          <span>اختبار الإتقان</span>
         </button>
       </nav>
     </div>
   </header>
 
   <!-- MAIN CONTAINER -->
-  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+  <main class="flex-grow max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6">
 
     <!-- ======================================================== -->
-    <!-- TAB 1: THE CORE ANCHORING SYSTEM (ترسيخ الأركان والواجبات) -->
+    <!-- TAB 1: SIFAH (صفة صلاة النبي صلى الله عليه وسلم كأنك تراها) -->
     <!-- ======================================================== -->
-    <div id="tab-anchoring" class="tab-content space-y-8">
+    <div id="tab-sifah" class="tab-content space-y-6">
       
-      <!-- HERO MENTAL MODEL CARD -->
+      <!-- HERO BANNER -->
       <div class="bg-gradient-to-br from-emerald-950 via-teal-900 to-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden border border-emerald-700/60">
         <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
         <div class="relative z-10 max-w-4xl">
           <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/20 text-amber-300 text-xs font-black mb-3 border border-amber-400/30">
+            <span>📖 «صَلُّوا كَمَا رَأَيْتُمُونِي أُصَلِّي» (صحيح البخاري)</span>
+            <span>•</span>
+            <span>معتمد من فتاوى إسلام ويب</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl font-black leading-tight text-white">
+            صِفَةُ صَلَاةِ النَّبِيِّ ﷺ كَأَنَّكَ تَرَاهَا مَعَهُ
+          </h2>
+          <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+            الرحلة النبوية الحركية والقلبية الكاملة من الطهارة والسترة واستقبال القبلة إلى ختام التسليم والأذكار، مع ربط كل حركة وذكر بحكمه الفقهي:
+            <span class="inline-block bg-red-900/60 text-red-300 px-2 py-0.5 rounded-md font-bold mx-1 border border-red-500/40">ركن</span>،
+            <span class="inline-block bg-blue-900/60 text-blue-300 px-2 py-0.5 rounded-md font-bold mx-1 border border-blue-500/40">واجب</span>، أو
+            <span class="inline-block bg-emerald-900/60 text-emerald-300 px-2 py-0.5 rounded-md font-bold mx-1 border border-emerald-500/40">سنة</span>.
+          </p>
+        </div>
+      </div>
+
+      <!-- STEP BY STEP CHRONOLOGICAL PROPHETIC TIMELINE -->
+      <div class="space-y-4" id="sifahTimelineContainer">
+        <!-- Dynamically injected with rich visual cards for each station of prayer -->
+      </div>
+
+    </div>
+
+    <!-- ======================================================== -->
+    <!-- TAB 2: ANCHORING (ترسيخ الأركان والواجبات والسنن)        -->
+    <!-- ======================================================== -->
+    <div id="tab-anchoring" class="tab-content hidden space-y-6">
+      
+      <div class="bg-gradient-to-br from-emerald-950 via-teal-900 to-slate-900 rounded-3xl p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden border border-emerald-700/60">
+        <div class="relative z-10 max-w-4xl">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/20 text-amber-300 text-xs font-black mb-3 border border-amber-400/30">
             <span>✨ مفتاح الخشوع وإتقان الصلاة</span>
             <span>•</span>
-            <span>فهم الفروق الجوهرية كما قررها أئمة السنة</span>
+            <span>فهم الفروق الجوهرية في الفقه الإسلامي</span>
           </div>
-          <h2 class="text-3xl sm:text-4xl font-black leading-tight text-white">
-            كيف يرسخ في قلبك وعقلك الفرق الحاسم بين <span class="text-rose-400">الركن</span> و <span class="text-sky-300">الواجب</span> و <span class="text-emerald-300">السنة</span>؟
+          <h2 class="text-2xl sm:text-4xl font-black leading-tight text-white">
+            ترسيخ <span class="text-rose-400">الأركان (14)</span> و <span class="text-sky-300">الواجبات (8)</span> و <span class="text-emerald-300">السنن</span>
           </h2>
-          <p class="text-slate-300 text-sm sm:text-base mt-3 leading-relaxed">
-            الصلاة بناءٌ متكامل مثل صرحٍ عظيم شُيّد لله رب العالمين:
-            <br>
-            • <strong class="text-rose-300">الأركان (14 ركناً):</strong> هي <strong>أعمدة البناء الأساسية</strong>؛ إن سقط منها عمودٌ واحد سقط البناء كله، ولا تصح الصلاة قط دون الإتيان به، ولا يجبره سجود السهو وحده.
-            <br>
-            • <strong class="text-sky-300">الواجبات (8 واجبات):</strong> هي <strong>جدران وسقف البناء</strong>؛ تبطل الصلاة بتعمد هدمها، وإن سقطت سهواً جُبِرت ورُمّمت بسجدتي السهو قبل السلام.
-            <br>
-            • <strong class="text-emerald-300">السنن (قولية وفعلية):</strong> هي <strong>زينة البناء وجماله وأنواره</strong>؛ لا تبطل الصلاة بفواتها، لكن بفواتها يُحرم العبد من كمال الأجر ورفعة الدرجات.
+          <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
+            • <strong class="text-rose-300">الأركان:</strong> أعمدة الصرح (إن سقط عمود انهار البيت، ولا تسقط بالسهو ولا يجبرها السجود وحده).<br>
+            • <strong class="text-sky-300">الواجبات:</strong> جدران وسقف الصرح (تبطل بتعمد تركها، وتُرمم بسجود السهو قبل السلام عند نسيانها).<br>
+            • <strong class="text-emerald-300">السنن:</strong> أنوار وزينة الصرح وبهجته (كمال الأجر ورفعة الدرجات).
           </p>
         </div>
 
-        <!-- TRI-PILLAR VISUAL COMPARISON STATS -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8 pt-8 border-t border-emerald-800/80">
-          
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4 mt-6 pt-6 border-t border-emerald-800/80">
           <div class="bg-red-950/40 border border-red-500/40 rounded-2xl p-4 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-1">
-                <span class="text-xs font-black text-red-300">القسم الأول</span>
+                <span class="text-xs font-black text-red-300">الأعمدة الأساسية</span>
                 <span class="text-2xl font-black text-red-400">14</span>
               </div>
               <h4 class="text-base font-black text-white">أركان الصلاة</h4>
-              <p class="text-xs text-red-200 mt-1 leading-relaxed">لا تسقط عمداً ولا سهواً ولا جهلاً. لابد من تداركها والإتيان بها وبما بعدها.</p>
-            </div>
-            <div class="mt-3 text-[11px] font-bold bg-red-900/60 text-red-200 py-1 px-2.5 rounded-lg text-center">
-              حكم السهو: لا يُجزئ السجود وحده
+              <p class="text-xs text-red-200 mt-1">لا تسقط بالسهو أبداً، لابد من تداركها وبناء ما بعدها عليها.</p>
             </div>
           </div>
-
           <div class="bg-blue-950/40 border border-blue-500/40 rounded-2xl p-4 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-1">
-                <span class="text-xs font-black text-blue-300">القسم الثاني</span>
+                <span class="text-xs font-black text-blue-300">الجدران اللازمة</span>
                 <span class="text-2xl font-black text-blue-400">8</span>
               </div>
               <h4 class="text-base font-black text-white">واجبات الصلاة</h4>
-              <p class="text-xs text-blue-200 mt-1 leading-relaxed">تبطل بالتعمد، وتسقط بالسهو وتُجبر بسجود السهو قبل السلام وتصح الصلاة.</p>
-            </div>
-            <div class="mt-3 text-[11px] font-bold bg-blue-900/60 text-blue-200 py-1 px-2.5 rounded-lg text-center">
-              حكم السهو: يسجد سجدتين قبل السلام
+              <p class="text-xs text-blue-200 mt-1">تسقط بالسهو وتُجبر بسجود السهو قبل السلام وتصح الصلاة.</p>
             </div>
           </div>
-
           <div class="bg-emerald-950/40 border border-emerald-500/40 rounded-2xl p-4 flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between mb-1">
-                <span class="text-xs font-black text-emerald-300">القسم الثالث</span>
+                <span class="text-xs font-black text-emerald-300">الزينة والنور</span>
                 <span class="text-2xl font-black text-emerald-400">سنن</span>
               </div>
-              <h4 class="text-base font-black text-white">سنن الصلاة (أقوال وهيئات)</h4>
-              <p class="text-xs text-emerald-200 mt-1 leading-relaxed">أدعية وهيئات مسنونة تزيد الأجر والخشوع وتكمل نقص الفريضة يوم القيامة.</p>
-            </div>
-            <div class="mt-3 text-[11px] font-bold bg-emerald-900/60 text-emerald-200 py-1 px-2.5 rounded-lg text-center">
-              حكم السهو: لا يلزم سجود سهو
+              <h4 class="text-base font-black text-white">السنن القولية والفعلية</h4>
+              <p class="text-xs text-emerald-200 mt-1">أدعية وهيئات تزيد الأجر والخشوع وتكمل نقص الفريضة يوم القيامة.</p>
             </div>
           </div>
-
         </div>
       </div>
 
-      <!-- INTERACTIVE SUB-NAVIGATION FOR ANCHORING -->
-      <div class="flex flex-wrap items-center justify-between gap-3 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm">
-        <div class="flex items-center gap-2">
-          <span class="text-xs font-black text-slate-700">تصفح أقسام الترسيخ:</span>
-          <button onclick="scrollToAnchorSection('sec-arkan')" class="px-3 py-1.5 rounded-xl bg-red-100 hover:bg-red-200 text-red-900 font-extrabold text-xs transition">
-            الأركان الـ 14 المفصلة
-          </button>
-          <button onclick="scrollToAnchorSection('sec-wajib')" class="px-3 py-1.5 rounded-xl bg-blue-100 hover:bg-blue-200 text-blue-900 font-extrabold text-xs transition">
-            الواجبات الـ 8 المفصلة
-          </button>
-          <button onclick="scrollToAnchorSection('sec-sunan')" class="px-3 py-1.5 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-extrabold text-xs transition">
-            دليل السنن القولية والفعلية
-          </button>
-          <button onclick="scrollToAnchorSection('sec-flashcards')" class="px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 font-extrabold text-xs transition flex items-center gap-1">
-            <span>💡 بطاقات تثبيت الذاكرة</span>
-          </button>
-        </div>
-        <div class="text-xs text-slate-500 font-medium">
-          المصدر المعتمد: مركز الفتوى بإسلام ويب (فتوى رقم 12455، 60058)
+      <!-- Quick Subnav for Anchoring -->
+      <div class="flex flex-wrap items-center justify-between gap-2 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm text-xs">
+        <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+          <button onclick="scrollToAnchorSection('sec-arkan')" class="px-3 py-1.5 rounded-xl bg-red-100 hover:bg-red-200 text-red-900 font-extrabold transition">الأركان الـ 14</button>
+          <button onclick="scrollToAnchorSection('sec-wajib')" class="px-3 py-1.5 rounded-xl bg-blue-100 hover:bg-blue-200 text-blue-900 font-extrabold transition">الواجبات الـ 8</button>
+          <button onclick="scrollToAnchorSection('sec-sunan')" class="px-3 py-1.5 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-extrabold transition">السنن القولية والفعلية</button>
+          <button onclick="scrollToAnchorSection('sec-flashcards')" class="px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 font-extrabold transition">💡 بطاقات الذاكرة</button>
         </div>
       </div>
 
-      <!-- ============================================== -->
-      <!-- SECTION A: THE 14 PILLARS (أركان الصلاة الـ 14) -->
-      <!-- ============================================== -->
-      <section id="sec-arkan" class="space-y-4">
-        <div class="flex items-center justify-between border-b border-red-200 pb-3">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-red-600 animate-pulse"></span>
-              <h3 class="text-2xl font-black text-slate-900">أولاً: أركان الصلاة الأربعة عشر (١٤ ركناً)</h3>
-            </div>
-            <p class="text-xs sm:text-sm text-slate-600 mt-1">
-              هي الأفعال والأقوال التي تتركب منها حقيقة الصلاة، إذا سقط واحدٌ منها بطلت الصلاة عمداً، ولم تصح سهواً حتى يؤتى به مع سجود السهو.
-            </p>
-          </div>
-          <span class="bg-red-600 text-white font-black text-xs px-3.5 py-1.5 rounded-xl shadow-sm">
-            لا تسقط بالسهو أبداً
-          </span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="arkanCardsContainer">
-          <!-- Dynamically populated via JS -->
-        </div>
+      <!-- SECTION: 14 PILLARS -->
+      <section id="sec-arkan" class="space-y-3 pt-2">
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 border-b border-red-200 pb-2 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-red-600"></span>
+          <span>أركان الصلاة الأربعة عشر (١٤ ركناً)</span>
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="arkanCardsContainer"></div>
       </section>
 
-      <!-- ============================================== -->
-      <!-- SECTION B: THE 8 OBLIGATIONS (واجبات الصلاة الـ 8) -->
-      <!-- ============================================== -->
-      <section id="sec-wajib" class="space-y-4 pt-6">
-        <div class="flex items-center justify-between border-b border-blue-200 pb-3">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-blue-600 animate-pulse"></span>
-              <h3 class="text-2xl font-black text-slate-900">ثانياً: واجبات الصلاة الثمانية (٨ واجبات)</h3>
-            </div>
-            <p class="text-xs sm:text-sm text-slate-600 mt-1">
-              أفعال وأقوال ألزم بها الشرع في الصلاة؛ تبطل الصلاة بتعمد تركها، وتسقط بالنسيان وتُجبر بسجود السهو قبل السلام وتصح الصلاة.
-            </p>
-          </div>
-          <span class="bg-blue-600 text-white font-black text-xs px-3.5 py-1.5 rounded-xl shadow-sm">
-            تُجبر بسجود السهو
-          </span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="wajibCardsContainer">
-          <!-- Dynamically populated via JS -->
-        </div>
+      <!-- SECTION: 8 OBLIGATIONS -->
+      <section id="sec-wajib" class="space-y-3 pt-6">
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 border-b border-blue-200 pb-2 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-blue-600"></span>
+          <span>واجبات الصلاة الثمانية (٨ واجبات)</span>
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" id="wajibCardsContainer"></div>
       </section>
 
-      <!-- ============================================== -->
-      <!-- SECTION C: THE SUNAN (سنن الصلاة القولية والفعلية) -->
-      <!-- ============================================== -->
-      <section id="sec-sunan" class="space-y-4 pt-6">
-        <div class="flex items-center justify-between border-b border-emerald-200 pb-3">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="w-3 h-3 rounded-full bg-emerald-600 animate-pulse"></span>
-              <h3 class="text-2xl font-black text-slate-900">ثالثاً: سنن الصلاة ومستحباتها (قولية وفعلية)</h3>
-            </div>
-            <p class="text-xs sm:text-sm text-slate-600 mt-1">
-              أقوال وهيئات كان النبي ﷺ يداوم عليها تعظيماً لله وخشوعاً؛ لا تبطل الصلاة بتركها عمداً ولا سهواً، وتجبر النقص وتضاعف الأجر.
-            </p>
+      <!-- SECTION: SUNAN -->
+      <section id="sec-sunan" class="space-y-3 pt-6">
+        <h3 class="text-xl sm:text-2xl font-black text-slate-900 border-b border-emerald-200 pb-2 flex items-center gap-2">
+          <span class="w-3 h-3 rounded-full bg-emerald-600"></span>
+          <span>سنن الصلاة ومستحباتها (أقوال وهيئات)</span>
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white rounded-3xl p-5 border border-emerald-200 shadow-sm">
+            <h4 class="font-black text-emerald-950 text-sm mb-3">🗣️ السنن القولية (أدعية وأقوال مسنونة)</h4>
+            <ul class="space-y-2 text-xs text-slate-700" id="sunanQawliyyahList"></ul>
           </div>
-          <span class="bg-emerald-600 text-white font-black text-xs px-3.5 py-1.5 rounded-xl shadow-sm">
-            كمال الأجر والخشوع
-          </span>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Verbal Sunan -->
-          <div class="bg-white rounded-3xl p-6 border border-emerald-200/80 shadow-sm">
-            <h4 class="text-base font-black text-emerald-950 flex items-center gap-2 mb-3">
-              <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-black">🗣️</span>
-              <span>السنن القولية (أقوال مسنونة)</span>
-            </h4>
-            <ul class="space-y-2 text-xs text-slate-700" id="sunanQawliyyahList">
-              <!-- JS Populated -->
-            </ul>
-          </div>
-
-          <!-- Physical Sunan -->
-          <div class="bg-white rounded-3xl p-6 border border-emerald-200/80 shadow-sm">
-            <h4 class="text-base font-black text-emerald-950 flex items-center gap-2 mb-3">
-              <span class="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs font-black">🧍</span>
-              <span>السنن الفعلية (هيئات وحركات مسنونة)</span>
-            </h4>
-            <ul class="space-y-2 text-xs text-slate-700" id="sunanFiliyyahList">
-              <!-- JS Populated -->
-            </ul>
+          <div class="bg-white rounded-3xl p-5 border border-emerald-200 shadow-sm">
+            <h4 class="font-black text-emerald-950 text-sm mb-3">🧍 السنن الفعلية (حركات وهيئات مسنونة)</h4>
+            <ul class="space-y-2 text-xs text-slate-700" id="sunanFiliyyahList"></ul>
           </div>
         </div>
       </section>
 
-      <!-- ============================================== -->
-      <!-- SECTION D: INTERACTIVE FLASHCARDS TO ANCHOR MEMORY -->
-      <!-- ============================================== -->
-      <section id="sec-flashcards" class="bg-gradient-to-r from-amber-500 via-amber-600 to-emerald-700 rounded-3xl p-6 sm:p-8 text-white shadow-xl">
-        <div class="max-w-3xl mb-6">
+      <!-- SECTION: FLASHCARDS -->
+      <section id="sec-flashcards" class="bg-gradient-to-r from-amber-500 via-amber-600 to-emerald-700 rounded-3xl p-5 sm:p-8 text-white shadow-xl">
+        <div class="max-w-2xl mb-5">
           <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full border border-white/30">تمرين العقل والقلب</span>
-          <h3 class="text-2xl sm:text-3xl font-black mt-2">بطاقات التثبيت الذهني التفاعلية: هل هو ركن أم واجب أم سنة؟</h3>
-          <p class="text-amber-100 text-xs sm:text-sm mt-1 leading-relaxed">
-            اضغط على البطاقة لتقلبها فوراً، واختبر استحضار ذهنك لحكم كل فعل وأثره الشرعي والروحي في الصلاة.
-          </p>
+          <h3 class="text-xl sm:text-2xl font-black mt-2">بطاقات التثبيت الذهني التفاعلية (Flashcards)</h3>
+          <p class="text-amber-100 text-xs sm:text-sm mt-1">اضغط على البطاقة لتقلبها في الحال وتختبر معرفتك بالحكم والأثر الشرعي.</p>
         </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4" id="flashcardsGrid">
-          <!-- Populated by JS -->
-        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" id="flashcardsGrid"></div>
       </section>
 
     </div>
 
-    <!-- ========================================== -->
-    <!-- TAB 2: INTERACTIVE PRAYER SIMULATOR       -->
-    <!-- ========================================== -->
+    <!-- ======================================================== -->
+    <!-- TAB 3: SIMULATOR (المحاكي التفاعلي)                       -->
+    <!-- ======================================================== -->
     <div id="tab-simulator" class="tab-content hidden space-y-6">
       
-      <div class="bg-gradient-to-r from-emerald-800 to-teal-900 rounded-3xl p-6 text-white shadow-lg relative overflow-hidden">
-        <div class="absolute -left-10 -bottom-10 w-44 h-44 bg-white/5 rounded-full pointer-events-none"></div>
-        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div class="bg-gradient-to-r from-emerald-800 to-teal-900 rounded-3xl p-5 sm:p-6 text-white shadow-lg relative overflow-hidden">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-bold mb-2 border border-amber-400/30">
-              <span>صلّوا كما رأيتموني أصلّي</span>
-              <span class="text-amber-200">(صحيح البخاري)</span>
+              <span>المحاكي الحركي والصوتي</span>
             </div>
-            <h2 class="text-2xl sm:text-3xl font-extrabold">المحاكي العملي لصفة الصلاة خطوة بخطوة</h2>
-            <p class="text-emerald-100 text-sm mt-1 max-w-2xl">
-              عيش تجربة الصلاة التفاعلية بحركاتها وأذكارها وهيئاتها النبوية الصحيحة. اختر نوع الصلاة وسر خطوة بخطوة مع تمييز دقيق بين الأركان (بالأحمر)، الواجبات (بالأزرق)، والسنن (بالأخضر).
+            <h2 class="text-xl sm:text-3xl font-extrabold">المحاكي العملي لصفة الصلاة خطوة بخطوة</h2>
+            <p class="text-emerald-100 text-xs sm:text-sm mt-1 max-w-2xl">
+              تنقل في الصلاة ركعة بركعة مع الصوت، وتمرين الطمأنينة السكوني، وتلوين الحركات حسب أحكامها الفقهية.
             </p>
           </div>
 
-          <div class="bg-emerald-950/60 backdrop-blur border border-emerald-600/40 p-3 rounded-2xl flex flex-col gap-2 min-w-[220px]">
-            <label class="text-xs font-semibold text-emerald-200">اختر عدد ركعات الصلاة:</label>
-            <div class="grid grid-cols-3 gap-1.5">
-              <button onclick="setPrayerType(2)" id="btnRakat2" class="py-2 text-center rounded-xl font-bold text-xs bg-emerald-600 text-white transition hover:bg-emerald-500 shadow">
-                ركعتان (الفجر/السنن)
-              </button>
-              <button onclick="setPrayerType(3)" id="btnRakat3" class="py-2 text-center rounded-xl font-bold text-xs bg-emerald-900/60 text-emerald-200 transition hover:bg-emerald-700">
-                3 ركعات (المغرب)
-              </button>
-              <button onclick="setPrayerType(4)" id="btnRakat4" class="py-2 text-center rounded-xl font-bold text-xs bg-emerald-900/60 text-emerald-200 transition hover:bg-emerald-700">
-                4 ركعات (الظهر/العصر/العشاء)
-              </button>
+          <div class="bg-emerald-950/60 backdrop-blur border border-emerald-600/40 p-3 rounded-2xl flex flex-col gap-1.5 min-w-[200px]">
+            <label class="text-xs font-semibold text-emerald-200">اختر عدد الركعات:</label>
+            <div class="grid grid-cols-3 gap-1">
+              <button onclick="setPrayerType(2)" id="btnRakat2" class="py-2 text-center rounded-xl font-bold text-xs bg-emerald-600 text-white shadow">ركعتان</button>
+              <button onclick="setPrayerType(3)" id="btnRakat3" class="py-2 text-center rounded-xl font-bold text-xs bg-emerald-900/60 text-emerald-200">3 ركعات</button>
+              <button onclick="setPrayerType(4)" id="btnRakat4" class="py-2 text-center rounded-xl font-bold text-xs bg-emerald-900/60 text-emerald-200">4 ركعات</button>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Simulator Stage Area -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        <div class="lg:col-span-7 bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80 flex flex-col items-center">
-          <div class="w-full flex items-center justify-between mb-4 border-b border-slate-100 pb-3">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+        <div class="lg:col-span-7 bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-slate-200/80 flex flex-col items-center">
+          <div class="w-full flex items-center justify-between mb-3 border-b border-slate-100 pb-2.5">
             <div class="flex items-center gap-2">
               <span id="currentRakaBadge" class="bg-emerald-100 text-emerald-800 text-xs font-extrabold px-3 py-1 rounded-full border border-emerald-200">الركعة الأولى</span>
               <span id="currentStepNumber" class="text-xs text-slate-500 font-semibold">خطوة 1 من 9</span>
             </div>
-            <div id="categoryBadge" class="px-3 py-1 rounded-full text-xs font-black shadow-sm flex items-center gap-1.5"></div>
+            <div id="categoryBadge" class="px-2.5 py-1 rounded-full text-xs font-black shadow-sm flex items-center gap-1.5"></div>
           </div>
 
-          <div class="w-full h-72 sm:h-80 bg-slate-50/80 rounded-2xl border border-slate-200/60 relative flex items-center justify-center p-4 overflow-hidden" id="postureIllustrationContainer"></div>
+          <div class="w-full h-64 sm:h-80 bg-slate-50/80 rounded-2xl border border-slate-200/60 relative flex items-center justify-center p-3 overflow-hidden" id="postureIllustrationContainer"></div>
 
-          <div class="w-full mt-4 bg-emerald-50/60 border border-emerald-100 rounded-2xl p-4">
-            <h4 class="text-xs font-bold text-emerald-900 mb-2 flex items-center gap-1.5">
+          <div class="w-full mt-3 bg-emerald-50/60 border border-emerald-100 rounded-2xl p-3.5">
+            <h4 class="text-xs font-bold text-emerald-900 mb-1.5 flex items-center gap-1">
               <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-              <span>الهيئة النبوية الدقيقة وضوابط الحركة:</span>
+              <span>ضوابط الهيئة النبوية:</span>
             </h4>
-            <ul id="postureKeyPoints" class="space-y-1.5 text-xs text-emerald-950 font-medium"></ul>
+            <ul id="postureKeyPoints" class="space-y-1 text-xs text-emerald-950 font-medium"></ul>
           </div>
 
-          <div class="w-full mt-4 bg-amber-50 border border-amber-200/80 rounded-2xl p-3 flex items-center justify-between gap-4">
+          <div class="w-full mt-3 bg-amber-50 border border-amber-200/80 rounded-2xl p-3 flex flex-wrap items-center justify-between gap-2">
             <div class="flex items-center gap-2">
-              <div class="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center font-bold text-sm">⏱️</div>
+              <span class="text-lg">⏱️</span>
               <div>
-                <p class="text-xs font-bold text-amber-900">مقياس الطمأنينة (ركن من أركان الصلاة)</p>
-                <p class="text-[11px] text-amber-700">وهي السكون حتى يرجع كل عظم ومفصل إلى موضعه</p>
+                <p class="text-xs font-bold text-amber-900">مقياس الطمأنينة (ركن أساسي)</p>
+                <p class="text-[11px] text-amber-700">السكون حتى يرجع كل عظم لموضعه</p>
               </div>
             </div>
-            <button onclick="startTranquilityTimer()" id="tranquilityTimerBtn" class="bg-amber-600 hover:bg-amber-500 text-white px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
+            <button onclick="startTranquilityTimer()" id="tranquilityTimerBtn" class="bg-amber-600 hover:bg-amber-500 text-white px-3 py-1.5 rounded-xl text-xs font-bold transition">
               <span id="timerLabel">ابدأ سكون الطمأنينة (3 ثوان)</span>
             </button>
           </div>
         </div>
 
-        <div class="lg:col-span-5 flex flex-col gap-5">
-          <div class="bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80">
-            <div class="flex items-start justify-between gap-2 mb-3">
+        <div class="lg:col-span-5 flex flex-col gap-4">
+          <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-slate-200/80">
+            <div class="flex items-start justify-between gap-2 mb-2">
               <div>
                 <span class="text-xs font-bold text-slate-400 block" id="stepSubheading">الحركة الحالية</span>
-                <h3 class="text-xl font-black text-slate-900 mt-0.5" id="stepTitle">تكبيرة الإحرام والقيام</h3>
+                <h3 class="text-lg sm:text-xl font-black text-slate-900 mt-0.5" id="stepTitle">تكبيرة الإحرام والقيام</h3>
               </div>
-              <button onclick="playStepAudio()" class="w-10 h-10 rounded-2xl bg-emerald-100 hover:bg-emerald-200 text-emerald-800 flex items-center justify-center transition shadow-sm" title="استمع لنطق الذكر">
+              <button onclick="playStepAudio()" class="w-10 h-10 rounded-2xl bg-emerald-100 hover:bg-emerald-200 text-emerald-800 flex items-center justify-center transition shadow-sm flex-shrink-0" title="استمع لنطق الذكر">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path></svg>
               </button>
             </div>
 
-            <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-4 my-4">
-              <div class="flex items-center justify-between text-xs text-slate-500 font-semibold mb-1.5">
-                <span>الذِّكْرُ / القول المأثور:</span>
+            <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-3.5 my-3">
+              <div class="flex items-center justify-between text-xs text-slate-500 font-semibold mb-1">
+                <span>الذِّكْرُ المأثور:</span>
                 <span id="zikrObligationType" class="text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded font-bold text-[11px]">واجب</span>
               </div>
-              <div id="stepZikrArabic" class="text-lg font-quran font-bold text-slate-900 text-center leading-relaxed py-2">اللهُ أَكْبَر</div>
-              <p id="stepZikrMeaning" class="text-xs text-slate-600 mt-1 text-center font-medium">يبدأ بها الصلاة، رافعاً يديه حذو منكبيه أو فروع أذنيه</p>
+              <div id="stepZikrArabic" class="text-lg font-quran font-bold text-slate-900 text-center leading-relaxed py-1.5">اللهُ أَكْبَر</div>
+              <p id="stepZikrMeaning" class="text-xs text-slate-600 text-center font-medium">يبدأ بها الصلاة، رافعاً يديه حذو منكبيه</p>
             </div>
 
-            <div class="bg-blue-50/70 border border-blue-200/70 rounded-2xl p-4 text-xs">
+            <div class="bg-blue-50/70 border border-blue-200/70 rounded-2xl p-3 text-xs">
               <div class="flex items-center gap-1.5 text-blue-900 font-extrabold mb-1">
-                <svg class="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"></path><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path></svg>
-                <span>حكم هذا الفعل في فتاوى إسلام ويب:</span>
+                <span>الحكم في إسلام ويب:</span>
               </div>
-              <p id="stepFiqhRuling" class="text-blue-950 font-medium leading-relaxed">ركن لا تنعقد الصلاة بدونه إطلاقاً. لا تسقط عمداً ولا سهواً ولا جهلاً.</p>
-              <div class="mt-2 text-[11px] text-blue-700 flex items-center justify-between border-t border-blue-100 pt-1.5">
-                <span id="stepEvidence">الدليل: حديث المسيء صلاته (متفق عليه)</span>
-                <span class="font-bold">مرجع: islamweb.net</span>
+              <p id="stepFiqhRuling" class="text-blue-950 font-medium leading-relaxed"></p>
+              <div class="mt-2 text-[11px] text-blue-700 flex items-center justify-between border-t border-blue-100 pt-1">
+                <span id="stepEvidence"></span>
+                <span class="font-bold">islamweb.net</span>
               </div>
             </div>
 
-            <div class="mt-4 bg-rose-50 border border-rose-200 rounded-2xl p-3 text-xs">
-              <p class="font-bold text-rose-800 flex items-center gap-1"><span>⚠️ احذر هذا الخطأ الشائع:</span></p>
-              <p id="stepMistakeWarning" class="text-rose-900 mt-1 font-medium">مد الألف في (الله) كأن يقول: "آلله أكبر" فتصبح استفهاماً وتبطل الصلاة، أو مد الباء: "أكبار".</p>
+            <div class="mt-3 bg-rose-50 border border-rose-200 rounded-2xl p-3 text-xs">
+              <p class="font-bold text-rose-800">⚠️ خطأ شائع يجب تجنبه:</p>
+              <p id="stepMistakeWarning" class="text-rose-900 mt-0.5 font-medium"></p>
             </div>
 
-            <div class="flex items-center gap-3 mt-6 pt-4 border-t border-slate-100">
-              <button onclick="prevStep()" id="prevBtn" class="flex-1 py-3 px-4 rounded-2xl border border-slate-300 font-bold text-slate-700 hover:bg-slate-100 transition flex items-center justify-center gap-1.5 text-sm">
+            <div class="flex items-center gap-2 sm:gap-3 mt-4 pt-3 border-t border-slate-100">
+              <button onclick="prevStep()" id="prevBtn" class="flex-1 py-3 px-3 rounded-2xl border border-slate-300 font-bold text-slate-700 hover:bg-slate-100 transition flex items-center justify-center gap-1 text-xs sm:text-sm">
                 <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
                 <span>السابق</span>
               </button>
               
-              <button onclick="nextStep()" id="nextBtn" class="flex-2 py-3 px-6 rounded-2xl bg-emerald-600 hover:bg-emerald-500 font-extrabold text-white transition flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/30 text-sm">
+              <button onclick="nextStep()" id="nextBtn" class="flex-2 py-3 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 font-extrabold text-white transition flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-600/30 text-xs sm:text-sm">
                 <span>التالي</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>
               </button>
             </div>
           </div>
 
-          <div class="bg-white rounded-3xl p-5 shadow-sm border border-slate-200/80">
-            <h4 class="text-xs font-extrabold text-slate-700 uppercase tracking-wider mb-3">تسلسل خطوات الركعة الحالية</h4>
-            <div class="grid grid-cols-4 sm:grid-cols-6 gap-2" id="stepsMiniNav"></div>
+          <div class="bg-white rounded-3xl p-4 shadow-sm border border-slate-200/80">
+            <h4 class="text-xs font-extrabold text-slate-700 mb-2">تسلسل خطوات الركعة</h4>
+            <div class="grid grid-cols-5 sm:grid-cols-9 gap-1.5" id="stepsMiniNav"></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- TAB 3: POSTURES                            -->
-    <!-- ========================================== -->
+    <!-- ======================================================== -->
+    <!-- TAB 4: POSTURES (أطلس الهيئات بالصور)                     -->
+    <!-- ======================================================== -->
     <div id="tab-postures" class="tab-content hidden space-y-6">
-      <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80">
-        <div class="max-w-3xl mb-8">
-          <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">الهيئات النبوية المصورة</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">معرض صور وتفاصيل هيئات الصلاة الصحيحة</h2>
-          <p class="text-slate-600 text-sm mt-2">
-            استعراض بصري مفصل لكل وضعية جسدية في الصلاة (القيام، الركوع، السجود، الجلوس، التورك)، مبيناً الأعضاء السبعة، استواء الظهر، تفريج الأصابع، والفرق بين الافتراش والتورك.
-          </p>
+      <div class="bg-white rounded-3xl p-5 sm:p-8 shadow-sm border border-slate-200/80">
+        <div class="max-w-3xl mb-6">
+          <span class="text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">الأطلس البصري النبوي</span>
+          <h2 class="text-xl sm:text-3xl font-black text-slate-900 mt-2">معرض صور وتفاصيل هيئات الصلاة الصحيحة</h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1">رسومات متجهة عالية الدقة لكافة الهيئات الجسدية الصحيحة في الصلاة مع تمييز الأعضاء السبعة وميزان الظهر.</p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="posturesCardsList">
-          <!-- Will be rendered with accurate diagrams -->
-        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="posturesCardsList"></div>
       </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- TAB 4: SAHW CALCULATOR                     -->
-    <!-- ========================================== -->
+    <!-- ======================================================== -->
+    <!-- TAB 5: SAHW CALCULATOR (حاسبة سجود السهو)                 -->
+    <!-- ======================================================== -->
     <div id="tab-sahw" class="tab-content hidden space-y-6">
-      <div class="bg-gradient-to-br from-indigo-950 via-slate-900 to-emerald-950 rounded-3xl p-6 sm:p-8 text-white shadow-xl">
+      <div class="bg-gradient-to-br from-indigo-950 via-slate-900 to-emerald-950 rounded-3xl p-5 sm:p-8 text-white shadow-xl">
         <div class="max-w-3xl">
           <span class="bg-indigo-500/30 text-indigo-300 border border-indigo-400/30 text-xs font-bold px-3 py-1 rounded-full">المرشد الفقهي الذكي</span>
-          <h2 class="text-2xl sm:text-3xl font-black mt-2">حاسبة سجود السهو: ماذا تفعل إذا نسيت أو شككت في صلاتك؟</h2>
-          <p class="text-slate-300 text-xs sm:text-sm mt-2 leading-relaxed">
-            وفق ضوابط أهل السنة وفتاوى إسلام ويب، يُشرع سجود السهو لثلاثة أسباب رئيسية: <strong>الزيادة</strong>، أو <strong>النقص</strong>، أو <strong>الشك</strong>.
+          <h2 class="text-xl sm:text-3xl font-black mt-2">حاسبة سجود السهو: ماذا تفعل إذا نسيت أو شككت في صلاتك؟</h2>
+          <p class="text-slate-300 text-xs sm:text-sm mt-1.5 leading-relaxed">
+            وفق ضوابط أهل السنة وفتاوى إسلام ويب، يُشرع سجود السهو لثلاثة أسباب: <strong>الزيادة</strong>، أو <strong>النقص</strong>، أو <strong>الشك</strong>.
           </p>
         </div>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <div class="lg:col-span-7 bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80 space-y-5">
-          <h3 class="text-base font-black text-slate-900 border-b pb-3">حدد الخلل الذي حدث معك في الصلاة:</h3>
-          <div class="space-y-3">
-            <label class="text-xs font-bold text-slate-700 block">1. نوع العارض في الصلاة:</label>
-            <div class="grid grid-cols-3 gap-2.5">
-              <button onclick="selectSahwType('naqs')" id="sahwTypeNaqs" class="sahw-type-btn p-3 rounded-2xl border-2 border-slate-200 text-slate-800 text-xs font-bold hover:border-emerald-500 transition text-center active-sahw-btn">نَقْص (نسيان شيء)</button>
-              <button onclick="selectSahwType('ziyadah')" id="sahwTypeZiyadah" class="sahw-type-btn p-3 rounded-2xl border-2 border-slate-200 text-slate-800 text-xs font-bold hover:border-emerald-500 transition text-center">زِيَادَة (ركوع/سجود/ركعة)</button>
-              <button onclick="selectSahwType('shakk')" id="sahwTypeShakk" class="sahw-type-btn p-3 rounded-2xl border-2 border-slate-200 text-slate-800 text-xs font-bold hover:border-emerald-500 transition text-center">شَكّ في عدد الركعات</button>
-            </div>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
+        <div class="lg:col-span-7 bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-slate-200/80 space-y-4">
+          <h3 class="text-sm sm:text-base font-black text-slate-900 border-b pb-2">حدد نوع العارض الذي حدث في صلاتك:</h3>
+          <div class="grid grid-cols-3 gap-2">
+            <button onclick="selectSahwType('naqs')" id="sahwTypeNaqs" class="sahw-type-btn p-3 rounded-2xl border-2 border-slate-200 text-slate-800 text-xs font-bold hover:border-emerald-500 transition text-center active-sahw-btn">نَقْص (نسيان شيء)</button>
+            <button onclick="selectSahwType('ziyadah')" id="sahwTypeZiyadah" class="sahw-type-btn p-3 rounded-2xl border-2 border-slate-200 text-slate-800 text-xs font-bold hover:border-emerald-500 transition text-center">زِيَادَة (ركوع/سجود)</button>
+            <button onclick="selectSahwType('shakk')" id="sahwTypeShakk" class="sahw-type-btn p-3 rounded-2xl border-2 border-slate-200 text-slate-800 text-xs font-bold hover:border-emerald-500 transition text-center">شَكّ في الركعات</button>
           </div>
-          <div id="sahwSubCasesContainer" class="space-y-3 pt-2"></div>
+          <div id="sahwSubCasesContainer" class="space-y-2 pt-2"></div>
         </div>
 
-        <div class="lg:col-span-5 bg-gradient-to-b from-slate-900 to-emerald-950 text-white rounded-3xl p-6 shadow-lg border border-emerald-800/40 flex flex-col justify-between">
+        <div class="lg:col-span-5 bg-gradient-to-b from-slate-900 to-emerald-950 text-white rounded-3xl p-5 sm:p-6 shadow-lg border border-emerald-800/40 flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-4 border-b border-emerald-800/50 pb-3">
-              <span class="text-xs font-bold text-emerald-300">الحكم والتوجيه الفقهي الدقيق:</span>
+            <div class="flex items-center justify-between mb-3 border-b border-emerald-800/50 pb-2">
+              <span class="text-xs font-bold text-emerald-300">الحكم والتوجيه الفقهي:</span>
               <span id="sahwTimingBadge" class="bg-amber-400 text-slate-950 font-black text-xs px-2.5 py-0.5 rounded-full">سجود قبل السلام</span>
             </div>
-            <h4 id="sahwVerdictTitle" class="text-lg font-black text-white mb-2">نسيان التشهد الأول</h4>
-            <div class="bg-emerald-900/50 border border-emerald-700/50 rounded-2xl p-4 text-xs text-emerald-100 leading-relaxed space-y-2 mb-4" id="sahwVerdictDetails"></div>
-            <div class="bg-white/5 border border-white/10 rounded-2xl p-3.5 text-xs text-slate-300 space-y-1.5">
-              <p class="font-bold text-amber-300">💡 القاعدة الذهبية من فتاوى إسلام ويب:</p>
+            <h4 id="sahwVerdictTitle" class="text-base sm:text-lg font-black text-white mb-2"></h4>
+            <div class="bg-emerald-900/50 border border-emerald-700/50 rounded-2xl p-3.5 text-xs text-emerald-100 leading-relaxed space-y-1.5 mb-3" id="sahwVerdictDetails"></div>
+            <div class="bg-white/5 border border-white/10 rounded-2xl p-3 text-xs text-slate-300 space-y-1">
+              <p class="font-bold text-amber-300">💡 القاعدة الذهبية من إسلام ويب:</p>
               <p>• <strong>قبل السلام:</strong> عن <span class="text-amber-200 font-bold">نقص</span>، أو عن <span class="text-amber-200 font-bold">شك دون ترجيح</span>.</p>
               <p>• <strong>بعد السلام:</strong> عن <span class="text-amber-200 font-bold">زيادة</span>، أو عن <span class="text-amber-200 font-bold">شك مع غلبة ظن</span> وترجيح.</p>
             </div>
           </div>
-          <div class="mt-6 pt-3 border-t border-emerald-800/60 text-[11px] text-emerald-400 font-semibold flex items-center justify-between">
+          <div class="mt-4 pt-2 border-t border-emerald-800/60 text-[11px] text-emerald-400 font-semibold flex items-center justify-between">
             <span>فتاوى إسلام ويب: (26883، 133596)</span>
             <span>سجدتان مثل سجود الصلاة</span>
           </div>
@@ -547,72 +493,95 @@
       </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- TAB 5: MISTAKES                            -->
-    <!-- ========================================== -->
+    <!-- ======================================================== -->
+    <!-- TAB 6: MISTAKES (مختبر الأخطاء الشائعة)                    -->
+    <!-- ======================================================== -->
     <div id="tab-mistakes" class="tab-content hidden space-y-6">
-      <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80">
-        <div class="max-w-3xl mb-8">
-          <span class="text-xs font-bold text-rose-600 uppercase tracking-wider bg-rose-50 border border-rose-200 px-3 py-1 rounded-full">المحاذير والمبطلات</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">مختبر تصحيح الأخطاء الشائعة في الصلاة</h2>
-          <p class="text-slate-600 text-sm mt-2">
-            جمعٌ لأشهر الأخطاء التي يقع فيها بعض المصلين مع بيان علة النهي والبديل النبوي الصحيح من الأحاديث الثابتة.
-          </p>
+      <div class="bg-white rounded-3xl p-5 sm:p-8 shadow-sm border border-slate-200/80">
+        <div class="max-w-3xl mb-6">
+          <span class="text-xs font-bold text-rose-600 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full">المحاذير والمبطلات</span>
+          <h2 class="text-xl sm:text-3xl font-black text-slate-900 mt-2">مختبر تصحيح الأخطاء الشائعة في الصلاة</h2>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1">جمعٌ لأشهر الأخطاء التي يقع فيها بعض المصلين مع بيان علة النهي والبديل النبوي الصحيح من الأحاديث الثابتة.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5" id="mistakesGrid"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="mistakesGrid"></div>
       </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- TAB 6: QUIZ                                -->
-    <!-- ========================================== -->
+    <!-- ======================================================== -->
+    <!-- TAB 7: QUIZ (اختبار إتقان الصلاة)                         -->
+    <!-- ======================================================== -->
     <div id="tab-quiz" class="tab-content hidden space-y-6">
-      <div class="max-w-3xl mx-auto bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-slate-200/80">
+      <div class="max-w-3xl mx-auto bg-white rounded-3xl p-5 sm:p-8 shadow-sm border border-slate-200/80">
         <div class="text-center mb-6">
           <span class="text-xs font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">اختبار فقه الصلاة</span>
-          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-2">اختبر إتقانك لأحكام الأركان والواجبات والسنن</h2>
+          <h2 class="text-xl sm:text-3xl font-black text-slate-900 mt-2">اختبر إتقانك لأحكام الأركان والواجبات والسنن</h2>
           <p class="text-slate-500 text-xs sm:text-sm mt-1">10 أسئلة فقهية عملية لقياس دقة فهمك مع التوضيح الشرعي الفوري لكل إجابة</p>
         </div>
 
         <div id="quizContainer">
-          <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 mb-6">
+          <div class="bg-slate-50 border border-slate-200 rounded-3xl p-4 sm:p-6 mb-5">
             <div class="flex items-center justify-between text-xs text-slate-500 font-bold mb-3 border-b border-slate-200 pb-2">
               <span id="quizProgressText">السؤال 1 من 10</span>
               <span id="quizScoreText" class="text-emerald-700 font-extrabold">الدرجة: 0</span>
             </div>
-            <h3 id="quizQuestionText" class="text-base sm:text-lg font-black text-slate-900 leading-relaxed mb-4">ما حكم من ترك قراءة سورة الفاتحة في الركعة متعمداً؟</h3>
-            <div class="space-y-2.5" id="quizOptionsContainer"></div>
-            <div id="quizFeedbackBox" class="hidden mt-4 p-4 rounded-2xl text-xs font-medium border leading-relaxed"></div>
+            <h3 id="quizQuestionText" class="text-sm sm:text-lg font-black text-slate-900 leading-relaxed mb-4"></h3>
+            <div class="space-y-2" id="quizOptionsContainer"></div>
+            <div id="quizFeedbackBox" class="hidden mt-3 p-3.5 rounded-2xl text-xs font-medium border leading-relaxed"></div>
           </div>
 
           <div class="flex items-center justify-between">
-            <button onclick="resetQuiz()" class="text-xs font-bold text-slate-500 hover:text-slate-700 px-3 py-2">إعادة الاختبار من البداية</button>
+            <button onclick="resetQuiz()" class="text-xs font-bold text-slate-500 hover:text-slate-700 px-3 py-2">إعادة من البداية</button>
             <button onclick="nextQuizQuestion()" id="quizNextBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs px-6 py-3 rounded-2xl transition shadow disabled:opacity-50">السؤال التالي</button>
           </div>
         </div>
 
-        <div id="quizResultView" class="hidden text-center py-8">
-          <div class="w-20 h-20 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl font-black shadow-inner">🏆</div>
-          <h3 class="text-2xl font-black text-slate-900">أحسنت! أتممت الاختبار</h3>
-          <p class="text-slate-600 text-sm mt-1 mb-4" id="quizFinalScoreSummary">درجتك النهائية: 10 من 10 (100%)</p>
-          <div class="max-w-md mx-auto p-4 bg-emerald-50 border border-emerald-200 rounded-2xl text-xs text-emerald-900 mb-6 font-medium">
-            قال رسول الله ﷺ: «إِنَّ أَوَّلَ مَا يُحَاسَبُ بِهِ العَبْدُ يَوْمَ القِيَامَةِ مِنْ عَمَلِهِ صَلَاتُهُ، فَإِنْ صَلَحَتْ فَقَدْ أَفْلَحَ وَأَنْجَحَ».
-          </div>
-          <button onclick="resetQuiz()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm px-8 py-3 rounded-2xl transition shadow-lg shadow-emerald-600/30">إعادة الاختبار لتثبيت العلم</button>
+        <div id="quizResultView" class="hidden text-center py-6">
+          <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl font-black">🏆</div>
+          <h3 class="text-xl font-black text-slate-900">أحسنت! أتممت الاختبار</h3>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1 mb-4" id="quizFinalScoreSummary"></p>
+          <button onclick="resetQuiz()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs sm:text-sm px-6 py-2.5 rounded-2xl transition shadow-lg shadow-emerald-600/30">إعادة الاختبار لتثبيت العلم</button>
         </div>
       </div>
     </div>
 
   </main>
 
+  <!-- MOBILE BOTTOM NAVIGATION (Thumb-friendly for Phones & Tablets) -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 px-2 py-2 flex items-center justify-around text-[10px] font-bold text-slate-400">
+    <button onclick="switchTab('sifah')" class="mobile-nav-btn flex flex-col items-center gap-1 active-bottom-tab" data-tab="sifah">
+      <span class="text-base">🕌</span>
+      <span>صفة الصلاة</span>
+    </button>
+    <button onclick="switchTab('anchoring')" class="mobile-nav-btn flex flex-col items-center gap-1" data-tab="anchoring">
+      <span class="text-base">✨</span>
+      <span>الأركان والسنن</span>
+    </button>
+    <button onclick="switchTab('simulator')" class="mobile-nav-btn flex flex-col items-center gap-1" data-tab="simulator">
+      <span class="text-base">⏱️</span>
+      <span>المحاكي</span>
+    </button>
+    <button onclick="switchTab('postures')" class="mobile-nav-btn flex flex-col items-center gap-1" data-tab="postures">
+      <span class="text-base">📐</span>
+      <span>الهيئات</span>
+    </button>
+    <button onclick="switchTab('sahw')" class="mobile-nav-btn flex flex-col items-center gap-1" data-tab="sahw">
+      <span class="text-base">⚖️</span>
+      <span>السهو</span>
+    </button>
+    <button onclick="switchTab('quiz')" class="mobile-nav-btn flex flex-col items-center gap-1" data-tab="quiz">
+      <span class="text-base">🏆</span>
+      <span>اختبار</span>
+    </button>
+  </nav>
+
   <!-- FOOTER -->
-  <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800 mt-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+  <footer class="bg-slate-900 text-slate-400 text-xs py-6 border-t border-slate-800 mt-8 hidden md:block">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3">
       <div class="text-center sm:text-right">
         <p class="text-slate-200 font-bold text-sm">تطبيق المُصَلِّي المتقن | إحدى مبادرات شركة <span class="text-amber-400 font-black">AnubisLand</span></p>
         <p class="text-slate-500 mt-0.5">المحتوى الفقهي مستند إلى مركز الفتوى بموقع إسلام ويب (islamweb.net) وصحيح السنة النبوية | صدقة جارية لوجه الله تعالى</p>
       </div>
-      <div class="flex items-center gap-4 text-slate-400">
+      <div class="flex items-center gap-3 text-slate-400">
         <a href="https://github.com/anubisland" target="_blank" rel="noopener" class="hover:text-amber-400 transition font-bold">شركة AnubisLand</a>
         <span>•</span>
         <a href="https://github.com/anubisland/Alsalah" target="_blank" rel="noopener" class="hover:text-emerald-400 transition">مستودع Alsalah</a>
@@ -622,383 +591,435 @@
     </div>
   </footer>
 
-  <!-- DATA & APP LOGIC -->
+  <!-- SCRIPT LOGIC & PROPHETIC CHRONOLOGICAL SIFAH -->
   <script>
     /* =========================================================================
-       1. DEEP DETAILED DATA: THE 14 PILLARS (أركان الصلاة الـ 14 كاملة)
+       1. SIFAH DATA: THE FULL CHRONOLOGICAL PROPHETIC STATIONS
+       ========================================================================= */
+    const sifahStations = [
+      {
+        stepNum: "المحطة الأولى",
+        title: "الاستعداد للصلاة: الطهارة والسترة واستقبال القبلة",
+        tag: "شرط صحة + سنة مؤكدة",
+        tagClass: "bg-purple-100 text-purple-900 border-purple-200",
+        desc: "يتطهر المصلي وضوءاً كوضوء النبي ﷺ، ويستر عورته، ويستقبل القبلة (الكعبة المشرفة) بكامل بدنه، وينوي بقلبه دون تلفظ باللسان (فالتلفظ بدعة لم ترد عن النبي ﷺ)، ويسن له أن يجعل أمامه سترة يدنو منها تمنع المرور بين يديه لقوله ﷺ: «إِذَا صَلَّى أَحَدُكُمْ فَلْيُصَلِّ إِلَى سُتْرَةٍ وَلْيَدْنُ مِنْهَا» (أبو داود).",
+        fiqhBreakdown: "الطهارة وستر العورة واستقبال القبلة شروط صحة لا تنعقد الصلاة بدونها، واتخاذ السترة سنة مؤكدة."
+      },
+      {
+        stepNum: "المحطة الثانية",
+        title: "تكبيرة الإحرام ودعاء الاستفتاح",
+        tag: "ركن أساسي + سنة قولية",
+        tagClass: "bg-red-100 text-red-900 border-red-200",
+        desc: "يقف قائماً مستوياً، ويرفع يديه حذو منكبيه أو فروع أذنيه ممدودة الأصابع غير مفرجة مستقبلاً بها القبلة قائلاً: «اللهُ أَكْبَر». ثم يقبض: يضع كفه اليمنى على ظهر كفه اليسرى والرسغ والساعد على صدره، ويرمي ببصره إلى موضع سجوده، ثم يستفتح سراً بأحد الأدعية الثابتة، ومن أجمعها: «سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، وَتَبَارَكَ اسْمُكَ، وَتَعَالَى جَدُّكَ، وَلا إِلَهَ غَيْرُكَ» أو: «اللَّهُمَّ بَاعِدْ بَيْنِي وَبَيْنَ خَطَايَايَ كَمَا بَاعَدْتَ بَيْنَ المَشْرِقِ وَالمَغْرِبِ...» (متفق عليه).",
+        fiqhBreakdown: "تكبيرة الإحرام والقيام لها ركنان، ورفع اليدين والقبض على الصدر ودعاء الاستفتاح سنن مؤكدة."
+      },
+      {
+        stepNum: "المحطة الثالثة",
+        title: "الاستعاذة والبسملة وقراءة الفاتحة وسورة",
+        tag: "الفاتحة ركن، وما عداها سنة",
+        tagClass: "bg-red-100 text-red-900 border-red-200",
+        desc: "يتعوذ سراً: «أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ»، ويبسمل سراً: «بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ»، ثم يرتل سورة الفاتحة آية آية يقف عند كل آية بخشوع وتدبر، فإذا قال: ﴿وَلَا الضَّالِّينَ﴾ قال: «آمِينَ» (يمد بها صوته جهراً في الصلاة الجهرية)، ثم يقرأ بعدها سورة أو ما تيسر من القرآن في الركعتين الأوليين.",
+        fiqhBreakdown: "قراءة الفاتحة ركن في كل ركعة، والاستعاذة والبسملة والتأمين وقراءة سورة سنن تزيد الأجر والخشوع."
+      },
+      {
+        stepNum: "المحطة الرابعة",
+        title: "الركوع التام والتعظيم فيه",
+        tag: "الركوع ركن + تسبيحة واجب + الزيادة سنة",
+        tagClass: "bg-red-100 text-red-900 border-red-200",
+        desc: "يسكت سكتة لطيفة بعد القراءة، ثم يرفع يديه حذو منكبيه مكبراً، ويهوي راكعاً، ويمكن كفيه من ركبتيه كأنه قابض عليهما مفرّجاً بين أصابعه، ويسوي ظهره حتى لو صُب عليه ماء لاستقر، ولا يشخص رأسه ولا يصوبه، ويجافي مرفقيه عن جنبيه، ويقول مطمئناً: «سُبْحَانَ رَبِّيَ الْعَظِيمِ» (ثلاثاً، والواحدة تجزئ)، ويزيد: «سُبُّوحٌ قُدُّوسٌ، رَبُّ المَلاَئِكَةِ وَالرُّوحِ».",
+        fiqhBreakdown: "الانحناء والطمأنينة ركنان، والتكبير والتسبيحة الأولى واجبان، ورفع اليدين واستواء الظهر والزيادة على تسبيحة سنن."
+      },
+      {
+        stepNum: "المحطة الخامسة",
+        title: "الرفع من الركوع والاعتدال بحمدٍ طويل",
+        tag: "الرفع والاعتدال ركنان + التسميع والتحميد واجبان",
+        tagClass: "bg-red-100 text-red-900 border-red-200",
+        desc: "يرفع صلبه من الركوع رافعاً يديه حذو منكبيه قائلاً (للإمام والمنفرد): «سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ»، حتى يستوي قائماً معتدلاً ويرجع كل عظم إلى موضعه، ويقول الجميع (إمام، مأموم، منفرد): «رَبَّنَا وَلَكَ الْحَمْدُ، حَمْدًا كَثِيرًا طَيِّبًا مُبَارَكًا فِيهِ، مِلْءَ السَّمَاوَاتِ وَمِلْءَ الأَرْضِ وَمِلْءَ مَا شِئْتَ مِنْ شَيْءٍ بَعْدُ»، ويمكث قائماً مطمئناً زمناً يقارب ركوعه.",
+        fiqhBreakdown: "الرفع والاعتدال والطمأنينة أركان، وقول سمع الله لمن حمده وربنا ولك الحمد واجبان."
+      },
+      {
+        stepNum: "المحطة السادسة",
+        title: "السجود على الأعضاء السبعة والتجافي",
+        tag: "السجود ركن أعظم + التسبيح واجب",
+        tagClass: "bg-red-100 text-red-900 border-red-200",
+        desc: "يكبر ويهوي ساجداً (واضعاً يديه قبل ركبتيه أو ركبتيه قبل يديه)، ويمكن أعضاءه السبعة من الأرض: الجبهة مع الأنف، والكفين مبسوطتين مضمومتي الأصابع متجهة للقبلة حذو منكبيه أو أذنيه، والركبتين، وأطراف أصابع القدمين منصوبتين مستقبلاً بهما القبلة وراصاً عقبيه، ويرفع ذراعيه ومرفقيه عن الأرض (نهياً عن افتراش الكلب)، ويجافي بطنه عن فخذيه، ويسبح: «سُبْحَانَ رَبِّيَ الأَعْلَى» ثلاثاً، ويكثر من الدعاء: «فَقَمِنٌ أَنْ يُسْتَجَابَ لَكُمْ».",
+        fiqhBreakdown: "السجود والطمأنينة وتمكين الأعضاء الـ 7 ركن، والتكبير وتسبيحة واحدة واجب، والتجافي ونصب القدمين والدعاء سنن."
+      },
+      {
+        stepNum: "المحطة السابعة",
+        title: "الجلوس بين السجدتين (الافتراش والاستغفار)",
+        tag: "الجلوس والطمأنينة ركنان + رب اغفر لي واجب",
+        tagClass: "bg-red-100 text-red-900 border-red-200",
+        desc: "يرفع رأسه مكبراً ويجلس مفترشاً: يفرش قدمه اليسرى ويجلس عليها مطمئناً وينصب قدمه اليمنى موجهاً أصابعها للقبلة، ويضع كفيه مبسوطتين على فخذيه قريباً من ركبتيه، ويقول خاشعاً: «رَبِّ اغْفِرْ لِي، رَبِّ اغْفِرْ لِي، اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي وَعَافِنِي وَاهْدِنِي وَارْزُقْنِي» ويمكث حتى يرجع كل عظم لموضعه، ثم يكبر ويسجد سجدته الثانية كصفة الأولى تماماً.",
+        fiqhBreakdown: "الجلوس والطمأنينة ركنان، وقول رب اغفر لي واجب، وهيئة الافتراش والزيادة في الدعاء سنن."
+      },
+      {
+        stepNum: "المحطة الثامنة",
+        title: "الركعة الثانية والتشهد الأول (في الثلاثية والرباعية)",
+        tag: "التشهد الأول والجلوس له واجبان",
+        tagClass: "bg-blue-100 text-blue-900 border-blue-200",
+        desc: "ينهض للركعة الثانية معتمداً على ركبتيه (أو يعتمد بيديه إذا شق عليه)، ويصليها كالأولى تماماً لكن دون دعاء استفتاح. فإذا فرغ من السجدة الثانية جلس مفترشاً للتشهد الأول، واضعاً يده اليسرى على فخذه اليسرى، ويقبض أصابع يده اليمنى كلها ويحلّق بالإبهام مع الوسطى، ويشير بسبابته محركاً لها عند الدعاء متشهداً: «التَّحِيَّاتُ لِلَّهِ، وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ...».",
+        fiqhBreakdown: "التشهد الأول والجلوس له واجبان، إن نسيهما واستتم قائماً لا يرجع ويجبر بسجود السهو قبل السلام."
+      },
+      {
+        stepNum: "المحطة التاسعة",
+        title: "الركعات الباقية والتشهد الأخير (جلسة التَّوَرُّك)",
+        tag: "التشهد الأخير والجلوس له والصلاة على النبي ﷺ أركان",
+        tagClass: "bg-red-100 text-red-900 border-red-200",
+        desc: "يقوم للثالثة رافعاً يديه حذو منكبيه مع التكبير، ويقرأ الفاتحة فقط في الركعات الباقية. وفي الجلسة الأخيرة يجلس متوركاً في الصلاة الثلاثية والرباعية: يخرج قدمه اليسرى من تحت ساقه اليمنى ويفضي بمقعدته إلى الأرض وينصب اليمنى، ويقرأ التحيات، ثم يصلي بالصلاة الإبراهيمية: «اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ...»، ثم يستعيذ من أربع: عذاب جهنم، وعذاب القبر، وفتنة المحيا والممات، وفتنة المسيح الدجال، ويدعو بما أحب.",
+        fiqhBreakdown: "التشهد الأخير والجلوس له والصلاة على النبي ﷺ أركان، وهيئة التورك والتعوذ من الأربع سنن مؤكدة."
+      },
+      {
+        stepNum: "المحطة العاشرة",
+        title: "التسليمتان وأذكار ما بعد السلام المسنونة",
+        tag: "التسليم ركن الخروج + الأذكار سنن مأثورة",
+        tagClass: "bg-red-100 text-red-900 border-red-200",
+        desc: "يلتفت عن يمينه حتى يُرى بياض خده الأيمن قائلاً: «السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ»، ثم عن يساره: «السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ». فإذا فرغ استغفر ثلاثاً: «أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ، أَسْتَغْفِرُ اللَّهَ»، وقال: «اللَّهُمَّ أَنْتَ السَّلاَمُ وَمِنْكَ السَّلاَمُ، تَبَارَكْتَ يَا ذَا الْجَلاَلِ وَالإِكْرَامِ»، ويقرأ آية الكرسي والمعوذات، ويسبح 33 ويحمد 33 ويكبر 33 ويختم المائة بلا إله إلا الله وحده لا شريك له له الملك وله الحمد وهو على كل شيء قدير.",
+        fiqhBreakdown: "التسليمة الأولى ركن يحل به الخروج من الصلاة، والتسليمة الثانية والأذكار دبر الصلاة سنن نبوية مأثورة عظيمة الأجر."
+      }
+    ];
+
+    /* =========================================================================
+       2. PILLARS & OBLIGATIONS & FLASHCARDS DATA
        ========================================================================= */
     const arkanData = [
-      {
-        num: 1,
-        title: "القيام في الفرض مع القدرة",
-        spiritualMeaning: "الوقوف في مقام العبودية والتذلل بين يدي ملك الملوك وخالق الكون تبارك وتعالى.",
-        rule: "ركن في الفريضة للقادر. من جلس في الفريضة دون عذر تبطل صلاته. أما في النافلة فالقعود جائز بنصف الأجر.",
-        evidence: "قوله تعالى: ﴿وَقُومُوا لِلَّهِ قَانِتِينَ﴾، وقوله ﷺ لعمران: «صَلِّ قَائِمًا، فَإِنْ لَمْ تَسْتَطِعْ فَقَاعِدًا» (البخاري).",
-        sahwRule: "لا يسقط بالسهو أبداً؛ إن تركه ساهياً وقعد لزمه القيام فور تذكره وسجود السهو."
-      },
-      {
-        num: 2,
-        title: "تكبيرة الإحرام (قول: الله أكبر)",
-        spiritualMeaning: "إعلان تعظيم الله واستصغار كل ما سواه والدخول في حمى الصلاة وحرمتها وقطع شواغل الدنيا.",
-        rule: "لا تنعقد الصلاة إلا بها بلفظ (الله أكبر) حصراً. وتجب قائماً قبل الهوي.",
-        evidence: "«تَحْرِيمُهَا التَّكْبِيرُ، وَتَحْلِيلُهَا التَّسْلِيمُ» (أبو داود والترمذي).",
-        sahwRule: "إن نسيها لم تنعقد صلاته أصلاً، ولا بد من استئناف الصلاة بتكبيرة إحرام صحيحة."
-      },
-      {
-        num: 3,
-        title: "قراءة سورة الفاتحة في كل ركعة",
-        spiritualMeaning: "مناجاة خاصة بين العبد وربه، يقسمها الله بينه وبين عبده نصفين، وطلب أعظم هداية (الصراط المستقيم).",
-        rule: "ركن في كل ركعة للإمام والمنفرد ورجحه إسلام ويب للمأموم أيضاً في السرية والجهرية.",
-        evidence: "«لَا صَلَاةَ لِمَنْ لَمْ يَقْرَأْ بِفَاتِحَةِ الْكِتَابِ» (متفق عليه).",
-        sahwRule: "إن نسيها وتذكر قبل ركوع التالية رجع وقرأها، وإن تذكر بعده لغت الركعة وقامت التالية مقامها."
-      },
-      {
-        num: 4,
-        title: "الرُّكُوع",
-        spiritualMeaning: "انحناء الجسد إقراراً بعظمة الرب وجلاله وخضوع العبد وتذلله لعزة ربه.",
-        rule: "ركن في كل ركعة؛ وحده الأدنى أن ينحني بحيث يمكن كفيه من ركبتيه.",
-        evidence: "قوله تعالى: ﴿يَا أَيُّهَا الَّذِينَ آمَنُوا ارْكَعُوا وَاسْجُدُوا﴾.",
-        sahwRule: "يلزم الإتيان به إن تذكره قبل ركوع التالية، فإن شرع في ركوع التالية لغت السابقة."
-      },
-      {
-        num: 5,
-        title: "الرفع من الركوع",
-        spiritualMeaning: "النهوض بحمد الله والاعتراف بأن الهداية والشكر له وحده سبحانه.",
-        rule: "ركن مستقل، لا يصح الانتقال من الركوع إلى السجود مباشرة دونه.",
-        evidence: "«ثُمَّ ارْفَعْ حَتَّى تَعْتَدِلَ قَائِمًا» (حديث المسيء صلاته - متفق عليه).",
-        sahwRule: "لا يسقط بالسهو، يلزم الإتيان به والاعتدال."
-      },
-      {
-        num: 6,
-        title: "الاعتدال قائماً بعد الركوع",
-        spiritualMeaning: "الاستقرار التام والوقوف بوقار وحمد كثير طيب مبارك فيه.",
-        rule: "ركن مستقل عن الرفع، فلابد من استقامة الظهر حتى يعود كل عظم إلى موضعه.",
-        evidence: "«كَانَ النَّبِيُّ ﷺ إِذَا رَفَعَ رَأْسَهُ مِنَ الرُّكُوعِ لَمْ يَسْجُدْ حَتَّى يَسْتَوِيَ قَائِمًا» (مسلم).",
-        sahwRule: "إن تركه وهوى سريعاً للسجود بطلت ركعته لعدم تحقق الركن."
-      },
-      {
-        num: 7,
-        title: "السجود على الأعضاء السبعة",
-        spiritualMeaning: "ذروة سنام العبودية؛ يضع المصلي أشرف ما فيه (وجهه) على التراب تذللاً لله، وهو أقرب ما يكون العبد من ربه.",
-        rule: "ركن سجدتان في كل ركعة. ويجب تمكين الأعضاء الـ 7: الجبهة والأنف، الكفان، الركبتان، وأطراف أصابع القدمين.",
-        evidence: "«أُمِرْتُ أَنْ أَسْجُدَ عَلَى سَبْعَةِ أَعْظُمٍ...» (البخاري ومسلم).",
-        sahwRule: "لا يسقط بالسجود السهو وحده؛ لابد من الإتيان بالسجدة المنسية وبناء ما بعدها عليها."
-      },
-      {
-        num: 8,
-        title: "الرفع من السجود",
-        spiritualMeaning: "الانتقال بين خضوعين بالاعتراف بفقر العبد لرحمة مولاه.",
-        rule: "ركن لازم للفصل بين السجدتين وتحقيق كل سجدة على حدة.",
-        evidence: "«ثُمَّ ارْفَعْ حَتَّى تَطْمَئِنَّ جَالِسًا» (متفق عليه).",
-        sahwRule: "يلزم الإتيان به مطمئناً."
-      },
-      {
-        num: 9,
-        title: "الجلوس بين السجدتين",
-        spiritualMeaning: "جلسة الاستغفار وسؤال الرحمة والهداية والعافية والرزق من الغني الحميد.",
-        rule: "ركن مستقل بين السجدتين، ويسن فيه الافتراش والدعاء.",
-        evidence: "فعل النبي ﷺ الدائم وأمره للمسيء صلاته.",
-        sahwRule: "لا يسقط بالسهو، ويلزم الجلوس مطمئناً."
-      },
-      {
-        num: 10,
-        title: "الطمأنينة في جميع الأركان الفعلية",
-        spiritualMeaning: "حضور القلب وسكون الجوارح وتذوق حلاوة الوقوف بين يدي الله بعيداً عن العجلة.",
-        rule: "ركن في كل حركة (الركوع، الاعتدال، السجود، الجلوس)، وهي السكون ولو بمقدار تسبيحة.",
-        evidence: "قوله ﷺ لمن نقر صلاته: «ارْجِعْ فَصَلِّ فَإِنَّكَ لَمْ تُصَلِّ» ثلاث مرات.",
-        sahwRule: "عدم الطمأنينة يبطل الصلاة اتفاقاً، ولا يجبره سجود السهو دون إعادة الركن مطمئناً."
-      },
-      {
-        num: 11,
-        title: "التشهد الأخير",
-        spiritualMeaning: "إعلان التوحيد الخالص، والسلام على رسول الله والعباد الصالحين قبل توديع الصلاة.",
-        rule: "ركن قولي في آخر الصلاة؛ ألفاظ التحيات والشهادتين.",
-        evidence: "«إِذَا صَلَّى أَحَدُكُمْ فَلْيَقُلْ: التَّحِيَّاتُ لِلَّهِ...» بعدما كانوا يقولون ألفاظاً غير مشروعة.",
-        sahwRule: "إن نسيه وسلم، يرجع فيجلس ويتشهد ويسلم ويسجد للسهو."
-      },
-      {
-        num: 12,
-        title: "الجلوس للتشهد الأخير",
-        spiritualMeaning: "الاستقرار في مقعد الشهادة والدعاء المأثور.",
-        rule: "ركن فعلي ملازم للتشهد الأخير، ويسن فيه التورك في الثلاثية والرباعية.",
-        evidence: "مداومة النبي ﷺ عليه وأمره به.",
-        sahwRule: "يلزم الجلوس والإتيان به."
-      },
-      {
-        num: 13,
-        title: "الصلاة على النبي ﷺ بعد التشهد الأخير",
-        spiritualMeaning: "الوفاء بحق خير خلق الله ﷺ وسؤال البركة والرحمة له ولآله كما صُلي على إبراهيم.",
-        rule: "ركن عند الحنابلة والشافعية وموقع إسلام ويب في التشهد الأخير بصيغتها الإبراهيمية.",
-        evidence: "قول الصحابة: كيف نصلي عليك؟ فقال: «قُولُوا: اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ...» (البخاري).",
-        sahwRule: "يلزم الإتيان بها قبل السلام."
-      },
-      {
-        num: 14,
-        title: "التسليم والترتيب بين الأركان",
-        spiritualMeaning: "التسليم ختام الصلاة ونشر السلام، والترتيب هو امتثال منهج الوحي خطوة بخطوة.",
-        rule: "التسليمة الأولى ركن يحل به الخروج من الصلاة، والترتيب ركن فلو سجد قبل أن يركع ألغيت وبطل الترتيب.",
-        evidence: "«وَتَحْلِيلُهَا التَّسْلِيمُ»، وقوله: «صَلُّوا كَمَا رَأَيْتُمُونِي أُصَلِّي».",
-        sahwRule: "إن سلم قبل تمام صلاته سهواً، بنى عليها ما لم يطل الوقت ويسجد للسهو بعد السلام."
-      }
+      { num: 1, title: "القيام في الفرض مع القدرة", rule: "ركن في الفريضة، تبطل الصلاة بتركه للقادر.", evidence: "﴿وَقُومُوا لِلَّهِ قَانِتِينَ﴾", sahwRule: "لا يسقط بالسهو أبداً." },
+      { num: 2, title: "تكبيرة الإحرام (قول: الله أكبر)", rule: "لا تنعقد الصلاة إلا بها بلفظ (الله أكبر) حصراً.", evidence: "«تَحْرِيمُهَا التَّكْبِيرُ»", sahwRule: "إن نسيها لم تنعقد صلاته." },
+      { num: 3, title: "قراءة سورة الفاتحة في كل ركعة", rule: "ركن في كل ركعة للإمام والمنفرد ورجح للمأموم.", evidence: "«لَا صَلَاةَ لِمَنْ لَمْ يَقْرَأْ بِفَاتِحَةِ الْكِتَابِ»", sahwRule: "يلزم الإتيان بها وبما بعدها." },
+      { num: 4, title: "الرُّكُوع", rule: "الانحناء بتمكين اليدين من الركبتين.", evidence: "﴿ارْكَعُوا وَاسْجُدُوا﴾", sahwRule: "يلزم الإتيان به إن ذكره قبل ركوع التالية." },
+      { num: 5, title: "الرفع من الركوع", rule: "ركن مستقل للانتقال إلى القيام.", evidence: "«ثُمَّ ارْفَعْ حَتَّى تَعْتَدِلَ قَائِمًا»", sahwRule: "لا يسقط بالسهو." },
+      { num: 6, title: "الاعتدال قائماً بعد الركوع", rule: "استواء الظهر وعودة كل عظم لموضعه.", evidence: "«لَمْ يَسْجُدْ حَتَّى يَسْتَوِيَ قَائِمًا»", sahwRule: "الهوي السريع مبطل للصلاة." },
+      { num: 7, title: "السجود على الأعضاء السبعة", rule: "تمكين الجبهة والأنف والكفين والركبتين وأطراف القدمين.", evidence: "«أُمِرْتُ أَنْ أَسْجُدَ عَلَى سَبْعَةِ أَعْظُمٍ»", sahwRule: "لا يجبره السهو دون الإتيان بالسجدة." },
+      { num: 8, title: "الرفع من السجود", rule: "ركن للفصل بين السجدتين.", evidence: "«ثُمَّ ارْفَعْ حَتَّى تَطْمَئِنَّ جَالِسًا»", sahwRule: "يلزم الإتيان به." },
+      { num: 9, title: "الجلوس بين السجدتين", rule: "جلسة الاستغفار بين السجدتين.", evidence: "فعل النبي ﷺ الدائم وأمره.", sahwRule: "لا يسقط بالسهو." },
+      { num: 10, title: "الطمأنينة في جميع الأركان الفعلية", rule: "السكون والاستقرار في الركوع والاعتدال والسجود والجلوس.", evidence: "«ارْجِعْ فَصَلِّ فَإِنَّكَ لَمْ تُصَلِّ»", sahwRule: "نقر الصلاة مبطل لها إجماعاً." },
+      { num: 11, title: "التشهد الأخير", rule: "ألفاظ التحيات والشهادتين في ختام الصلاة.", evidence: "«إِذَا صَلَّى أَحَدُكُمْ فَلْيَقُلْ: التَّحِيَّاتُ...»", sahwRule: "يرجع فيجلس ويتشهد ويسلم." },
+      { num: 12, title: "الجلوس للتشهد الأخير", rule: "القعود الأخير لأداء التشهد والسلام.", evidence: "مداومة النبي ﷺ عليه.", sahwRule: "يلزم الإتيان به." },
+      { num: 13, title: "الصلاة على النبي ﷺ في الأخير", rule: "بالصيغة الإبراهيمية في التشهد الأخير.", evidence: "«قُولُوا: اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ...»", sahwRule: "يلزم الإتيان بها قبل السلام." },
+      { num: 14, title: "التسليم والترتيب بين الأركان", rule: "التسليمة الأولى ركن التحليل، والترتيب ركن المتابعة.", evidence: "«وَتَحْلِيلُهَا التَّسْلِيمُ»", sahwRule: "إن سلم قبل تمام صلاته سهواً أتمها وسجد بعد السلام." }
     ];
 
-    /* =========================================================================
-       2. DEEP DETAILED DATA: THE 8 OBLIGATIONS (واجبات الصلاة الـ 8 كاملة)
-       ========================================================================= */
     const wajibData = [
-      {
-        num: 1,
-        title: "تكبيرات الانتقال (غير تكبيرة الإحرام)",
-        text: "قول: «اللهُ أَكْبَر» عند كل خفض ورفع وقيام وقعود.",
-        rule: "واجبة تبطل الصلاة بتعمد تركها، وتسقط بالسهو وتجبر بسجدتي السهو قبل السلام.",
-        evidence: "حديث أبي هريرة: «كَانَ رَسُولُ اللَّهِ ﷺ يُكَبِّرُ حِينَ يَقُومُ، ثُمَّ يُكَبِّرُ حِينَ يَرْكَعُ...» (متفق عليه)."
-      },
-      {
-        num: 2,
-        title: "التسميع: قول (سمع الله لمن حمده)",
-        text: "يقال عند الرفع من الركوع للإمام والمنفرد حصراً.",
-        rule: "واجب على الإمام والمنفرد، أما المأموم فلا يشرع له التسميع بل يكتفي بالتحميد.",
-        evidence: "«إِذَا قَالَ الإِمَامُ: سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ، فَقُولُوا: رَبَّنَا وَلَكَ الحَمْدُ» (البخاري ومسلم)."
-      },
-      {
-        num: 3,
-        title: "التحميد: قول (ربنا ولك الحمد)",
-        text: "يقال بعد استواء القيام للجميع (إمام، مأموم، منفرد).",
-        rule: "واجب على كل مصلٍّ، ويسن أن يزيد: «حَمْداً كَثِيراً طَيِّباً مُبَارَكاً فِيهِ ملء السماوات والأرض».",
-        evidence: "الأحاديث المتواترة في الأمر بالتحميد بعد الاعتدال."
-      },
-      {
-        num: 4,
-        title: "تسبيح الركوع: (سبحان ربي العظيم)",
-        text: "مرة واحدة واجبة مجزئة في الركوع، والزيادة إلى ثلاث سنة.",
-        rule: "واجب يسقط بالنسيان ويجبر بسجود السهو قبل السلام إن فارق محله.",
-        evidence: "لما نزل قوله تعالى: ﴿فَسَبِّحْ بِاسْمِ رَبِّكَ الْعَظِيمِ﴾ قال ﷺ: «اجْعَلُوهَا فِي رُكُوعِكُمْ» (أبو داود)."
-      },
-      {
-        num: 5,
-        title: "تسبيح السجود: (سبحان ربي الأعلى)",
-        text: "مرة واحدة واجبة في السجود، وما زاد فهو سنة مستحبة.",
-        rule: "واجب تسقط بالتفريط سهواً وتجبر بسجود السهو.",
-        evidence: "لما نزل قوله تعالى: ﴿سَبِّحِ اسْمَ رَبِّكَ الأَعْلَى﴾ قال ﷺ: «اجْعَلُوهَا فِي سُجُودِكُمْ» (أحمد وأبو داود)."
-      },
-      {
-        num: 6,
-        title: "طلب المغفرة بين السجدتين: (رب اغفر لي)",
-        text: "قول: «رَبِّ اغْفِرْ لِي» مرة واحدة على الأقل بين السجدتين.",
-        rule: "واجب عند الحنابلة وإسلام ويب، والزيادة: «وارحمني وعافني وارزقني» سنة.",
-        evidence: "حديث حذيفة أن النبي ﷺ كان يقول بين السجدتين: «رَبِّ اغْفِرْ لِي، رَبِّ اغْفِرْ لِي» (النسائي وابن ماجه)."
-      },
-      {
-        num: 7,
-        title: "التشهد الأول (ألفاظه)",
-        text: "قراءة صيغة التحيات بعد الركعة الثانية في الثلاثية والرباعية.",
-        rule: "واجب قولي؛ إن تركه وقام واستتم قائماً لا يرجع ويجبره بسجود السهو قبل السلام.",
-        evidence: "حديث عبد الله بن بحينة أن النبي ﷺ قام من الثنتين ولم يجلس، فلما قضى صلاته سجد سجدتين قبل أن يسلم (البخاري)."
-      },
-      {
-        num: 8,
-        title: "الجلوس للتشهد الأول",
-        text: "القعود بعد الركعة الثانية مفترشاً لأداء التشهد الأول.",
-        rule: "واجب فعلي ملازم لألفاظ التشهد الأول ويسقط بالسهو ويجبر بالسجود.",
-        evidence: "فعل النبي ﷺ الثابت ومداومته عليه."
-      }
+      { num: 1, title: "تكبيرات الانتقال", text: "اللهُ أَكْبَر في كل خفض ورفع عدا الإحرام.", rule: "تسقط بالسهو وتجبر بسجود السهو قبل السلام." },
+      { num: 2, title: "قول (سمع الله لمن حمده)", text: "للإمام والمنفرد عند الرفع من الركوع.", rule: "واجب عليهما، والمأموم يقتصر على التحميد." },
+      { num: 3, title: "قول (ربنا ولك الحمد)", text: "للجميع بعد استواء القيام.", rule: "واجب على الإمام والمأموم والمنفرد." },
+      { num: 4, title: "تسبيح الركوع", text: "«سُبْحَانَ رَبِّيَ الْعَظِيمِ» مرة واحدة.", rule: "واجب يسقط بالنسيان ويجبر بالسجود." },
+      { num: 5, title: "تسبيح السجود", text: "«سُبْحَانَ رَبِّيَ الأَعْلَى» مرة واحدة.", rule: "واجب تجبره سجدتا السهو قبل السلام." },
+      { num: 6, title: "المغفرة بين السجدتين", text: "قول «رَبِّ اغْفِرْ لِي» مرة واحدة.", rule: "واجب عند الحنابلة وإسلام ويب." },
+      { num: 7, title: "التشهد الأول (ألفاظه)", text: "التحيات في ختام الركعة الثانية.", rule: "إن نسيه واستتم قائماً مضى وسجد قبل السلام." },
+      { num: 8, title: "الجلوس للتشهد الأول", text: "القعود بعد الثانية للتشهد الأول.", rule: "واجب يسقط بالسهو ويجبر بالسجود." }
     ];
 
-    /* =========================================================================
-       3. SUNAN LISTS
-       ========================================================================= */
     const sunanQawliyyah = [
-      "دعاء الاستفتاح بعد تكبيرة الإحرام (سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ...)",
-      "الاستعاذة بالله من الشيطان الرجيم قبل القراءة سراً",
-      "البسملة (بسم الله الرحمن الرحيم) سراً في كل ركعة",
-      "قول «آمين» بعد الفاتحة للإمام والمأموم والمنفرد جهراً في الجهرية وسراً في السرية",
-      "قراءة سورة أو آيات بعد الفاتحة في الركعتين الأوليين",
-      "الجهر بالقراءة في صلاة الصبح والجمعة والعيدين والمغرب والعشاء (الأوليين)، والإسرار في الظهر والعصر وباقي الركعات",
-      "ما زاد على التسبيحة الأولى في الركوع والسجود (إلى 3 أو 5 أو 10)",
-      "ما زاد على قول 'ربنا ولك الحمد' (ملء السماوات وملء الأرض وملء ما شئت من شيء بعد)",
-      "ما زاد على المرة الأولى في قول 'رب اغفر لي' بين السجدتين، والدعاء بالعافية والرزق",
-      "الاستعاذة بالله في التشهد الأخير من أربع: (عذاب جهنم، عذاب القبر، فتنة المحيا والممات، فتنة المسيح الدجال)",
-      "الدعاء بعد الصلاة الإبراهيمية وقبل السلام بما ورد في القرآن والسنة"
+      "دعاء الاستفتاح بعد تكبيرة الإحرام سراً",
+      "الاستعاذة بالله من الشيطان الرجيم والبسملة سراً",
+      "قول «آمِينَ» بعد الفاتحة للإمام والمأموم",
+      "قراءة سورة أو آيات بعد الفاتحة في الأوليين",
+      "الجهر في الجهرية والإسرار في السرية",
+      "الزيادة على تسبيحة واحدة في الركوع والسجود",
+      "الاستعاذة من عذاب القبر وجهنم والمحيا والممات والمسيح الدجال في التشهد الأخير",
+      "الأذكار والتسبيحات المأثورة دبر الصلوات المكتوبة"
     ];
 
     const sunanFiliyyah = [
-      "رفع اليدين حذو المنكبين أو فروع الأذنين في 4 مواضع: عند تكبيرة الإحرام، وعند الركوع، وعند الرفع من الركوع، وعند القيام من التشهد الأول",
-      "وضع اليد اليمنى على ظهر كف اليسرى والرسغ والساعد على الصدر في القيام",
-      "النظر إلى موضع السجود طيلة الصلاة بخشوع وتواضع",
-      "استواء الظهر في الركوع وجعل الرأس حياله (لا يشخصه ولا يصوبه)",
-      "تمكين اليدين من الركبتين مع تفريج الأصابع كالقابض عليهما ومجافاة المرفقين عن الجنبين",
-      "السجود مع مجافاة العضدين عن الجنبين، والبطن عن الفخذين، والفخذين عن الساقين",
-      "رفع الذراعين والمرفقين عن الأرض في السجود (النهي عن انبساط الكلب)",
-      "نصب القدمين في السجود وتوجيه أطراف الأصابع نحو القبلة ورص العقبين",
-      "جلسة الافتراش: فرش الرجل اليسرى والجلوس عليها ونصب اليمنى (بين السجدتين وفي التشهد الأول)",
-      "جلسة التَّوَرُّك: إخراج اليسرى والجلوس بالمقعدة على الأرض في التشهد الأخير للصلوات الثلاثية والرباعية",
-      "عقد أصابع اليد اليمنى والإشارة بالسبابة وتحريكها عند ذكر الله والدعاء في التشهد"
+      "رفع اليدين حذو المنكبين عند الإحرام والركوع والرفع منه والقيام للثالثة",
+      "وضع اليد اليمنى على ظهر كف اليسرى والساعد على الصدر",
+      "النظر إلى موضع السجود بخشوع",
+      "استواء الظهر في الركوع ومس الركبتين مفرجتي الأصابع",
+      "مجافاة العضدين عن الجنبين والبطن عن الفخذين في السجود",
+      "رفع الذراعين والمرفقين عن الأرض في السجود",
+      "جلسة الافتراش: فرش اليسرى ونصب اليمنى بين السجدتين والتشهد الأول",
+      "جلسة التورك: في التشهد الأخير للصلوات الثلاثية والرباعية",
+      "الإشارة بالسبابة وتحريكها عند الدعاء في التشهد"
+    ];
+
+    const flashcardsData = [
+      { front: "قراءة سورة الفاتحة", type: "ركن أساسي", typeClass: "bg-red-500", back: "ركن لا تصح الصلاة بدونه في كل ركعة للإمام والمنفرد. لا يسقط بالسهو." },
+      { front: "قول: (سمع الله لمن حمده)", type: "واجب للصلاة", typeClass: "bg-blue-500", back: "واجب على الإمام والمنفرد؛ يسقط بالسهو ويجبر بسجدتي السهو قبل السلام." },
+      { front: "دعاء الاستفتاح", type: "سنة قولية", typeClass: "bg-emerald-500", back: "سنة مستحبة. لا تبطل الصلاة بتركه عمداً ولا سهواً ولا يشرع له سجود سهو." },
+      { front: "التشهد الأول", type: "واجب للصلاة", typeClass: "bg-blue-500", back: "واجب؛ إذا نسيه الإمام واستتم قائماً للثالثة لا يرجع، ويجبر بسجود السهو قبل السلام." },
+      { front: "الطمأنينة في الركوع والسجود", type: "ركن مغلظ", typeClass: "bg-red-500", back: "ركن باتفاق الأئمة؛ وهي السكون حتى يرجع كل عظم لموضعه. من نقر صلاته لم يصل." },
+      { front: "جلسة التورك في التشهد الأخير", type: "سنة فعلية", typeClass: "bg-emerald-500", back: "سنة في الصلاة ذات التشهدين (المغرب، الظهر، العصر، العشاء). فواتها لا يوجب سهواً." },
+      { front: "تسبيحة واحدة في السجود", type: "واجب للصلاة", typeClass: "bg-blue-500", back: "قول (سبحان ربي الأعلى) مرة واحدة واجب، وما زاد إلى ثلاث فهو سنة." },
+      { front: "التسليمة الأولى", type: "ركن الصلاة", typeClass: "bg-red-500", back: "ركن إجماعاً لتحليل الصلاة والخروج منها لقوله ﷺ: 'وتحليلها التسليم'." }
     ];
 
     /* =========================================================================
-       4. INTERACTIVE FLASHCARDS DATA
+       3. SIMULATOR STEPS
        ========================================================================= */
-    const flashcardsData = [
+    const prayerSteps = [
       {
-        front: "قراءة سورة الفاتحة",
-        type: "ركن أساسي",
-        typeClass: "bg-red-500",
-        back: "ركن لا تصح الصلاة بدونه في كل ركعة للإمام والمنفرد. إن نسيها لا تجبر بسجود السهو وحده بل لابد من الإتيان بها وبما بعدها."
+        id: "takbeer",
+        title: "تكبيرة الإحرام والقيام",
+        raka: 1,
+        categoryText: "ركن أساسي لا تنعقد الصلاة إلا به",
+        categoryColor: "bg-red-100 text-red-800 border-red-300",
+        zikr: "اللهُ أَكْبَر",
+        zikrType: "ركن قولي",
+        meaning: "يرفع يديه حذو منكبيه أو فروع أذنيه ممدودة الأصابع غير مفرجة مستقبلاً بها القبلة.",
+        fiqhRuling: "تكبيرة الإحرام والقيام لها في الفرض ركنان لا يسقطان عمداً ولا سهواً.",
+        evidence: "حديث المسيء صلاته: «إِذَا قُمْتَ إِلَى الصَّلَاةِ فَكَبِّرْ» (متفق عليه).",
+        mistake: "مد الألف في (الله) كأن يقول: 'آلله أكبر' فتصبح استفهاماً وتبطل الصلاة.",
+        cues: ["استقبال القبلة بالبدن والقدمين", "النظر إلى موضع السجود بخشوع", "رفع اليدين حذو المنكبين (سنة)", "الجهر بالتكبير بقدر ما يُسمع نفسه"],
+        svg: `<svg viewBox="0 0 200 240" class="w-full h-full max-h-60 sm:max-h-64"><line x1="40" y1="225" x2="160" y2="225" stroke="#94a3b8" stroke-width="2"/><circle cx="100" cy="35" r="16" fill="#047857"/><line x1="105" y1="38" x2="135" y2="225" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3"/><circle cx="135" cy="225" r="3" fill="#f59e0b"/><text x="140" y="222" font-size="8" fill="#d97706" font-weight="bold">موضع السجود</text><line x1="100" y1="51" x2="100" y2="135" stroke="#065f46" stroke-width="20" stroke-linecap="round"/><path d="M 90 70 Q 60 55 65 35" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round"/><circle cx="65" cy="35" r="5" fill="#d97706"/><path d="M 110 70 Q 140 55 135 35" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round"/><circle cx="135" cy="35" r="5" fill="#d97706"/><line x1="92" y1="135" x2="92" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/><line x1="108" y1="135" x2="108" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/><rect x="85" y="218" width="14" height="6" rx="2" fill="#065f46"/><rect x="101" y="218" width="14" height="6" rx="2" fill="#065f46"/><text x="50" y="20" font-size="9" fill="#065f46" font-weight="bold">رفع اليدين حذو المنكبين</text></svg>`
       },
       {
-        front: "قول: (سمع الله لمن حمده)",
-        type: "واجب للصلاة",
-        typeClass: "bg-blue-500",
-        back: "واجب على الإمام والمنفرد؛ تبطل الصلاة بتعمده، ويسقط بالسهو ويجبر بسجدتي السهو قبل السلام."
+        id: "istiftah_fatiha",
+        title: "الاستفتاح وقراءة الفاتحة والقبض",
+        raka: 1,
+        categoryText: "الفاتحة ركن، والاستفتاح والقبض سنن",
+        categoryColor: "bg-red-100 text-red-800 border-red-300",
+        zikr: "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ... ثم الفاتحة وسورة",
+        zikrType: "استفتاح (سنة) + فاتحة (ركن)",
+        meaning: "يضع كفه الأيمن على كفه الأيسر والساعد على صدره، يستفتح سراً، ثم يتعوذ ويبسمل، ويقرأ الفاتحة.",
+        fiqhRuling: "قراءة الفاتحة ركن في كل ركعة على الإمام والمنفرد (ورجح إسلام ويب للمأموم).",
+        evidence: "«لَا صَلَاةَ لِمَنْ لَمْ يَقْرَأْ بِفَاتِحَةِ الْكِتَابِ» (البخاري: 756).",
+        mistake: "إسقاط آية من الفاتحة أو تبديل حركة تغير المعنى ككسر تاء (أنعمتَ).",
+        cues: ["وضع اليمين على اليسرى على الصدر", "قراءة الفاتحة بتأنٍّ آيةً آية", "قول (آمين) ممدودة بعد الفاتحة", "قراءة سورة بعدها في الأوليين"],
+        svg: `<svg viewBox="0 0 200 240" class="w-full h-full max-h-60 sm:max-h-64"><line x1="40" y1="225" x2="160" y2="225" stroke="#94a3b8" stroke-width="2"/><circle cx="100" cy="35" r="16" fill="#047857"/><line x1="100" y1="51" x2="100" y2="135" stroke="#065f46" stroke-width="20" stroke-linecap="round"/><ellipse cx="100" cy="85" rx="14" ry="7" fill="#fbbf24"/><text x="50" y="88" font-size="8" fill="#d97706" font-weight="bold">القبض على الصدر</text><line x1="92" y1="135" x2="92" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/><line x1="108" y1="135" x2="108" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/><rect x="85" y="218" width="14" height="6" rx="2" fill="#065f46"/><rect x="101" y="218" width="14" height="6" rx="2" fill="#065f46"/><text x="60" y="15" font-size="9" fill="#047857" font-weight="bold">القيام وقراءة الفاتحة</text></svg>`
       },
       {
-        front: "دعاء الاستفتاح",
-        type: "سنة قولية",
-        typeClass: "bg-emerald-500",
-        back: "سنة مستحبة بعد تكبيرة الإحرام. لا تبطل الصلاة بتركه عمداً ولا سهواً، ولا يشرع له سجود سهو."
+        id: "ruku",
+        title: "الركوع والتسبيح فيه",
+        raka: 1,
+        categoryText: "هيئة الركوع ركن، وتسبيحة واحدة واجب",
+        categoryColor: "bg-red-100 text-red-800 border-red-300",
+        zikr: "سُبْحَانَ رَبِّيَ الْعَظِيمِ (ثلاث مرات)",
+        zikrType: "واجب (المرة الأولى) وسنة (الزيادة)",
+        meaning: "يكبر ويهوي راكعاً مع رفع اليدين، ويمكن كفيه من ركبتيه مفرجتي الأصابع، ويسوي ظهره.",
+        fiqhRuling: "الانحناء ركن، والطمأنينة فيه ركن، وقول 'سبحان ربي العظيم' مرة واحدة واجب.",
+        evidence: "﴿يَا أَيُّهَا الَّذِينَ آمَنُوا ارْكَعُوا وَاسْجُدُوا﴾.",
+        mistake: "تقويس الظهر، أو خفض الرأس كثيراً أو رفعه للأعلى.",
+        cues: ["استواء الظهر تماماً كأنه صفيحة ماء", "الرأس حيال الظهر", "تفريج الأصابع على الركبتين", "مجافاة المرفقين عن الجنبين"],
+        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-60 sm:max-h-64"><line x1="20" y1="185" x2="220" y2="185" stroke="#94a3b8" stroke-width="2"/><line x1="165" y1="95" x2="165" y2="182" stroke="#047857" stroke-width="14" stroke-linecap="round"/><rect x="157" y="178" width="22" height="7" rx="3" fill="#065f46"/><line x1="70" y1="95" x2="165" y2="95" stroke="#065f46" stroke-width="16" stroke-linecap="round"/><circle cx="55" cy="95" r="14" fill="#047857"/><line x1="90" y1="95" x2="165" y2="135" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/><circle cx="165" cy="135" r="6" fill="#d97706"/><line x1="45" y1="80" x2="185" y2="80" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/><text x="65" y="74" font-size="8" fill="#0284c7" font-weight="bold">استواء الظهر التام</text></svg>`
       },
       {
-        front: "التشهد الأول",
-        type: "واجب للصلاة",
-        typeClass: "bg-blue-500",
-        back: "واجب؛ إذا نسيه الإمام واستتم قائماً للثالثة لا يرجع، ويجبر بسجود السهو سجدتين قبل السلام."
+        id: "raf_ruku",
+        title: "الرفع من الركوع والاعتدال",
+        raka: 1,
+        categoryText: "الرفع والاعتدال ركنان، والتسميع والتحميد واجبان",
+        categoryColor: "bg-red-100 text-red-800 border-red-300",
+        zikr: "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ - رَبَّنَا وَلَكَ الْحَمْدُ",
+        zikrType: "واجبات الصلاة",
+        meaning: "يرفع رأسه وظهره من الركوع رافعاً يديه حذو منكبيه، حتى يعتدل قائماً مطمئناً.",
+        fiqhRuling: "الرفع والاعتدال ركنان، والتسميع والتحميد واجبان.",
+        evidence: "«ثُمَّ ارْفَعْ حَتَّى تَعْتَدِلَ قَائِمًا» (البخاري: 757).",
+        mistake: "الهوي للسجود قبل استتمام القيام والاستقرار فيه.",
+        cues: ["رفع اليدين حذو المنكبين عند الرفع", "الاعتدال التام حتى يرجع كل عظم لموضعه", "المكث في القيام زمناً يقارب الركوع بالحمد"],
+        svg: `<svg viewBox="0 0 200 240" class="w-full h-full max-h-60 sm:max-h-64"><line x1="40" y1="225" x2="160" y2="225" stroke="#94a3b8" stroke-width="2"/><circle cx="100" cy="35" r="16" fill="#047857"/><line x1="100" y1="51" x2="100" y2="135" stroke="#065f46" stroke-width="20" stroke-linecap="round"/><line x1="92" y1="135" x2="92" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/><line x1="108" y1="135" x2="108" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/><text x="45" y="20" font-size="9" fill="#047857" font-weight="bold">الاعتدال قائماً مطمئناً</text></svg>`
       },
       {
-        front: "الطمأنينة في الركوع والسجود",
-        type: "ركن مغلظ",
-        typeClass: "bg-red-500",
-        back: "ركن باتفاق الأئمة؛ وهي السكون حتى يرجع كل عظم لموضعه. صلاة من ينقر صلاته باطلة لقوله ﷺ: 'ارجع فصل فإنك لم تصل'."
+        id: "sujud_1",
+        title: "السجود الأول والتسبيح فيه",
+        raka: 1,
+        categoryText: "السجود على الـ 7 أعضاء ركن، والتسبيح واجب",
+        categoryColor: "bg-red-100 text-red-800 border-red-300",
+        zikr: "سُبْحَانَ رَبِّيَ الأَعْلَى (ثلاثاً)",
+        zikrType: "واجب + سنة",
+        meaning: "يهوي ساجداً على سبعة أعظم: الجبهة والأنف، الكفان، الركبتان، وأطراف أصابع القدمين.",
+        fiqhRuling: "السجود ركن أعظم، ويجب تمكين جميع الأعضاء السبعة من موضع السجود.",
+        evidence: "«أُمِرْتُ أَنْ أَسْجُدَ عَلَى سَبْعَةِ أَعْظُمٍ...» (البخاري ومسلم).",
+        mistake: "رفع القدمين في الهواء، أو بسط الذراعين كبساط الكلب.",
+        cues: ["استقرار الجبهة والأنف معاً", "نصب القدمين وتوجيه الأصابع للقبلة", "مجافاة العضدين والبطن عن الفخذين", "رفع الذراعين والمرفقين عن الأرض"],
+        svg: `<svg viewBox="0 0 250 190" class="w-full h-full max-h-60 sm:max-h-64"><line x1="15" y1="165" x2="235" y2="165" stroke="#94a3b8" stroke-width="2.5"/><path d="M 205 162 L 180 110 L 125 110 L 70 150" fill="none" stroke="#047857" stroke-width="14" stroke-linecap="round"/><path d="M 125 110 L 100 130 L 75 160" fill="none" stroke="#fbbf24" stroke-width="8" stroke-linecap="round"/><circle cx="50" cy="155" r="12" fill="#065f46"/><circle cx="48" cy="164" r="5" fill="#ef4444"/><circle cx="75" cy="163" r="5" fill="#ef4444"/><circle cx="160" cy="163" r="5" fill="#ef4444"/><circle cx="210" cy="163" r="5" fill="#ef4444"/><text x="65" y="75" font-size="8" fill="#ef4444" font-weight="bold">السجود على 7 أعضاء مع رفع الذراعين</text></svg>`
       },
       {
-        front: "جلسة التورك في التشهد الأخير",
-        type: "سنة فعلية",
-        typeClass: "bg-emerald-500",
-        back: "سنة في الصلاة ذات التشهدين (المغرب، الظهر، العصر، العشاء). فواتها لا يبطل الصلاة ولا يوجب سهواً."
+        id: "jilsah_between",
+        title: "الجلوس بين السجدتين والدعاء",
+        raka: 1,
+        categoryText: "الجلوس والطمأنينة ركن، وقول رب اغفر لي واجب",
+        categoryColor: "bg-red-100 text-red-800 border-red-300",
+        zikr: "رَبِّ اغْفِرْ لِي، رَبِّ اغْفِرْ لِي",
+        zikrType: "واجب + سنة",
+        meaning: "يرفع رأسه مكبراً ويجلس مفترشاً رجله اليسرى وناصباً اليمنى واضعاً كفيه على فخذيه.",
+        fiqhRuling: "الجلوس بين السجدتين ركن، والطمأنينة فيه ركن.",
+        evidence: "«ثُمَّ ارْفَعْ حَتَّى تَطْمَئِنَّ جَالِسًا» (متفق عليه).",
+        mistake: "النقر السريع دون جلوس مستقر.",
+        cues: ["صفة الافتراش: فرش اليسرى ونصب اليمنى", "وضع الكفين على الفخذين", "سكون الجسد بطمأنينة"],
+        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-60 sm:max-h-64"><line x1="20" y1="175" x2="220" y2="175" stroke="#94a3b8" stroke-width="2"/><line x1="120" y1="55" x2="120" y2="125" stroke="#047857" stroke-width="18" stroke-linecap="round"/><circle cx="120" cy="40" r="14" fill="#065f46"/><path d="M 120 135 L 140 170 L 110 172 Z" fill="#10b981"/><text x="60" y="25" font-size="8" fill="#047857" font-weight="bold">الافتراش بين السجدتين</text></svg>`
       },
       {
-        front: "تسبيحة واحدة في السجود",
-        type: "واجب للصلاة",
-        typeClass: "bg-blue-500",
-        back: "قول (سبحان ربي الأعلى) مرة واحدة واجب، وما زاد إلى ثلاث فهو سنة."
+        id: "sujud_2",
+        title: "السجود الثاني",
+        raka: 1,
+        categoryText: "ركن السجود الثاني كسجدة أولى",
+        categoryColor: "bg-red-100 text-red-800 border-red-300",
+        zikr: "سُبْحَانَ رَبِّيَ الأَعْلَى (ثلاثاً)",
+        zikrType: "واجب + سنة",
+        meaning: "يسجد سجدته الثانية كصفة الأولى تماماً في الطمأنينة والتسبيح وتمكين الأعضاء السبعة.",
+        fiqhRuling: "السجدة الثانية ركن مستقل في كل ركعة.",
+        evidence: "«ثُمَّ اسْجُدْ حَتَّى تَطْمَئِنَّ سَاجِدًا».",
+        mistake: "الاكتفاء بسجدة واحدة نسياناً.",
+        cues: ["مطابقة تامة للسجدة الأولى", "الإكثار من الدعاء"],
+        svg: `<svg viewBox="0 0 250 190" class="w-full h-full max-h-60 sm:max-h-64"><line x1="15" y1="165" x2="235" y2="165" stroke="#94a3b8" stroke-width="2.5"/><path d="M 205 162 L 180 110 L 125 110 L 70 150" fill="none" stroke="#047857" stroke-width="14" stroke-linecap="round"/><circle cx="50" cy="155" r="12" fill="#065f46"/><circle cx="48" cy="164" r="5" fill="#ef4444"/><circle cx="75" cy="163" r="5" fill="#ef4444"/><circle cx="160" cy="163" r="5" fill="#ef4444"/><circle cx="210" cy="163" r="5" fill="#ef4444"/></svg>`
       },
       {
-        front: "التسليمة الأولى",
-        type: "ركن الصلاة",
-        typeClass: "bg-red-500",
-        back: "ركن إجماعاً لتحليل الصلاة والخروج منها لقوله ﷺ: 'وتحليلها التسليم'."
+        id: "tashahhud_first",
+        title: "التشهد الأول (في الثلاثية والرباعية)",
+        raka: 2,
+        categoryText: "واجب يُجبر بسجود السهو قبل السلام",
+        categoryColor: "bg-blue-100 text-blue-800 border-blue-300",
+        zikr: "التَّحِيَّاتُ لِلَّهِ... أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ",
+        zikrType: "واجب قولي",
+        meaning: "يجلس مفترشاً بعد الركعة الثانية، ويقبض أصابعه ويشير بالسبابة متشهداً.",
+        fiqhRuling: "التشهد الأول والجلوس له واجبان يسقطان بالسهو ويجبران بالسجود.",
+        evidence: "حديث عبد الله بن بحينة في البخاري (829).",
+        mistake: "الرجوع إليه بعد الشروع في قراءة ركعة جديدة.",
+        cues: ["جلسة الافتراش", "تحليق الإبهام مع الوسطى", "الإشارة بالسبابة"],
+        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-60 sm:max-h-64"><line x1="20" y1="175" x2="220" y2="175" stroke="#94a3b8" stroke-width="2"/><line x1="120" y1="55" x2="120" y2="125" stroke="#047857" stroke-width="18" stroke-linecap="round"/><circle cx="120" cy="40" r="14" fill="#065f46"/><circle cx="70" cy="135" r="5" fill="#ef4444"/><line x1="70" y1="135" x2="60" y2="120" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/><text x="35" y="115" font-size="8" fill="#ef4444" font-weight="bold">الإشارة بالسبابة</text></svg>`
+      },
+      {
+        id: "tashahhud_last",
+        title: "التشهد الأخير والصلاة الإبراهيمية (مع التورك)",
+        raka: 4,
+        categoryText: "التشهد الأخير والجلوس له والصلاة على النبي ﷺ أركان",
+        categoryColor: "bg-red-100 text-red-800 border-red-300",
+        zikr: "التَّحِيَّاتُ لِلَّهِ... اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ...",
+        zikrType: "ركن قولي + سنن الدعاء",
+        meaning: "يجلس متوركاً في الصلاة الثلاثية والرباعية، مكرراً التشهد ومصلياً بالصلاة الإبراهيمية ومستعيذاً من الأربع.",
+        fiqhRuling: "التشهد الأخير ركن، والجلوس له ركن، والصلاة على النبي ﷺ ركن.",
+        evidence: "«قُولُوا: اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ...» (متفق عليه).",
+        mistake: "ترك الصلاة الإبراهيمية أو العجلة في السلام.",
+        cues: ["جلسة التورك في الصلاة ذات التشهدين", "الإشارة بالسبابة", "التعوذ من الأربع"],
+        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-60 sm:max-h-64"><line x1="20" y1="175" x2="220" y2="175" stroke="#94a3b8" stroke-width="2"/><line x1="120" y1="55" x2="120" y2="135" stroke="#047857" stroke-width="18" stroke-linecap="round"/><circle cx="120" cy="40" r="14" fill="#065f46"/><ellipse cx="125" cy="155" rx="16" ry="10" fill="#047857"/><path d="M 115 145 Q 150 160 175 168" fill="none" stroke="#10b981" stroke-width="7" stroke-linecap="round"/><text x="35" y="105" font-size="8" fill="#ef4444" font-weight="bold">التشهد الأخير مع التورك</text></svg>`
       }
     ];
 
     /* =========================================================================
-       5. INITIALIZE & RENDER ANCHORING SECTIONS
+       4. INITIALIZATION & RENDERING FUNCTIONS
        ========================================================================= */
+    let currentStepIndex = 0;
+    let selectedPrayerLength = 2;
+    let isAudioEnabled = true;
+    let currentQuizIndex = 0;
+    let quizScore = 0;
+    let userHasAnsweredCurrent = false;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // Register Service Worker for PWA
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      }
+
+      renderSifahTimeline();
+      renderAnchoringContent();
+      renderSimulatorStep();
+      renderStepsMiniNav();
+      renderPosturesCards();
+      renderCommonMistakes();
+      initSahwSubcases();
+      loadQuizQuestion();
+    });
+
+    // Render Sifah Chronological Timeline
+    function renderSifahTimeline() {
+      const container = document.getElementById('sifahTimelineContainer');
+      container.innerHTML = sifahStations.map((st, i) => `
+        <div class="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/80 shadow-sm hover:border-emerald-300 transition">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <div class="flex items-center gap-2">
+              <span class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 font-black text-xs flex items-center justify-center flex-shrink-0">
+                ${i + 1}
+              </span>
+              <div>
+                <span class="text-[11px] text-slate-400 font-bold block">${st.stepNum}</span>
+                <h4 class="text-base sm:text-lg font-black text-slate-900">${st.title}</h4>
+              </div>
+            </div>
+            <span class="${st.tagClass} text-[11px] font-extrabold px-3 py-1 rounded-full border">
+              ${st.tag}
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed my-3 font-medium bg-slate-50/70 p-3.5 rounded-2xl border border-slate-100">
+            ${st.desc}
+          </p>
+
+          <div class="bg-emerald-50/60 border border-emerald-100 rounded-xl p-2.5 text-xs text-emerald-950 font-semibold flex items-center gap-1.5">
+            <span class="text-emerald-700 font-bold">📌 التوصيف الفقهي (إسلام ويب):</span>
+            <span>${st.fiqhBreakdown}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Render Anchoring Content
     function renderAnchoringContent() {
-      // Render 14 Pillars
-      const arkanContainer = document.getElementById('arkanCardsContainer');
-      arkanContainer.innerHTML = arkanData.map(a => `
-        <div class="bg-white rounded-3xl p-5 border border-red-200 hover:border-red-400 hover:shadow-md transition flex flex-col justify-between">
+      // 14 Pillars
+      document.getElementById('arkanCardsContainer').innerHTML = arkanData.map(a => `
+        <div class="bg-white rounded-3xl p-4 sm:p-5 border border-red-200 hover:shadow-md transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="w-7 h-7 rounded-xl bg-red-100 text-red-700 flex items-center justify-center font-black text-xs">
-                ${a.num}
-              </span>
-              <span class="bg-red-50 text-red-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-red-200">
-                ركن لا يسقط
-              </span>
+              <span class="w-6 h-6 rounded-lg bg-red-100 text-red-700 flex items-center justify-center font-black text-xs">${a.num}</span>
+              <span class="bg-red-50 text-red-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-red-200">ركن لا يسقط</span>
             </div>
-            <h4 class="text-base font-black text-slate-900 mb-1.5">${a.title}</h4>
-            <div class="bg-amber-50/70 border border-amber-200/60 rounded-xl p-2.5 text-xs text-amber-950 font-medium mb-3">
-              <span class="text-amber-700 font-bold block mb-0.5">💖 المعنى القلبي والروحي:</span>
-              ${a.spiritualMeaning}
-            </div>
-            <p class="text-xs text-slate-700 mb-2 leading-relaxed"><strong>الحكم:</strong> ${a.rule}</p>
+            <h4 class="text-sm sm:text-base font-black text-slate-900 mb-1">${a.title}</h4>
+            <p class="text-xs text-slate-700 mb-2 leading-relaxed">${a.rule}</p>
           </div>
-          <div class="pt-3 border-t border-slate-100 space-y-1 text-[11px]">
-            <div class="text-slate-500 font-medium">${a.evidence}</div>
-            <div class="text-red-700 font-bold bg-red-50 p-1.5 rounded-lg">${a.sahwRule}</div>
+          <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500 font-medium">
+            <div>${a.evidence}</div>
+            <div class="text-red-700 font-bold mt-0.5">${a.sahwRule}</div>
           </div>
         </div>
       `).join('');
 
-      // Render 8 Obligations
-      const wajibContainer = document.getElementById('wajibCardsContainer');
-      wajibContainer.innerHTML = wajibData.map(w => `
-        <div class="bg-white rounded-3xl p-5 border border-blue-200 hover:border-blue-400 hover:shadow-md transition flex flex-col justify-between">
+      // 8 Obligations
+      document.getElementById('wajibCardsContainer').innerHTML = wajibData.map(w => `
+        <div class="bg-white rounded-3xl p-4 sm:p-5 border border-blue-200 hover:shadow-md transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="w-7 h-7 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-black text-xs">
-                ${w.num}
-              </span>
-              <span class="bg-blue-50 text-blue-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-blue-200">
-                واجب يُجبر
-              </span>
+              <span class="w-6 h-6 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-black text-xs">${w.num}</span>
+              <span class="bg-blue-50 text-blue-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-blue-200">واجب يُجبر</span>
             </div>
-            <h4 class="text-sm font-black text-slate-900 mb-1">${w.title}</h4>
-            <div class="bg-slate-50 border border-slate-200 rounded-xl p-2 font-quran font-bold text-slate-900 text-xs text-center my-2">
-              ${w.text}
-            </div>
+            <h4 class="text-xs sm:text-sm font-black text-slate-900 mb-1">${w.title}</h4>
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-1.5 font-quran font-bold text-slate-900 text-xs text-center my-1.5">${w.text}</div>
             <p class="text-xs text-slate-700 mb-2 leading-relaxed">${w.rule}</p>
           </div>
-          <div class="pt-2.5 border-t border-slate-100 text-[11px] text-blue-800 font-medium">
-            ${w.evidence}
-          </div>
         </div>
       `).join('');
 
-      // Render Sunan lists
+      // Sunan
       document.getElementById('sunanQawliyyahList').innerHTML = sunanQawliyyah.map((s, i) => `
-        <li class="flex items-start gap-2 p-2 rounded-xl hover:bg-emerald-50/50 transition">
-          <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
-          <span class="leading-relaxed">${s}</span>
+        <li class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-emerald-50/50 transition">
+          <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
+          <span>${s}</span>
         </li>
       `).join('');
 
       document.getElementById('sunanFiliyyahList').innerHTML = sunanFiliyyah.map((s, i) => `
-        <li class="flex items-start gap-2 p-2 rounded-xl hover:bg-emerald-50/50 transition">
-          <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
-          <span class="leading-relaxed">${s}</span>
+        <li class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-emerald-50/50 transition">
+          <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
+          <span>${s}</span>
         </li>
       `).join('');
 
-      // Render Flashcards
-      const flashcardsGrid = document.getElementById('flashcardsGrid');
-      flashcardsGrid.innerHTML = flashcardsData.map((f, idx) => `
-        <div class="flashcard h-52 cursor-pointer select-none" onclick="toggleFlashcard(${idx})" id="flashcard_${idx}">
+      // Flashcards
+      document.getElementById('flashcardsGrid').innerHTML = flashcardsData.map((f, idx) => `
+        <div class="flashcard h-48 cursor-pointer select-none" onclick="toggleFlashcard(${idx})" id="flashcard_${idx}">
           <div class="flashcard-inner relative w-full h-full shadow-lg rounded-3xl">
-            
-            <!-- Front -->
-            <div class="flashcard-front absolute inset-0 bg-white rounded-3xl p-5 flex flex-col justify-between text-slate-900 border-2 border-amber-300">
+            <div class="flashcard-front absolute inset-0 bg-white rounded-3xl p-4 flex flex-col justify-between text-slate-900 border-2 border-amber-300">
               <div class="flex items-center justify-between">
-                <span class="text-[11px] font-bold text-slate-400">بطاقة تثبيت ${idx + 1}</span>
-                <span class="w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping"></span>
+                <span class="text-[10px] font-bold text-slate-400">بطاقة تثبيت ${idx + 1}</span>
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
               </div>
-              <div class="text-center py-2">
-                <span class="text-xs text-slate-500 font-semibold block mb-1">ما حكم هذا العمل؟</span>
-                <h4 class="text-lg font-black text-slate-900">${f.front}</h4>
+              <div class="text-center py-1">
+                <span class="text-[11px] text-slate-500 font-semibold block mb-0.5">ما حكم هذا الفعل؟</span>
+                <h4 class="text-base font-black text-slate-900">${f.front}</h4>
               </div>
               <div class="text-center">
-                <span class="text-[11px] text-amber-700 font-extrabold bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
-                  👆 اضغط هنا لقلب البطاقة ومعرفة الحكم
-                </span>
+                <span class="text-[10px] text-amber-700 font-extrabold bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">👆 المس لقلب البطاقة</span>
               </div>
             </div>
-
-            <!-- Back -->
-            <div class="flashcard-back absolute inset-0 bg-gradient-to-br from-slate-900 to-emerald-950 text-white rounded-3xl p-5 flex flex-col justify-between border-2 border-emerald-500">
+            <div class="flashcard-back absolute inset-0 bg-gradient-to-br from-slate-900 to-emerald-950 text-white rounded-3xl p-4 flex flex-col justify-between border-2 border-emerald-500">
               <div>
-                <div class="flex items-center justify-between mb-2">
-                  <span class="text-[11px] text-slate-300 font-bold">${f.front}</span>
-                  <span class="${f.typeClass} text-white font-black text-[10px] px-2 py-0.5 rounded-full shadow">
-                    ${f.type}
-                  </span>
+                <div class="flex items-center justify-between mb-1">
+                  <span class="text-[10px] text-slate-300 font-bold">${f.front}</span>
+                  <span class="${f.typeClass} text-white font-black text-[9px] px-2 py-0.5 rounded-full">${f.type}</span>
                 </div>
-                <p class="text-xs text-slate-200 leading-relaxed mt-2">${f.back}</p>
+                <p class="text-xs text-slate-200 leading-relaxed mt-1">${f.back}</p>
               </div>
-              <div class="text-center text-[10px] text-emerald-300 font-bold border-t border-white/10 pt-2">
-                مرجع الفتوى: إسلام ويب (islamweb.net)
-              </div>
+              <div class="text-center text-[9px] text-emerald-300 font-bold border-t border-white/10 pt-1">مرجع: إسلام ويب</div>
             </div>
-
           </div>
         </div>
       `).join('');
@@ -1006,523 +1027,98 @@
 
     function toggleFlashcard(idx) {
       const card = document.getElementById(`flashcard_${idx}`);
-      if (card) {
-        card.classList.toggle('flipped');
-      }
+      if (card) card.classList.toggle('flipped');
     }
 
     function scrollToAnchorSection(secId) {
       const el = document.getElementById(secId);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
 
-    /* =========================================================================
-       6. POSTURES RENDERER
-       ========================================================================= */
+    // Tab Switching (Both Desktop & Mobile synchronized)
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      const target = document.getElementById(`tab-${tabId}`);
+      if (target) target.classList.remove('hidden');
+
+      // Update Desktop Nav
+      document.querySelectorAll('.nav-tab').forEach(btn => {
+        btn.classList.remove('active-tab');
+        btn.classList.add('hover:bg-emerald-800/60');
+      });
+      const activeDesktopBtn = document.querySelector(`.nav-tab[data-tab="${tabId}"]`);
+      if (activeDesktopBtn) {
+        activeDesktopBtn.classList.add('active-tab');
+        activeDesktopBtn.classList.remove('hover:bg-emerald-800/60');
+      }
+
+      // Update Mobile Nav
+      document.querySelectorAll('.mobile-nav-btn').forEach(btn => {
+        btn.classList.remove('active-bottom-tab');
+      });
+      const activeMobileBtn = document.querySelector(`.mobile-nav-btn[data-tab="${tabId}"]`);
+      if (activeMobileBtn) {
+        activeMobileBtn.classList.add('active-bottom-tab');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Postures Render
     function renderPosturesCards() {
       const container = document.getElementById('posturesCardsList');
-      if (!container) return;
-
       container.innerHTML = `
-        <!-- CARD 1 -->
         <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 hover:shadow-md transition flex flex-col">
-          <div class="flex items-center justify-between mb-3">
-            <span class="font-bold text-slate-900 text-sm">1. هيئة القيام وتكبيرة الإحرام والقبض</span>
-            <span class="bg-emerald-100 text-emerald-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">ركن + سنة</span>
-          </div>
+          <div class="flex items-center justify-between mb-3"><span class="font-bold text-slate-900 text-sm">1. هيئة القيام وتكبيرة الإحرام والقبض</span><span class="bg-emerald-100 text-emerald-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">ركن + سنة</span></div>
           <div class="h-56 bg-white rounded-2xl border border-slate-200/70 p-3 flex items-center justify-center">
-            <svg viewBox="0 0 200 240" class="w-full h-full">
-              <circle cx="100" cy="35" r="16" fill="#047857" opacity="0.85"/>
-              <line x1="105" y1="38" x2="140" y2="230" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3"/>
-              <circle cx="140" cy="230" r="3" fill="#f59e0b"/>
-              <text x="145" y="232" font-size="8" fill="#d97706" font-weight="bold">موضع السجود</text>
-              <line x1="100" y1="51" x2="100" y2="135" stroke="#065f46" stroke-width="20" stroke-linecap="round"/>
-              <ellipse cx="100" cy="85" rx="14" ry="7" fill="#fbbf24"/>
-              <text x="118" y="85" font-size="8" fill="#065f46" font-weight="bold">القبض على الصدر</text>
-              <line x1="92" y1="135" x2="92" y2="225" stroke="#047857" stroke-width="12" stroke-linecap="round"/>
-              <line x1="108" y1="135" x2="108" y2="225" stroke="#047857" stroke-width="12" stroke-linecap="round"/>
-              <rect x="84" y="222" width="16" height="7" rx="3" fill="#065f46"/>
-              <rect x="100" y="222" width="16" height="7" rx="3" fill="#065f46"/>
-              <line x1="40" y1="230" x2="170" y2="230" stroke="#cbd5e1" stroke-width="2"/>
-              <path d="M 85 65 Q 60 40 70 25" fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="2,2"/>
-              <path d="M 115 65 Q 140 40 130 25" fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="2,2"/>
-              <text x="10" y="25" font-size="8" fill="#10b981">رفع اليدين حذو المنكبين</text>
-            </svg>
+            <svg viewBox="0 0 200 240" class="w-full h-full"><circle cx="100" cy="35" r="16" fill="#047857" opacity="0.85"/><line x1="105" y1="38" x2="140" y2="230" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3"/><circle cx="140" cy="230" r="3" fill="#f59e0b"/><text x="145" y="232" font-size="8" fill="#d97706" font-weight="bold">موضع السجود</text><line x1="100" y1="51" x2="100" y2="135" stroke="#065f46" stroke-width="20" stroke-linecap="round"/><ellipse cx="100" cy="85" rx="14" ry="7" fill="#fbbf24"/><text x="118" y="85" font-size="8" fill="#065f46" font-weight="bold">القبض على الصدر</text><line x1="92" y1="135" x2="92" y2="225" stroke="#047857" stroke-width="12" stroke-linecap="round"/><line x1="108" y1="135" x2="108" y2="225" stroke="#047857" stroke-width="12" stroke-linecap="round"/><rect x="84" y="222" width="16" height="7" rx="3" fill="#065f46"/><rect x="100" y="222" width="16" height="7" rx="3" fill="#065f46"/><line x1="40" y1="230" x2="170" y2="230" stroke="#cbd5e1" stroke-width="2"/></svg>
           </div>
-          <div class="mt-4 text-xs text-slate-700 space-y-2 flex-grow">
-            <p>• <strong>النظر:</strong> يرمي ببصره إلى موضع سجوده طيلة الصلاة.</p>
-            <p>• <strong>الرفع:</strong> يرفع كفيه ممدودتي الأصابع حذو منكبيه أو أذنيه عند التكبير.</p>
-            <p>• <strong>القبض:</strong> يضع كفه اليمنى على ظهر كفه اليسرى والرسغ والساعد على صدره.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/80 text-[11px] text-emerald-800 font-bold bg-emerald-50/50 p-2 rounded-xl">المصدر: سنن أبي داود (726) وإسلام ويب (60058)</div>
+          <div class="mt-3 text-xs text-slate-700 space-y-1.5 flex-grow"><p>• <strong>النظر:</strong> إلى موضع السجود طيلة الصلاة.</p><p>• <strong>الرفع:</strong> حذو المنكبين أو الأذنين.</p><p>• <strong>القبض:</strong> وضع اليمين على اليسرى على الصدر.</p></div>
         </div>
 
-        <!-- CARD 2 -->
         <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 hover:shadow-md transition flex flex-col">
-          <div class="flex items-center justify-between mb-3">
-            <span class="font-bold text-slate-900 text-sm">2. هيئة الركوع التام</span>
-            <span class="bg-red-100 text-red-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">ركن مغلظ</span>
-          </div>
+          <div class="flex items-center justify-between mb-3"><span class="font-bold text-slate-900 text-sm">2. هيئة الركوع واستواء الظهر</span><span class="bg-red-100 text-red-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">ركن مغلظ</span></div>
           <div class="h-56 bg-white rounded-2xl border border-slate-200/70 p-3 flex items-center justify-center">
-            <svg viewBox="0 0 240 200" class="w-full h-full">
-              <line x1="20" y1="185" x2="220" y2="185" stroke="#cbd5e1" stroke-width="2"/>
-              <line x1="165" y1="95" x2="165" y2="182" stroke="#047857" stroke-width="14" stroke-linecap="round"/>
-              <rect x="157" y="178" width="22" height="7" rx="3" fill="#065f46"/>
-              <line x1="70" y1="95" x2="165" y2="95" stroke="#065f46" stroke-width="16" stroke-linecap="round"/>
-              <line x1="45" y1="80" x2="185" y2="80" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>
-              <text x="65" y="74" font-size="8" fill="#0284c7" font-weight="bold">استواء الظهر كأنه صفيحة ماء</text>
-              <circle cx="55" cy="95" r="14" fill="#047857" opacity="0.85"/>
-              <text x="20" y="115" font-size="8" fill="#047857">الرأس حيال الظهر</text>
-              <line x1="90" y1="95" x2="165" y2="135" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/>
-              <circle cx="165" cy="135" r="6" fill="#d97706"/>
-              <text x="145" y="150" font-size="8" fill="#d97706" font-weight="bold">كالقابض على ركبتيه مفرج الأصابع</text>
-            </svg>
+            <svg viewBox="0 0 240 200" class="w-full h-full"><line x1="20" y1="185" x2="220" y2="185" stroke="#cbd5e1" stroke-width="2"/><line x1="165" y1="95" x2="165" y2="182" stroke="#047857" stroke-width="14" stroke-linecap="round"/><line x1="70" y1="95" x2="165" y2="95" stroke="#065f46" stroke-width="16" stroke-linecap="round"/><line x1="45" y1="80" x2="185" y2="80" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/><text x="65" y="74" font-size="8" fill="#0284c7" font-weight="bold">استواء الظهر كأنه صفيحة ماء</text><circle cx="55" cy="95" r="14" fill="#047857"/><line x1="90" y1="95" x2="165" y2="135" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/><circle cx="165" cy="135" r="6" fill="#d97706"/></svg>
           </div>
-          <div class="mt-4 text-xs text-slate-700 space-y-2 flex-grow">
-            <p>• <strong>استواء الظهر:</strong> يسوي ظهره ويمده حتى لو صب عليه ماء لاستقر.</p>
-            <p>• <strong>الرأس:</strong> مساوياً لظهره لا يشخصه ولا يصوبه.</p>
-            <p>• <strong>اليدان:</strong> تفريج الأصابع ومس الركبتين كالقابض عليهما.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/80 text-[11px] text-emerald-800 font-bold bg-emerald-50/50 p-2 rounded-xl">المصدر: صحيح البخاري (828) وصفة صلاة النبي للألباني</div>
+          <div class="mt-3 text-xs text-slate-700 space-y-1.5 flex-grow"><p>• <strong>استواء الظهر:</strong> لو صب عليه ماء لاستقر.</p><p>• <strong>الرأس:</strong> حيال الظهر لا يشخص ولا يصوب.</p><p>• <strong>اليدان:</strong> مفرجتي الأصابع كالقابض على الركبتين.</p></div>
         </div>
 
-        <!-- CARD 3 -->
         <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 hover:shadow-md transition flex flex-col">
-          <div class="flex items-center justify-between mb-3">
-            <span class="font-bold text-slate-900 text-sm">3. هيئة السجود على الأعضاء الـ 7</span>
-            <span class="bg-red-100 text-red-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">أعظم أركان الصلاة</span>
-          </div>
+          <div class="flex items-center justify-between mb-3"><span class="font-bold text-slate-900 text-sm">3. هيئة السجود على الأعضاء الـ 7</span><span class="bg-red-100 text-red-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">أعظم الأركان</span></div>
           <div class="h-56 bg-white rounded-2xl border border-slate-200/70 p-3 flex items-center justify-center">
-            <svg viewBox="0 0 250 190" class="w-full h-full">
-              <line x1="15" y1="165" x2="235" y2="165" stroke="#cbd5e1" stroke-width="2.5"/>
-              <path d="M 205 162 L 180 110 L 125 110 L 70 150" fill="none" stroke="#047857" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M 125 110 L 100 130 L 75 160" fill="none" stroke="#fbbf24" stroke-width="8" stroke-linecap="round"/>
-              <line x1="100" y1="125" x2="100" y2="90" stroke="#ef4444" stroke-width="1" stroke-dasharray="2,2"/>
-              <text x="65" y="85" font-size="7.5" fill="#ef4444" font-weight="bold">رفع الذراعين (نهي عن بسطهما كالكلب)</text>
-              <circle cx="50" cy="155" r="12" fill="#065f46"/>
-              <circle cx="48" cy="164" r="5" fill="#ef4444"/>
-              <text x="15" y="177" font-size="7.5" fill="#b91c1c" font-weight="bold">1. الجبهة والأنف</text>
-              <circle cx="75" cy="163" r="5" fill="#ef4444"/>
-              <text x="65" y="187" font-size="7.5" fill="#b91c1c" font-weight="bold">2-3. الكفان</text>
-              <circle cx="160" cy="163" r="5" fill="#ef4444"/>
-              <text x="145" y="177" font-size="7.5" fill="#b91c1c" font-weight="bold">4-5. الركبتان</text>
-              <circle cx="210" cy="163" r="5" fill="#ef4444"/>
-              <text x="190" y="187" font-size="7.5" fill="#b91c1c" font-weight="bold">6-7. أطراف أصابع القدمين</text>
-            </svg>
+            <svg viewBox="0 0 250 190" class="w-full h-full"><line x1="15" y1="165" x2="235" y2="165" stroke="#cbd5e1" stroke-width="2.5"/><path d="M 205 162 L 180 110 L 125 110 L 70 150" fill="none" stroke="#047857" stroke-width="14" stroke-linecap="round"/><path d="M 125 110 L 100 130 L 75 160" fill="none" stroke="#fbbf24" stroke-width="8" stroke-linecap="round"/><text x="65" y="85" font-size="7.5" fill="#ef4444" font-weight="bold">رفع الذراعين (نهي عن افتراش الكلب)</text><circle cx="50" cy="155" r="12" fill="#065f46"/><circle cx="48" cy="164" r="5" fill="#ef4444"/><circle cx="75" cy="163" r="5" fill="#ef4444"/><circle cx="160" cy="163" r="5" fill="#ef4444"/><circle cx="210" cy="163" r="5" fill="#ef4444"/></svg>
           </div>
-          <div class="mt-4 text-xs text-slate-700 space-y-2 flex-grow">
-            <p>• <strong>الأعضاء السبعة:</strong> «أُمِرْتُ أَنْ أَسْجُدَ عَلَى سَبْعَةِ أَعْظُمٍ...».</p>
-            <p>• <strong>التجافي:</strong> مباعدة العضدين عن الجنبين والبطن عن الفخذين.</p>
-            <p>• <strong>النهي النبوي:</strong> رفع المرفقين والذراعين عن الأرض تماماً.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/80 text-[11px] text-emerald-800 font-bold bg-emerald-50/50 p-2 rounded-xl">المصدر: متفق عليه (البخاري 812، مسلم 490)</div>
+          <div class="mt-3 text-xs text-slate-700 space-y-1.5 flex-grow"><p>• <strong>الأعضاء السبعة:</strong> الجبهة والأنف، الكفان، الركبتان، أطراف القدمين.</p><p>• <strong>التجافي:</strong> مباعدة العضدين والبطن.</p><p>• <strong>النهي:</strong> رفع الذراعين عن الأرض تماماً.</p></div>
         </div>
 
-        <!-- CARD 4 -->
         <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 hover:shadow-md transition flex flex-col">
-          <div class="flex items-center justify-between mb-3">
-            <span class="font-bold text-slate-900 text-sm">4. هيئة الجلوس بين السجدتين (الافتراش)</span>
-            <span class="bg-emerald-100 text-emerald-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">ركن الجلوس + سنة الهيئة</span>
-          </div>
+          <div class="flex items-center justify-between mb-3"><span class="font-bold text-slate-900 text-sm">4. هيئة الافتراش</span><span class="bg-emerald-100 text-emerald-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">سنة الهيئة</span></div>
           <div class="h-56 bg-white rounded-2xl border border-slate-200/70 p-3 flex items-center justify-center">
-            <svg viewBox="0 0 240 200" class="w-full h-full">
-              <line x1="20" y1="175" x2="220" y2="175" stroke="#cbd5e1" stroke-width="2"/>
-              <line x1="120" y1="55" x2="120" y2="125" stroke="#047857" stroke-width="18" stroke-linecap="round"/>
-              <circle cx="120" cy="40" r="14" fill="#065f46"/>
-              <line x1="120" y1="90" x2="70" y2="135" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/>
-              <circle cx="70" cy="135" r="5" fill="#d97706"/>
-              <text x="30" y="125" font-size="7.5" fill="#d97706" font-weight="bold">الكفان مبسوطتان على الفخذين</text>
-              <path d="M 120 135 L 140 170 L 110 172 Z" fill="#10b981"/>
-              <text x="80" y="190" font-size="7.5" fill="#047857" font-weight="bold">يفرش رجله اليسرى ويجلس عليها</text>
-              <path d="M 120 135 L 170 145 L 175 173" fill="none" stroke="#047857" stroke-width="9" stroke-linecap="round"/>
-              <circle cx="175" cy="172" r="4" fill="#ef4444"/>
-              <text x="145" y="160" font-size="7.5" fill="#ef4444" font-weight="bold">ينصب رجله اليمنى</text>
-            </svg>
+            <svg viewBox="0 0 240 200" class="w-full h-full"><line x1="20" y1="175" x2="220" y2="175" stroke="#cbd5e1" stroke-width="2"/><line x1="120" y1="55" x2="120" y2="125" stroke="#047857" stroke-width="18" stroke-linecap="round"/><circle cx="120" cy="40" r="14" fill="#065f46"/><path d="M 120 135 L 140 170 L 110 172 Z" fill="#10b981"/><text x="60" y="25" font-size="8" fill="#047857" font-weight="bold">فرش اليسرى ونصب اليمنى</text></svg>
           </div>
-          <div class="mt-4 text-xs text-slate-700 space-y-2 flex-grow">
-            <p>• <strong>الافتراش:</strong> فرش قدمه اليسرى والجلوس عليها ونصب قدمه اليمنى للقبلة.</p>
-            <p>• <strong>الذكر الواجب:</strong> قول "رب اغفر لي، رب اغفر لي" مع السكون التام.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/80 text-[11px] text-emerald-800 font-bold bg-emerald-50/50 p-2 rounded-xl">المصدر: صحيح البخاري (828) وصحيح مسلم (498)</div>
+          <div class="mt-3 text-xs text-slate-700 space-y-1.5 flex-grow"><p>• <strong>موضعه:</strong> بين السجدتين وفي التشهد الأول.</p><p>• <strong>صفته:</strong> فرش اليسرى والجلوس عليها ونصب اليمنى.</p></div>
         </div>
 
-        <!-- CARD 5 -->
         <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 hover:shadow-md transition flex flex-col">
-          <div class="flex items-center justify-between mb-3">
-            <span class="font-bold text-slate-900 text-sm">5. هيئة التشهد الأخير (التَّوَرُّك)</span>
-            <span class="bg-blue-100 text-blue-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">سنة الهيئة في الصلوات ذات التشهدين</span>
-          </div>
+          <div class="flex items-center justify-between mb-3"><span class="font-bold text-slate-900 text-sm">5. هيئة التَّوَرُّك</span><span class="bg-blue-100 text-blue-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">سنة التشهد الأخير</span></div>
           <div class="h-56 bg-white rounded-2xl border border-slate-200/70 p-3 flex items-center justify-center">
-            <svg viewBox="0 0 240 200" class="w-full h-full">
-              <line x1="20" y1="175" x2="220" y2="175" stroke="#cbd5e1" stroke-width="2"/>
-              <line x1="120" y1="55" x2="120" y2="135" stroke="#047857" stroke-width="18" stroke-linecap="round"/>
-              <circle cx="120" cy="40" r="14" fill="#065f46"/>
-              <ellipse cx="125" cy="155" rx="16" ry="10" fill="#047857"/>
-              <text x="35" y="165" font-size="7.5" fill="#047857" font-weight="bold">يجلس بمقعدته على الأرض مباشرة</text>
-              <path d="M 115 145 Q 150 160 175 168" fill="none" stroke="#10b981" stroke-width="7" stroke-linecap="round"/>
-              <text x="135" y="187" font-size="7.5" fill="#059669" font-weight="bold">يخرج قدمه اليسرى من تحت ساقه اليمنى</text>
-              <line x1="120" y1="140" x2="150" y2="173" stroke="#065f46" stroke-width="8" stroke-linecap="round"/>
-              <line x1="120" y1="90" x2="80" y2="130" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/>
-              <circle cx="75" cy="125" r="4" fill="#ef4444"/>
-              <line x1="75" y1="125" x2="65" y2="115" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
-              <text x="35" y="105" font-size="7.5" fill="#ef4444" font-weight="bold">الإشارة بالسبابة وتحريكها عند الدعاء</text>
-            </svg>
+            <svg viewBox="0 0 240 200" class="w-full h-full"><line x1="20" y1="175" x2="220" y2="175" stroke="#cbd5e1" stroke-width="2"/><line x1="120" y1="55" x2="120" y2="135" stroke="#047857" stroke-width="18" stroke-linecap="round"/><circle cx="120" cy="40" r="14" fill="#065f46"/><ellipse cx="125" cy="155" rx="16" ry="10" fill="#047857"/><path d="M 115 145 Q 150 160 175 168" fill="none" stroke="#10b981" stroke-width="7" stroke-linecap="round"/><text x="35" y="105" font-size="8" fill="#ef4444" font-weight="bold">الجلوس على الأرض مع التورك</text></svg>
           </div>
-          <div class="mt-4 text-xs text-slate-700 space-y-2 flex-grow">
-            <p>• <strong>صفة التورك:</strong> يفضي بوركه ومقعدته إلى الأرض ويخرج رجله اليسرى من الجانب الأيمن.</p>
-            <p>• <strong>موضعه:</strong> التشهد الثاني في الصلوات الثلاثية والرباعية.</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/80 text-[11px] text-emerald-800 font-bold bg-emerald-50/50 p-2 rounded-xl">المصدر: إسلام ويب (12455) ومذهب جمهور أهل السنة</div>
+          <div class="mt-3 text-xs text-slate-700 space-y-1.5 flex-grow"><p>• <strong>موضعه:</strong> التشهد الثاني في الصلاة الثلاثية والرباعية.</p><p>• <strong>صفته:</strong> إخراج اليسرى والجلوس بالمقعدة على الأرض.</p></div>
         </div>
 
-        <!-- CARD 6 -->
         <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 hover:shadow-md transition flex flex-col">
-          <div class="flex items-center justify-between mb-3">
-            <span class="font-bold text-slate-900 text-sm">6. هيئة التسليم للخروج من الصلاة</span>
-            <span class="bg-red-100 text-red-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">ركن تحليق الصلاة</span>
-          </div>
+          <div class="flex items-center justify-between mb-3"><span class="font-bold text-slate-900 text-sm">6. هيئة التسليم للخروج</span><span class="bg-red-100 text-red-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">ركن التحليل</span></div>
           <div class="h-56 bg-white rounded-2xl border border-slate-200/70 p-3 flex items-center justify-center">
-            <svg viewBox="0 0 240 200" class="w-full h-full">
-              <line x1="20" y1="175" x2="220" y2="175" stroke="#cbd5e1" stroke-width="2"/>
-              <line x1="120" y1="70" x2="120" y2="145" stroke="#047857" stroke-width="18" stroke-linecap="round"/>
-              <ellipse cx="140" cy="50" rx="14" ry="12" fill="#065f46"/>
-              <circle cx="150" cy="52" r="5" fill="#fde047"/>
-              <line x1="155" y1="52" x2="195" y2="52" stroke="#d97706" stroke-width="1.5"/>
-              <text x="140" y="40" font-size="7.5" fill="#d97706" font-weight="bold">حتى يُرى بياض خده الأيمن</text>
-              <path d="M 115 35 Q 135 25 155 38" fill="none" stroke="#10b981" stroke-width="2"/>
-              <text x="100" y="20" font-size="8" fill="#047857" font-weight="bold">الالتفات التام يميناً ثم يساراً</text>
-              <ellipse cx="120" cy="155" rx="30" ry="15" fill="#047857" opacity="0.8"/>
-            </svg>
+            <svg viewBox="0 0 240 200" class="w-full h-full"><line x1="20" y1="175" x2="220" y2="175" stroke="#cbd5e1" stroke-width="2"/><line x1="120" y1="70" x2="120" y2="145" stroke="#047857" stroke-width="18" stroke-linecap="round"/><ellipse cx="140" cy="50" rx="14" ry="12" fill="#065f46"/><circle cx="150" cy="52" r="5" fill="#fde047"/><text x="140" y="40" font-size="7.5" fill="#d97706" font-weight="bold">حتى يُرى بياض خده</text><path d="M 115 35 Q 135 25 155 38" fill="none" stroke="#10b981" stroke-width="2"/></svg>
           </div>
-          <div class="mt-4 text-xs text-slate-700 space-y-2 flex-grow">
-            <p>• <strong>الالتفات:</strong> يلتفت يميناً ويساراً حتى يرى من خلفه بياض خده.</p>
-            <p>• <strong>تحليل الصلاة:</strong> «وتحريمها التكبير، وتحليلها التسليم».</p>
-          </div>
-          <div class="mt-4 pt-3 border-t border-slate-200/80 text-[11px] text-emerald-800 font-bold bg-emerald-50/50 p-2 rounded-xl">المصدر: سنن أبي داود (61) وصحيح مسلم (582)</div>
+          <div class="mt-3 text-xs text-slate-700 space-y-1.5 flex-grow"><p>• <strong>الالتفات:</strong> يميناً ثم يساراً حتى يرى من خلفه بياض خده.</p><p>• <strong>اللفظ:</strong> «السلام عليكم ورحمة الله».</p></div>
         </div>
       `;
     }
 
-    /* =========================================================================
-       7. SIMULATOR LOGIC & STEPS
-       ========================================================================= */
-    const prayerSteps = [
-      {
-        id: "takbeer",
-        title: "تكبيرة الإحرام والقيام",
-        raka: 1,
-        category: "ركن",
-        categoryColor: "bg-red-100 text-red-800 border-red-300",
-        categoryText: "ركن أساسي لا تنعقد الصلاة إلا به",
-        zikr: "اللهُ أَكْبَر",
-        zikrType: "ركن قولي",
-        meaning: "يرفع يديه حذو منكبيه أو فروع أذنيه ممدودة الأصابع غير مفرجة مستقبلاً بها القبلة، قائلاً: الله أكبر.",
-        fiqhRuling: "تكبيرة الإحرام والقيام لها في الفرض ركنان لا يسقطان عمداً ولا سهواً ولا جهلاً. وتنعقد الصلاة بلفظ (الله أكبر) حصراً عند الجمهور.",
-        evidence: "حديث المسيء صلاته: «إِذَا قُمْتَ إِلَى الصَّلَاةِ فَكَبِّرْ» (متفق عليه). إسلام ويب رقم: 60058",
-        mistake: "مد الألف في أول الجلالة: (آلله أكبر) أو مد الباء: (أكبار) أو قولها وهو ينحني للركوع قبل استتمام القيام.",
-        cues: [
-          "استقبال القبلة بالبدن والقدمين",
-          "النظر إلى موضع السجود بخشوع",
-          "رفع اليدين حذو المنكبين أو فروع الأذنين (سنة)",
-          "الجهر بالتكبير بقدر ما يُسمع نفسه (للإمام يجهر ليسمع المأمومين)"
-        ],
-        svg: `<svg viewBox="0 0 200 240" class="w-full h-full max-h-64">
-          <line x1="40" y1="225" x2="160" y2="225" stroke="#94a3b8" stroke-width="2"/>
-          <circle cx="100" cy="35" r="16" fill="#047857"/>
-          <line x1="105" y1="38" x2="135" y2="225" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3"/>
-          <circle cx="135" cy="225" r="3" fill="#f59e0b"/>
-          <text x="140" y="222" font-size="8" fill="#d97706" font-weight="bold">موضع السجود</text>
-          <line x1="100" y1="51" x2="100" y2="135" stroke="#065f46" stroke-width="20" stroke-linecap="round"/>
-          <path d="M 90 70 Q 60 55 65 35" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round"/>
-          <circle cx="65" cy="35" r="5" fill="#d97706"/>
-          <path d="M 110 70 Q 140 55 135 35" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round"/>
-          <circle cx="135" cy="35" r="5" fill="#d97706"/>
-          <line x1="92" y1="135" x2="92" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/>
-          <line x1="108" y1="135" x2="108" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/>
-          <rect x="85" y="218" width="14" height="6" rx="2" fill="#065f46"/>
-          <rect x="101" y="218" width="14" height="6" rx="2" fill="#065f46"/>
-          <text x="50" y="20" font-size="9" fill="#065f46" font-weight="bold">رفع اليدين حذو المنكبين</text>
-        </svg>`
-      },
-      {
-        id: "istiftah_fatiha",
-        title: "الاستفتاح وقراءة الفاتحة والقبض",
-        raka: 1,
-        category: "ركن + سنة",
-        categoryColor: "bg-red-100 text-red-800 border-red-300",
-        categoryText: "الفاتحة ركن، والاستفتاح والقبض سنن",
-        zikr: "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، وَتَبَارَكَ اسْمُكَ، وَتَعَالَى جَدُّكَ، وَلا إِلَهَ غَيْرُكَ. ثم الفاتحة وسورة.",
-        zikrType: "استفتاح (سنة) + فاتحة (ركن)",
-        meaning: "يضع كفه الأيمن على كفه الأيسر والرسغ والساعد على صدره، يستفتح سراً، ثم يتعوذ ويبسمل، ويقرأ الفاتحة مرتبة مع التأمين وسورة بعدها.",
-        fiqhRuling: "قراءة الفاتحة ركن في كل ركعة على الإمام والمنفرد (ورجح إسلام ويب قراءتها في السرية والجهرية للمأموم). تركها عمداً أو سهواً يُبطل الركعة حتى يؤتى بها.",
-        evidence: "«لَا صَلَاةَ لِمَنْ لَمْ يَقْرَأْ بِفَاتِحَةِ الْكِتَابِ» (صحيح البخاري: 756). إسلام ويب: 12455",
-        mistake: "إسقاط آية من الفاتحة أو تبديل حركة تغير المعنى ككسر تاء (أنعمتَ)، أو السرعة الشديدة بحيث لا يطمئن فيها.",
-        cues: [
-          "وضع اليد اليمنى على ظهر اليسرى والرسغ والساعد فوق الصدر",
-          "قراءة الفاتحة بتأنٍّ آيةً آية مع إخراج الحروف والتشديدات كاملة",
-          "قول (آمين) بعد انتهاء الفاتحة (سنة مؤكدة)",
-          "قراءة سورة أو ما تيسر من القرآن بعدها في الركعتين الأوليين"
-        ],
-        svg: `<svg viewBox="0 0 200 240" class="w-full h-full max-h-64">
-          <line x1="40" y1="225" x2="160" y2="225" stroke="#94a3b8" stroke-width="2"/>
-          <circle cx="100" cy="35" r="16" fill="#047857"/>
-          <line x1="100" y1="51" x2="100" y2="135" stroke="#065f46" stroke-width="20" stroke-linecap="round"/>
-          <ellipse cx="100" cy="85" rx="14" ry="7" fill="#fbbf24"/>
-          <line x1="90" y1="70" x2="100" y2="85" stroke="#fbbf24" stroke-width="5" stroke-linecap="round"/>
-          <line x1="110" y1="70" x2="100" y2="85" stroke="#fbbf24" stroke-width="5" stroke-linecap="round"/>
-          <text x="50" y="88" font-size="8" fill="#d97706" font-weight="bold">القبض على الصدر</text>
-          <line x1="92" y1="135" x2="92" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/>
-          <line x1="108" y1="135" x2="108" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/>
-          <rect x="85" y="218" width="14" height="6" rx="2" fill="#065f46"/>
-          <rect x="101" y="218" width="14" height="6" rx="2" fill="#065f46"/>
-          <text x="60" y="15" font-size="9" fill="#047857" font-weight="bold">القيام وقراءة الفاتحة</text>
-        </svg>`
-      },
-      {
-        id: "ruku",
-        title: "الركوع والتسبيح فيه",
-        raka: 1,
-        category: "ركن + واجب",
-        categoryColor: "bg-red-100 text-red-800 border-red-300",
-        categoryText: "هيئة الركوع ركن، وتسبيحة واحدة واجب",
-        zikr: "سُبْحَانَ رَبِّيَ الْعَظِيمِ (ثلاث مرات، والواحدة تجزئ)",
-        zikrType: "واجب (المرة الأولى) وسنة (الزيادة)",
-        meaning: "يكبر ويهوي راكعاً مع رفع اليدين عند الهوي، ويمكن كفيه من ركبتيه مفرجتي الأصابع، ويسوي ظهره برأسه.",
-        fiqhRuling: "الانحناء ركن، والطمأنينة فيه ركن، وقول 'سبحان ربي العظيم' مرة واحدة واجب يسقط بالسهو ويُجبر بسجود السهو.",
-        evidence: "قوله تعالى: ﴿يَا أَيُّهَا الَّذِينَ آمَنُوا ارْكَعُوا وَاسْجُدُوا﴾، وحديث: «أَمَّا الرُّكُوعُ فَعَظِّمُوا فِيهِ الرَّبَّ» (مسلم). إسلام ويب: 26883",
-        mistake: "تقويس الظهر، أو خفض الرأس كثيراً أو رفعه للأعلى، أو عدم الاستقرار والطمأنينة كأن ينزل ويرتفع في ثانية.",
-        cues: [
-          "استواء الظهر تماماً بحيث لو صُب عليه ماء لاستقر",
-          "الرأس حيال الظهر: لا يُشخصه ولا يُصوبه",
-          "تفريج الأصابع ومس الركبتين كالقابض عليهما",
-          "مجافاة المرفقين عن الجنبين"
-        ],
-        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-64">
-          <line x1="20" y1="185" x2="220" y2="185" stroke="#94a3b8" stroke-width="2"/>
-          <line x1="165" y1="95" x2="165" y2="182" stroke="#047857" stroke-width="14" stroke-linecap="round"/>
-          <rect x="157" y="178" width="22" height="7" rx="3" fill="#065f46"/>
-          <line x1="70" y1="95" x2="165" y2="95" stroke="#065f46" stroke-width="16" stroke-linecap="round"/>
-          <circle cx="55" cy="95" r="14" fill="#047857"/>
-          <line x1="90" y1="95" x2="165" y2="135" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/>
-          <circle cx="165" cy="135" r="6" fill="#d97706"/>
-          <line x1="45" y1="80" x2="185" y2="80" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/>
-          <text x="65" y="74" font-size="8" fill="#0284c7" font-weight="bold">استواء الظهر التام</text>
-        </svg>`
-      },
-      {
-        id: "raf_ruku",
-        title: "الرفع من الركوع والاعتدال",
-        raka: 1,
-        category: "ركن + واجب",
-        categoryColor: "bg-red-100 text-red-800 border-red-300",
-        categoryText: "الرفع والاعتدال ركنان، والتسميع والتحميد واجبان",
-        zikr: "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ (للإمام والمنفرد) - رَبَّنَا وَلَكَ الْحَمْدُ، حَمْداً كَثِيراً طَيِّباً مُبَارَكاً فِيهِ (للجميع)",
-        zikrType: "واجبات الصلاة",
-        meaning: "يرفع رأسه وظهره من الركوع رافعاً يديه حذو منكبيه، حتى يعتدل قائماً مطمئناً ويرجع كل مفصل إلى موضعه.",
-        fiqhRuling: "الرفع من الركوع ركن، والاعتدال قائماً ركن، والطمأنينة فيه ركن مستقل. قول 'سمع الله لمن حمده' واجب للإمام والمنفرد، و'ربنا ولك الحمد' واجب للجميع.",
-        evidence: "حديث: «ثُمَّ ارْفَعْ حَتَّى تَعْتَدِلَ قَائِمًا» (البخاري: 757). إسلام ويب رقم: 12455",
-        mistake: "الهوي للسجود قبل استتمام القيام والاستقرار فيه، وهو مبطل للصلاة لفوات ركن الاعتدال والطمأنينة.",
-        cues: [
-          "رفع اليدين حذو المنكبين عند الرفع من الركوع (سنة)",
-          "الاعتدال التام حتى يرجع كل عظم ومفصل إلى فقاره",
-          "المكث في القيام زمناً يقارب الركوع بالحمد والثناء"
-        ],
-        svg: `<svg viewBox="0 0 200 240" class="w-full h-full max-h-64">
-          <line x1="40" y1="225" x2="160" y2="225" stroke="#94a3b8" stroke-width="2"/>
-          <circle cx="100" cy="35" r="16" fill="#047857"/>
-          <line x1="100" y1="51" x2="100" y2="135" stroke="#065f46" stroke-width="20" stroke-linecap="round"/>
-          <line x1="88" y1="70" x2="80" y2="130" stroke="#fbbf24" stroke-width="5" stroke-linecap="round"/>
-          <line x1="112" y1="70" x2="120" y2="130" stroke="#fbbf24" stroke-width="5" stroke-linecap="round"/>
-          <line x1="92" y1="135" x2="92" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/>
-          <line x1="108" y1="135" x2="108" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/>
-          <rect x="85" y="218" width="14" height="6" rx="2" fill="#065f46"/>
-          <rect x="101" y="218" width="14" height="6" rx="2" fill="#065f46"/>
-          <text x="45" y="20" font-size="9" fill="#047857" font-weight="bold">الاعتدال قائماً مطمئناً</text>
-        </svg>`
-      },
-      {
-        id: "sujud_1",
-        title: "السجود الأول والتسبيح فيه",
-        raka: 1,
-        category: "ركن + واجب",
-        categoryColor: "bg-red-100 text-red-800 border-red-300",
-        categoryText: "السجود على الـ 7 أعضاء ركن، والتسبيح واجب",
-        zikr: "سُبْحَانَ رَبِّيَ الأَعْلَى (ثلاثاً، والواحدة تجزئ)",
-        zikrType: "واجب (الأولى) وسنة (الزيادة والدعاء)",
-        meaning: "يكبر ويهوي ساجداً على سبعة أعظم: الجبهة والأنف، والكفان، والركبتان، وأطراف أصابع القدمين، موجهاً أصابعه نحو القبلة.",
-        fiqhRuling: "السجود ركن أعظم، ويجب تمكين جميع الأعضاء السبعة من موضع السجود. إن رُفِع عضو منها طيلة السجود لم يصح.",
-        evidence: "«أُمِرْتُ أَنْ أَسْجُدَ عَلَى سَبْعَةِ أَعْظُمٍ...» (البخاري 812 ومسلم 490). إسلام ويب: 12455",
-        mistake: "رفع القدمين في الهواء، أو بسط الذراعين وإلصاق المرفقين بالأرض كبساط الكلب (منهي عنه صراحة).",
-        cues: [
-          "استقرار الجبهة والأنف معاً على الأرض",
-          "نصب القدمين وتوجيه أصابعهما نحو القبلة ورص العقبين",
-          "مجافاة العضدين عن الجنبين والبطن عن الفخذين",
-          "رفع الذراعين والمرفقين عن الأرض تماماً"
-        ],
-        svg: `<svg viewBox="0 0 250 190" class="w-full h-full max-h-64">
-          <line x1="15" y1="165" x2="235" y2="165" stroke="#94a3b8" stroke-width="2.5"/>
-          <path d="M 205 162 L 180 110 L 125 110 L 70 150" fill="none" stroke="#047857" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M 125 110 L 100 130 L 75 160" fill="none" stroke="#fbbf24" stroke-width="8" stroke-linecap="round"/>
-          <circle cx="50" cy="155" r="12" fill="#065f46"/>
-          <circle cx="48" cy="164" r="5" fill="#ef4444"/>
-          <circle cx="75" cy="163" r="5" fill="#ef4444"/>
-          <circle cx="160" cy="163" r="5" fill="#ef4444"/>
-          <circle cx="210" cy="163" r="5" fill="#ef4444"/>
-          <text x="65" y="75" font-size="8" fill="#ef4444" font-weight="bold">السجود على 7 أعضاء مع رفع الذراعين</text>
-        </svg>`
-      },
-      {
-        id: "jilsah_between",
-        title: "الجلوس بين السجدتين والدعاء",
-        raka: 1,
-        category: "ركن + واجب",
-        categoryColor: "bg-red-100 text-red-800 border-red-300",
-        categoryText: "الجلوس والطمأنينة ركن، وقول رب اغفر لي واجب",
-        zikr: "رَبِّ اغْفِرْ لِي، رَبِّ اغْفِرْ لِي (ويسن: اللَّهُمَّ اغْفِرْ لِي وَارْحَمْنِي وَعَافِنِي وَاهْدِنِي وَارْزُقْنِي)",
-        zikrType: "واجب (المغفرة) وسنة (الزيادة)",
-        meaning: "يرفع رأسه مكبراً ويجلس مفترشاً رجله اليسرى وناصباً اليمنى، واضعاً كفيه على فخذيه، ويطمئن حتى يسكن كل مفصل.",
-        fiqhRuling: "الجلوس بين السجدتين ركن، والطمأنينة فيه ركن. قول (رب اغفر لي) واجب عند الحنابلة وإسلام ويب.",
-        evidence: "«ثُمَّ ارْفَعْ حَتَّى تَطْمَئِنَّ جَالِسًا» (متفق عليه). إسلام ويب: 12455",
-        mistake: "النقر السريع دون جلوس مستقر ومباشرة السجدة الثانية فوراً (وهذا يبطل الصلاة).",
-        cues: [
-          "صفة الافتراش: فرش اليسرى والجلوس عليها ونصب اليمنى",
-          "وضع الكفين مبسوطتين على الفخذين قريباً من الركبتين",
-          "سكون الجسد بمقدار الدعاء بطمأنينة تامة"
-        ],
-        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-64">
-          <line x1="20" y1="175" x2="220" y2="175" stroke="#94a3b8" stroke-width="2"/>
-          <line x1="120" y1="55" x2="120" y2="125" stroke="#047857" stroke-width="18" stroke-linecap="round"/>
-          <circle cx="120" cy="40" r="14" fill="#065f46"/>
-          <line x1="120" y1="90" x2="70" y2="135" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/>
-          <circle cx="70" cy="135" r="5" fill="#d97706"/>
-          <path d="M 120 135 L 140 170 L 110 172 Z" fill="#10b981"/>
-          <path d="M 120 135 L 170 145 L 175 173" fill="none" stroke="#047857" stroke-width="9" stroke-linecap="round"/>
-          <circle cx="175" cy="172" r="4" fill="#ef4444"/>
-          <text x="60" y="25" font-size="8" fill="#047857" font-weight="bold">الافتراش بين السجدتين</text>
-        </svg>`
-      },
-      {
-        id: "sujud_2",
-        title: "السجود الثاني",
-        raka: 1,
-        category: "ركن + واجب",
-        categoryColor: "bg-red-100 text-red-800 border-red-300",
-        categoryText: "ركن السجود الثاني كسجدة أولى",
-        zikr: "سُبْحَانَ رَبِّيَ الأَعْلَى (ثلاثاً)",
-        zikrType: "واجب + سنة",
-        meaning: "يكبر ويسجد سجدته الثانية كصفة الأولى تماماً في الطمأنينة والتسبيح وتمكين الأعضاء السبعة.",
-        fiqhRuling: "السجدة الثانية ركن مستقل، فلكل ركعة سجدتان لازمتان لا تتم الركعة إلا بهما.",
-        evidence: "«ثُمَّ اسْجُدْ حَتَّى تَطْمَئِنَّ سَاجِدًا» (متفق عليه).",
-        mistake: "الاكتفاء بسجدة واحدة نسياناً دون تداركها وسجود السهو.",
-        cues: [
-          "مطابقة تامة للسجدة الأولى",
-          "الإكثار من الدعاء: «أَقْرَبُ مَا يَكُونُ الْعَبْدُ مِنْ رَبِّهِ وَهُوَ سَاجِدٌ فَأَكْثِرُوا الدُّعَاءَ»"
-        ],
-        svg: `<svg viewBox="0 0 250 190" class="w-full h-full max-h-64">
-          <line x1="15" y1="165" x2="235" y2="165" stroke="#94a3b8" stroke-width="2.5"/>
-          <path d="M 205 162 L 180 110 L 125 110 L 70 150" fill="none" stroke="#047857" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M 125 110 L 100 130 L 75 160" fill="none" stroke="#fbbf24" stroke-width="8" stroke-linecap="round"/>
-          <circle cx="50" cy="155" r="12" fill="#065f46"/>
-          <circle cx="48" cy="164" r="5" fill="#ef4444"/>
-          <circle cx="75" cy="163" r="5" fill="#ef4444"/>
-          <circle cx="160" cy="163" r="5" fill="#ef4444"/>
-          <circle cx="210" cy="163" r="5" fill="#ef4444"/>
-        </svg>`
-      },
-      {
-        id: "tashahhud_first",
-        title: "التشهد الأول (في الصلوات الثلاثية والرباعية)",
-        raka: 2,
-        category: "واجب",
-        categoryColor: "bg-blue-100 text-blue-800 border-blue-300",
-        categoryText: "واجب يُجبر بسجود السهو قبل السلام",
-        zikr: "التَّحِيَّاتُ لِلَّهِ، وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلاَمُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلاَمُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لاَ إِلَهَ إِلاَّ اللَّهُ، وَأَشْهَدُ أَنَّ مُحَمَّداً عَبْدُهُ وَرَسُولُهُ.",
-        zikrType: "واجب قولي",
-        meaning: "يجلس مفترشاً بعد الركعة الثانية، ويقبض أصابع يده اليمنى ويحلّق بالإبهام مع الوسطى ويشير بالسبابة متشهداً.",
-        fiqhRuling: "التشهد الأول والجلوس له واجبان؛ إن نسيهما وقام للثالثة واستتم قائماً لم يرجع ويسجد للسهو قبل السلام.",
-        evidence: "حديث ابن مسعود وحديث عبد الله بن بحينة أن النبي ﷺ نسيه وسجد سجدتين قبل أن يسلم (البخاري 829). إسلام ويب: 60058",
-        mistake: "الرجوع إليه بعد الشروع في قراءة ركعة جديدة (وهذا مكروه أو مبطل إن كان عالماً بالتحريم).",
-        cues: [
-          "جلسة الافتراش (فرش اليسرى ونصب اليمنى)",
-          "قبض الخنصر والبنصر وتحليق الإبهام مع الوسطى",
-          "الإشارة بالسبابة وتحريكها عند الدعاء"
-        ],
-        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-64">
-          <line x1="20" y1="175" x2="220" y2="175" stroke="#94a3b8" stroke-width="2"/>
-          <line x1="120" y1="55" x2="120" y2="125" stroke="#047857" stroke-width="18" stroke-linecap="round"/>
-          <circle cx="120" cy="40" r="14" fill="#065f46"/>
-          <line x1="120" y1="90" x2="70" y2="135" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/>
-          <circle cx="70" cy="135" r="5" fill="#ef4444"/>
-          <line x1="70" y1="135" x2="60" y2="120" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
-          <path d="M 120 135 L 140 170 L 110 172 Z" fill="#10b981"/>
-          <text x="35" y="115" font-size="8" fill="#ef4444" font-weight="bold">الإشارة بالسبابة</text>
-        </svg>`
-      },
-      {
-        id: "tashahhud_last",
-        title: "التشهد الأخير والصلاة الإبراهيمية (مع التورك)",
-        raka: 4,
-        category: "ركن",
-        categoryColor: "bg-red-100 text-red-800 border-red-300",
-        categoryText: "التشهد الأخير والجلوس له والصلاة على النبي ﷺ أركان",
-        zikr: "التَّحِيَّاتُ لِلَّهِ... اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ... وَبَارِكْ عَلَى مُحَمَّدٍ... ثُمَّ التعوذ من أربع: (اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ جَهَنَّمَ، وَمِنْ عَذَابِ الْقَبْرِ، وَمِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ، وَمِنْ شَرِّ فِتْنَةِ الْمَسِيحِ الدَّجَّالِ).",
-        zikrType: "ركن قولي + سنن الدعاء",
-        meaning: "يجلس متوركاً في الصلاة الثلاثية والرباعية مفضياً بمقعدته إلى الأرض، مكرراً التشهد ومصلياً على النبي بالصلاة الإبراهيمية ومستعيذاً من الأربع.",
-        fiqhRuling: "التشهد الأخير ركن، والجلوس له ركن، والصلاة على النبي ﷺ فيه ركن عند الحنابلة والشافعية. الاستعاذة من الأربع سنة مؤكدة جداً.",
-        evidence: "أمر النبي ﷺ بالتشهد والصلاة عليه: «قُولُوا: اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ...» (متفق عليه). إسلام ويب: 12455",
-        mistake: "ترك الصلاة الإبراهيمية، أو العجلة في السلام دون تعوذ ودعاء، أو ترك الإشارة بالسبابة.",
-        cues: [
-          "جلسة التورك في الصلاة ذات التشهدين (إخراج اليسرى ونصب اليمنى والجلوس بالألية على الأرض)",
-          "الإشارة بالسبابة باستمرار طيلة التشهد والدعاء",
-          "التعوذ من عذاب القبر وعذاب النار وفتنة المحيا والممات والمسيح الدجال"
-        ],
-        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-64">
-          <line x1="20" y1="175" x2="220" y2="175" stroke="#94a3b8" stroke-width="2"/>
-          <line x1="120" y1="55" x2="120" y2="135" stroke="#047857" stroke-width="18" stroke-linecap="round"/>
-          <circle cx="120" cy="40" r="14" fill="#065f46"/>
-          <ellipse cx="125" cy="155" rx="16" ry="10" fill="#047857"/>
-          <path d="M 115 145 Q 150 160 175 168" fill="none" stroke="#10b981" stroke-width="7" stroke-linecap="round"/>
-          <line x1="120" y1="90" x2="80" y2="130" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/>
-          <circle cx="75" cy="125" r="4" fill="#ef4444"/>
-          <line x1="75" y1="125" x2="65" y2="115" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="35" y="105" font-size="8" fill="#ef4444" font-weight="bold">التشهد الأخير مع التورك</text>
-        </svg>`
-      },
-      {
-        id: "taslim",
-        title: "التسليم (خاتمة الصلاة)",
-        raka: 4,
-        category: "ركن",
-        categoryColor: "bg-red-100 text-red-800 border-red-300",
-        categoryText: "ركن تحليل الصلاة",
-        zikr: "عن يمينه: السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ | وعن يساره: السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
-        zikrType: "ركن (الأولى) + سنة/واجب (الثانية)",
-        meaning: "يلتفت عن يمينه حتى يُرى بياض خده قائلاً: السلام عليكم ورحمة الله، ثم عن يساره قائلاً: السلام عليكم ورحمة الله.",
-        fiqhRuling: "التسليمة الأولى ركن بالإجماع يخرج به من الصلاة، والتسليمة الثانية ركن/واجب في المذهب وسنة عند الجمهور.",
-        evidence: "«وَتَحْرِيمُهَا التَّكْبِيرُ، وَتَحْلِيلُهَا التَّسْلِيمُ» (أبو داود والترمذي وهو حديث صحيح). إسلام ويب: 12455",
-        mistake: "هز الرأس للأسفل والأعلى عند السلام، أو مسح الوجه باليدين، أو تحريك اليدين إشارة مع السلام كفعل أهل الجاهلية.",
-        cues: [
-          "الالتفات التام حتى يرى من خلفه بياض خده",
-          "بدء النطق مع بدء الالتفات وختم اللفظ مع كمال الالتفات",
-          "الانشغال بعدها بالأذكار النبوية المأثورة دبر الصلاة"
-        ],
-        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-64">
-          <line x1="20" y1="175" x2="220" y2="175" stroke="#94a3b8" stroke-width="2"/>
-          <line x1="120" y1="70" x2="120" y2="145" stroke="#047857" stroke-width="18" stroke-linecap="round"/>
-          <ellipse cx="140" cy="50" rx="14" ry="12" fill="#065f46"/>
-          <circle cx="150" cy="52" r="5" fill="#fde047"/>
-          <path d="M 115 35 Q 135 25 155 38" fill="none" stroke="#10b981" stroke-width="2"/>
-          <text x="60" y="25" font-size="8" fill="#065f46" font-weight="bold">السلام عليكم ورحمة الله</text>
-        </svg>`
-      }
-    ];
-
-    let currentStepIndex = 0;
-    let selectedPrayerLength = 2;
-    let isAudioEnabled = true;
-
+    // Simulator Functions
     function setPrayerType(rakat) {
       selectedPrayerLength = rakat;
       [2, 3, 4].forEach(r => {
@@ -1530,7 +1126,7 @@
         if (r === rakat) {
           btn.className = "py-2 text-center rounded-xl font-bold text-xs bg-emerald-500 text-white shadow";
         } else {
-          btn.className = "py-2 text-center rounded-xl font-bold text-xs bg-emerald-900/60 text-emerald-200 transition hover:bg-emerald-700";
+          btn.className = "py-2 text-center rounded-xl font-bold text-xs bg-emerald-900/60 text-emerald-200";
         }
       });
       currentStepIndex = 0;
@@ -1544,7 +1140,7 @@
       document.getElementById('currentRakaBadge').textContent = `الركعة ${step.raka}`;
       
       const badge = document.getElementById('categoryBadge');
-      badge.className = `px-3 py-1 rounded-full text-xs font-black shadow-sm flex items-center gap-1.5 border ${step.categoryColor}`;
+      badge.className = `px-2.5 py-1 rounded-full text-xs font-black shadow-sm flex items-center gap-1.5 border ${step.categoryColor}`;
       badge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-current"></span><span>${step.categoryText}</span>`;
 
       document.getElementById('postureIllustrationContainer').innerHTML = step.svg;
@@ -1565,7 +1161,7 @@
 
       const nextBtn = document.getElementById('nextBtn');
       if (currentStepIndex === prayerSteps.length - 1) {
-        nextBtn.innerHTML = `<span>إتمام الصلاة والدعاء</span> 🎉`;
+        nextBtn.innerHTML = `<span>إتمام الصلاة</span> 🎉`;
       } else {
         nextBtn.innerHTML = `<span>التالي</span><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>`;
       }
@@ -1580,7 +1176,7 @@
     function renderStepsMiniNav() {
       const container = document.getElementById('stepsMiniNav');
       container.innerHTML = prayerSteps.map((s, idx) => `
-        <button onclick="goToStep(${idx})" id="miniStepBtn_${idx}" class="p-2 rounded-xl text-center border font-bold text-xs transition ${idx === currentStepIndex ? 'bg-emerald-600 text-white border-emerald-600 shadow' : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'}">
+        <button onclick="goToStep(${idx})" id="miniStepBtn_${idx}" class="p-1.5 rounded-xl text-center border font-bold text-xs transition ${idx === currentStepIndex ? 'bg-emerald-600 text-white border-emerald-600 shadow' : 'bg-slate-50 text-slate-700 border-slate-200'}">
           ${idx + 1}
         </button>
       `).join('');
@@ -1591,9 +1187,9 @@
         const btn = document.getElementById(`miniStepBtn_${idx}`);
         if (btn) {
           if (idx === currentStepIndex) {
-            btn.className = "p-2 rounded-xl text-center border font-extrabold text-xs bg-emerald-600 text-white border-emerald-600 shadow";
+            btn.className = "p-1.5 rounded-xl text-center border font-extrabold text-xs bg-emerald-600 text-white border-emerald-600 shadow";
           } else {
-            btn.className = "p-2 rounded-xl text-center border font-bold text-xs bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100";
+            btn.className = "p-1.5 rounded-xl text-center border font-bold text-xs bg-slate-50 text-slate-700 border-slate-200";
           }
         }
       });
@@ -1604,7 +1200,7 @@
         currentStepIndex++;
         renderSimulatorStep();
       } else {
-        alert("تقبل الله طاعتكم! أتممت خطوات الصلاة على منهاج النبوة. يمكنك الآن اختبار معلوماتك في قسم 'اختبار إتقان الصلاة'.");
+        alert("تقبل الله طاعتكم! أتممت خطوات الصلاة على منهاج النبوة.");
         switchTab('quiz');
       }
     }
@@ -1679,103 +1275,29 @@
       }, 1000);
     }
 
-    /* =========================================================================
-       8. TAB SWITCHING
-       ========================================================================= */
-    function switchTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-      const target = document.getElementById(`tab-${tabId}`);
-      if (target) target.classList.remove('hidden');
-
-      document.querySelectorAll('.nav-tab').forEach(btn => {
-        btn.classList.remove('active-tab');
-        btn.classList.add('hover:bg-emerald-800/60');
-      });
-      const activeBtn = document.querySelector(`.nav-tab[data-tab="${tabId}"]`);
-      if (activeBtn) {
-        activeBtn.classList.add('active-tab');
-        activeBtn.classList.remove('hover:bg-emerald-800/60');
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    /* =========================================================================
-       9. SAHW & MISTAKES & QUIZ SCRIPTS
-       ========================================================================= */
+    // Sahw Calculator
     const sahwCases = {
       naqs: [
-        {
-          id: "omitted_first_tashahhud",
-          name: "نسيت التشهد الأول وقمت للركعة الثالثة",
-          timing: "قبل السلام",
-          title: "حكم نسيان التشهد الأول والجلوس له",
-          desc: "التشهد الأول واجب من واجبات الصلاة. إذا نهضت للثالثة واستتممت قائماً، فلا ترجع إليه، وامض في صلاتك واسجد سجدتين للسهو قبل أن تسلم مباشرة كما فعل النبي ﷺ."
-        },
-        {
-          id: "omitted_tasbeeh_ruku",
-          name: "نسيت تسبيح الركوع (سبحان ربي العظيم) حتى رفعت",
-          timing: "قبل السلام",
-          title: "حكم نسيان واجب قولي كالتسبيح أو التحميد",
-          desc: "تسبيح الركوع واجب يسقط بالسهو إذا فارق محله. لا ترجع للركوع، واستمر في صلاتك واسجد للسهو سجدتين قبل السلام وتصح صلاتك."
-        },
-        {
-          id: "omitted_sajdah",
-          name: "نسيت سجدة في الركعة (سجدت سجدة واحدة فقط)",
-          timing: "بعد السلام (أو قبل السلام حسب التدارك)",
-          title: "حكم نسيان ركن (سجدة واحدة)",
-          desc: "السجود ركن لا يسقط بالسهو! إذا تذكرته قبل ركوع الركعة التالية ارجع فوراً واجلس واسجدها. أما إذا ركعت في الركعة التالية، لغت الركعة السابقة وقامت هذه مقامها، وتتم الصلاة وتسجد للسهو بعد السلام."
-        },
-        {
-          id: "omitted_fatiha",
-          name: "نسيت قراءة الفاتحة في ركعة وتذكرت في الركوع",
-          timing: "بعد السلام",
-          title: "حكم نسيان ركن الفاتحة",
-          desc: "الفاتحة ركن أساسي. إذا تذكرت في الركوع، قف فوراً واقرأ الفاتحة ثم اركع. وإن لم تتذكر حتى ركعت في الركعة التالية بطلت الركعة الأولى وقامت التالية مقامها وتسجد للسهو بعد السلام."
-        }
+        { id: "omitted_first_tashahhud", name: "نسيت التشهد الأول وقمت للركعة الثالثة", timing: "قبل السلام", title: "حكم نسيان التشهد الأول والجلوس له", desc: "التشهد الأول واجب. إذا نهضت للثالثة واستتممت قائماً، فلا ترجع إليه، وامض في صلاتك واسجد سجدتين للسهو قبل أن تسلم مباشرة." },
+        { id: "omitted_tasbeeh_ruku", name: "نسيت تسبيح الركوع حتى رفعت", timing: "قبل السلام", title: "حكم نسيان واجب قولي", desc: "تسبيح الركوع واجب يسقط بالسهو إذا فارق محله. لا ترجع للركوع، واسجد للسهو سجدتين قبل السلام وتصح صلاتك." },
+        { id: "omitted_sajdah", name: "نسيت سجدة في الركعة", timing: "بعد السلام (أو قبله حسب التدارك)", title: "حكم نسيان ركن (سجدة)", desc: "السجود ركن لا يسقط بالسهو! إن تذكرته قبل ركوع التالية ارجع فوراً واسجدها، وإن ركعت في التالية لغت الركعة السابقة وقامت هذه مقامها، وتسجد للسهو بعد السلام." }
       ],
       ziyadah: [
-        {
-          id: "added_ruku_or_sujud",
-          name: "زدت ركوعاً أو سجوداً سهواً في الركعة",
-          timing: "بعد السلام",
-          title: "حكم الزيادة الفعلية في الصلاة سهواً",
-          desc: "إذا زدت ركوعاً أو سجوداً سهواً وتنبهت بعد الفراغ منه، أكمل صلاتك طبيعياً ثم سلّم، وبعد السلام اسجد سجدتي السهو ثم سلّم مرة ثانية."
-        },
-        {
-          id: "added_rakah",
-          name: "قمت لركعة خامسة في صلاة رباعية (كالظهر)",
-          timing: "بعد السلام",
-          title: "حكم الزيادة في عدد الركعات",
-          desc: "إن تنبهت وأنت في الخامسة، اجلس فوراً للتشهد ولا تكملها، ثم تشهد وسلم واسجد للسهو بعد السلام. وإن لم تتنبه إلا بعد السلام فاسجد سجدتي السهو وسلم."
-        }
+        { id: "added_ruku_or_sujud", name: "زدت ركوعاً أو سجوداً سهواً", timing: "بعد السلام", title: "حكم الزيادة الفعلية سهواً", desc: "أكمل صلاتك طبيعياً ثم سلّم، وبعد السلام اسجد سجدتي السهو ثم سلّم ثانية." },
+        { id: "added_rakah", name: "قمت لركعة خامسة في رباعية", timing: "بعد السلام", title: "حكم زيادة ركعة كاملة", desc: "إن تنبهت وأنت فيها اجلس فوراً للتشهد، وتشهد وسلم واسجد للسهو بعد السلام." }
       ],
       shakk: [
-        {
-          id: "shakk_without_tarjeeh",
-          name: "شككت هل صليت 3 أم 4 ركعات ولا أدري أيهما أقرب؟",
-          timing: "قبل السلام",
-          title: "الشك دون ترجيح (البناء على اليقين وهو الأقل)",
-          desc: "ابنِ على اليقين وهو الأقل (اجعلها 3)، ثم ائتِ بركعة رابعة كاملة، ثم تشهد واسجد للسهو سجدتين قبل السلام مباشرة ثم سلّم."
-        },
-        {
-          id: "shakk_with_tarjeeh",
-          name: "شككت هل صليت 3 أم 4 لكن يغلب على ظني أنها 4؟",
-          timing: "بعد السلام",
-          title: "الشك مع غلبة الظن والترجيح",
-          desc: "ابنِ على ما غلب على ظنك (وهي الرابعة)، وأتم عليها صلاتك وسلم، ثم اسجد سجدتي السهو بعد السلام وسلم."
-        }
+        { id: "shakk_without_tarjeeh", name: "شككت هل صليت 3 أم 4 دون ترجيح؟", timing: "قبل السلام", title: "الشك دون ترجيح (البناء على اليقين وهو الأقل)", desc: "ابنِ على اليقين وهو الأقل (اجعلها 3)، ثم ائتِ بركعة رابعة كاملة، ثم تشهد واسجد للسهو سجدتين قبل السلام مباشرة." },
+        { id: "shakk_with_tarjeeh", name: "شككت هل صليت 3 أم 4 لكن يغلب على ظني أنها 4؟", timing: "بعد السلام", title: "الشك مع غلبة الظن", desc: "ابنِ على ما غلب على ظنك (وهي الرابعة)، وأتم عليها صلاتك وسلم، ثم اسجد سجدتي السهو بعد السلام." }
       ]
     };
 
     let activeSahwCategory = 'naqs';
-
     function selectSahwType(cat) {
       activeSahwCategory = cat;
       document.querySelectorAll('.sahw-type-btn').forEach(b => b.classList.remove('active-sahw-btn', 'border-emerald-500', 'bg-emerald-50'));
       const activeBtn = document.getElementById(`sahwType${cat.charAt(0).toUpperCase() + cat.slice(1)}`);
-      if (activeBtn) {
-        activeBtn.classList.add('active-sahw-btn', 'border-emerald-500', 'bg-emerald-50');
-      }
+      if (activeBtn) activeBtn.classList.add('active-sahw-btn', 'border-emerald-500', 'bg-emerald-50');
       initSahwSubcases();
     }
 
@@ -1783,19 +1305,17 @@
       const container = document.getElementById('sahwSubCasesContainer');
       const cases = sahwCases[activeSahwCategory];
       container.innerHTML = `
-        <label class="text-xs font-bold text-slate-700 block">2. اختر المسألة المطابقة لحالتك:</label>
-        <div class="space-y-2">
-          ${cases.map((c, i) => `
-            <button onclick="displaySahwVerdict('${c.id}')" class="w-full text-right p-3 rounded-2xl border border-slate-200 text-xs font-bold hover:bg-slate-50 transition flex items-center justify-between group">
+        <label class="text-xs font-bold text-slate-700 block">اختر المسألة:</label>
+        <div class="space-y-1.5">
+          ${cases.map(c => `
+            <button onclick="displaySahwVerdict('${c.id}')" class="w-full text-right p-2.5 rounded-xl border border-slate-200 text-xs font-bold hover:bg-slate-50 transition flex items-center justify-between">
               <span class="text-slate-800">${c.name}</span>
-              <span class="text-emerald-600 opacity-0 group-hover:opacity-100 font-extrabold text-[11px]">عرض الحكم ←</span>
+              <span class="text-emerald-600 font-extrabold text-[11px]">عرض الحكم ←</span>
             </button>
           `).join('')}
         </div>
       `;
-      if (cases.length > 0) {
-        displaySahwVerdict(cases[0].id);
-      }
+      if (cases.length > 0) displaySahwVerdict(cases[0].id);
     }
 
     function displaySahwVerdict(caseId) {
@@ -1805,204 +1325,44 @@
 
       document.getElementById('sahwTimingBadge').textContent = selected.timing;
       document.getElementById('sahwVerdictTitle').textContent = selected.title;
-      document.getElementById('sahwVerdictDetails').innerHTML = `
-        <p class="font-bold text-amber-300">التوجيه العملي:</p>
-        <p>${selected.desc}</p>
-      `;
+      document.getElementById('sahwVerdictDetails').innerHTML = `<p class="font-bold text-amber-300">التوجيه العملي:</p><p>${selected.desc}</p>`;
     }
 
+    // Common Mistakes
     const commonMistakesList = [
-      {
-        title: "نقر الصلاة وعدم الطمأنينة (صلاة المسيء)",
-        tag: "مبطل للصلاة",
-        tagColor: "bg-red-100 text-red-800",
-        desc: "السرعة الشديدة في الركوع والسجود دون استقرار المفاصل لثوانٍ معدودة.",
-        hadith: "«ارْجِعْ فَصَلِّ فَإِنَّكَ لَمْ تُصَلِّ» (متفق عليه). الطمأنينة ركن باتفاق الأئمة.",
-        correction: "المكث في كل ركن حتى يسكن كل عظم إلى موضعه ويسبح بتؤدة وخشوع."
-      },
-      {
-        title: "افتراش الذراعين كبساط الكلب في السجود",
-        tag: "منهي عنه شرعاً",
-        tagColor: "bg-amber-100 text-amber-800",
-        desc: "وضع الذراعين والمرفقين ملتصقين بالأرض كلياً أثناء السجود.",
-        hadith: "«اعْتَدِلُوا فِي السُّجُودِ، وَلاَ يَبْسُطْ أَحَدُكُمْ ذِرَاعَيْهِ انْبِسَاطَ الكَلْبِ» (البخاري ومسلم).",
-        correction: "رفع المرفقين والذراعين عن الأرض ومجافاتهما عن الجنبين وتمكين الكفين فقط."
-      },
-      {
-        title: "مسابقة الإمام أو مساواته في الركوع والسجود",
-        tag: "محرم / مبطل",
-        tagColor: "bg-red-100 text-red-800",
-        desc: "النزول للركوع أو السجود قبل الإمام أو معه في نفس اللحظة.",
-        hadith: "«أَمَا يَخْشَى أَحَدُكُمْ إِذَا رَفَعَ رَأْسَهُ قَبْلَ الإِمَامِ أَنْ يَجْعَلَ اللَّهُ رَأْسَهُ رَأْسَ حِمَارٍ» (متفق عليه).",
-        correction: "المتابعة: لا تبدأ بالحركة إلا بعد انقطاع صوت تكبير الإمام واستقراره في الركن."
-      },
-      {
-        title: "رفع البصر إلى السماء أثناء الصلاة",
-        tag: "وعيد شديد",
-        tagColor: "bg-rose-100 text-rose-800",
-        desc: "النظر إلى السقف أو رفع العينين للأعلى أثناء القيام أو الاعتدال.",
-        hadith: "«مَا بَالُ أَقْوَامٍ يَرْفَعُونَ أَبْصَارَهُمْ إِلَى السَّمَاءِ فِي صَلاَتِهِمْ؟ لَيَنْتَهُنَّ عَنْ ذَلِكَ أَوْ لَتُخْطَفَنَّ أَبْصَارُهُمْ» (البخاري).",
-        correction: "النظر الدائم إلى موضع السجود بخشوع وتواضع لله تعالى."
-      },
-      {
-        title: "رفع القدمين أو إحداهما عن الأرض في السجود",
-        tag: "يُخل بركن السجود",
-        tagColor: "bg-red-100 text-red-800",
-        desc: "وضع الركبتين واليدين ورفع أطراف القدمين في الهواء أو حكهما ببعض.",
-        hadith: "السجود مأمور به على سبعة أعظم منها «أَطْرَافُ القَدَمَيْنِ».",
-        correction: "تثبيت أصابع القدمين مضمومة أو معتدلة متجهة للقبلة طيلة فترة السجود."
-      },
-      {
-        title: "قول: (سمع الله لمن حمده) للمأموم",
-        tag: "خلاف السنة",
-        tagColor: "bg-slate-100 text-slate-800",
-        desc: "قول المأموم التسميع خلف الإمام بدلاً من الاكتفاء بالتحميد.",
-        hadith: "«وَإِذَا قَالَ: سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ، فَقُولُوا: رَبَّنَا وَلَكَ الحَمْدُ» (البخاري ومسلم).",
-        correction: "المأموم يقول فوراً: (ربنا ولك الحمد)، والتسميع خاص بالإمام والمنفرد."
-      }
+      { title: "نقر الصلاة وعدم الطمأنينة (صلاة المسيء)", tag: "مبطل للصلاة", tagColor: "bg-red-100 text-red-800", desc: "السرعة الشديدة في الركوع والسجود دون سكون المفاصل.", hadith: "«ارْجِعْ فَصَلِّ فَإِنَّكَ لَمْ تُصَلِّ» (متفق عليه).", correction: "المكث في كل ركن حتى يسكن كل عظم لموضعه." },
+      { title: "افتراش الذراعين كبساط الكلب في السجود", tag: "منهي عنه", tagColor: "bg-amber-100 text-amber-800", desc: "إلصاق الذراعين والمرفقين بالأرض في السجود.", hadith: "«وَلاَ يَبْسُطْ أَحَدُكُمْ ذِرَاعَيْهِ انْبِسَاطَ الكَلْبِ» (متفق عليه).", correction: "رفع المرفقين والذراعين عن الأرض ومجافاتهما." },
+      { title: "مسابقة الإمام أو مساواته", tag: "محرم / مبطل", tagColor: "bg-red-100 text-red-800", desc: "النزول للركوع أو السجود قبل الإمام أو معه.", hadith: "«أَمَا يَخْشَى أَحَدُكُمْ إِذَا رَفَعَ رَأْسَهُ قَبْلَ الإِمَامِ أَنْ يَجْعَلَ اللَّهُ رَأْسَهُ رَأْسَ حِمَارٍ».", correction: "المتابعة: لا تتحرك حتى ينقطع صوت تكبير الإمام." },
+      { title: "رفع البصر إلى السماء", tag: "وعيد شديد", tagColor: "bg-rose-100 text-rose-800", desc: "النظر للأعلى أثناء القيام أو الاعتدال.", hadith: "«لَيَنْتَهُنَّ عَنْ ذَلِكَ أَوْ لَتُخْطَفَنَّ أَبْصَارُهُمْ» (البخاري).", correction: "النظر دائماً إلى موضع السجود بخشوع." }
     ];
 
     function renderCommonMistakes() {
       const container = document.getElementById('mistakesGrid');
-      container.innerHTML = commonMistakesList.map((m, idx) => `
-        <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-5 hover:border-rose-300 transition flex flex-col justify-between">
+      container.innerHTML = commonMistakesList.map(m => `
+        <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-4 sm:p-5 hover:border-rose-300 transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-2">
-              <span class="font-black text-slate-900 text-sm flex items-center gap-1.5">
-                <span class="text-rose-600 font-bold">❌</span>
-                <span>${m.title}</span>
-              </span>
+              <span class="font-black text-slate-900 text-xs sm:text-sm flex items-center gap-1.5"><span class="text-rose-600 font-bold">❌</span><span>${m.title}</span></span>
               <span class="${m.tagColor} text-[10px] font-extrabold px-2 py-0.5 rounded-full">${m.tag}</span>
             </div>
-            <p class="text-xs text-slate-600 mb-3">${m.desc}</p>
-            <div class="bg-rose-50/70 border border-rose-100 rounded-xl p-2.5 text-xs text-rose-950 font-medium mb-3">
-              <strong>الدليل النبوي:</strong> ${m.hadith}
-            </div>
+            <p class="text-xs text-slate-600 mb-2">${m.desc}</p>
+            <div class="bg-rose-50/70 border border-rose-100 rounded-xl p-2 text-xs text-rose-950 font-medium mb-2"><strong>الدليل النبوي:</strong> ${m.hadith}</div>
           </div>
-          <div class="bg-emerald-50 border border-emerald-200/70 rounded-xl p-2.5 text-xs text-emerald-950 font-bold flex items-center gap-1.5">
-            <span class="text-emerald-600">✓ البديل الصحيح:</span>
-            <span>${m.correction}</span>
+          <div class="bg-emerald-50 border border-emerald-200/70 rounded-xl p-2 text-xs text-emerald-950 font-bold flex items-center gap-1.5">
+            <span class="text-emerald-600">✓ البديل الصحيح:</span><span>${m.correction}</span>
           </div>
         </div>
       `).join('');
     }
 
+    // Quiz
     const quizQuestions = [
-      {
-        q: "ما حكم من ترك قراءة سورة الفاتحة في الركعة متعمداً؟",
-        options: [
-          "صلاته باطلة بإجماع أهل العلم لأن الفاتحة ركن",
-          "صلاته صحيحة ويجزئه سجود السهو",
-          "صلاته مكروهة وعليه إعادة الاستفتاح فقط",
-          "تسقط قراءتها ويكفيه التسبيح"
-        ],
-        correct: 0,
-        explanation: "الفاتحة ركن من أركان الصلاة لقوله ﷺ: 'لا صلاة لمن لم يقرأ بفاتحة الكتاب' وتبطل الصلاة بتركها عمداً إجماعاً."
-      },
-      {
-        q: "ما الفرق الأساسي بين ركن الصلاة وواجب الصلاة إذا نُسي سهواً؟",
-        options: [
-          "لا فرق بينهما فكلاهما يسقط بسجود السهو",
-          "الركن لا يسقط بالسهو بل لا بد من الإتيان به، بينما الواجب يسقط بالسهو ويُجبر بسجود السهو",
-          "الواجب أقوى من الركن في الصلاة",
-          "الركن يلزم فيه إعادة الصلاة من أولها دائماً"
-        ],
-        correct: 1,
-        explanation: "الركن لا يسقط سهواً ولا جهلاً ولابد من تداركه وبناء ما بعده عليه، أما الواجب فيسقط بنسيانه وتصح الصلاة إذا جُبر بسجود السهو قبل السلام."
-      },
-      {
-        q: "إمام نسي التشهد الأول واستتم قائماً للركعة الثالثة وشرع في الفاتحة، ماذا يفعل؟",
-        options: [
-          "يرجع فوراً للجلوس والتشهد ثم يقوم",
-          "يستمر في صلاته ولا يرجع، ويسجد سجدتين للسهو قبل السلام",
-          "تبطل صلاته وعليه استئنافها",
-          "يسجد للسهو بعد السلام فقط"
-        ],
-        correct: 1,
-        explanation: "السنة الثابتة عن النبي ﷺ أنه إذا استتم قائماً مضى في صلاته ولم يرجع وجبره بسجدتي السهو قبل السلام كما في حديث عبد الله بن بحينة."
-      },
-      {
-        q: "ما عدد الأعضاء التي يجب السجود عليها شرعاً؟",
-        options: [
-          "خمسة أعضاء فقط",
-          "سبعة أعضاء: الجبهة والأنف، الكفان، الركبتان، وأطراف القدمين",
-          "أربعة أعضاء فقط",
-          "تسعة أعضاء مع المرفقين"
-        ],
-        correct: 1,
-        explanation: "قال ﷺ: 'أمرت أن أسجد على سبعة أعظم: على الجبهة -وأشار بيده على أنفه- واليدين، والركبتين، وأطراف القدمين'."
-      },
-      {
-        q: "ما حكم دعاء الاستفتاح في الصلاة؟",
-        options: [
-          "ركن تبطل الصلاة بتركه",
-          "واجب يلزم بسقوطه سجود السهو",
-          "سنة مستحبة لا تبطل الصلاة بتركها ولا يلزم لتركه سجود سهو",
-          "مكروه إلا في صلاة الليل"
-        ],
-        correct: 2,
-        explanation: "دعاء الاستفتاح من السنن القولية باتفاق العلماء، يثاب فاعله ولا تبطل الصلاة بتركه عمداً ولا سهواً."
-      },
-      {
-        q: "متى يكون موضع سجود السهو إذا كان السهو ناتجاً عن زيادة في الصلاة (كركوع زائد)؟",
-        options: [
-          "قبل السلام دائماً",
-          "بعد السلام",
-          "أثناء الركوع الزائد",
-          "لا يُسجد للزيادة سهواً"
-        ],
-        correct: 1,
-        explanation: "القاعدة الفقهية المعتمدة في إسلام ويب أن سجود السهو يكون بعد السلام إذا كان سببه الزيادة، حتى لا يجتمع في الصلاة زيادتان."
-      },
-      {
-        q: "ما صفة 'الافتراش' المسنونة في الجلوس بين السجدتين؟",
-        options: [
-          "فرش القدمين معاً والجلوس على الأرض",
-          "فرش القدم اليسرى والجلوس عليها ونصب القدم اليمنى",
-          "نصب القدمين معاً والجلوس على العقبين طيلة الصلاة",
-          "إخراج القدمين من الجانب الأيمن"
-        ],
-        correct: 1,
-        explanation: "الافتراش هو أن يفرش رجله اليسرى فيجلس عليها وينصب رجله اليمنى موجهاً أصابعها للقبلة، وهي سنة الجلوس بين السجدتين والتشهد الأول."
-      },
-      {
-        q: "ما هو حكم الطمأنينة في الركوع والسجود والاعتدال؟",
-        options: [
-          "مستحبة فقط لمن أراد الخشوع",
-          "واجبة تجبر بسجود السهو",
-          "ركن أساسي من أركان الصلاة لا تصح الصلاة بدونه",
-          "سنة مؤكدة"
-        ],
-        correct: 2,
-        explanation: "الطمأنينة ركن باتفاق أئمة المذاهب لقوله ﷺ للمسيء صلاته: 'ثم اركع حتى تطمئن راكعاً... ثم اسجد حتى تطمئن ساجداً' وقال له: 'ارجع فصل فإنك لم تصل'."
-      },
-      {
-        q: "المأموم خلف الإمام عند قول الإمام (سمع الله لمن حمده)، ماذا يقول المأموم شرعاً؟",
-        options: [
-          "يقول: ربنا ولك الحمد (فقط)",
-          "يقول: سمع الله لمن حمده وربنا ولك الحمد معاً",
-          "لا يقول شيئاً ويسكت",
-          "يكبر قائلاً الله أكبر"
-        ],
-        correct: 0,
-        explanation: "لقول النبي ﷺ: 'إِنَّمَا جُعِلَ الإِمَامُ لِيُؤْتَمَّ بِهِ... وَإِذَا قَالَ: سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ، فَقُولُوا: رَبَّنَا وَلَكَ الحَمْدُ'."
-      },
-      {
-        q: "ما هو التورك وفي أي الصلوات يسن فعله؟",
-        options: [
-          "هو الإفضاء بالورك إلى الأرض، ويسن في التشهد الأخير للصلوات الثلاثية والرباعية",
-          "هو الجلوس على باطن القدمين في كل ركعة",
-          "يسن فقط في صلاة ركعتين كالفجر",
-          "هو رفع اليدين عند التكبير"
-        ],
-        correct: 0,
-        explanation: "التورك هو أن يخرج رجله اليسرى من الجانب الأيمن ويجلس بمقعدته على الأرض ناصباً اليمنى، ويسن في التشهد الأخير للصلوات ذات التشهدين كالمغرب والرباعيات."
-      }
+      { q: "ما حكم من ترك قراءة سورة الفاتحة في الركعة متعمداً؟", options: ["صلاته باطلة بإجماع أهل العلم لأن الفاتحة ركن", "صلاته صحيحة ويجزئه سجود السهو", "صلاته مكروهة وعليه إعادة الاستفتاح فقط", "تسقط قراءتها ويكفيه التسبيح"], correct: 0, explanation: "الفاتحة ركن لقوله ﷺ: 'لا صلاة لمن لم يقرأ بفاتحة الكتاب' وتبطل الصلاة بتركها عمداً إجماعاً." },
+      { q: "ما الفرق الأساسي بين ركن الصلاة وواجب الصلاة إذا نُسي سهواً؟", options: ["لا فرق بينهما فكلاهما يسقط بسجود السهو", "الركن لا يسقط بالسهو بل لا بد من الإتيان به، بينما الواجب يسقط بالسهو ويُجبر بسجود السهو", "الواجب أقوى من الركن في الصلاة", "الركن يلزم فيه إعادة الصلاة دائماً"], correct: 1, explanation: "الركن لا يسقط سهواً ولا جهلاً ولابد من الإتيان به، أما الواجب فيسقط بنسيانه ويجبر بسجود السهو قبل السلام." },
+      { q: "إمام نسي التشهد الأول واستتم قائماً للركعة الثالثة وشرع في الفاتحة، ماذا يفعل؟", options: ["يرجع فوراً للجلوس والتشهد", "يستمر في صلاته ولا يرجع، ويسجد سجدتين للسهو قبل السلام", "تبطل صلاته وعليه استئنافها", "يسجد للسهو بعد السلام فقط"], correct: 1, explanation: "إذا استتم قائماً مضى في صلاته ولم يرجع وجبره بسجدتي السهو قبل السلام كما في حديث عبد الله بن بحينة." },
+      { q: "ما عدد الأعضاء التي يجب السجود عليها شرعاً؟", options: ["خمسة أعضاء فقط", "سبعة أعضاء: الجبهة والأنف، الكفان، الركبتان، وأطراف القدمين", "أربعة أعضاء فقط", "تسعة أعضاء مع المرفقين"], correct: 1, explanation: "قال ﷺ: 'أمرت أن أسجد على سبعة أعظم: على الجبهة -وأشار بيده على أنفه- واليدين، والركبتين، وأطراف القدمين'." },
+      { q: "ما حكم دعاء الاستفتاح في الصلاة؟", options: ["ركن تبطل الصلاة بتركه", "واجب يلزم بسقوطه سجود السهو", "سنة مستحبة لا تبطل الصلاة بتركها ولا يلزم لتركه سجود سهو", "مكروه إلا في صلاة الليل"], correct: 2, explanation: "دعاء الاستفتاح من السنن القولية باتفاق العلماء، يثاب فاعله ولا تبطل الصلاة بتركه." }
     ];
-
-    let currentQuizIndex = 0;
-    let quizScore = 0;
-    let userHasAnsweredCurrent = false;
 
     function loadQuizQuestion() {
       userHasAnsweredCurrent = false;
@@ -2016,7 +1376,7 @@
 
       const optionsContainer = document.getElementById('quizOptionsContainer');
       optionsContainer.innerHTML = q.options.map((opt, i) => `
-        <button onclick="handleQuizAnswer(${i})" id="quizOptBtn_${i}" class="w-full text-right p-3.5 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 bg-white font-bold text-xs text-slate-800 transition flex items-center justify-between">
+        <button onclick="handleQuizAnswer(${i})" id="quizOptBtn_${i}" class="w-full text-right p-3 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 bg-white font-bold text-xs text-slate-800 transition flex items-center justify-between">
           <span>${opt}</span>
           <span class="w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center text-[10px] font-bold text-slate-400">${i + 1}</span>
         </button>
@@ -2042,16 +1402,15 @@
         selectedBtn.classList.replace('border-slate-200', 'border-emerald-600');
         selectedBtn.classList.add('bg-emerald-50', 'text-emerald-950');
 
-        feedbackBox.className = "mt-4 p-4 rounded-2xl text-xs font-medium border bg-emerald-50 border-emerald-300 text-emerald-950 leading-relaxed";
+        feedbackBox.className = "mt-3 p-3.5 rounded-2xl text-xs font-medium border bg-emerald-50 border-emerald-300 text-emerald-950 leading-relaxed";
         feedbackBox.innerHTML = `<strong>✓ إجابة صحيحة بارك الله فيك!</strong><br>${q.explanation}`;
       } else {
         selectedBtn.classList.replace('border-slate-200', 'border-rose-500');
         selectedBtn.classList.add('bg-rose-50', 'text-rose-950');
-
         correctBtn.classList.replace('border-slate-200', 'border-emerald-600');
         correctBtn.classList.add('bg-emerald-50', 'text-emerald-950');
 
-        feedbackBox.className = "mt-4 p-4 rounded-2xl text-xs font-medium border bg-rose-50 border-rose-300 text-rose-950 leading-relaxed";
+        feedbackBox.className = "mt-3 p-3.5 rounded-2xl text-xs font-medium border bg-rose-50 border-rose-300 text-rose-950 leading-relaxed";
         feedbackBox.innerHTML = `<strong>❌ إجابة خاطئة.</strong> الجواب الصحيح هو: <em>${q.options[q.correct]}</em>.<br>${q.explanation}`;
       }
 
@@ -2077,19 +1436,6 @@
       document.getElementById('quizContainer').classList.remove('hidden');
       loadQuizQuestion();
     }
-
-    /* =========================================================================
-       10. ON LOAD
-       ========================================================================= */
-    window.addEventListener('DOMContentLoaded', () => {
-      renderAnchoringContent();
-      renderSimulatorStep();
-      renderStepsMiniNav();
-      renderPosturesCards();
-      renderCommonMistakes();
-      initSahwSubcases();
-      loadQuizQuestion();
-    });
   </script>
 </body>
 </html>
