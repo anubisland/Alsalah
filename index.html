@@ -288,13 +288,19 @@
           <span>سنن الصلاة ومستحباتها (أقوال وهيئات)</span>
         </h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="bg-white rounded-3xl p-5 border border-emerald-200 shadow-sm">
-            <h4 class="font-black text-emerald-950 text-sm mb-3">🗣️ السنن القولية (أدعية وأقوال مسنونة)</h4>
-            <ul class="space-y-2 text-xs text-slate-700" id="sunanQawliyyahList"></ul>
+          <div class="bg-[#fcfbf4] rounded-3xl p-5 sm:p-6 border border-amber-200/90 shadow-sm hover:shadow transition">
+            <div class="inline-flex items-center gap-2 bg-amber-100/90 text-amber-950 px-3.5 py-1.5 rounded-2xl border border-amber-300/80 font-black text-xs sm:text-sm mb-4">
+              <span>🗣️</span>
+              <span>السنن القولية (أدعية وأقوال مسنونة)</span>
+            </div>
+            <ul class="space-y-2.5 text-xs text-slate-800" id="sunanQawliyyahList"></ul>
           </div>
-          <div class="bg-white rounded-3xl p-5 border border-emerald-200 shadow-sm">
-            <h4 class="font-black text-emerald-950 text-sm mb-3">🧍 السنن الفعلية (حركات وهيئات مسنونة)</h4>
-            <ul class="space-y-2 text-xs text-slate-700" id="sunanFiliyyahList"></ul>
+          <div class="bg-[#fcfbf4] rounded-3xl p-5 sm:p-6 border border-amber-200/90 shadow-sm hover:shadow transition">
+            <div class="inline-flex items-center gap-2 bg-amber-100/90 text-amber-950 px-3.5 py-1.5 rounded-2xl border border-amber-300/80 font-black text-xs sm:text-sm mb-4">
+              <span>🧍</span>
+              <span>السنن الفعلية (حركات وهيئات مسنونة)</span>
+            </div>
+            <ul class="space-y-2.5 text-xs text-slate-800" id="sunanFiliyyahList"></ul>
           </div>
         </div>
       </section>
@@ -744,7 +750,406 @@
       { front: "التسليمة الأولى", type: "ركن الصلاة", typeClass: "bg-red-500", back: "ركن إجماعاً لتحليل الصلاة والخروج منها لقوله ﷺ: 'وتحليلها التسليم'." }
     ];
 
+    
     /* =========================================================================
+       MASTER ARTISTIC VECTOR ILLUSTRATIONS FOR PRAYER POSTURES (المُصَلِّي المتقن)
+       Accurate anatomical figures, flowing thobe, Islamic prayer mat, guidance cues
+       ========================================================================= */
+    const prayerIllustrations = {
+      // 1. Takbeer: Standing upright, hands raised to shoulders/ears, eyes on sujud spot
+      takbeer: `<svg viewBox="0 0 320 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+        <defs>
+          <linearGradient id="matGradTakbeer" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
+          </linearGradient>
+          <linearGradient id="thobeGradTakbeer" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
+          </linearGradient>
+          <filter id="shadowTakbeer" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
+          </filter>
+        </defs>
+        <!-- Background Mihrab Arch Tone -->
+        <path d="M 105 235 Q 105 20 160 20 Q 215 20 215 235" fill="#f0fdf4" opacity="0.65"/>
+        <!-- Decorated Prayer Mat -->
+        <polygon points="45,225 275,225 255,253 65,253" fill="url(#matGradTakbeer)" stroke="#047857" stroke-width="1.5"/>
+        <polygon points="65,229 255,229 240,249 80,249" fill="#065f46" opacity="0.5"/>
+        <path d="M 135 249 Q 160 234 185 249" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+        <line x1="65" y1="253" x2="60" y2="257" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="85" y1="253" x2="80" y2="257" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="235" y1="253" x2="240" y2="257" stroke="#d97706" stroke-width="1.5"/>
+        <line x1="255" y1="253" x2="260" y2="257" stroke="#d97706" stroke-width="1.5"/>
+        <!-- Sight Line to Sujud Spot -->
+        <line x1="160" y1="48" x2="205" y2="235" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <circle cx="205" cy="235" r="3.5" fill="#f59e0b"/>
+        <rect x="170" y="218" width="68" height="15" rx="7" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+        <text x="204" y="229" font-size="8" fill="#b45309" font-weight="bold" text-anchor="middle">موضع السجود</text>
+        <!-- Worshipper Body Group -->
+        <g filter="url(#shadowTakbeer)">
+          <ellipse cx="150" cy="228" rx="7" ry="3.5" fill="#334155"/>
+          <ellipse cx="170" cy="228" rx="7" ry="3.5" fill="#334155"/>
+          <path d="M 136 138 L 142 225 L 178 225 L 184 138 Z" fill="url(#thobeGradTakbeer)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <line x1="160" y1="145" x2="160" y2="225" stroke="#e2e8f0" stroke-width="1"/>
+          <path d="M 135 75 Q 133 108 136 140 L 184 140 Q 187 108 185 75 Q 160 70 135 75 Z" fill="url(#thobeGradTakbeer)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <!-- Head & Neck -->
+          <path d="M 154 75 L 154 62 L 166 62 L 166 75 Z" fill="#fed7aa"/>
+          <ellipse cx="160" cy="46" rx="13" ry="15" fill="#fed7aa"/>
+          <!-- White Kufi Cap -->
+          <path d="M 147 43 Q 160 30 173 43 Q 173 34 160 32 Q 147 34 147 43 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+          <path d="M 166 46 Q 169 50 166 54" stroke="#d97706" stroke-width="1" fill="none"/>
+          <!-- Raised Arms (Takbeer at Shoulders/Ears) -->
+          <path d="M 136 78 C 122 80 114 62 118 45" fill="none" stroke="#f1f5f9" stroke-width="12" stroke-linecap="round"/>
+          <path d="M 136 78 C 122 80 114 62 118 45" fill="none" stroke="#94a3b8" stroke-width="1" stroke-linecap="round"/>
+          <ellipse cx="120" cy="38" rx="5" ry="8" fill="#fed7aa" transform="rotate(-10 120 38)"/>
+          <path d="M 184 78 C 198 80 206 62 202 45" fill="none" stroke="#f1f5f9" stroke-width="12" stroke-linecap="round"/>
+          <path d="M 184 78 C 198 80 206 62 202 45" fill="none" stroke="#94a3b8" stroke-width="1" stroke-linecap="round"/>
+          <ellipse cx="200" cy="38" rx="5" ry="8" fill="#fed7aa" transform="rotate(10 200 38)"/>
+        </g>
+        <!-- Educational Badge -->
+        <g transform="translate(60, 12)">
+          <rect width="200" height="22" rx="11" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+          <text x="100" y="15" font-size="8.5" fill="#065f46" font-weight="black" text-anchor="middle">رفع اليدين حذو المنكبين وممدودة الأصابع</text>
+        </g>
+      </svg>`,
+
+      // 2. Qabd: Standing upright, right hand over left forearm across chest, eyes on sujud spot
+      qabd: `<svg viewBox="0 0 320 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+        <defs>
+          <linearGradient id="matGradQabd" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
+          </linearGradient>
+          <linearGradient id="thobeGradQabd" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
+          </linearGradient>
+          <filter id="shadowQabd" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
+          </filter>
+        </defs>
+        <path d="M 105 235 Q 105 20 160 20 Q 215 20 215 235" fill="#f0fdf4" opacity="0.65"/>
+        <polygon points="45,225 275,225 255,253 65,253" fill="url(#matGradQabd)" stroke="#047857" stroke-width="1.5"/>
+        <polygon points="65,229 255,229 240,249 80,249" fill="#065f46" opacity="0.5"/>
+        <path d="M 135 249 Q 160 234 185 249" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+        <!-- Sight Line to Sujud Spot -->
+        <line x1="160" y1="48" x2="205" y2="235" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <circle cx="205" cy="235" r="3.5" fill="#f59e0b"/>
+        <rect x="170" y="218" width="68" height="15" rx="7" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+        <text x="204" y="229" font-size="8" fill="#b45309" font-weight="bold" text-anchor="middle">موضع السجود</text>
+        <!-- Worshipper Body Group -->
+        <g filter="url(#shadowQabd)">
+          <ellipse cx="150" cy="228" rx="7" ry="3.5" fill="#334155"/>
+          <ellipse cx="170" cy="228" rx="7" ry="3.5" fill="#334155"/>
+          <path d="M 136 138 L 142 225 L 178 225 L 184 138 Z" fill="url(#thobeGradQabd)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <path d="M 135 75 Q 133 108 136 140 L 184 140 Q 187 108 185 75 Q 160 70 135 75 Z" fill="url(#thobeGradQabd)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <!-- Head & Neck -->
+          <path d="M 154 75 L 154 62 L 166 62 L 166 75 Z" fill="#fed7aa"/>
+          <ellipse cx="160" cy="46" rx="13" ry="15" fill="#fed7aa"/>
+          <path d="M 147 43 Q 160 30 173 43 Q 173 34 160 32 Q 147 34 147 43 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+          <path d="M 166 46 Q 169 50 166 54" stroke="#d97706" stroke-width="1" fill="none"/>
+          <!-- Folded Arms Across Chest (القبض على الصدر) -->
+          <!-- Left arm bent to center -->
+          <path d="M 136 78 C 128 95 135 106 155 106" fill="none" stroke="#f1f5f9" stroke-width="11" stroke-linecap="round"/>
+          <path d="M 136 78 C 128 95 135 106 155 106" fill="none" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- Right arm crossing over left wrist -->
+          <path d="M 184 78 C 192 95 180 104 158 104" fill="none" stroke="#f1f5f9" stroke-width="11" stroke-linecap="round"/>
+          <path d="M 184 78 C 192 95 180 104 158 104" fill="none" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- Hands clasp on chest -->
+          <rect x="148" y="99" width="24" height="11" rx="5.5" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
+          <!-- Indicator ring -->
+          <circle cx="160" cy="104" r="14" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3,3"/>
+        </g>
+        <!-- Educational Badge -->
+        <g transform="translate(50, 12)">
+          <rect width="220" height="22" rx="11" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+          <text x="110" y="15" font-size="8.5" fill="#065f46" font-weight="black" text-anchor="middle">القبض: وضع كف اليمين على ظهر اليسرى على الصدر</text>
+        </g>
+      </svg>`,
+
+      // 3. Ruku': Level 90-degree flat table back, head aligned, hands cupping kneecaps with spread fingers
+      ruku: `<svg viewBox="0 0 340 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+        <defs>
+          <linearGradient id="matGradRuku" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
+          </linearGradient>
+          <linearGradient id="thobeGradRuku" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
+          </linearGradient>
+          <filter id="shadowRuku" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
+          </filter>
+        </defs>
+        <!-- Prayer Mat -->
+        <polygon points="30,225 310,225 285,253 55,253" fill="url(#matGradRuku)" stroke="#047857" stroke-width="1.5"/>
+        <polygon points="50,229 290,229 270,249 70,249" fill="#065f46" opacity="0.5"/>
+        <!-- Spirit Level Bar on Back -->
+        <g transform="translate(60, 68)">
+          <rect width="180" height="18" rx="9" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.5"/>
+          <rect x="75" y="3" width="30" height="12" rx="6" fill="#38bdf8" opacity="0.5"/>
+          <circle cx="90" cy="9" r="4" fill="#0284c7"/>
+          <text x="90" y="-5" font-size="8.5" fill="#0284c7" font-weight="black" text-anchor="middle">استواء الظهر كأنه صفيحة ماء (٩٠ درجة)</text>
+        </g>
+        <!-- Worshipper Body in Ruku -->
+        <g filter="url(#shadowRuku)">
+          <!-- Feet on mat -->
+          <ellipse cx="228" cy="228" rx="8" ry="4" fill="#334155"/>
+          <!-- Legs (upright / slightly flexed) -->
+          <path d="M 218 135 L 222 226 L 234 226 L 232 135 Z" fill="url(#thobeGradRuku)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <line x1="226" y1="140" x2="226" y2="224" stroke="#e2e8f0" stroke-width="1"/>
+          <!-- Torso / Spine perfectly 90 degrees horizontal -->
+          <path d="M 230 135 L 230 95 C 220 92 110 92 100 95 L 100 135 C 130 132 210 132 230 135 Z" fill="url(#thobeGradRuku)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <line x1="102" y1="98" x2="228" y2="98" stroke="#cbd5e1" stroke-width="1.5"/>
+          <!-- Head aligned with back (لم يشخص ولم يصوب) -->
+          <path d="M 100 102 L 86 104 L 86 118 L 100 120 Z" fill="#fed7aa"/>
+          <ellipse cx="78" cy="110" rx="13" ry="12" fill="#fed7aa"/>
+          <path d="M 78 98 Q 90 98 90 110 Q 78 112 66 110 Q 66 98 78 98 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+          <!-- Arms descending to Knees -->
+          <path d="M 115 110 L 210 162" stroke="#f8fafc" stroke-width="14" stroke-linecap="round"/>
+          <path d="M 115 110 L 210 162" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Hands gripping Knees with spread fingers -->
+          <circle cx="215" cy="164" r="8" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
+          <path d="M 210 159 L 205 156 M 210 164 L 204 164 M 210 169 L 205 172" stroke="#b45309" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="222" cy="165" r="5" fill="none" stroke="#047857" stroke-width="2" stroke-dasharray="2,2"/>
+        </g>
+        <!-- Cues Badges -->
+        <g transform="translate(160, 186)">
+          <rect width="130" height="20" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+          <text x="65" y="13" font-size="8" fill="#b45309" font-weight="bold" text-anchor="middle">تفريج الأصابع ومس الركبتين</text>
+        </g>
+      </svg>`,
+
+      // 4. Raf' / Itidal: Standing upright, erect spine, tranquil stillness
+      itidal: `<svg viewBox="0 0 320 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+        <defs>
+          <linearGradient id="matGradItidal" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
+          </linearGradient>
+          <linearGradient id="thobeGradItidal" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
+          </linearGradient>
+          <filter id="shadowItidal" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
+          </filter>
+        </defs>
+        <path d="M 105 235 Q 105 20 160 20 Q 215 20 215 235" fill="#f0fdf4" opacity="0.65"/>
+        <polygon points="45,225 275,225 255,253 65,253" fill="url(#matGradItidal)" stroke="#047857" stroke-width="1.5"/>
+        <polygon points="65,229 255,229 240,249 80,249" fill="#065f46" opacity="0.5"/>
+        <path d="M 135 249 Q 160 234 185 249" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+        <!-- Worshipper Body Group in Itidal -->
+        <g filter="url(#shadowItidal)">
+          <ellipse cx="150" cy="228" rx="7" ry="3.5" fill="#334155"/>
+          <ellipse cx="170" cy="228" rx="7" ry="3.5" fill="#334155"/>
+          <path d="M 136 138 L 142 225 L 178 225 L 184 138 Z" fill="url(#thobeGradItidal)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <path d="M 135 75 Q 133 108 136 140 L 184 140 Q 187 108 185 75 Q 160 70 135 75 Z" fill="url(#thobeGradItidal)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <!-- Head & Neck straight with reverence -->
+          <path d="M 154 75 L 154 62 L 166 62 L 166 75 Z" fill="#fed7aa"/>
+          <ellipse cx="160" cy="46" rx="13" ry="15" fill="#fed7aa"/>
+          <path d="M 147 43 Q 160 30 173 43 Q 173 34 160 32 Q 147 34 147 43 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+          <!-- Calm arms by side or raised in transition -->
+          <path d="M 136 78 C 126 100 130 125 132 145" fill="none" stroke="#f1f5f9" stroke-width="11" stroke-linecap="round"/>
+          <path d="M 136 78 C 126 100 130 125 132 145" fill="none" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M 184 78 C 194 100 190 125 188 145" fill="none" stroke="#f1f5f9" stroke-width="11" stroke-linecap="round"/>
+          <path d="M 184 78 C 194 100 190 125 188 145" fill="none" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/>
+          <!-- Hands calm -->
+          <ellipse cx="132" cy="148" rx="5" ry="6" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
+          <ellipse cx="188" cy="148" rx="5" ry="6" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
+        </g>
+        <!-- Educational Badge -->
+        <g transform="translate(50, 12)">
+          <rect width="220" height="22" rx="11" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+          <text x="110" y="15" font-size="8.5" fill="#065f46" font-weight="black" text-anchor="middle">الاعتدال التام والطمأنينة حتى يرجع كل عظم لموضعه</text>
+        </g>
+      </svg>`,
+
+      // 5. Sujud: 7 limbs, elevated forearms/elbows, air gap under belly (Tajafi)
+      sujud: `<svg viewBox="0 0 360 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+        <defs>
+          <linearGradient id="matGradSujud" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
+          </linearGradient>
+          <linearGradient id="thobeGradSujud" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
+          </linearGradient>
+          <filter id="shadowSujud" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
+          </filter>
+        </defs>
+        <!-- Mat -->
+        <polygon points="20,225 340,225 315,255 45,255" fill="url(#matGradSujud)" stroke="#047857" stroke-width="1.5"/>
+        <polygon points="40,229 320,229 300,250 60,250" fill="#065f46" opacity="0.5"/>
+        <!-- Prostrating Worshipper -->
+        <g filter="url(#shadowSujud)">
+          <!-- Feet (Erect toes bent forward touching mat - Point 6 & 7) -->
+          <ellipse cx="285" cy="224" rx="9" ry="4" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
+          <path d="M 285 220 L 275 180 L 295 180 Z" fill="url(#thobeGradSujud)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <!-- Lower Leg to Knees (Point 4 & 5 - Knees touching mat) -->
+          <path d="M 275 180 L 210 224 L 195 224 L 255 170 Z" fill="url(#thobeGradSujud)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <!-- Thighs & Torso (Abdomen lifted away from thighs) -->
+          <path d="M 255 170 C 230 115 160 115 130 160 L 140 180 C 160 145 220 145 240 180 Z" fill="url(#thobeGradSujud)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <!-- Head: Forehead & Nose on mat (Point 1) -->
+          <ellipse cx="75" cy="220" rx="14" ry="12" fill="#fed7aa" transform="rotate(15 75 220)"/>
+          <path d="M 66 212 Q 78 205 88 214 Q 82 208 72 208 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+          <circle cx="63" cy="224" r="3" fill="#fed7aa"/>
+          <!-- Arms: High lifted elbows (NO dog-like resting), palms flat beside head (Point 2 & 3) -->
+          <path d="M 130 155 Q 110 120 95 140" fill="none" stroke="#f8fafc" stroke-width="14" stroke-linecap="round"/>
+          <path d="M 130 155 Q 110 120 95 140" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M 95 140 L 98 222" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
+          <path d="M 95 140 L 98 222" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- Flat Palm on ground (Fingers together facing Qiblah) -->
+          <ellipse cx="98" cy="224" rx="7" ry="3.5" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
+          <!-- Air gap indicator under belly / arms (التجافي) -->
+          <path d="M 115 190 Q 150 165 185 195" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="3,3"/>
+          <rect x="125" y="165" width="55" height="15" rx="7" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
+          <text x="152" y="176" font-size="7" fill="#047857" font-weight="bold" text-anchor="middle">تجافي البطن</text>
+        </g>
+        <!-- 7 CONTACT POINTS (الأعضاء السبعة) -->
+        <g transform="translate(58, 206)">
+          <circle cx="8" cy="8" r="8" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+          <text x="8" y="11" font-size="8.5" fill="#ffffff" font-weight="black" text-anchor="middle">1</text>
+        </g>
+        <g transform="translate(93, 206)">
+          <circle cx="8" cy="8" r="8" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+          <text x="8" y="11" font-size="7.5" fill="#ffffff" font-weight="black" text-anchor="middle">2,3</text>
+        </g>
+        <g transform="translate(196, 206)">
+          <circle cx="8" cy="8" r="8" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+          <text x="8" y="11" font-size="7.5" fill="#ffffff" font-weight="black" text-anchor="middle">4,5</text>
+        </g>
+        <g transform="translate(278, 206)">
+          <circle cx="8" cy="8" r="8" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
+          <text x="8" y="11" font-size="7.5" fill="#ffffff" font-weight="black" text-anchor="middle">6,7</text>
+        </g>
+        <!-- Top Educational Banner -->
+        <g transform="translate(30, 15)">
+          <rect width="300" height="24" rx="12" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+          <text x="150" y="16" font-size="8.5" fill="#991b1b" font-weight="black" text-anchor="middle">السجود على 7 أعضاء كاملة مع رفع الذراعين (نهي عن افتراش الكلب)</text>
+        </g>
+      </svg>`,
+
+      // 6. Iftirash: Left foot flattened underneath, right foot erect on toes, hands on thighs
+      iftirash: `<svg viewBox="0 0 340 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+        <defs>
+          <linearGradient id="matGradIftirash" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
+          </linearGradient>
+          <linearGradient id="thobeGradIftirash" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
+          </linearGradient>
+          <filter id="shadowIftirash" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
+          </filter>
+        </defs>
+        <polygon points="30,225 310,225 285,253 55,253" fill="url(#matGradIftirash)" stroke="#047857" stroke-width="1.5"/>
+        <polygon points="50,229 290,229 270,249 70,249" fill="#065f46" opacity="0.5"/>
+        <g filter="url(#shadowIftirash)">
+          <!-- Right Foot Erect on Toes (نصب اليمنى) -->
+          <ellipse cx="235" cy="224" rx="7" ry="4" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
+          <!-- Left Foot Flattened under Buttocks (فرش اليسرى والجلوس عليها) -->
+          <rect x="160" y="222" width="55" height="7" rx="3" fill="#10b981" stroke="#047857" stroke-width="1"/>
+          <text x="187" y="217" font-size="7.5" fill="#047857" font-weight="black" text-anchor="middle">اليسرى مفروشة تحته</text>
+          <!-- Lower Body / Thighs -->
+          <path d="M 140 185 L 120 224 L 210 224 L 205 170 Z" fill="url(#thobeGradIftirash)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <!-- Torso Upright Tranquil -->
+          <path d="M 165 95 L 155 175 L 205 175 L 195 95 Z" fill="url(#thobeGradIftirash)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <!-- Head bowed respectfully -->
+          <path d="M 175 95 L 175 80 L 185 80 L 185 95 Z" fill="#fed7aa"/>
+          <ellipse cx="180" cy="65" rx="13" ry="15" fill="#fed7aa"/>
+          <path d="M 167 62 Q 180 50 193 62 Q 193 54 180 52 Q 167 54 167 62 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+          <!-- Arms resting on thighs near knees -->
+          <path d="M 170 100 L 140 160 L 130 185" fill="none" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
+          <path d="M 170 100 L 140 160 L 130 185" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="130" cy="186" rx="7" ry="4" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
+        </g>
+        <!-- Educational Badge -->
+        <g transform="translate(45, 12)">
+          <rect width="250" height="22" rx="11" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
+          <text x="125" y="15" font-size="8.5" fill="#065f46" font-weight="black" text-anchor="middle">صفة الافتراش: فرش اليسرى والقعود عليها ونصب اليمنى</text>
+        </g>
+      </svg>`,
+
+      // 7. Tawarruk: Left foot passed out to the right side, buttocks on the ground, index finger pointing
+      tawarruk: `<svg viewBox="0 0 340 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+        <defs>
+          <linearGradient id="matGradTawarruk" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
+          </linearGradient>
+          <linearGradient id="thobeGradTawarruk" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
+          </linearGradient>
+          <filter id="shadowTawarruk" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
+          </filter>
+        </defs>
+        <polygon points="30,225 310,225 285,253 55,253" fill="url(#matGradTawarruk)" stroke="#047857" stroke-width="1.5"/>
+        <polygon points="50,229 290,229 270,249 70,249" fill="#065f46" opacity="0.5"/>
+        <g filter="url(#shadowTawarruk)">
+          <!-- Right Foot Erect on toes -->
+          <ellipse cx="245" cy="224" rx="7" ry="4" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
+          <!-- Left Leg exited to the right side from beneath right shin -->
+          <path d="M 175 220 Q 215 225 235 232" fill="none" stroke="#0284c7" stroke-width="6" stroke-linecap="round"/>
+          <text x="250" y="242" font-size="7.5" fill="#0369a1" font-weight="black">إخراج اليسرى للجانب الأيمن</text>
+          <!-- Buttocks directly on ground -->
+          <ellipse cx="180" cy="223" rx="25" ry="6" fill="#047857" opacity="0.4"/>
+          <text x="150" y="215" font-size="7.5" fill="#ef4444" font-weight="black">المقعدة على الأرض</text>
+          <!-- Torso and Thighs -->
+          <path d="M 135 185 L 120 224 L 205 224 L 205 170 Z" fill="url(#thobeGradTawarruk)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <path d="M 165 95 L 155 175 L 205 175 L 195 95 Z" fill="url(#thobeGradTawarruk)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <!-- Head -->
+          <path d="M 175 95 L 175 80 L 185 80 L 185 95 Z" fill="#fed7aa"/>
+          <ellipse cx="180" cy="65" rx="13" ry="15" fill="#fed7aa"/>
+          <path d="M 167 62 Q 180 50 193 62 Q 193 54 180 52 Q 167 54 167 62 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+          <!-- Right Hand with Index finger pointed (الإشارة بالسبابة) -->
+          <path d="M 170 100 L 140 160 L 125 180" fill="none" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
+          <path d="M 170 100 L 140 160 L 125 180" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+          <ellipse cx="122" cy="180" rx="6" ry="5" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
+          <line x1="122" y1="178" x2="108" y2="172" stroke="#b45309" stroke-width="3" stroke-linecap="round"/>
+          <text x="95" y="165" font-size="7.5" fill="#b45309" font-weight="black">الإشارة بالسبابة</text>
+        </g>
+        <!-- Educational Badge -->
+        <g transform="translate(45, 12)">
+          <rect width="250" height="22" rx="11" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+          <text x="125" y="15" font-size="8.5" fill="#1d4ed8" font-weight="black" text-anchor="middle">صفة التَّوَرُّك: إفضاء الإلية للأرض وإخراج اليسرى من تحته</text>
+        </g>
+      </svg>`,
+
+      // 8. Taslim: Sitting worshipper turning head to the right, showing cheek profile with directional arrow
+      taslim: `<svg viewBox="0 0 340 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+        <defs>
+          <linearGradient id="matGradTaslim" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
+          </linearGradient>
+          <linearGradient id="thobeGradTaslim" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
+          </linearGradient>
+          <filter id="shadowTaslim" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
+          </filter>
+        </defs>
+        <polygon points="30,225 310,225 285,253 55,253" fill="url(#matGradTaslim)" stroke="#047857" stroke-width="1.5"/>
+        <polygon points="50,229 290,229 270,249 70,249" fill="#065f46" opacity="0.5"/>
+        <g filter="url(#shadowTaslim)">
+          <path d="M 140 185 L 120 224 L 210 224 L 205 170 Z" fill="url(#thobeGradTaslim)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <path d="M 165 95 L 155 175 L 205 175 L 195 95 Z" fill="url(#thobeGradTaslim)" stroke="#cbd5e1" stroke-width="1.5"/>
+          <!-- Head turned to the right (showing cheek profile) -->
+          <path d="M 175 95 L 175 80 L 185 80 L 185 95 Z" fill="#fed7aa"/>
+          <ellipse cx="195" cy="65" rx="14" ry="15" fill="#fed7aa"/>
+          <path d="M 185 60 Q 198 48 208 60 Q 208 52 198 50 Q 185 52 185 60 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
+          <!-- Cheek Highlight -->
+          <ellipse cx="197" cy="66" rx="6" ry="5" fill="#ffffff" opacity="0.9" stroke="#fde047" stroke-width="1"/>
+          <text x="215" y="55" font-size="7.5" fill="#b45309" font-weight="black">بياض خده الأيمن</text>
+          <!-- Direction arrow for turning -->
+          <path d="M 165 48 Q 185 35 205 48" fill="none" stroke="#10b981" stroke-width="2.5"/>
+          <!-- Arms on knees -->
+          <path d="M 170 100 L 140 160 L 130 185" fill="none" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
+          <path d="M 170 100 L 140 160 L 130 185" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+        </g>
+        <!-- Educational Badge -->
+        <g transform="translate(45, 12)">
+          <rect width="250" height="22" rx="11" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+          <text x="125" y="15" font-size="8.5" fill="#991b1b" font-weight="black" text-anchor="middle">التسليمة الأولى: الالتفات يميناً حتى يُرى بياض خده</text>
+        </g>
+      </svg>`
+    };
+
+/* =========================================================================
        3. SIMULATOR STEPS
        ========================================================================= */
     const prayerSteps = [
@@ -761,7 +1166,7 @@
         evidence: "حديث المسيء صلاته: «إِذَا قُمْتَ إِلَى الصَّلَاةِ فَكَبِّرْ» (متفق عليه).",
         mistake: "مد الألف في (الله) كأن يقول: 'آلله أكبر' فتصبح استفهاماً وتبطل الصلاة.",
         cues: ["استقبال القبلة بالبدن والقدمين", "النظر إلى موضع السجود بخشوع", "رفع اليدين حذو المنكبين (سنة)", "الجهر بالتكبير بقدر ما يُسمع نفسه"],
-        svg: `<svg viewBox="0 0 200 240" class="w-full h-full max-h-60 sm:max-h-64"><line x1="40" y1="225" x2="160" y2="225" stroke="#94a3b8" stroke-width="2"/><circle cx="100" cy="35" r="16" fill="#047857"/><line x1="105" y1="38" x2="135" y2="225" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3"/><circle cx="135" cy="225" r="3" fill="#f59e0b"/><text x="140" y="222" font-size="8" fill="#d97706" font-weight="bold">موضع السجود</text><line x1="100" y1="51" x2="100" y2="135" stroke="#065f46" stroke-width="20" stroke-linecap="round"/><path d="M 90 70 Q 60 55 65 35" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round"/><circle cx="65" cy="35" r="5" fill="#d97706"/><path d="M 110 70 Q 140 55 135 35" fill="none" stroke="#fbbf24" stroke-width="6" stroke-linecap="round"/><circle cx="135" cy="35" r="5" fill="#d97706"/><line x1="92" y1="135" x2="92" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/><line x1="108" y1="135" x2="108" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/><rect x="85" y="218" width="14" height="6" rx="2" fill="#065f46"/><rect x="101" y="218" width="14" height="6" rx="2" fill="#065f46"/><text x="50" y="20" font-size="9" fill="#065f46" font-weight="bold">رفع اليدين حذو المنكبين</text></svg>`
+        svg: prayerIllustrations.takbeer
       },
       {
         id: "istiftah_fatiha",
@@ -776,7 +1181,7 @@
         evidence: "«لَا صَلَاةَ لِمَنْ لَمْ يَقْرَأْ بِفَاتِحَةِ الْكِتَابِ» (البخاري: 756).",
         mistake: "إسقاط آية من الفاتحة أو تبديل حركة تغير المعنى ككسر تاء (أنعمتَ).",
         cues: ["وضع اليمين على اليسرى على الصدر", "قراءة الفاتحة بتأنٍّ آيةً آية", "قول (آمين) ممدودة بعد الفاتحة", "قراءة سورة بعدها في الأوليين"],
-        svg: `<svg viewBox="0 0 200 240" class="w-full h-full max-h-60 sm:max-h-64"><line x1="40" y1="225" x2="160" y2="225" stroke="#94a3b8" stroke-width="2"/><circle cx="100" cy="35" r="16" fill="#047857"/><line x1="100" y1="51" x2="100" y2="135" stroke="#065f46" stroke-width="20" stroke-linecap="round"/><ellipse cx="100" cy="85" rx="14" ry="7" fill="#fbbf24"/><text x="50" y="88" font-size="8" fill="#d97706" font-weight="bold">القبض على الصدر</text><line x1="92" y1="135" x2="92" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/><line x1="108" y1="135" x2="108" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/><rect x="85" y="218" width="14" height="6" rx="2" fill="#065f46"/><rect x="101" y="218" width="14" height="6" rx="2" fill="#065f46"/><text x="60" y="15" font-size="9" fill="#047857" font-weight="bold">القيام وقراءة الفاتحة</text></svg>`
+        svg: prayerIllustrations.qabd
       },
       {
         id: "ruku",
@@ -791,7 +1196,7 @@
         evidence: "﴿يَا أَيُّهَا الَّذِينَ آمَنُوا ارْكَعُوا وَاسْجُدُوا﴾.",
         mistake: "تقويس الظهر، أو خفض الرأس كثيراً أو رفعه للأعلى.",
         cues: ["استواء الظهر تماماً كأنه صفيحة ماء", "الرأس حيال الظهر", "تفريج الأصابع على الركبتين", "مجافاة المرفقين عن الجنبين"],
-        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-60 sm:max-h-64"><line x1="20" y1="185" x2="220" y2="185" stroke="#94a3b8" stroke-width="2"/><line x1="165" y1="95" x2="165" y2="182" stroke="#047857" stroke-width="14" stroke-linecap="round"/><rect x="157" y="178" width="22" height="7" rx="3" fill="#065f46"/><line x1="70" y1="95" x2="165" y2="95" stroke="#065f46" stroke-width="16" stroke-linecap="round"/><circle cx="55" cy="95" r="14" fill="#047857"/><line x1="90" y1="95" x2="165" y2="135" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/><circle cx="165" cy="135" r="6" fill="#d97706"/><line x1="45" y1="80" x2="185" y2="80" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/><text x="65" y="74" font-size="8" fill="#0284c7" font-weight="bold">استواء الظهر التام</text></svg>`
+        svg: prayerIllustrations.ruku
       },
       {
         id: "raf_ruku",
@@ -806,7 +1211,7 @@
         evidence: "«ثُمَّ ارْفَعْ حَتَّى تَعْتَدِلَ قَائِمًا» (البخاري: 757).",
         mistake: "الهوي للسجود قبل استتمام القيام والاستقرار فيه.",
         cues: ["رفع اليدين حذو المنكبين عند الرفع", "الاعتدال التام حتى يرجع كل عظم لموضعه", "المكث في القيام زمناً يقارب الركوع بالحمد"],
-        svg: `<svg viewBox="0 0 200 240" class="w-full h-full max-h-60 sm:max-h-64"><line x1="40" y1="225" x2="160" y2="225" stroke="#94a3b8" stroke-width="2"/><circle cx="100" cy="35" r="16" fill="#047857"/><line x1="100" y1="51" x2="100" y2="135" stroke="#065f46" stroke-width="20" stroke-linecap="round"/><line x1="92" y1="135" x2="92" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/><line x1="108" y1="135" x2="108" y2="220" stroke="#047857" stroke-width="12" stroke-linecap="round"/><text x="45" y="20" font-size="9" fill="#047857" font-weight="bold">الاعتدال قائماً مطمئناً</text></svg>`
+        svg: prayerIllustrations.itidal
       },
       {
         id: "sujud_1",
@@ -821,7 +1226,7 @@
         evidence: "«أُمِرْتُ أَنْ أَسْجُدَ عَلَى سَبْعَةِ أَعْظُمٍ...» (البخاري ومسلم).",
         mistake: "رفع القدمين في الهواء، أو بسط الذراعين كبساط الكلب.",
         cues: ["استقرار الجبهة والأنف معاً", "نصب القدمين وتوجيه الأصابع للقبلة", "مجافاة العضدين والبطن عن الفخذين", "رفع الذراعين والمرفقين عن الأرض"],
-        svg: `<svg viewBox="0 0 250 190" class="w-full h-full max-h-60 sm:max-h-64"><line x1="15" y1="165" x2="235" y2="165" stroke="#94a3b8" stroke-width="2.5"/><path d="M 205 162 L 180 110 L 125 110 L 70 150" fill="none" stroke="#047857" stroke-width="14" stroke-linecap="round"/><path d="M 125 110 L 100 130 L 75 160" fill="none" stroke="#fbbf24" stroke-width="8" stroke-linecap="round"/><circle cx="50" cy="155" r="12" fill="#065f46"/><circle cx="48" cy="164" r="5" fill="#ef4444"/><circle cx="75" cy="163" r="5" fill="#ef4444"/><circle cx="160" cy="163" r="5" fill="#ef4444"/><circle cx="210" cy="163" r="5" fill="#ef4444"/><text x="65" y="75" font-size="8" fill="#ef4444" font-weight="bold">السجود على 7 أعضاء مع رفع الذراعين</text></svg>`
+        svg: prayerIllustrations.sujud
       },
       {
         id: "jilsah_between",
@@ -836,7 +1241,7 @@
         evidence: "«ثُمَّ ارْفَعْ حَتَّى تَطْمَئِنَّ جَالِسًا» (متفق عليه).",
         mistake: "النقر السريع دون جلوس مستقر.",
         cues: ["صفة الافتراش: فرش اليسرى ونصب اليمنى", "وضع الكفين على الفخذين", "سكون الجسد بطمأنينة"],
-        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-60 sm:max-h-64"><line x1="20" y1="175" x2="220" y2="175" stroke="#94a3b8" stroke-width="2"/><line x1="120" y1="55" x2="120" y2="125" stroke="#047857" stroke-width="18" stroke-linecap="round"/><circle cx="120" cy="40" r="14" fill="#065f46"/><path d="M 120 135 L 140 170 L 110 172 Z" fill="#10b981"/><text x="60" y="25" font-size="8" fill="#047857" font-weight="bold">الافتراش بين السجدتين</text></svg>`
+        svg: prayerIllustrations.iftirash
       },
       {
         id: "sujud_2",
@@ -851,7 +1256,7 @@
         evidence: "«ثُمَّ اسْجُدْ حَتَّى تَطْمَئِنَّ سَاجِدًا».",
         mistake: "الاكتفاء بسجدة واحدة نسياناً.",
         cues: ["مطابقة تامة للسجدة الأولى", "الإكثار من الدعاء"],
-        svg: `<svg viewBox="0 0 250 190" class="w-full h-full max-h-60 sm:max-h-64"><line x1="15" y1="165" x2="235" y2="165" stroke="#94a3b8" stroke-width="2.5"/><path d="M 205 162 L 180 110 L 125 110 L 70 150" fill="none" stroke="#047857" stroke-width="14" stroke-linecap="round"/><circle cx="50" cy="155" r="12" fill="#065f46"/><circle cx="48" cy="164" r="5" fill="#ef4444"/><circle cx="75" cy="163" r="5" fill="#ef4444"/><circle cx="160" cy="163" r="5" fill="#ef4444"/><circle cx="210" cy="163" r="5" fill="#ef4444"/></svg>`
+        svg: prayerIllustrations.sujud
       },
       {
         id: "tashahhud_first",
@@ -881,7 +1286,7 @@
         evidence: "«قُولُوا: اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ...» (متفق عليه).",
         mistake: "ترك الصلاة الإبراهيمية أو العجلة في السلام.",
         cues: ["جلسة التورك في الصلاة ذات التشهدين", "الإشارة بالسبابة", "التعوذ من الأربع"],
-        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-60 sm:max-h-64"><line x1="20" y1="175" x2="220" y2="175" stroke="#94a3b8" stroke-width="2"/><line x1="120" y1="55" x2="120" y2="135" stroke="#047857" stroke-width="18" stroke-linecap="round"/><circle cx="120" cy="40" r="14" fill="#065f46"/><ellipse cx="125" cy="155" rx="16" ry="10" fill="#047857"/><path d="M 115 145 Q 150 160 175 168" fill="none" stroke="#10b981" stroke-width="7" stroke-linecap="round"/><text x="35" y="105" font-size="8" fill="#ef4444" font-weight="bold">التشهد الأخير مع التورك</text></svg>`
+        svg: prayerIllustrations.tawarruk
       }
     ];
 
@@ -912,84 +1317,87 @@
     });
 
     // Render Sifah Chronological Timeline
-    function renderSifahTimeline() {
+        function renderSifahTimeline() {
       const container = document.getElementById('sifahTimelineContainer');
       container.innerHTML = sifahStations.map((st, i) => `
-        <div class="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/80 shadow-sm hover:border-emerald-300 transition">
+        <div class="bg-[#f8faf8] rounded-3xl p-5 sm:p-6 border border-emerald-200/70 shadow-sm hover:border-emerald-300 hover:shadow-md transition">
           <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <div class="flex items-center gap-2">
-              <span class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-800 font-black text-xs flex items-center justify-center flex-shrink-0">
+            <div class="flex items-center gap-2.5">
+              <span class="w-8 h-8 rounded-xl bg-emerald-600 text-white font-black text-xs flex items-center justify-center flex-shrink-0 shadow-xs">
                 ${i + 1}
               </span>
               <div>
-                <span class="text-[11px] text-slate-400 font-bold block">${st.stepNum}</span>
+                <span class="text-[11px] text-emerald-800 font-bold block">${st.stepNum}</span>
                 <h4 class="text-base sm:text-lg font-black text-slate-900">${st.title}</h4>
               </div>
             </div>
-            <span class="${st.tagClass} text-[11px] font-extrabold px-3 py-1 rounded-full border">
+            <span class="${st.tagClass} text-[11px] font-extrabold px-3 py-1 rounded-full border shadow-2xs">
               ${st.tag}
             </span>
           </div>
 
-          <p class="text-xs sm:text-sm text-slate-700 leading-relaxed my-3 font-medium bg-slate-50/70 p-3.5 rounded-2xl border border-slate-100">
+          <p class="text-xs sm:text-sm text-slate-800 leading-relaxed my-3 font-medium bg-white/90 p-4 rounded-2xl border border-emerald-100/90 shadow-2xs">
             ${st.desc}
           </p>
 
-          <div class="bg-emerald-50/60 border border-emerald-100 rounded-xl p-2.5 text-xs text-emerald-950 font-semibold flex items-center gap-1.5">
-            <span class="text-emerald-700 font-bold">📌 التوصيف الفقهي (إسلام ويب):</span>
-            <span>${st.fiqhBreakdown}</span>
+          <div class="bg-emerald-100/40 border border-emerald-200/80 rounded-xl p-3 text-xs text-emerald-950 font-semibold flex items-center gap-2">
+            <span class="text-emerald-700 font-bold flex-shrink-0">📌 التوصيف الفقهي (إسلام ويب):</span>
+            <span class="leading-relaxed">${st.fiqhBreakdown}</span>
           </div>
         </div>
       `).join('');
     }
 
     // Render Anchoring Content
-    function renderAnchoringContent() {
-      // 14 Pillars
+        function renderAnchoringContent() {
+      // 14 Pillars - Soft Calm Rose/Blush Background (#fdf6f6)
       document.getElementById('arkanCardsContainer').innerHTML = arkanData.map(a => `
-        <div class="bg-white rounded-3xl p-4 sm:p-5 border border-red-200 hover:shadow-md transition flex flex-col justify-between">
+        <div class="bg-[#fdf6f6] rounded-3xl p-4 sm:p-5 border border-rose-200/80 hover:border-rose-300 shadow-sm hover:shadow-md transition flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="w-6 h-6 rounded-lg bg-red-100 text-red-700 flex items-center justify-center font-black text-xs">${a.num}</span>
-              <span class="bg-red-50 text-red-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-red-200">ركن لا يسقط</span>
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="w-7 h-7 rounded-xl bg-rose-600 text-white flex items-center justify-center font-black text-xs shadow-xs">${a.num}</span>
+              <span class="bg-rose-100 text-rose-800 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-rose-200/80">ركن لا يسقط</span>
             </div>
-            <h4 class="text-sm sm:text-base font-black text-slate-900 mb-1">${a.title}</h4>
-            <p class="text-xs text-slate-700 mb-2 leading-relaxed">${a.rule}</p>
+            <h4 class="text-sm sm:text-base font-black text-slate-900 mb-1.5">${a.title}</h4>
+            <p class="text-xs text-slate-700 mb-2 leading-relaxed bg-white/80 p-2.5 rounded-xl border border-rose-100/80">${a.rule}</p>
           </div>
-          <div class="pt-2 border-t border-slate-100 text-[11px] text-slate-500 font-medium">
-            <div>${a.evidence}</div>
-            <div class="text-red-700 font-bold mt-0.5">${a.sahwRule}</div>
+          <div class="pt-2 border-t border-rose-100 text-[11px] font-medium space-y-1">
+            <div class="text-slate-600">📖 دليله: ${a.evidence}</div>
+            <div class="text-rose-800 font-bold bg-rose-100/50 px-2 py-1 rounded-lg border border-rose-200/60">${a.sahwRule}</div>
           </div>
         </div>
       `).join('');
 
-      // 8 Obligations
+      // 8 Obligations - Soft Calm Sky/Blue Background (#f0f7fc)
       document.getElementById('wajibCardsContainer').innerHTML = wajibData.map(w => `
-        <div class="bg-white rounded-3xl p-4 sm:p-5 border border-blue-200 hover:shadow-md transition flex flex-col justify-between">
+        <div class="bg-[#f0f7fc] rounded-3xl p-4 sm:p-5 border border-sky-200/80 hover:border-sky-300 shadow-sm hover:shadow-md transition flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="w-6 h-6 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-black text-xs">${w.num}</span>
-              <span class="bg-blue-50 text-blue-700 text-[10px] font-extrabold px-2 py-0.5 rounded-full border border-blue-200">واجب يُجبر</span>
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="w-7 h-7 rounded-xl bg-sky-600 text-white flex items-center justify-center font-black text-xs shadow-xs">${w.num}</span>
+              <span class="bg-sky-100 text-sky-800 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-sky-200/80">واجب يُجبر</span>
             </div>
-            <h4 class="text-xs sm:text-sm font-black text-slate-900 mb-1">${w.title}</h4>
-            <div class="bg-slate-50 border border-slate-200 rounded-xl p-1.5 font-quran font-bold text-slate-900 text-xs text-center my-1.5">${w.text}</div>
-            <p class="text-xs text-slate-700 mb-2 leading-relaxed">${w.rule}</p>
+            <h4 class="text-xs sm:text-sm font-black text-slate-900 mb-1.5">${w.title}</h4>
+            <div class="bg-white border border-sky-200/90 rounded-xl p-2 font-quran font-bold text-sky-950 text-xs text-center my-2 shadow-2xs">${w.text}</div>
+            <p class="text-xs text-slate-700 mb-2 leading-relaxed bg-white/80 p-2.5 rounded-xl border border-sky-100/80">${w.rule}</p>
+          </div>
+          <div class="pt-2 border-t border-sky-100 text-[11px] font-bold text-sky-900 bg-sky-100/50 px-2 py-1 rounded-lg border border-sky-200/60 text-center">
+            يسقط بالنسيان ويجبره سجود السهو قبل السلام
           </div>
         </div>
       `).join('');
 
-      // Sunan
+      // Sunan Lists - Calm Cream/Amber styling
       document.getElementById('sunanQawliyyahList').innerHTML = sunanQawliyyah.map((s, i) => `
-        <li class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-emerald-50/50 transition">
-          <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
-          <span>${s}</span>
+        <li class="flex items-start gap-2.5 p-2 rounded-xl bg-white/90 border border-amber-200/70 shadow-2xs">
+          <span class="w-5 h-5 rounded-lg bg-amber-200 text-amber-900 font-black text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
+          <span class="font-medium text-slate-800">${s}</span>
         </li>
       `).join('');
 
       document.getElementById('sunanFiliyyahList').innerHTML = sunanFiliyyah.map((s, i) => `
-        <li class="flex items-start gap-2 p-1.5 rounded-xl hover:bg-emerald-50/50 transition">
-          <span class="w-4 h-4 rounded-full bg-emerald-100 text-emerald-800 font-bold text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
-          <span>${s}</span>
+        <li class="flex items-start gap-2.5 p-2 rounded-xl bg-white/90 border border-amber-200/70 shadow-2xs">
+          <span class="w-5 h-5 rounded-lg bg-amber-200 text-amber-900 font-black text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
+          <span class="font-medium text-slate-800">${s}</span>
         </li>
       `).join('');
 
@@ -1065,55 +1473,107 @@
     }
 
     // Postures Render
-    function renderPosturesCards() {
+        function renderPosturesCards() {
       const container = document.getElementById('posturesCardsList');
       container.innerHTML = `
-        <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 hover:shadow-md transition flex flex-col">
-          <div class="flex items-center justify-between mb-3"><span class="font-bold text-slate-900 text-sm">1. هيئة القيام وتكبيرة الإحرام والقبض</span><span class="bg-emerald-100 text-emerald-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">ركن + سنة</span></div>
-          <div class="h-56 bg-white rounded-2xl border border-slate-200/70 p-3 flex items-center justify-center">
-            <svg viewBox="0 0 200 240" class="w-full h-full"><circle cx="100" cy="35" r="16" fill="#047857" opacity="0.85"/><line x1="105" y1="38" x2="140" y2="230" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3"/><circle cx="140" cy="230" r="3" fill="#f59e0b"/><text x="145" y="232" font-size="8" fill="#d97706" font-weight="bold">موضع السجود</text><line x1="100" y1="51" x2="100" y2="135" stroke="#065f46" stroke-width="20" stroke-linecap="round"/><ellipse cx="100" cy="85" rx="14" ry="7" fill="#fbbf24"/><text x="118" y="85" font-size="8" fill="#065f46" font-weight="bold">القبض على الصدر</text><line x1="92" y1="135" x2="92" y2="225" stroke="#047857" stroke-width="12" stroke-linecap="round"/><line x1="108" y1="135" x2="108" y2="225" stroke="#047857" stroke-width="12" stroke-linecap="round"/><rect x="84" y="222" width="16" height="7" rx="3" fill="#065f46"/><rect x="100" y="222" width="16" height="7" rx="3" fill="#065f46"/><line x1="40" y1="230" x2="170" y2="230" stroke="#cbd5e1" stroke-width="2"/></svg>
+        <div class="bg-white border border-slate-200/90 rounded-3xl p-5 hover:border-emerald-300 hover:shadow-lg transition flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-black text-slate-900 text-sm">1. هيئة تكبيرة الإحرام والرفع</span>
+            <span class="bg-emerald-100 text-emerald-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full border border-emerald-200">ركن + سنة</span>
           </div>
-          <div class="mt-3 text-xs text-slate-700 space-y-1.5 flex-grow"><p>• <strong>النظر:</strong> إلى موضع السجود طيلة الصلاة.</p><p>• <strong>الرفع:</strong> حذو المنكبين أو الأذنين.</p><p>• <strong>القبض:</strong> وضع اليمين على اليسرى على الصدر.</p></div>
+          <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
+            ${prayerIllustrations.takbeer}
+          </div>
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+            <p>• <strong>الرفع:</strong> حذو المنكبين أو الأذنين مع مَدِّ الأصابع للقبلة.</p>
+            <p>• <strong>النظر:</strong> دوام النظر إلى موضع السجود بخشوع وسكينة.</p>
+          </div>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 hover:shadow-md transition flex flex-col">
-          <div class="flex items-center justify-between mb-3"><span class="font-bold text-slate-900 text-sm">2. هيئة الركوع واستواء الظهر</span><span class="bg-red-100 text-red-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">ركن مغلظ</span></div>
-          <div class="h-56 bg-white rounded-2xl border border-slate-200/70 p-3 flex items-center justify-center">
-            <svg viewBox="0 0 240 200" class="w-full h-full"><line x1="20" y1="185" x2="220" y2="185" stroke="#cbd5e1" stroke-width="2"/><line x1="165" y1="95" x2="165" y2="182" stroke="#047857" stroke-width="14" stroke-linecap="round"/><line x1="70" y1="95" x2="165" y2="95" stroke="#065f46" stroke-width="16" stroke-linecap="round"/><line x1="45" y1="80" x2="185" y2="80" stroke="#0284c7" stroke-width="1.5" stroke-dasharray="3,3"/><text x="65" y="74" font-size="8" fill="#0284c7" font-weight="bold">استواء الظهر كأنه صفيحة ماء</text><circle cx="55" cy="95" r="14" fill="#047857"/><line x1="90" y1="95" x2="165" y2="135" stroke="#fbbf24" stroke-width="7" stroke-linecap="round"/><circle cx="165" cy="135" r="6" fill="#d97706"/></svg>
+        <div class="bg-white border border-slate-200/90 rounded-3xl p-5 hover:border-emerald-300 hover:shadow-lg transition flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-black text-slate-900 text-sm">2. هيئة القيام وقبض اليدين</span>
+            <span class="bg-emerald-100 text-emerald-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full border border-emerald-200">سنة الهيئة</span>
           </div>
-          <div class="mt-3 text-xs text-slate-700 space-y-1.5 flex-grow"><p>• <strong>استواء الظهر:</strong> لو صب عليه ماء لاستقر.</p><p>• <strong>الرأس:</strong> حيال الظهر لا يشخص ولا يصوب.</p><p>• <strong>اليدان:</strong> مفرجتي الأصابع كالقابض على الركبتين.</p></div>
+          <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
+            ${prayerIllustrations.qabd}
+          </div>
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+            <p>• <strong>القبض:</strong> وضع اليد اليمنى على ظهر كف اليسرى والساعد على الصدر.</p>
+            <p>• <strong>الاستفتاح:</strong> قراءة الاستفتاح والتعوذ والبسملة سراً.</p>
+          </div>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 hover:shadow-md transition flex flex-col">
-          <div class="flex items-center justify-between mb-3"><span class="font-bold text-slate-900 text-sm">3. هيئة السجود على الأعضاء الـ 7</span><span class="bg-red-100 text-red-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">أعظم الأركان</span></div>
-          <div class="h-56 bg-white rounded-2xl border border-slate-200/70 p-3 flex items-center justify-center">
-            <svg viewBox="0 0 250 190" class="w-full h-full"><line x1="15" y1="165" x2="235" y2="165" stroke="#cbd5e1" stroke-width="2.5"/><path d="M 205 162 L 180 110 L 125 110 L 70 150" fill="none" stroke="#047857" stroke-width="14" stroke-linecap="round"/><path d="M 125 110 L 100 130 L 75 160" fill="none" stroke="#fbbf24" stroke-width="8" stroke-linecap="round"/><text x="65" y="85" font-size="7.5" fill="#ef4444" font-weight="bold">رفع الذراعين (نهي عن افتراش الكلب)</text><circle cx="50" cy="155" r="12" fill="#065f46"/><circle cx="48" cy="164" r="5" fill="#ef4444"/><circle cx="75" cy="163" r="5" fill="#ef4444"/><circle cx="160" cy="163" r="5" fill="#ef4444"/><circle cx="210" cy="163" r="5" fill="#ef4444"/></svg>
+        <div class="bg-white border border-slate-200/90 rounded-3xl p-5 hover:border-emerald-300 hover:shadow-lg transition flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-black text-slate-900 text-sm">3. هيئة الركوع واستواء الظهر</span>
+            <span class="bg-red-100 text-red-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full border border-red-200">ركن مغلظ</span>
           </div>
-          <div class="mt-3 text-xs text-slate-700 space-y-1.5 flex-grow"><p>• <strong>الأعضاء السبعة:</strong> الجبهة والأنف، الكفان، الركبتان، أطراف القدمين.</p><p>• <strong>التجافي:</strong> مباعدة العضدين والبطن.</p><p>• <strong>النهي:</strong> رفع الذراعين عن الأرض تماماً.</p></div>
+          <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
+            ${prayerIllustrations.ruku}
+          </div>
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+            <p>• <strong>استواء الظهر:</strong> لو صب عليه ماء لاستقر مستوياً 90 درجة.</p>
+            <p>• <strong>الرأس:</strong> حيال الظهر مستقيماً لا يشخص ولا يصوب.</p>
+            <p>• <strong>اليدان:</strong> كالقابض على ركبتيه مع تفريج الأصابع.</p>
+          </div>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 hover:shadow-md transition flex flex-col">
-          <div class="flex items-center justify-between mb-3"><span class="font-bold text-slate-900 text-sm">4. هيئة الافتراش</span><span class="bg-emerald-100 text-emerald-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">سنة الهيئة</span></div>
-          <div class="h-56 bg-white rounded-2xl border border-slate-200/70 p-3 flex items-center justify-center">
-            <svg viewBox="0 0 240 200" class="w-full h-full"><line x1="20" y1="175" x2="220" y2="175" stroke="#cbd5e1" stroke-width="2"/><line x1="120" y1="55" x2="120" y2="125" stroke="#047857" stroke-width="18" stroke-linecap="round"/><circle cx="120" cy="40" r="14" fill="#065f46"/><path d="M 120 135 L 140 170 L 110 172 Z" fill="#10b981"/><text x="60" y="25" font-size="8" fill="#047857" font-weight="bold">فرش اليسرى ونصب اليمنى</text></svg>
+        <div class="bg-white border border-slate-200/90 rounded-3xl p-5 hover:border-emerald-300 hover:shadow-lg transition flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-black text-slate-900 text-sm">4. هيئة السجود والتجافي</span>
+            <span class="bg-red-100 text-red-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full border border-red-200">أعظم الأركان</span>
           </div>
-          <div class="mt-3 text-xs text-slate-700 space-y-1.5 flex-grow"><p>• <strong>موضعه:</strong> بين السجدتين وفي التشهد الأول.</p><p>• <strong>صفته:</strong> فرش اليسرى والجلوس عليها ونصب اليمنى.</p></div>
+          <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
+            ${prayerIllustrations.sujud}
+          </div>
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+            <p>• <strong>الأعضاء السبعة:</strong> الجبهة والأنف، الكفان، الركبتان، أطراف القدمين.</p>
+            <p>• <strong>النهي النبوي:</strong> رفع الذراعين والمرفقين عن الأرض تحذيراً من افتراش الكلب.</p>
+            <p>• <strong>التجافي:</strong> مباعدة البطن عن الفخذين والعضدين عن الجنبين.</p>
+          </div>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 hover:shadow-md transition flex flex-col">
-          <div class="flex items-center justify-between mb-3"><span class="font-bold text-slate-900 text-sm">5. هيئة التَّوَرُّك</span><span class="bg-blue-100 text-blue-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">سنة التشهد الأخير</span></div>
-          <div class="h-56 bg-white rounded-2xl border border-slate-200/70 p-3 flex items-center justify-center">
-            <svg viewBox="0 0 240 200" class="w-full h-full"><line x1="20" y1="175" x2="220" y2="175" stroke="#cbd5e1" stroke-width="2"/><line x1="120" y1="55" x2="120" y2="135" stroke="#047857" stroke-width="18" stroke-linecap="round"/><circle cx="120" cy="40" r="14" fill="#065f46"/><ellipse cx="125" cy="155" rx="16" ry="10" fill="#047857"/><path d="M 115 145 Q 150 160 175 168" fill="none" stroke="#10b981" stroke-width="7" stroke-linecap="round"/><text x="35" y="105" font-size="8" fill="#ef4444" font-weight="bold">الجلوس على الأرض مع التورك</text></svg>
+        <div class="bg-white border border-slate-200/90 rounded-3xl p-5 hover:border-emerald-300 hover:shadow-lg transition flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-black text-slate-900 text-sm">5. هيئة الافتراش</span>
+            <span class="bg-emerald-100 text-emerald-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full border border-emerald-200">سنة الهيئة</span>
           </div>
-          <div class="mt-3 text-xs text-slate-700 space-y-1.5 flex-grow"><p>• <strong>موضعه:</strong> التشهد الثاني في الصلاة الثلاثية والرباعية.</p><p>• <strong>صفته:</strong> إخراج اليسرى والجلوس بالمقعدة على الأرض.</p></div>
+          <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
+            ${prayerIllustrations.iftirash}
+          </div>
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+            <p>• <strong>موضعه:</strong> بين السجدتين وفي التشهد الأول.</p>
+            <p>• <strong>صفته:</strong> فرش الرجل اليسرى والقعود عليها ونصب اليمنى متوجهاً بأصابعها للقبلة.</p>
+          </div>
         </div>
 
-        <div class="bg-slate-50 border border-slate-200 rounded-3xl p-5 hover:shadow-md transition flex flex-col">
-          <div class="flex items-center justify-between mb-3"><span class="font-bold text-slate-900 text-sm">6. هيئة التسليم للخروج</span><span class="bg-red-100 text-red-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full">ركن التحليل</span></div>
-          <div class="h-56 bg-white rounded-2xl border border-slate-200/70 p-3 flex items-center justify-center">
-            <svg viewBox="0 0 240 200" class="w-full h-full"><line x1="20" y1="175" x2="220" y2="175" stroke="#cbd5e1" stroke-width="2"/><line x1="120" y1="70" x2="120" y2="145" stroke="#047857" stroke-width="18" stroke-linecap="round"/><ellipse cx="140" cy="50" rx="14" ry="12" fill="#065f46"/><circle cx="150" cy="52" r="5" fill="#fde047"/><text x="140" y="40" font-size="7.5" fill="#d97706" font-weight="bold">حتى يُرى بياض خده</text><path d="M 115 35 Q 135 25 155 38" fill="none" stroke="#10b981" stroke-width="2"/></svg>
+        <div class="bg-white border border-slate-200/90 rounded-3xl p-5 hover:border-emerald-300 hover:shadow-lg transition flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-black text-slate-900 text-sm">6. هيئة التَّوَرُّك</span>
+            <span class="bg-blue-100 text-blue-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full border border-blue-200">سنة التشهد الأخير</span>
           </div>
-          <div class="mt-3 text-xs text-slate-700 space-y-1.5 flex-grow"><p>• <strong>الالتفات:</strong> يميناً ثم يساراً حتى يرى من خلفه بياض خده.</p><p>• <strong>اللفظ:</strong> «السلام عليكم ورحمة الله».</p></div>
+          <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
+            ${prayerIllustrations.tawarruk}
+          </div>
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+            <p>• <strong>موضعه:</strong> التشهد الأخير في الصلوات الثلاثية والرباعية.</p>
+            <p>• <strong>صفته:</strong> إخراج اليسرى من الجانب الأيمن وإفضاء المقعدة للأرض مع الإشارة بالسبابة.</p>
+          </div>
+        </div>
+
+        <div class="bg-white border border-slate-200/90 rounded-3xl p-5 hover:border-emerald-300 hover:shadow-lg transition flex flex-col">
+          <div class="flex items-center justify-between mb-3">
+            <span class="font-black text-slate-900 text-sm">7. هيئة التسليم للخروج</span>
+            <span class="bg-red-100 text-red-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full border border-red-200">ركن التحليل</span>
+          </div>
+          <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
+            ${prayerIllustrations.taslim}
+          </div>
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+            <p>• <strong>الالتفات:</strong> يميناً ثم يساراً حتى يرى من خلفه بياض خده.</p>
+            <p>• <strong>اللفظ:</strong> «السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ».</p>
+          </div>
         </div>
       `;
     }
