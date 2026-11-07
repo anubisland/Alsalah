@@ -1,5 +1,10 @@
 # تَطْبِيقُ المُصَلِّي المُتْقِن | AnubisLand
 
+<div align="center">
+  <img src="Alsalah.png" alt="شعار تطبيق المُصَلِّي المتقن" width="220" style="border-radius: 28px; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
+  <br><br>
+</div>
+
 > **الدليل العملي التفاعلي الشامل لصفة صلاة النبي ﷺ وفقه الأركان والواجبات والسنن وسجود السهو وفق أهل السُنّة والجماعة وفتاوى إسلام ويب (islamweb.net)**
 
 [![AnubisLand](https://img.shields.io/badge/Company-AnubisLand-emerald.svg)](https://github.com/anubisland)
