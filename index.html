@@ -33,7 +33,14 @@
     }
     body {
       font-family: var(--font-body);
+      font-size: 15px;
+      line-height: 1.7;
+      color: #0f172a; /* high contrast deep slate-900 */
       -webkit-tap-highlight-color: transparent;
+      -webkit-font-smoothing: antialiased;
+    }
+    p, li, span, button {
+      -webkit-text-stroke: 0.15px rgba(0,0,0,0.1);
     }
     .font-quran {
       font-family: var(--font-quran);
@@ -363,7 +370,7 @@
               <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
               <span>ضوابط الهيئة النبوية:</span>
             </h4>
-            <ul id="postureKeyPoints" class="space-y-1 text-xs text-emerald-950 font-medium"></ul>
+            <ul id="postureKeyPoints" class="space-y-2 text-sm sm:text-base text-emerald-950 font-bold leading-relaxed"></ul>
           </div>
 
           <div class="w-full mt-3 bg-amber-50 border border-amber-200/80 rounded-2xl p-3 flex flex-wrap items-center justify-between gap-2">
@@ -398,14 +405,14 @@
                 <span id="zikrObligationType" class="text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded font-bold text-[11px]">واجب</span>
               </div>
               <div id="stepZikrArabic" class="text-lg font-quran font-bold text-slate-900 text-center leading-relaxed py-1.5">اللهُ أَكْبَر</div>
-              <p id="stepZikrMeaning" class="text-xs text-slate-600 text-center font-medium">يبدأ بها الصلاة، رافعاً يديه حذو منكبيه</p>
+              <p id="stepZikrMeaning" class="text-sm sm:text-base text-slate-900 text-center font-semibold mt-1">يبدأ بها الصلاة، رافعاً يديه حذو منكبيه</p>
             </div>
 
             <div class="bg-blue-50/70 border border-blue-200/70 rounded-2xl p-3 text-xs">
               <div class="flex items-center gap-1.5 text-blue-900 font-extrabold mb-1">
                 <span>الحكم في إسلام ويب:</span>
               </div>
-              <p id="stepFiqhRuling" class="text-blue-950 font-medium leading-relaxed"></p>
+              <p id="stepFiqhRuling" class="text-blue-950 font-semibold leading-relaxed text-sm sm:text-base"></p>
               <div class="mt-2 text-[11px] text-blue-700 flex items-center justify-between border-t border-blue-100 pt-1">
                 <span id="stepEvidence"></span>
                 <span class="font-bold">islamweb.net</span>
@@ -414,7 +421,7 @@
 
             <div class="mt-3 bg-rose-50 border border-rose-200 rounded-2xl p-3 text-xs">
               <p class="font-bold text-rose-800">⚠️ خطأ شائع يجب تجنبه:</p>
-              <p id="stepMistakeWarning" class="text-rose-900 mt-0.5 font-medium"></p>
+              <p id="stepMistakeWarning" class="text-rose-950 mt-1 font-bold text-sm sm:text-base leading-relaxed"></p>
             </div>
 
             <div class="flex items-center gap-2 sm:gap-3 mt-4 pt-3 border-t border-slate-100">
@@ -773,38 +780,33 @@
       </linearGradient>
     </defs>
   <rect width="400" height="280" rx="16" fill="url(#bgPlate_tk)" stroke="#cbd5e1" stroke-width="1.5"/>
-    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_tk)" stroke="#047857" stroke-width="2"/>
-    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <polygon points="30,225 370,225 340,265 60,265" fill="url(#matGreen_tk)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,229 345,229 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
     <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
     <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
-  <!-- Sight Line to Sujud Spot -->
-  <line x1="200" y1="52" x2="265" y2="240" stroke="#d97706" stroke-width="2" stroke-dasharray="4,4"/>
-  <circle cx="265" cy="240" r="4" fill="#d97706"/>
-  <g transform="translate(225, 218)">
-    <rect width="80" height="20" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-    <text x="40" y="14" font-size="9" fill="#b45309" font-weight="900" text-anchor="middle">موضع السجود</text>
+  <line x1="200" y1="52" x2="265" y2="238" stroke="#d97706" stroke-width="2" stroke-dasharray="4,4"/>
+  <circle cx="265" cy="238" r="4.5" fill="#d97706"/>
+  <g transform="translate(210, 212)">
+    <rect width="105" height="24" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="52" y="16" font-size="12" fill="#92400e" font-weight="900" text-anchor="middle">موضع السجود</text>
   </g>
-  <!-- Top Banner -->
-  <g transform="translate(50, 15)">
-    <rect width="300" height="26" rx="13" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-    <text x="150" y="18" font-size="11" fill="#065f46" font-weight="900" text-anchor="middle">رفع اليدين حذو المنكبين والأصابع مستترة للقبلة</text>
+  <g transform="translate(30, 12)">
+    <rect width="340" height="28" rx="14" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="170" y="19" font-size="13" fill="#064e3b" font-weight="900" text-anchor="middle">رفع اليدين حذو المنكبين وممدودة الأصابع</text>
   </g>
-  <!-- Standing Body -->
   <g stroke="#0f172a" stroke-linejoin="round">
-    <ellipse cx="188" cy="233" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
-    <ellipse cx="212" cy="233" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
-    <path d="M 172 142 L 180 231 L 220 231 L 228 142 Z" fill="url(#thobeFill_tk)" stroke="#0f172a" stroke-width="2.5"/>
-    <line x1="200" y1="145" x2="200" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+    <ellipse cx="188" cy="230" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="212" cy="230" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 172 142 L 180 228 L 220 228 L 228 142 Z" fill="url(#thobeFill_tk)" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="200" y1="145" x2="200" y2="228" stroke="#94a3b8" stroke-width="1.5"/>
     <path d="M 170 78 Q 168 112 172 145 L 228 145 Q 232 112 230 78 Q 200 72 170 78 Z" fill="url(#thobeFill_tk)" stroke="#0f172a" stroke-width="2.5"/>
-    <!-- Head & Neck -->
     <path d="M 193 78 L 193 64 L 207 64 L 207 78 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <ellipse cx="200" cy="50" rx="15" ry="16" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <path d="M 186 46 Q 200 34 214 46 Q 214 36 200 34 Q 186 36 186 46 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
     <path d="M 186 42 Q 200 38 214 42" stroke="#047857" stroke-width="2" fill="none"/>
-    <!-- Arms raised for Takbeer -->
     <path d="M 172 82 C 154 84 144 65 148 48" stroke="url(#thobeFill_tk)" stroke-width="14" stroke-linecap="round"/>
     <path d="M 172 82 C 154 84 144 65 148 48" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
     <ellipse cx="150" cy="40" rx="6" ry="10" fill="#fed7aa" stroke="#0f172a" stroke-width="2" transform="rotate(-10 150 40)"/>
@@ -830,38 +832,37 @@
       </linearGradient>
     </defs>
   <rect width="400" height="280" rx="16" fill="url(#bgPlate_qb)" stroke="#cbd5e1" stroke-width="1.5"/>
-    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_qb)" stroke="#047857" stroke-width="2"/>
-    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <polygon points="30,225 370,225 340,265 60,265" fill="url(#matGreen_qb)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,229 345,229 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
     <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
     <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
-  <line x1="200" y1="52" x2="265" y2="240" stroke="#d97706" stroke-width="2" stroke-dasharray="4,4"/>
-  <circle cx="265" cy="240" r="4" fill="#d97706"/>
-  <g transform="translate(225, 218)">
-    <rect width="80" height="20" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-    <text x="40" y="14" font-size="9" fill="#b45309" font-weight="900" text-anchor="middle">موضع السجود</text>
+  <line x1="200" y1="52" x2="265" y2="238" stroke="#d97706" stroke-width="2" stroke-dasharray="4,4"/>
+  <circle cx="265" cy="238" r="4.5" fill="#d97706"/>
+  <g transform="translate(210, 212)">
+    <rect width="105" height="24" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="52" y="16" font-size="12" fill="#92400e" font-weight="900" text-anchor="middle">موضع السجود</text>
   </g>
-  <g transform="translate(50, 15)">
-    <rect width="300" height="26" rx="13" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-    <text x="150" y="18" font-size="11" fill="#065f46" font-weight="900" text-anchor="middle">القبض: وضع كف اليمين على كف اليسرى على الصدر</text>
+  <g transform="translate(30, 12)">
+    <rect width="340" height="28" rx="14" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="170" y="19" font-size="13" fill="#064e3b" font-weight="900" text-anchor="middle">القبض: وضع اليمين على كف وساعد اليسرى على الصدر</text>
   </g>
   <g stroke="#0f172a" stroke-linejoin="round">
-    <ellipse cx="188" cy="233" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
-    <ellipse cx="212" cy="233" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
-    <path d="M 172 142 L 180 231 L 220 231 L 228 142 Z" fill="url(#thobeFill_qb)" stroke="#0f172a" stroke-width="2.5"/>
+    <ellipse cx="188" cy="230" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="212" cy="230" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 172 142 L 180 228 L 220 228 L 228 142 Z" fill="url(#thobeFill_qb)" stroke="#0f172a" stroke-width="2.5"/>
     <path d="M 170 78 Q 168 112 172 145 L 228 145 Q 232 112 230 78 Q 200 72 170 78 Z" fill="url(#thobeFill_qb)" stroke="#0f172a" stroke-width="2.5"/>
     <path d="M 193 78 L 193 64 L 207 64 L 207 78 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <ellipse cx="200" cy="50" rx="15" ry="16" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <path d="M 186 46 Q 200 34 214 46 Q 214 36 200 34 Q 186 36 186 46 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
-    <!-- Arms folded across chest -->
     <path d="M 172 82 C 160 102 170 115 195 115" stroke="url(#thobeFill_qb)" stroke-width="14" stroke-linecap="round"/>
     <path d="M 172 82 C 160 102 170 115 195 115" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
     <path d="M 228 82 C 240 102 230 113 205 113" stroke="url(#thobeFill_qb)" stroke-width="14" stroke-linecap="round"/>
     <path d="M 228 82 C 240 102 230 113 205 113" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
     <rect x="188" y="105" width="24" height="14" rx="7" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
-    <circle cx="200" cy="112" r="16" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="3,3"/>
+    <circle cx="200" cy="112" r="16" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="3,3"/>
   </g>
 </svg>`,
       ruku: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" class="w-full h-full max-h-60 sm:max-h-64 select-none">
@@ -881,23 +882,23 @@
       </linearGradient>
     </defs>
   <rect width="400" height="280" rx="16" fill="url(#bgPlate_rk)" stroke="#cbd5e1" stroke-width="1.5"/>
-    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_rk)" stroke="#047857" stroke-width="2"/>
-    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <polygon points="30,225 370,225 340,265 60,265" fill="url(#matGreen_rk)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,229 345,229 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
     <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
     <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
-  <g transform="translate(80, 75)">
-    <rect width="220" height="22" rx="11" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
-    <rect x="95" y="4" width="30" height="14" rx="7" fill="#38bdf8"/>
-    <circle cx="110" cy="11" r="4" fill="#0284c7"/>
-    <text x="110" y="-7" font-size="10" fill="#0284c7" font-weight="900" text-anchor="middle">استواء الظهر كأنه صفيحة ماء (٩٠° تماماً)</text>
+  <g transform="translate(60, 68)">
+    <rect width="255" height="26" rx="13" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <rect x="110" y="4" width="35" height="18" rx="9" fill="#38bdf8"/>
+    <circle cx="127" cy="13" r="5" fill="#0284c7"/>
+    <text x="127" y="-7" font-size="12" fill="#0369a1" font-weight="900" text-anchor="middle">استواء الظهر كأنه صفيحة ماء (٩٠° تماماً)</text>
   </g>
   <g stroke="#0f172a" stroke-linejoin="round">
-    <ellipse cx="275" cy="233" rx="10" ry="5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
-    <path d="M 262 135 L 268 232 L 282 232 L 278 135 Z" fill="url(#thobeFill_rk)" stroke="#0f172a" stroke-width="2.5"/>
-    <line x1="273" y1="140" x2="273" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+    <ellipse cx="275" cy="230" rx="10" ry="5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 262 135 L 268 228 L 282 228 L 278 135 Z" fill="url(#thobeFill_rk)" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="273" y1="140" x2="273" y2="228" stroke="#94a3b8" stroke-width="1.5"/>
     <path d="M 276 135 L 276 95 C 255 92 135 92 120 95 L 120 135 C 160 132 250 132 276 135 Z" fill="url(#thobeFill_rk)" stroke="#0f172a" stroke-width="2.5"/>
     <line x1="122" y1="96" x2="274" y2="96" stroke="#0284c7" stroke-width="2.5"/>
     <path d="M 120 102 L 102 104 L 102 122 L 120 122 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
@@ -912,9 +913,9 @@
     <line x1="254" y1="175" x2="247" y2="179" stroke="#b45309" stroke-width="2" stroke-linecap="round"/>
     <circle cx="268" cy="172" r="6" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="3,3"/>
   </g>
-  <g transform="translate(190, 192)">
-    <rect width="165" height="24" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-    <text x="82" y="16" font-size="9.5" fill="#b45309" font-weight="900" text-anchor="middle">تفريج الأصابع كالقابض على ركبتيه</text>
+  <g transform="translate(170, 192)">
+    <rect width="195" height="26" rx="13" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="97" y="18" font-size="12" fill="#92400e" font-weight="900" text-anchor="middle">تفريج الأصابع كالقابض على ركبتيه</text>
   </g>
 </svg>`,
       itidal: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" class="w-full h-full max-h-60 sm:max-h-64 select-none">
@@ -934,27 +935,26 @@
       </linearGradient>
     </defs>
   <rect width="400" height="280" rx="16" fill="url(#bgPlate_it)" stroke="#cbd5e1" stroke-width="1.5"/>
-    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_it)" stroke="#047857" stroke-width="2"/>
-    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <polygon points="30,225 370,225 340,265 60,265" fill="url(#matGreen_it)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,229 345,229 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
     <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
     <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
-  <g transform="translate(45, 15)">
-    <rect width="310" height="26" rx="13" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-    <text x="155" y="18" font-size="11" fill="#065f46" font-weight="900" text-anchor="middle">الاعتدال التام والطمأنينة حتى يرجع كل عظم لموضعه</text>
+  <g transform="translate(30, 12)">
+    <rect width="340" height="28" rx="14" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="170" y="19" font-size="13" fill="#064e3b" font-weight="900" text-anchor="middle">الاعتدال التام والطمأنينة حتى يرجع كل عظم لموضعه</text>
   </g>
   <g stroke="#0f172a" stroke-linejoin="round">
-    <ellipse cx="188" cy="233" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
-    <ellipse cx="212" cy="233" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
-    <path d="M 172 142 L 180 231 L 220 231 L 228 142 Z" fill="url(#thobeFill_it)" stroke="#0f172a" stroke-width="2.5"/>
-    <line x1="200" y1="145" x2="200" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+    <ellipse cx="188" cy="230" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="212" cy="230" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 172 142 L 180 228 L 220 228 L 228 142 Z" fill="url(#thobeFill_it)" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="200" y1="145" x2="200" y2="228" stroke="#94a3b8" stroke-width="1.5"/>
     <path d="M 170 78 Q 168 112 172 145 L 228 145 Q 232 112 230 78 Q 200 72 170 78 Z" fill="url(#thobeFill_it)" stroke="#0f172a" stroke-width="2.5"/>
     <path d="M 193 78 L 193 64 L 207 64 L 207 78 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <ellipse cx="200" cy="50" rx="15" ry="16" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <path d="M 186 46 Q 200 34 214 46 Q 214 36 200 34 Q 186 36 186 46 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
-    <!-- Arms calm by sides -->
     <path d="M 172 82 C 160 105 165 135 168 155" stroke="url(#thobeFill_it)" stroke-width="14" stroke-linecap="round"/>
     <path d="M 172 82 C 160 105 165 135 168 155" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
     <ellipse cx="168" cy="158" rx="6" ry="7" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
@@ -980,49 +980,43 @@
       </linearGradient>
     </defs>
   <rect width="400" height="280" rx="16" fill="url(#bgPlate_sj)" stroke="#cbd5e1" stroke-width="1.5"/>
-    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_sj)" stroke="#047857" stroke-width="2"/>
-    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <polygon points="30,225 370,225 340,265 60,265" fill="url(#matGreen_sj)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,229 345,229 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
     <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
     <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
-  <g transform="translate(35, 15)">
-    <rect width="330" height="26" rx="13" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
-    <text x="165" y="18" font-size="10.5" fill="#991b1b" font-weight="900" text-anchor="middle">السجود على ٧ أعضاء كاملة مع رفع الذراعين (نهي عن افتراش الكلب)</text>
+  <g transform="translate(25, 12)">
+    <rect width="350" height="28" rx="14" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+    <text x="175" y="19" font-size="12" fill="#991b1b" font-weight="900" text-anchor="middle">السجود على ٧ أعضاء كاملة مع رفع الذراعين (نهي عن افتراش الكلب)</text>
   </g>
   <g stroke="#0f172a" stroke-linejoin="round">
-    <!-- Feet (Point 6 & 7) -->
     <g transform="translate(325, 215)">
       <ellipse cx="0" cy="14" rx="9" ry="4.5" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
       <path d="M -2 14 L -12 -25 L 8 -25 Z" fill="url(#thobeFill_sj)" stroke="#0f172a" stroke-width="2.5"/>
     </g>
-    <!-- Lower leg to knees (Point 4 & 5) -->
-    <path d="M 315 190 L 240 232 L 222 232 L 290 178 Z" fill="url(#thobeFill_sj)" stroke="#0f172a" stroke-width="2.5"/>
-    <!-- Thighs and Torso with clear air gap under belly -->
+    <path d="M 315 190 L 240 230 L 222 230 L 290 178 Z" fill="url(#thobeFill_sj)" stroke="#0f172a" stroke-width="2.5"/>
     <path d="M 290 178 C 260 115 175 115 140 162 L 152 186 C 176 148 245 148 272 188 Z" fill="url(#thobeFill_sj)" stroke="#0f172a" stroke-width="2.5"/>
-    <!-- Head: Forehead & nose touching (Point 1) -->
-    <ellipse cx="78" cy="224" rx="16" ry="14" fill="#fed7aa" stroke="#0f172a" stroke-width="2" transform="rotate(15 78 224)"/>
-    <path d="M 68 215 Q 82 208 92 217 Q 86 211 75 211 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
-    <circle cx="64" cy="228" r="3.5" fill="#fed7aa" stroke="#0f172a" stroke-width="1.5"/>
-    <!-- Arms: High lifted elbows off the floor -->
+    <ellipse cx="78" cy="222" rx="16" ry="14" fill="#fed7aa" stroke="#0f172a" stroke-width="2" transform="rotate(15 78 222)"/>
+    <path d="M 68 213 Q 82 206 92 215 Q 86 209 75 209 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="64" cy="226" r="3.5" fill="#fed7aa" stroke="#0f172a" stroke-width="1.5"/>
     <path d="M 140 156 Q 118 116 102 138" stroke="url(#thobeFill_sj)" stroke-width="16" stroke-linecap="round"/>
     <path d="M 140 156 Q 118 116 102 138" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-    <path d="M 102 138 L 105 226" stroke="url(#thobeFill_sj)" stroke-width="14" stroke-linecap="round"/>
-    <path d="M 102 138 L 105 226" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-    <ellipse cx="105" cy="229" rx="9" ry="4.5" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
-    <!-- Air gap indicator under belly -->
+    <path d="M 102 138 L 105 224" stroke="url(#thobeFill_sj)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 102 138 L 105 224" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <ellipse cx="105" cy="227" rx="9" ry="4.5" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <path d="M 125 195 Q 165 170 205 200" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="4,4"/>
-    <g transform="translate(138, 170)">
-      <rect width="70" height="20" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
-      <text x="35" y="14" font-size="8.5" fill="#065f46" font-weight="900" text-anchor="middle">تجافي البطن</text>
+    <g transform="translate(135, 168)">
+      <rect width="80" height="22" rx="11" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+      <text x="40" y="15" font-size="11" fill="#065f46" font-weight="900" text-anchor="middle">تجافي البطن</text>
     </g>
   </g>
   <!-- 7 NUMBERED PINS -->
-  <g transform="translate(58, 208)"><circle cx="10" cy="10" r="10" fill="#ef4444" stroke="#ffffff" stroke-width="2"/><text x="10" y="14" font-size="10" fill="#ffffff" font-weight="900" text-anchor="middle">1</text></g>
-  <g transform="translate(95, 208)"><circle cx="10" cy="10" r="10" fill="#ef4444" stroke="#ffffff" stroke-width="2"/><text x="10" y="14" font-size="9" fill="#ffffff" font-weight="900" text-anchor="middle">2,3</text></g>
-  <g transform="translate(225, 208)"><circle cx="10" cy="10" r="10" fill="#ef4444" stroke="#ffffff" stroke-width="2"/><text x="10" y="14" font-size="9" fill="#ffffff" font-weight="900" text-anchor="middle">4,5</text></g>
-  <g transform="translate(315, 208)"><circle cx="10" cy="10" r="10" fill="#ef4444" stroke="#ffffff" stroke-width="2"/><text x="10" y="14" font-size="9" fill="#ffffff" font-weight="900" text-anchor="middle">6,7</text></g>
+  <g transform="translate(56, 204)"><circle cx="11" cy="11" r="11" fill="#dc2626" stroke="#ffffff" stroke-width="2"/><text x="11" y="15" font-size="12" fill="#ffffff" font-weight="900" text-anchor="middle">1</text></g>
+  <g transform="translate(95, 204)"><circle cx="11" cy="11" r="11" fill="#dc2626" stroke="#ffffff" stroke-width="2"/><text x="11" y="15" font-size="11" fill="#ffffff" font-weight="900" text-anchor="middle">2,3</text></g>
+  <g transform="translate(225, 204)"><circle cx="11" cy="11" r="11" fill="#dc2626" stroke="#ffffff" stroke-width="2"/><text x="11" y="15" font-size="11" fill="#ffffff" font-weight="900" text-anchor="middle">4,5</text></g>
+  <g transform="translate(315, 204)"><circle cx="11" cy="11" r="11" fill="#dc2626" stroke="#ffffff" stroke-width="2"/><text x="11" y="15" font-size="11" fill="#ffffff" font-weight="900" text-anchor="middle">6,7</text></g>
 </svg>`,
       iftirash: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" class="w-full h-full max-h-60 sm:max-h-64 select-none">
   <defs>
@@ -1041,48 +1035,45 @@
       </linearGradient>
     </defs>
   <rect width="400" height="280" rx="16" fill="url(#bgPlate_if)" stroke="#cbd5e1" stroke-width="1.5"/>
-    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_if)" stroke="#047857" stroke-width="2"/>
-    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <polygon points="30,225 370,225 340,265 60,265" fill="url(#matGreen_if)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,229 345,229 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
     <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
     <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
-  <g transform="translate(50, 15)">
-    <rect width="300" height="26" rx="13" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
-    <text x="150" y="18" font-size="11" fill="#065f46" font-weight="900" text-anchor="middle">هيئة الافتراش: فرش اليسرى والجلوس عليها ونصب اليمنى</text>
+  <g transform="translate(35, 12)">
+    <rect width="330" height="28" rx="14" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="165" y="19" font-size="13" fill="#064e3b" font-weight="900" text-anchor="middle">هيئة الافتراش: فرش اليسرى والجلوس عليها ونصب اليمنى</text>
   </g>
   <g stroke="#0f172a" stroke-linejoin="round">
-    <!-- Right foot upright on toes (نصب اليمنى) -->
+    <!-- Right Foot: Upright on toes -->
     <g transform="translate(295, 215)">
       <path d="M 0 0 L 8 16 L -4 16 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
       <ellipse cx="3" cy="16" rx="7" ry="4" fill="#fed7aa" stroke="#0f172a" stroke-width="1.5"/>
-      <circle cx="3" cy="16" r="11" fill="none" stroke="#0284c7" stroke-width="2" stroke-dasharray="3,3"/>
+      <circle cx="3" cy="16" r="12" fill="none" stroke="#0284c7" stroke-width="2" stroke-dasharray="3,3"/>
     </g>
-    <g transform="translate(265, 172)">
-      <rect width="105" height="20" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
-      <text x="52" y="14" font-size="8.5" fill="#0369a1" font-weight="900" text-anchor="middle">نصب القدم اليمنى</text>
+    <g transform="translate(260, 168)">
+      <rect width="120" height="24" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+      <text x="60" y="16" font-size="11.5" fill="#0369a1" font-weight="900" text-anchor="middle">نصب القدم اليمنى</text>
     </g>
-    <!-- Left foot flat under buttocks (فرش اليسرى) -->
+    <!-- Left Foot: Flat under buttocks -->
     <g transform="translate(175, 226)">
       <rect width="90" height="11" rx="5.5" fill="#10b981" stroke="#047857" stroke-width="2"/>
-      <circle cx="45" cy="5" r="14" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="3,3"/>
+      <circle cx="45" cy="5" r="15" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="3,3"/>
     </g>
-    <g transform="translate(165, 246)">
-      <rect width="110" height="20" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
-      <text x="55" y="14" font-size="8.5" fill="#065f46" font-weight="900" text-anchor="middle">اليسرى مفروشة تحته</text>
+    <g transform="translate(160, 246)">
+      <rect width="125" height="24" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+      <text x="62" y="16" font-size="11.5" fill="#065f46" font-weight="900" text-anchor="middle">اليسرى مفروشة تحته</text>
     </g>
     <!-- Legs & Thighs in Thobe -->
-    <path d="M 140 185 L 120 230 L 265 230 L 260 170 Z" fill="url(#thobeFill_if)" stroke="#0f172a" stroke-width="2.5"/>
-    <!-- Torso -->
+    <path d="M 140 185 L 120 228 L 265 228 L 260 170 Z" fill="url(#thobeFill_if)" stroke="#0f172a" stroke-width="2.5"/>
     <path d="M 205 95 L 190 180 L 260 180 L 245 95 Z" fill="url(#thobeFill_if)" stroke="#0f172a" stroke-width="2.5"/>
     <line x1="222" y1="100" x2="222" y2="175" stroke="#94a3b8" stroke-width="1.5"/>
-    <!-- Head -->
     <path d="M 218 95 L 218 78 L 232 78 L 232 95 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <ellipse cx="225" cy="62" rx="16" ry="17" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <path d="M 210 58 Q 225 44 240 58 Q 240 48 225 46 Q 210 48 210 58 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
     <path d="M 210 54 Q 225 50 240 54" stroke="#047857" stroke-width="2" fill="none"/>
-    <!-- Arms on thighs -->
     <path d="M 210 105 L 170 165 L 155 190" stroke="url(#thobeFill_if)" stroke-width="16" stroke-linecap="round"/>
     <path d="M 210 105 L 170 165 L 155 190" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
     <ellipse cx="155" cy="192" rx="9" ry="6" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
@@ -1105,55 +1096,50 @@
       </linearGradient>
     </defs>
   <rect width="400" height="280" rx="16" fill="url(#bgPlate_tw)" stroke="#cbd5e1" stroke-width="1.5"/>
-    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_tw)" stroke="#047857" stroke-width="2"/>
-    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <polygon points="30,225 370,225 340,265 60,265" fill="url(#matGreen_tw)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,229 345,229 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
     <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
     <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
-  <g transform="translate(45, 15)">
-    <rect width="310" height="26" rx="13" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
-    <text x="155" y="18" font-size="11" fill="#1d4ed8" font-weight="900" text-anchor="middle">هيئة التَّوَرُّك: إفضاء الإلية للأرض وإخراج اليسرى للجانب الأيمن</text>
+  <g transform="translate(30, 12)">
+    <rect width="340" height="28" rx="14" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="170" y="19" font-size="12.5" fill="#1d4ed8" font-weight="900" text-anchor="middle">هيئة التَّوَرُّك: إفضاء الإلية للأرض وإخراج اليسرى للجانب الأيمن</text>
   </g>
   <g stroke="#0f172a" stroke-linejoin="round">
-    <!-- Right foot upright on toes (نصب اليمنى) -->
     <g transform="translate(300, 215)">
       <path d="M 0 0 L 8 16 L -4 16 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
       <ellipse cx="3" cy="16" rx="7" ry="4" fill="#fed7aa" stroke="#0f172a" stroke-width="1.5"/>
     </g>
-    <!-- Left foot exiting to the right -->
     <path d="M 220 226 Q 265 230 290 240" stroke="#0284c7" stroke-width="8" stroke-linecap="round" fill="none"/>
     <ellipse cx="294" cy="242" rx="8" ry="5" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
-    <g transform="translate(250, 246)">
-      <rect width="125" height="20" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
-      <text x="62" y="14" font-size="8.5" fill="#0369a1" font-weight="900" text-anchor="middle">إخراج اليسرى للجانب الأيمن</text>
+    <g transform="translate(245, 246)">
+      <rect width="140" height="24" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+      <text x="70" y="16" font-size="11.5" fill="#0369a1" font-weight="900" text-anchor="middle">إخراج اليسرى للجانب الأيمن</text>
     </g>
     <!-- Buttocks directly on the ground -->
-    <ellipse cx="215" cy="230" rx="35" ry="8" fill="#ef4444" opacity="0.35" stroke="#dc2626" stroke-width="2"/>
-    <g transform="translate(125, 246)">
-      <rect width="115" height="20" rx="10" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
-      <text x="57" y="14" font-size="8.5" fill="#b91c1c" font-weight="900" text-anchor="middle">الجلوس بالمقعدة على الأرض</text>
+    <ellipse cx="215" cy="228" rx="35" ry="8" fill="#ef4444" opacity="0.35" stroke="#dc2626" stroke-width="2"/>
+    <g transform="translate(100, 246)">
+      <rect width="140" height="24" rx="12" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+      <text x="70" y="16" font-size="11.5" fill="#b91c1c" font-weight="900" text-anchor="middle">الجلوس بالمقعدة على الأرض</text>
     </g>
-    <!-- Legs & Thighs in Thobe -->
-    <path d="M 135 185 L 115 230 L 260 230 L 255 170 Z" fill="url(#thobeFill_tw)" stroke="#0f172a" stroke-width="2.5"/>
-    <!-- Torso -->
+    <path d="M 135 185 L 115 228 L 260 228 L 255 170 Z" fill="url(#thobeFill_tw)" stroke="#0f172a" stroke-width="2.5"/>
     <path d="M 205 95 L 190 180 L 260 180 L 245 95 Z" fill="url(#thobeFill_tw)" stroke="#0f172a" stroke-width="2.5"/>
     <line x1="222" y1="100" x2="222" y2="175" stroke="#94a3b8" stroke-width="1.5"/>
-    <!-- Head -->
     <path d="M 218 95 L 218 78 L 232 78 L 232 95 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <ellipse cx="225" cy="62" rx="16" ry="17" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <path d="M 210 58 Q 225 44 240 58 Q 240 48 225 46 Q 210 48 210 58 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
     <path d="M 210 54 Q 225 50 240 54" stroke="#047857" stroke-width="2" fill="none"/>
-    <!-- Right Hand with Index finger pointed in Tawhid -->
+    <!-- Pointing index finger -->
     <path d="M 210 105 L 170 165 L 145 185" stroke="url(#thobeFill_tw)" stroke-width="16" stroke-linecap="round"/>
     <path d="M 210 105 L 170 165 L 145 185" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
     <circle cx="142" cy="186" r="8" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
-    <line x1="142" y1="184" x2="120" y2="176" stroke="#b45309" stroke-width="4" stroke-linecap="round"/>
-    <circle cx="118" cy="175" r="3.5" fill="#b45309"/>
-    <g transform="translate(65, 155)">
-      <rect width="95" height="20" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-      <text x="47" y="14" font-size="8.5" fill="#b45309" font-weight="900" text-anchor="middle">الإشارة بالسبابة</text>
+    <line x1="142" y1="184" x2="120" y2="176" stroke="#b45309" stroke-width="4.5" stroke-linecap="round"/>
+    <circle cx="118" cy="175" r="4" fill="#b45309"/>
+    <g transform="translate(60, 150)">
+      <rect width="110" height="24" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="55" y="16" font-size="11.5" fill="#92400e" font-weight="900" text-anchor="middle">الإشارة بالسبابة</text>
     </g>
   </g>
 </svg>`,
@@ -1174,33 +1160,29 @@
       </linearGradient>
     </defs>
   <rect width="400" height="280" rx="16" fill="url(#bgPlate_ts)" stroke="#cbd5e1" stroke-width="1.5"/>
-    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_ts)" stroke="#047857" stroke-width="2"/>
-    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <polygon points="30,225 370,225 340,265 60,265" fill="url(#matGreen_ts)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,229 345,229 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
     <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
     <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
     <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
-  <g transform="translate(50, 15)">
-    <rect width="300" height="26" rx="13" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
-    <text x="150" y="18" font-size="11" fill="#991b1b" font-weight="900" text-anchor="middle">التسليمة الأولى: الالتفات يميناً حتى يُرى بياض خده</text>
+  <g transform="translate(35, 12)">
+    <rect width="330" height="28" rx="14" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+    <text x="165" y="19" font-size="12.5" fill="#991b1b" font-weight="900" text-anchor="middle">التسليمة الأولى: الالتفات يميناً حتى يُرى بياض خده</text>
   </g>
   <g stroke="#0f172a" stroke-linejoin="round">
-    <path d="M 140 185 L 120 230 L 265 230 L 260 170 Z" fill="url(#thobeFill_ts)" stroke="#0f172a" stroke-width="2.5"/>
+    <path d="M 140 185 L 120 228 L 265 228 L 260 170 Z" fill="url(#thobeFill_ts)" stroke="#0f172a" stroke-width="2.5"/>
     <path d="M 205 95 L 190 180 L 260 180 L 245 95 Z" fill="url(#thobeFill_ts)" stroke="#0f172a" stroke-width="2.5"/>
-    <!-- Head rotated right -->
     <path d="M 218 95 L 218 78 L 232 78 L 232 95 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <ellipse cx="242" cy="62" rx="17" ry="17" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
     <path d="M 230 54 Q 245 42 258 54 Q 258 46 245 44 Q 230 46 230 54 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
-    <!-- Cheek highlight -->
     <ellipse cx="246" cy="64" rx="7" ry="6" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
-    <g transform="translate(262, 52)">
-      <rect width="105" height="20" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
-      <text x="52" y="14" font-size="8.5" fill="#b45309" font-weight="900" text-anchor="middle">بياض خده الأيمن</text>
+    <g transform="translate(258, 50)">
+      <rect width="115" height="24" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="57" y="16" font-size="11.5" fill="#92400e" font-weight="900" text-anchor="middle">بياض خده الأيمن</text>
     </g>
-    <!-- Rotation arrow -->
     <path d="M 205 45 Q 228 32 250 46" fill="none" stroke="#059669" stroke-width="3"/>
-    <!-- Arms -->
     <path d="M 210 105 L 170 165 L 155 190" stroke="url(#thobeFill_ts)" stroke-width="16" stroke-linecap="round"/>
     <path d="M 210 105 L 170 165 L 155 190" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
     <ellipse cx="155" cy="192" rx="9" ry="6" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
@@ -1379,28 +1361,28 @@
         function renderSifahTimeline() {
       const container = document.getElementById('sifahTimelineContainer');
       container.innerHTML = sifahStations.map((st, i) => `
-        <div class="bg-[#f8faf8] rounded-3xl p-5 sm:p-6 border border-emerald-200/70 shadow-sm hover:border-emerald-300 hover:shadow-md transition">
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
-            <div class="flex items-center gap-2.5">
-              <span class="w-8 h-8 rounded-xl bg-emerald-600 text-white font-black text-xs flex items-center justify-center flex-shrink-0 shadow-xs">
+        <div class="bg-[#f8faf8] rounded-3xl p-5 sm:p-7 border border-emerald-200/80 shadow-sm hover:border-emerald-400 hover:shadow-md transition">
+          <div class="flex flex-wrap items-center justify-between gap-2.5 mb-3">
+            <div class="flex items-center gap-3">
+              <span class="w-9 h-9 rounded-xl bg-emerald-700 text-white font-black text-sm flex items-center justify-center flex-shrink-0 shadow-xs">
                 ${i + 1}
               </span>
               <div>
-                <span class="text-[11px] text-emerald-800 font-bold block">${st.stepNum}</span>
-                <h4 class="text-base sm:text-lg font-black text-slate-900">${st.title}</h4>
+                <span class="text-xs text-emerald-900 font-extrabold block">${st.stepNum}</span>
+                <h4 class="text-lg sm:text-xl font-black text-slate-950 tracking-tight">${st.title}</h4>
               </div>
             </div>
-            <span class="${st.tagClass} text-[11px] font-extrabold px-3 py-1 rounded-full border shadow-2xs">
+            <span class="${st.tagClass} text-xs font-black px-3.5 py-1.5 rounded-full border shadow-2xs">
               ${st.tag}
             </span>
           </div>
 
-          <p class="text-xs sm:text-sm text-slate-800 leading-relaxed my-3 font-medium bg-white/90 p-4 rounded-2xl border border-emerald-100/90 shadow-2xs">
+          <p class="text-sm sm:text-base text-slate-900 leading-relaxed my-3.5 font-medium bg-white/95 p-4 sm:p-5 rounded-2xl border border-emerald-200/70 shadow-xs">
             ${st.desc}
           </p>
 
-          <div class="bg-emerald-100/40 border border-emerald-200/80 rounded-xl p-3 text-xs text-emerald-950 font-semibold flex items-center gap-2">
-            <span class="text-emerald-700 font-bold flex-shrink-0">📌 التوصيف الفقهي (إسلام ويب):</span>
+          <div class="bg-emerald-100/50 border border-emerald-300/80 rounded-2xl p-3.5 sm:p-4 text-sm text-emerald-950 font-semibold flex items-center gap-2">
+            <span class="text-emerald-800 font-black flex-shrink-0">📌 التوصيف الفقهي (إسلام ويب):</span>
             <span class="leading-relaxed">${st.fiqhBreakdown}</span>
           </div>
         </div>
@@ -1409,54 +1391,54 @@
 
     // Render Anchoring Content
         function renderAnchoringContent() {
-      // 14 Pillars - Soft Calm Rose/Blush Background (#fdf6f6)
+      // 14 Pillars - Soft Calm Rose/Blush Background (#fdf6f6) with large high-contrast readable text
       document.getElementById('arkanCardsContainer').innerHTML = arkanData.map(a => `
-        <div class="bg-[#fdf6f6] rounded-3xl p-4 sm:p-5 border border-rose-200/80 hover:border-rose-300 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <div class="bg-[#fdf6f6] rounded-3xl p-5 sm:p-6 border border-rose-200/90 hover:border-rose-400 shadow-sm hover:shadow-md transition flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-2.5">
-              <span class="w-7 h-7 rounded-xl bg-rose-600 text-white flex items-center justify-center font-black text-xs shadow-xs">${a.num}</span>
-              <span class="bg-rose-100 text-rose-800 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-rose-200/80">ركن لا يسقط</span>
+            <div class="flex items-center justify-between mb-3">
+              <span class="w-8 h-8 rounded-xl bg-rose-700 text-white flex items-center justify-center font-black text-sm shadow-xs">${a.num}</span>
+              <span class="bg-rose-100 text-rose-900 text-xs font-black px-3 py-1 rounded-full border border-rose-200">ركن لا يسقط</span>
             </div>
-            <h4 class="text-sm sm:text-base font-black text-slate-900 mb-1.5">${a.title}</h4>
-            <p class="text-xs text-slate-700 mb-2 leading-relaxed bg-white/80 p-2.5 rounded-xl border border-rose-100/80">${a.rule}</p>
+            <h4 class="text-base sm:text-lg font-black text-slate-950 mb-2">${a.title}</h4>
+            <p class="text-sm sm:text-base text-slate-900 mb-3 leading-relaxed bg-white/95 p-3 sm:p-3.5 rounded-2xl border border-rose-200/70 font-medium">${a.rule}</p>
           </div>
-          <div class="pt-2 border-t border-rose-100 text-[11px] font-medium space-y-1">
-            <div class="text-slate-600">📖 دليله: ${a.evidence}</div>
-            <div class="text-rose-800 font-bold bg-rose-100/50 px-2 py-1 rounded-lg border border-rose-200/60">${a.sahwRule}</div>
+          <div class="pt-2.5 border-t border-rose-200/80 text-xs sm:text-sm font-semibold space-y-1.5">
+            <div class="text-slate-800">📖 دليله: ${a.evidence}</div>
+            <div class="text-rose-950 font-black bg-rose-100/70 px-2.5 py-1.5 rounded-xl border border-rose-300/80">${a.sahwRule}</div>
           </div>
         </div>
       `).join('');
 
-      // 8 Obligations - Soft Calm Sky/Blue Background (#f0f7fc)
+      // 8 Obligations - Soft Calm Sky/Blue Background (#f0f7fc) with large readable text
       document.getElementById('wajibCardsContainer').innerHTML = wajibData.map(w => `
-        <div class="bg-[#f0f7fc] rounded-3xl p-4 sm:p-5 border border-sky-200/80 hover:border-sky-300 shadow-sm hover:shadow-md transition flex flex-col justify-between">
+        <div class="bg-[#f0f7fc] rounded-3xl p-5 sm:p-6 border border-sky-200/90 hover:border-sky-400 shadow-sm hover:shadow-md transition flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-2.5">
-              <span class="w-7 h-7 rounded-xl bg-sky-600 text-white flex items-center justify-center font-black text-xs shadow-xs">${w.num}</span>
-              <span class="bg-sky-100 text-sky-800 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border border-sky-200/80">واجب يُجبر</span>
+            <div class="flex items-center justify-between mb-3">
+              <span class="w-8 h-8 rounded-xl bg-sky-700 text-white flex items-center justify-center font-black text-sm shadow-xs">${w.num}</span>
+              <span class="bg-sky-100 text-sky-900 text-xs font-black px-3 py-1 rounded-full border border-sky-200">واجب يُجبر</span>
             </div>
-            <h4 class="text-xs sm:text-sm font-black text-slate-900 mb-1.5">${w.title}</h4>
-            <div class="bg-white border border-sky-200/90 rounded-xl p-2 font-quran font-bold text-sky-950 text-xs text-center my-2 shadow-2xs">${w.text}</div>
-            <p class="text-xs text-slate-700 mb-2 leading-relaxed bg-white/80 p-2.5 rounded-xl border border-sky-100/80">${w.rule}</p>
+            <h4 class="text-base sm:text-lg font-black text-slate-950 mb-2">${w.title}</h4>
+            <div class="bg-white border border-sky-300/80 rounded-2xl p-2.5 font-quran font-bold text-sky-950 text-base sm:text-lg text-center my-2 shadow-2xs">${w.text}</div>
+            <p class="text-sm sm:text-base text-slate-900 mb-3 leading-relaxed bg-white/95 p-3 rounded-2xl border border-sky-200/70 font-medium">${w.rule}</p>
           </div>
-          <div class="pt-2 border-t border-sky-100 text-[11px] font-bold text-sky-900 bg-sky-100/50 px-2 py-1 rounded-lg border border-sky-200/60 text-center">
+          <div class="pt-2.5 border-t border-sky-200/80 text-xs sm:text-sm font-black text-sky-950 bg-sky-100/70 px-2.5 py-1.5 rounded-xl border border-sky-300/70 text-center">
             يسقط بالنسيان ويجبره سجود السهو قبل السلام
           </div>
         </div>
       `).join('');
 
-      // Sunan Lists - Calm Cream/Amber styling
+      // Sunan Lists - Calm Cream/Amber styling with large readable text
       document.getElementById('sunanQawliyyahList').innerHTML = sunanQawliyyah.map((s, i) => `
-        <li class="flex items-start gap-2.5 p-2 rounded-xl bg-white/90 border border-amber-200/70 shadow-2xs">
-          <span class="w-5 h-5 rounded-lg bg-amber-200 text-amber-900 font-black text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
-          <span class="font-medium text-slate-800">${s}</span>
+        <li class="flex items-start gap-3 p-3 rounded-2xl bg-white/95 border border-amber-200/90 shadow-2xs">
+          <span class="w-6 h-6 rounded-lg bg-amber-300 text-amber-950 font-black text-xs flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
+          <span class="font-bold text-slate-950 text-sm sm:text-base leading-relaxed">${s}</span>
         </li>
       `).join('');
 
       document.getElementById('sunanFiliyyahList').innerHTML = sunanFiliyyah.map((s, i) => `
-        <li class="flex items-start gap-2.5 p-2 rounded-xl bg-white/90 border border-amber-200/70 shadow-2xs">
-          <span class="w-5 h-5 rounded-lg bg-amber-200 text-amber-900 font-black text-[10px] flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
-          <span class="font-medium text-slate-800">${s}</span>
+        <li class="flex items-start gap-3 p-3 rounded-2xl bg-white/95 border border-amber-200/90 shadow-2xs">
+          <span class="w-6 h-6 rounded-lg bg-amber-300 text-amber-950 font-black text-xs flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
+          <span class="font-bold text-slate-950 text-sm sm:text-base leading-relaxed">${s}</span>
         </li>
       `).join('');
 
@@ -1543,7 +1525,7 @@
           <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
             ${prayerIllustrations.takbeer}
           </div>
-          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/95 p-4 rounded-2xl border border-slate-200 text-sm sm:text-base text-slate-950 font-semibold leading-relaxed">
             <p>• <strong>الرفع:</strong> حذو المنكبين أو الأذنين مع مَدِّ الأصابع للقبلة.</p>
             <p>• <strong>النظر:</strong> دوام النظر إلى موضع السجود بخشوع وسكينة.</p>
           </div>
@@ -1557,7 +1539,7 @@
           <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
             ${prayerIllustrations.qabd}
           </div>
-          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/95 p-4 rounded-2xl border border-slate-200 text-sm sm:text-base text-slate-950 font-semibold leading-relaxed">
             <p>• <strong>القبض:</strong> وضع اليد اليمنى على ظهر كف اليسرى والساعد على الصدر.</p>
             <p>• <strong>الاستفتاح:</strong> قراءة الاستفتاح والتعوذ والبسملة سراً.</p>
           </div>
@@ -1571,7 +1553,7 @@
           <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
             ${prayerIllustrations.ruku}
           </div>
-          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/95 p-4 rounded-2xl border border-slate-200 text-sm sm:text-base text-slate-950 font-semibold leading-relaxed">
             <p>• <strong>استواء الظهر:</strong> لو صب عليه ماء لاستقر مستوياً 90 درجة.</p>
             <p>• <strong>الرأس:</strong> حيال الظهر مستقيماً لا يشخص ولا يصوب.</p>
             <p>• <strong>اليدان:</strong> كالقابض على ركبتيه مع تفريج الأصابع.</p>
@@ -1586,7 +1568,7 @@
           <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
             ${prayerIllustrations.sujud}
           </div>
-          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/95 p-4 rounded-2xl border border-slate-200 text-sm sm:text-base text-slate-950 font-semibold leading-relaxed">
             <p>• <strong>الأعضاء السبعة:</strong> الجبهة والأنف، الكفان، الركبتان، أطراف القدمين.</p>
             <p>• <strong>النهي النبوي:</strong> رفع الذراعين والمرفقين عن الأرض تحذيراً من افتراش الكلب.</p>
             <p>• <strong>التجافي:</strong> مباعدة البطن عن الفخذين والعضدين عن الجنبين.</p>
@@ -1601,7 +1583,7 @@
           <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
             ${prayerIllustrations.iftirash}
           </div>
-          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/95 p-4 rounded-2xl border border-slate-200 text-sm sm:text-base text-slate-950 font-semibold leading-relaxed">
             <p>• <strong>موضعه:</strong> بين السجدتين وفي التشهد الأول.</p>
             <p>• <strong>صفته:</strong> فرش الرجل اليسرى والقعود عليها ونصب اليمنى متوجهاً بأصابعها للقبلة.</p>
           </div>
@@ -1615,7 +1597,7 @@
           <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
             ${prayerIllustrations.tawarruk}
           </div>
-          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/95 p-4 rounded-2xl border border-slate-200 text-sm sm:text-base text-slate-950 font-semibold leading-relaxed">
             <p>• <strong>موضعه:</strong> التشهد الأخير في الصلوات الثلاثية والرباعية.</p>
             <p>• <strong>صفته:</strong> إخراج اليسرى من الجانب الأيمن وإفضاء المقعدة للأرض مع الإشارة بالسبابة.</p>
           </div>
@@ -1629,7 +1611,7 @@
           <div class="h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
             ${prayerIllustrations.taslim}
           </div>
-          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/80 p-3 rounded-2xl border border-slate-100">
+          <div class="mt-3.5 text-xs text-slate-700 space-y-1.5 flex-grow bg-slate-50/95 p-4 rounded-2xl border border-slate-200 text-sm sm:text-base text-slate-950 font-semibold leading-relaxed">
             <p>• <strong>الالتفات:</strong> يميناً ثم يساراً حتى يرى من خلفه بياض خده.</p>
             <p>• <strong>اللفظ:</strong> «السَّلاَمُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ».</p>
           </div>
@@ -1864,11 +1846,11 @@
               <span class="font-black text-slate-900 text-xs sm:text-sm flex items-center gap-1.5"><span class="text-rose-600 font-bold">❌</span><span>${m.title}</span></span>
               <span class="${m.tagColor} text-[10px] font-extrabold px-2 py-0.5 rounded-full">${m.tag}</span>
             </div>
-            <p class="text-xs text-slate-600 mb-2">${m.desc}</p>
-            <div class="bg-rose-50/70 border border-rose-100 rounded-xl p-2 text-xs text-rose-950 font-medium mb-2"><strong>الدليل النبوي:</strong> ${m.hadith}</div>
+            <p class="text-sm sm:text-base text-slate-900 mb-2.5 font-medium leading-relaxed">${m.desc}</p>
+            <div class="bg-rose-50 border border-rose-200 rounded-2xl p-3 text-sm text-rose-950 font-bold mb-2.5 leading-relaxed"><strong>📖 الدليل النبوي:</strong> ${m.hadith}</div>
           </div>
-          <div class="bg-emerald-50 border border-emerald-200/70 rounded-xl p-2 text-xs text-emerald-950 font-bold flex items-center gap-1.5">
-            <span class="text-emerald-600">✓ البديل الصحيح:</span><span>${m.correction}</span>
+          <div class="bg-emerald-50 border border-emerald-300 rounded-2xl p-3 text-sm text-emerald-950 font-bold flex items-center gap-2 leading-relaxed">
+            <span class="text-emerald-700">✓ البديل الصحيح:</span><span>${m.correction}</span>
           </div>
         </div>
       `).join('');
@@ -1895,9 +1877,9 @@
 
       const optionsContainer = document.getElementById('quizOptionsContainer');
       optionsContainer.innerHTML = q.options.map((opt, i) => `
-        <button onclick="handleQuizAnswer(${i})" id="quizOptBtn_${i}" class="w-full text-right p-3 rounded-2xl border-2 border-slate-200 hover:border-emerald-500 bg-white font-bold text-xs text-slate-800 transition flex items-center justify-between">
+        <button onclick="handleQuizAnswer(${i})" id="quizOptBtn_${i}" class="w-full text-right p-4 rounded-2xl border-2 border-slate-300 hover:border-emerald-600 bg-white font-black text-sm sm:text-base text-slate-950 transition flex items-center justify-between shadow-xs">
           <span>${opt}</span>
-          <span class="w-5 h-5 rounded-full border border-slate-300 flex items-center justify-center text-[10px] font-bold text-slate-400">${i + 1}</span>
+          <span class="w-6 h-6 rounded-full border-2 border-slate-400 flex items-center justify-center text-xs font-black text-slate-700 flex-shrink-0">${i + 1}</span>
         </button>
       `).join('');
 
