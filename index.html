@@ -756,397 +756,456 @@
        Accurate anatomical figures, flowing thobe, Islamic prayer mat, guidance cues
        ========================================================================= */
     const prayerIllustrations = {
-      // 1. Takbeer: Standing upright, hands raised to shoulders/ears, eyes on sujud spot
-      takbeer: `<svg viewBox="0 0 320 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
-        <defs>
-          <linearGradient id="matGradTakbeer" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
-          </linearGradient>
-          <linearGradient id="thobeGradTakbeer" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
-          </linearGradient>
-          <filter id="shadowTakbeer" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
-          </filter>
-        </defs>
-        <!-- Background Mihrab Arch Tone -->
-        <path d="M 105 235 Q 105 20 160 20 Q 215 20 215 235" fill="#f0fdf4" opacity="0.65"/>
-        <!-- Decorated Prayer Mat -->
-        <polygon points="45,225 275,225 255,253 65,253" fill="url(#matGradTakbeer)" stroke="#047857" stroke-width="1.5"/>
-        <polygon points="65,229 255,229 240,249 80,249" fill="#065f46" opacity="0.5"/>
-        <path d="M 135 249 Q 160 234 185 249" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
-        <line x1="65" y1="253" x2="60" y2="257" stroke="#d97706" stroke-width="1.5"/>
-        <line x1="85" y1="253" x2="80" y2="257" stroke="#d97706" stroke-width="1.5"/>
-        <line x1="235" y1="253" x2="240" y2="257" stroke="#d97706" stroke-width="1.5"/>
-        <line x1="255" y1="253" x2="260" y2="257" stroke="#d97706" stroke-width="1.5"/>
-        <!-- Sight Line to Sujud Spot -->
-        <line x1="160" y1="48" x2="205" y2="235" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <circle cx="205" cy="235" r="3.5" fill="#f59e0b"/>
-        <rect x="170" y="218" width="68" height="15" rx="7" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
-        <text x="204" y="229" font-size="8" fill="#b45309" font-weight="bold" text-anchor="middle">موضع السجود</text>
-        <!-- Worshipper Body Group -->
-        <g filter="url(#shadowTakbeer)">
-          <ellipse cx="150" cy="228" rx="7" ry="3.5" fill="#334155"/>
-          <ellipse cx="170" cy="228" rx="7" ry="3.5" fill="#334155"/>
-          <path d="M 136 138 L 142 225 L 178 225 L 184 138 Z" fill="url(#thobeGradTakbeer)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <line x1="160" y1="145" x2="160" y2="225" stroke="#e2e8f0" stroke-width="1"/>
-          <path d="M 135 75 Q 133 108 136 140 L 184 140 Q 187 108 185 75 Q 160 70 135 75 Z" fill="url(#thobeGradTakbeer)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <!-- Head & Neck -->
-          <path d="M 154 75 L 154 62 L 166 62 L 166 75 Z" fill="#fed7aa"/>
-          <ellipse cx="160" cy="46" rx="13" ry="15" fill="#fed7aa"/>
-          <!-- White Kufi Cap -->
-          <path d="M 147 43 Q 160 30 173 43 Q 173 34 160 32 Q 147 34 147 43 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-          <path d="M 166 46 Q 169 50 166 54" stroke="#d97706" stroke-width="1" fill="none"/>
-          <!-- Raised Arms (Takbeer at Shoulders/Ears) -->
-          <path d="M 136 78 C 122 80 114 62 118 45" fill="none" stroke="#f1f5f9" stroke-width="12" stroke-linecap="round"/>
-          <path d="M 136 78 C 122 80 114 62 118 45" fill="none" stroke="#94a3b8" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="120" cy="38" rx="5" ry="8" fill="#fed7aa" transform="rotate(-10 120 38)"/>
-          <path d="M 184 78 C 198 80 206 62 202 45" fill="none" stroke="#f1f5f9" stroke-width="12" stroke-linecap="round"/>
-          <path d="M 184 78 C 198 80 206 62 202 45" fill="none" stroke="#94a3b8" stroke-width="1" stroke-linecap="round"/>
-          <ellipse cx="200" cy="38" rx="5" ry="8" fill="#fed7aa" transform="rotate(10 200 38)"/>
-        </g>
-        <!-- Educational Badge -->
-        <g transform="translate(60, 12)">
-          <rect width="200" height="22" rx="11" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-          <text x="100" y="15" font-size="8.5" fill="#065f46" font-weight="black" text-anchor="middle">رفع اليدين حذو المنكبين وممدودة الأصابع</text>
-        </g>
-      </svg>`,
-
-      // 2. Qabd: Standing upright, right hand over left forearm across chest, eyes on sujud spot
-      qabd: `<svg viewBox="0 0 320 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
-        <defs>
-          <linearGradient id="matGradQabd" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
-          </linearGradient>
-          <linearGradient id="thobeGradQabd" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
-          </linearGradient>
-          <filter id="shadowQabd" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
-          </filter>
-        </defs>
-        <path d="M 105 235 Q 105 20 160 20 Q 215 20 215 235" fill="#f0fdf4" opacity="0.65"/>
-        <polygon points="45,225 275,225 255,253 65,253" fill="url(#matGradQabd)" stroke="#047857" stroke-width="1.5"/>
-        <polygon points="65,229 255,229 240,249 80,249" fill="#065f46" opacity="0.5"/>
-        <path d="M 135 249 Q 160 234 185 249" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
-        <!-- Sight Line to Sujud Spot -->
-        <line x1="160" y1="48" x2="205" y2="235" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <circle cx="205" cy="235" r="3.5" fill="#f59e0b"/>
-        <rect x="170" y="218" width="68" height="15" rx="7" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
-        <text x="204" y="229" font-size="8" fill="#b45309" font-weight="bold" text-anchor="middle">موضع السجود</text>
-        <!-- Worshipper Body Group -->
-        <g filter="url(#shadowQabd)">
-          <ellipse cx="150" cy="228" rx="7" ry="3.5" fill="#334155"/>
-          <ellipse cx="170" cy="228" rx="7" ry="3.5" fill="#334155"/>
-          <path d="M 136 138 L 142 225 L 178 225 L 184 138 Z" fill="url(#thobeGradQabd)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <path d="M 135 75 Q 133 108 136 140 L 184 140 Q 187 108 185 75 Q 160 70 135 75 Z" fill="url(#thobeGradQabd)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <!-- Head & Neck -->
-          <path d="M 154 75 L 154 62 L 166 62 L 166 75 Z" fill="#fed7aa"/>
-          <ellipse cx="160" cy="46" rx="13" ry="15" fill="#fed7aa"/>
-          <path d="M 147 43 Q 160 30 173 43 Q 173 34 160 32 Q 147 34 147 43 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-          <path d="M 166 46 Q 169 50 166 54" stroke="#d97706" stroke-width="1" fill="none"/>
-          <!-- Folded Arms Across Chest (القبض على الصدر) -->
-          <!-- Left arm bent to center -->
-          <path d="M 136 78 C 128 95 135 106 155 106" fill="none" stroke="#f1f5f9" stroke-width="11" stroke-linecap="round"/>
-          <path d="M 136 78 C 128 95 135 106 155 106" fill="none" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/>
-          <!-- Right arm crossing over left wrist -->
-          <path d="M 184 78 C 192 95 180 104 158 104" fill="none" stroke="#f1f5f9" stroke-width="11" stroke-linecap="round"/>
-          <path d="M 184 78 C 192 95 180 104 158 104" fill="none" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/>
-          <!-- Hands clasp on chest -->
-          <rect x="148" y="99" width="24" height="11" rx="5.5" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
-          <!-- Indicator ring -->
-          <circle cx="160" cy="104" r="14" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="3,3"/>
-        </g>
-        <!-- Educational Badge -->
-        <g transform="translate(50, 12)">
-          <rect width="220" height="22" rx="11" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-          <text x="110" y="15" font-size="8.5" fill="#065f46" font-weight="black" text-anchor="middle">القبض: وضع كف اليمين على ظهر اليسرى على الصدر</text>
-        </g>
-      </svg>`,
-
-      // 3. Ruku': Level 90-degree flat table back, head aligned, hands cupping kneecaps with spread fingers
-      ruku: `<svg viewBox="0 0 340 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
-        <defs>
-          <linearGradient id="matGradRuku" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
-          </linearGradient>
-          <linearGradient id="thobeGradRuku" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
-          </linearGradient>
-          <filter id="shadowRuku" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
-          </filter>
-        </defs>
-        <!-- Prayer Mat -->
-        <polygon points="30,225 310,225 285,253 55,253" fill="url(#matGradRuku)" stroke="#047857" stroke-width="1.5"/>
-        <polygon points="50,229 290,229 270,249 70,249" fill="#065f46" opacity="0.5"/>
-        <!-- Spirit Level Bar on Back -->
-        <g transform="translate(60, 68)">
-          <rect width="180" height="18" rx="9" fill="#f0f9ff" stroke="#0284c7" stroke-width="1.5"/>
-          <rect x="75" y="3" width="30" height="12" rx="6" fill="#38bdf8" opacity="0.5"/>
-          <circle cx="90" cy="9" r="4" fill="#0284c7"/>
-          <text x="90" y="-5" font-size="8.5" fill="#0284c7" font-weight="black" text-anchor="middle">استواء الظهر كأنه صفيحة ماء (٩٠ درجة)</text>
-        </g>
-        <!-- Worshipper Body in Ruku -->
-        <g filter="url(#shadowRuku)">
-          <!-- Feet on mat -->
-          <ellipse cx="228" cy="228" rx="8" ry="4" fill="#334155"/>
-          <!-- Legs (upright / slightly flexed) -->
-          <path d="M 218 135 L 222 226 L 234 226 L 232 135 Z" fill="url(#thobeGradRuku)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <line x1="226" y1="140" x2="226" y2="224" stroke="#e2e8f0" stroke-width="1"/>
-          <!-- Torso / Spine perfectly 90 degrees horizontal -->
-          <path d="M 230 135 L 230 95 C 220 92 110 92 100 95 L 100 135 C 130 132 210 132 230 135 Z" fill="url(#thobeGradRuku)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <line x1="102" y1="98" x2="228" y2="98" stroke="#cbd5e1" stroke-width="1.5"/>
-          <!-- Head aligned with back (لم يشخص ولم يصوب) -->
-          <path d="M 100 102 L 86 104 L 86 118 L 100 120 Z" fill="#fed7aa"/>
-          <ellipse cx="78" cy="110" rx="13" ry="12" fill="#fed7aa"/>
-          <path d="M 78 98 Q 90 98 90 110 Q 78 112 66 110 Q 66 98 78 98 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-          <!-- Arms descending to Knees -->
-          <path d="M 115 110 L 210 162" stroke="#f8fafc" stroke-width="14" stroke-linecap="round"/>
-          <path d="M 115 110 L 210 162" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
-          <!-- Hands gripping Knees with spread fingers -->
-          <circle cx="215" cy="164" r="8" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
-          <path d="M 210 159 L 205 156 M 210 164 L 204 164 M 210 169 L 205 172" stroke="#b45309" stroke-width="1.5" stroke-linecap="round"/>
-          <circle cx="222" cy="165" r="5" fill="none" stroke="#047857" stroke-width="2" stroke-dasharray="2,2"/>
-        </g>
-        <!-- Cues Badges -->
-        <g transform="translate(160, 186)">
-          <rect width="130" height="20" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
-          <text x="65" y="13" font-size="8" fill="#b45309" font-weight="bold" text-anchor="middle">تفريج الأصابع ومس الركبتين</text>
-        </g>
-      </svg>`,
-
-      // 4. Raf' / Itidal: Standing upright, erect spine, tranquil stillness
-      itidal: `<svg viewBox="0 0 320 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
-        <defs>
-          <linearGradient id="matGradItidal" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
-          </linearGradient>
-          <linearGradient id="thobeGradItidal" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
-          </linearGradient>
-          <filter id="shadowItidal" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
-          </filter>
-        </defs>
-        <path d="M 105 235 Q 105 20 160 20 Q 215 20 215 235" fill="#f0fdf4" opacity="0.65"/>
-        <polygon points="45,225 275,225 255,253 65,253" fill="url(#matGradItidal)" stroke="#047857" stroke-width="1.5"/>
-        <polygon points="65,229 255,229 240,249 80,249" fill="#065f46" opacity="0.5"/>
-        <path d="M 135 249 Q 160 234 185 249" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
-        <!-- Worshipper Body Group in Itidal -->
-        <g filter="url(#shadowItidal)">
-          <ellipse cx="150" cy="228" rx="7" ry="3.5" fill="#334155"/>
-          <ellipse cx="170" cy="228" rx="7" ry="3.5" fill="#334155"/>
-          <path d="M 136 138 L 142 225 L 178 225 L 184 138 Z" fill="url(#thobeGradItidal)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <path d="M 135 75 Q 133 108 136 140 L 184 140 Q 187 108 185 75 Q 160 70 135 75 Z" fill="url(#thobeGradItidal)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <!-- Head & Neck straight with reverence -->
-          <path d="M 154 75 L 154 62 L 166 62 L 166 75 Z" fill="#fed7aa"/>
-          <ellipse cx="160" cy="46" rx="13" ry="15" fill="#fed7aa"/>
-          <path d="M 147 43 Q 160 30 173 43 Q 173 34 160 32 Q 147 34 147 43 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-          <!-- Calm arms by side or raised in transition -->
-          <path d="M 136 78 C 126 100 130 125 132 145" fill="none" stroke="#f1f5f9" stroke-width="11" stroke-linecap="round"/>
-          <path d="M 136 78 C 126 100 130 125 132 145" fill="none" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/>
-          <path d="M 184 78 C 194 100 190 125 188 145" fill="none" stroke="#f1f5f9" stroke-width="11" stroke-linecap="round"/>
-          <path d="M 184 78 C 194 100 190 125 188 145" fill="none" stroke="#94a3b8" stroke-width="1.2" stroke-linecap="round"/>
-          <!-- Hands calm -->
-          <ellipse cx="132" cy="148" rx="5" ry="6" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
-          <ellipse cx="188" cy="148" rx="5" ry="6" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
-        </g>
-        <!-- Educational Badge -->
-        <g transform="translate(50, 12)">
-          <rect width="220" height="22" rx="11" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-          <text x="110" y="15" font-size="8.5" fill="#065f46" font-weight="black" text-anchor="middle">الاعتدال التام والطمأنينة حتى يرجع كل عظم لموضعه</text>
-        </g>
-      </svg>`,
-
-      // 5. Sujud: 7 limbs, elevated forearms/elbows, air gap under belly (Tajafi)
-      sujud: `<svg viewBox="0 0 360 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
-        <defs>
-          <linearGradient id="matGradSujud" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
-          </linearGradient>
-          <linearGradient id="thobeGradSujud" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
-          </linearGradient>
-          <filter id="shadowSujud" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
-          </filter>
-        </defs>
-        <!-- Mat -->
-        <polygon points="20,225 340,225 315,255 45,255" fill="url(#matGradSujud)" stroke="#047857" stroke-width="1.5"/>
-        <polygon points="40,229 320,229 300,250 60,250" fill="#065f46" opacity="0.5"/>
-        <!-- Prostrating Worshipper -->
-        <g filter="url(#shadowSujud)">
-          <!-- Feet (Erect toes bent forward touching mat - Point 6 & 7) -->
-          <ellipse cx="285" cy="224" rx="9" ry="4" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
-          <path d="M 285 220 L 275 180 L 295 180 Z" fill="url(#thobeGradSujud)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <!-- Lower Leg to Knees (Point 4 & 5 - Knees touching mat) -->
-          <path d="M 275 180 L 210 224 L 195 224 L 255 170 Z" fill="url(#thobeGradSujud)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <!-- Thighs & Torso (Abdomen lifted away from thighs) -->
-          <path d="M 255 170 C 230 115 160 115 130 160 L 140 180 C 160 145 220 145 240 180 Z" fill="url(#thobeGradSujud)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <!-- Head: Forehead & Nose on mat (Point 1) -->
-          <ellipse cx="75" cy="220" rx="14" ry="12" fill="#fed7aa" transform="rotate(15 75 220)"/>
-          <path d="M 66 212 Q 78 205 88 214 Q 82 208 72 208 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-          <circle cx="63" cy="224" r="3" fill="#fed7aa"/>
-          <!-- Arms: High lifted elbows (NO dog-like resting), palms flat beside head (Point 2 & 3) -->
-          <path d="M 130 155 Q 110 120 95 140" fill="none" stroke="#f8fafc" stroke-width="14" stroke-linecap="round"/>
-          <path d="M 130 155 Q 110 120 95 140" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
-          <path d="M 95 140 L 98 222" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
-          <path d="M 95 140 L 98 222" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
-          <!-- Flat Palm on ground (Fingers together facing Qiblah) -->
-          <ellipse cx="98" cy="224" rx="7" ry="3.5" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
-          <!-- Air gap indicator under belly / arms (التجافي) -->
-          <path d="M 115 190 Q 150 165 185 195" fill="none" stroke="#10b981" stroke-width="2" stroke-dasharray="3,3"/>
-          <rect x="125" y="165" width="55" height="15" rx="7" fill="#ecfdf5" stroke="#10b981" stroke-width="1"/>
-          <text x="152" y="176" font-size="7" fill="#047857" font-weight="bold" text-anchor="middle">تجافي البطن</text>
-        </g>
-        <!-- 7 CONTACT POINTS (الأعضاء السبعة) -->
-        <g transform="translate(58, 206)">
-          <circle cx="8" cy="8" r="8" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
-          <text x="8" y="11" font-size="8.5" fill="#ffffff" font-weight="black" text-anchor="middle">1</text>
-        </g>
-        <g transform="translate(93, 206)">
-          <circle cx="8" cy="8" r="8" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
-          <text x="8" y="11" font-size="7.5" fill="#ffffff" font-weight="black" text-anchor="middle">2,3</text>
-        </g>
-        <g transform="translate(196, 206)">
-          <circle cx="8" cy="8" r="8" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
-          <text x="8" y="11" font-size="7.5" fill="#ffffff" font-weight="black" text-anchor="middle">4,5</text>
-        </g>
-        <g transform="translate(278, 206)">
-          <circle cx="8" cy="8" r="8" fill="#ef4444" stroke="#ffffff" stroke-width="1.5"/>
-          <text x="8" y="11" font-size="7.5" fill="#ffffff" font-weight="black" text-anchor="middle">6,7</text>
-        </g>
-        <!-- Top Educational Banner -->
-        <g transform="translate(30, 15)">
-          <rect width="300" height="24" rx="12" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
-          <text x="150" y="16" font-size="8.5" fill="#991b1b" font-weight="black" text-anchor="middle">السجود على 7 أعضاء كاملة مع رفع الذراعين (نهي عن افتراش الكلب)</text>
-        </g>
-      </svg>`,
-
-      // 6. Iftirash: Left foot flattened underneath, right foot erect on toes, hands on thighs
-      iftirash: `<svg viewBox="0 0 340 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
-        <defs>
-          <linearGradient id="matGradIftirash" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
-          </linearGradient>
-          <linearGradient id="thobeGradIftirash" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
-          </linearGradient>
-          <filter id="shadowIftirash" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
-          </filter>
-        </defs>
-        <polygon points="30,225 310,225 285,253 55,253" fill="url(#matGradIftirash)" stroke="#047857" stroke-width="1.5"/>
-        <polygon points="50,229 290,229 270,249 70,249" fill="#065f46" opacity="0.5"/>
-        <g filter="url(#shadowIftirash)">
-          <!-- Right Foot Erect on Toes (نصب اليمنى) -->
-          <ellipse cx="235" cy="224" rx="7" ry="4" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
-          <!-- Left Foot Flattened under Buttocks (فرش اليسرى والجلوس عليها) -->
-          <rect x="160" y="222" width="55" height="7" rx="3" fill="#10b981" stroke="#047857" stroke-width="1"/>
-          <text x="187" y="217" font-size="7.5" fill="#047857" font-weight="black" text-anchor="middle">اليسرى مفروشة تحته</text>
-          <!-- Lower Body / Thighs -->
-          <path d="M 140 185 L 120 224 L 210 224 L 205 170 Z" fill="url(#thobeGradIftirash)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <!-- Torso Upright Tranquil -->
-          <path d="M 165 95 L 155 175 L 205 175 L 195 95 Z" fill="url(#thobeGradIftirash)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <!-- Head bowed respectfully -->
-          <path d="M 175 95 L 175 80 L 185 80 L 185 95 Z" fill="#fed7aa"/>
-          <ellipse cx="180" cy="65" rx="13" ry="15" fill="#fed7aa"/>
-          <path d="M 167 62 Q 180 50 193 62 Q 193 54 180 52 Q 167 54 167 62 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-          <!-- Arms resting on thighs near knees -->
-          <path d="M 170 100 L 140 160 L 130 185" fill="none" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
-          <path d="M 170 100 L 140 160 L 130 185" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
-          <ellipse cx="130" cy="186" rx="7" ry="4" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
-        </g>
-        <!-- Educational Badge -->
-        <g transform="translate(45, 12)">
-          <rect width="250" height="22" rx="11" fill="#ecfdf5" stroke="#10b981" stroke-width="1.5"/>
-          <text x="125" y="15" font-size="8.5" fill="#065f46" font-weight="black" text-anchor="middle">صفة الافتراش: فرش اليسرى والقعود عليها ونصب اليمنى</text>
-        </g>
-      </svg>`,
-
-      // 7. Tawarruk: Left foot passed out to the right side, buttocks on the ground, index finger pointing
-      tawarruk: `<svg viewBox="0 0 340 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
-        <defs>
-          <linearGradient id="matGradTawarruk" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
-          </linearGradient>
-          <linearGradient id="thobeGradTawarruk" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
-          </linearGradient>
-          <filter id="shadowTawarruk" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
-          </filter>
-        </defs>
-        <polygon points="30,225 310,225 285,253 55,253" fill="url(#matGradTawarruk)" stroke="#047857" stroke-width="1.5"/>
-        <polygon points="50,229 290,229 270,249 70,249" fill="#065f46" opacity="0.5"/>
-        <g filter="url(#shadowTawarruk)">
-          <!-- Right Foot Erect on toes -->
-          <ellipse cx="245" cy="224" rx="7" ry="4" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
-          <!-- Left Leg exited to the right side from beneath right shin -->
-          <path d="M 175 220 Q 215 225 235 232" fill="none" stroke="#0284c7" stroke-width="6" stroke-linecap="round"/>
-          <text x="250" y="242" font-size="7.5" fill="#0369a1" font-weight="black">إخراج اليسرى للجانب الأيمن</text>
-          <!-- Buttocks directly on ground -->
-          <ellipse cx="180" cy="223" rx="25" ry="6" fill="#047857" opacity="0.4"/>
-          <text x="150" y="215" font-size="7.5" fill="#ef4444" font-weight="black">المقعدة على الأرض</text>
-          <!-- Torso and Thighs -->
-          <path d="M 135 185 L 120 224 L 205 224 L 205 170 Z" fill="url(#thobeGradTawarruk)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <path d="M 165 95 L 155 175 L 205 175 L 195 95 Z" fill="url(#thobeGradTawarruk)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <!-- Head -->
-          <path d="M 175 95 L 175 80 L 185 80 L 185 95 Z" fill="#fed7aa"/>
-          <ellipse cx="180" cy="65" rx="13" ry="15" fill="#fed7aa"/>
-          <path d="M 167 62 Q 180 50 193 62 Q 193 54 180 52 Q 167 54 167 62 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-          <!-- Right Hand with Index finger pointed (الإشارة بالسبابة) -->
-          <path d="M 170 100 L 140 160 L 125 180" fill="none" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
-          <path d="M 170 100 L 140 160 L 125 180" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
-          <ellipse cx="122" cy="180" rx="6" ry="5" fill="#fed7aa" stroke="#d97706" stroke-width="1"/>
-          <line x1="122" y1="178" x2="108" y2="172" stroke="#b45309" stroke-width="3" stroke-linecap="round"/>
-          <text x="95" y="165" font-size="7.5" fill="#b45309" font-weight="black">الإشارة بالسبابة</text>
-        </g>
-        <!-- Educational Badge -->
-        <g transform="translate(45, 12)">
-          <rect width="250" height="22" rx="11" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
-          <text x="125" y="15" font-size="8.5" fill="#1d4ed8" font-weight="black" text-anchor="middle">صفة التَّوَرُّك: إفضاء الإلية للأرض وإخراج اليسرى من تحته</text>
-        </g>
-      </svg>`,
-
-      // 8. Taslim: Sitting worshipper turning head to the right, showing cheek profile with directional arrow
-      taslim: `<svg viewBox="0 0 340 260" class="w-full h-full max-h-60 sm:max-h-64 select-none">
-        <defs>
-          <linearGradient id="matGradTaslim" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#064e3b"/><stop offset="50%" stop-color="#047857"/><stop offset="100%" stop-color="#064e3b"/>
-          </linearGradient>
-          <linearGradient id="thobeGradTaslim" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#f1f5f9"/>
-          </linearGradient>
-          <filter id="shadowTaslim" x="-10%" y="-10%" width="120%" height="120%">
-            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
-          </filter>
-        </defs>
-        <polygon points="30,225 310,225 285,253 55,253" fill="url(#matGradTaslim)" stroke="#047857" stroke-width="1.5"/>
-        <polygon points="50,229 290,229 270,249 70,249" fill="#065f46" opacity="0.5"/>
-        <g filter="url(#shadowTaslim)">
-          <path d="M 140 185 L 120 224 L 210 224 L 205 170 Z" fill="url(#thobeGradTaslim)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <path d="M 165 95 L 155 175 L 205 175 L 195 95 Z" fill="url(#thobeGradTaslim)" stroke="#cbd5e1" stroke-width="1.5"/>
-          <!-- Head turned to the right (showing cheek profile) -->
-          <path d="M 175 95 L 175 80 L 185 80 L 185 95 Z" fill="#fed7aa"/>
-          <ellipse cx="195" cy="65" rx="14" ry="15" fill="#fed7aa"/>
-          <path d="M 185 60 Q 198 48 208 60 Q 208 52 198 50 Q 185 52 185 60 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1"/>
-          <!-- Cheek Highlight -->
-          <ellipse cx="197" cy="66" rx="6" ry="5" fill="#ffffff" opacity="0.9" stroke="#fde047" stroke-width="1"/>
-          <text x="215" y="55" font-size="7.5" fill="#b45309" font-weight="black">بياض خده الأيمن</text>
-          <!-- Direction arrow for turning -->
-          <path d="M 165 48 Q 185 35 205 48" fill="none" stroke="#10b981" stroke-width="2.5"/>
-          <!-- Arms on knees -->
-          <path d="M 170 100 L 140 160 L 130 185" fill="none" stroke="#f8fafc" stroke-width="12" stroke-linecap="round"/>
-          <path d="M 170 100 L 140 160 L 130 185" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
-        </g>
-        <!-- Educational Badge -->
-        <g transform="translate(45, 12)">
-          <rect width="250" height="22" rx="11" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
-          <text x="125" y="15" font-size="8.5" fill="#991b1b" font-weight="black" text-anchor="middle">التسليمة الأولى: الالتفات يميناً حتى يُرى بياض خده</text>
-        </g>
-      </svg>`
+      takbeer: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+  <defs>
+      <linearGradient id="bgPlate_tk" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f8fafc"/>
+        <stop offset="100%" stop-color="#f1f5f9"/>
+      </linearGradient>
+      <linearGradient id="matGreen_tk" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#064e3b"/>
+        <stop offset="50%" stop-color="#047857"/>
+        <stop offset="100%" stop-color="#064e3b"/>
+      </linearGradient>
+      <linearGradient id="thobeFill_tk" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#e2e8f0"/>
+      </linearGradient>
+    </defs>
+  <rect width="400" height="280" rx="16" fill="url(#bgPlate_tk)" stroke="#cbd5e1" stroke-width="1.5"/>
+    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_tk)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
+  <!-- Sight Line to Sujud Spot -->
+  <line x1="200" y1="52" x2="265" y2="240" stroke="#d97706" stroke-width="2" stroke-dasharray="4,4"/>
+  <circle cx="265" cy="240" r="4" fill="#d97706"/>
+  <g transform="translate(225, 218)">
+    <rect width="80" height="20" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="40" y="14" font-size="9" fill="#b45309" font-weight="900" text-anchor="middle">موضع السجود</text>
+  </g>
+  <!-- Top Banner -->
+  <g transform="translate(50, 15)">
+    <rect width="300" height="26" rx="13" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="150" y="18" font-size="11" fill="#065f46" font-weight="900" text-anchor="middle">رفع اليدين حذو المنكبين والأصابع مستترة للقبلة</text>
+  </g>
+  <!-- Standing Body -->
+  <g stroke="#0f172a" stroke-linejoin="round">
+    <ellipse cx="188" cy="233" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="212" cy="233" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 172 142 L 180 231 L 220 231 L 228 142 Z" fill="url(#thobeFill_tk)" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="200" y1="145" x2="200" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+    <path d="M 170 78 Q 168 112 172 145 L 228 145 Q 232 112 230 78 Q 200 72 170 78 Z" fill="url(#thobeFill_tk)" stroke="#0f172a" stroke-width="2.5"/>
+    <!-- Head & Neck -->
+    <path d="M 193 78 L 193 64 L 207 64 L 207 78 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="200" cy="50" rx="15" ry="16" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 186 46 Q 200 34 214 46 Q 214 36 200 34 Q 186 36 186 46 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 186 42 Q 200 38 214 42" stroke="#047857" stroke-width="2" fill="none"/>
+    <!-- Arms raised for Takbeer -->
+    <path d="M 172 82 C 154 84 144 65 148 48" stroke="url(#thobeFill_tk)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 172 82 C 154 84 144 65 148 48" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <ellipse cx="150" cy="40" rx="6" ry="10" fill="#fed7aa" stroke="#0f172a" stroke-width="2" transform="rotate(-10 150 40)"/>
+    <path d="M 228 82 C 246 84 256 65 252 48" stroke="url(#thobeFill_tk)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 228 82 C 246 84 256 65 252 48" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <ellipse cx="250" cy="40" rx="6" ry="10" fill="#fed7aa" stroke="#0f172a" stroke-width="2" transform="rotate(10 250 40)"/>
+  </g>
+</svg>`,
+      qabd: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+  <defs>
+      <linearGradient id="bgPlate_qb" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f8fafc"/>
+        <stop offset="100%" stop-color="#f1f5f9"/>
+      </linearGradient>
+      <linearGradient id="matGreen_qb" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#064e3b"/>
+        <stop offset="50%" stop-color="#047857"/>
+        <stop offset="100%" stop-color="#064e3b"/>
+      </linearGradient>
+      <linearGradient id="thobeFill_qb" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#e2e8f0"/>
+      </linearGradient>
+    </defs>
+  <rect width="400" height="280" rx="16" fill="url(#bgPlate_qb)" stroke="#cbd5e1" stroke-width="1.5"/>
+    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_qb)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
+  <line x1="200" y1="52" x2="265" y2="240" stroke="#d97706" stroke-width="2" stroke-dasharray="4,4"/>
+  <circle cx="265" cy="240" r="4" fill="#d97706"/>
+  <g transform="translate(225, 218)">
+    <rect width="80" height="20" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="40" y="14" font-size="9" fill="#b45309" font-weight="900" text-anchor="middle">موضع السجود</text>
+  </g>
+  <g transform="translate(50, 15)">
+    <rect width="300" height="26" rx="13" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="150" y="18" font-size="11" fill="#065f46" font-weight="900" text-anchor="middle">القبض: وضع كف اليمين على كف اليسرى على الصدر</text>
+  </g>
+  <g stroke="#0f172a" stroke-linejoin="round">
+    <ellipse cx="188" cy="233" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="212" cy="233" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 172 142 L 180 231 L 220 231 L 228 142 Z" fill="url(#thobeFill_qb)" stroke="#0f172a" stroke-width="2.5"/>
+    <path d="M 170 78 Q 168 112 172 145 L 228 145 Q 232 112 230 78 Q 200 72 170 78 Z" fill="url(#thobeFill_qb)" stroke="#0f172a" stroke-width="2.5"/>
+    <path d="M 193 78 L 193 64 L 207 64 L 207 78 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="200" cy="50" rx="15" ry="16" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 186 46 Q 200 34 214 46 Q 214 36 200 34 Q 186 36 186 46 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+    <!-- Arms folded across chest -->
+    <path d="M 172 82 C 160 102 170 115 195 115" stroke="url(#thobeFill_qb)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 172 82 C 160 102 170 115 195 115" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 228 82 C 240 102 230 113 205 113" stroke="url(#thobeFill_qb)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 228 82 C 240 102 230 113 205 113" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <rect x="188" y="105" width="24" height="14" rx="7" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="200" cy="112" r="16" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="3,3"/>
+  </g>
+</svg>`,
+      ruku: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+  <defs>
+      <linearGradient id="bgPlate_rk" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f8fafc"/>
+        <stop offset="100%" stop-color="#f1f5f9"/>
+      </linearGradient>
+      <linearGradient id="matGreen_rk" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#064e3b"/>
+        <stop offset="50%" stop-color="#047857"/>
+        <stop offset="100%" stop-color="#064e3b"/>
+      </linearGradient>
+      <linearGradient id="thobeFill_rk" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#e2e8f0"/>
+      </linearGradient>
+    </defs>
+  <rect width="400" height="280" rx="16" fill="url(#bgPlate_rk)" stroke="#cbd5e1" stroke-width="1.5"/>
+    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_rk)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
+  <g transform="translate(80, 75)">
+    <rect width="220" height="22" rx="11" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <rect x="95" y="4" width="30" height="14" rx="7" fill="#38bdf8"/>
+    <circle cx="110" cy="11" r="4" fill="#0284c7"/>
+    <text x="110" y="-7" font-size="10" fill="#0284c7" font-weight="900" text-anchor="middle">استواء الظهر كأنه صفيحة ماء (٩٠° تماماً)</text>
+  </g>
+  <g stroke="#0f172a" stroke-linejoin="round">
+    <ellipse cx="275" cy="233" rx="10" ry="5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 262 135 L 268 232 L 282 232 L 278 135 Z" fill="url(#thobeFill_rk)" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="273" y1="140" x2="273" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+    <path d="M 276 135 L 276 95 C 255 92 135 92 120 95 L 120 135 C 160 132 250 132 276 135 Z" fill="url(#thobeFill_rk)" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="122" y1="96" x2="274" y2="96" stroke="#0284c7" stroke-width="2.5"/>
+    <path d="M 120 102 L 102 104 L 102 122 L 120 122 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="92" cy="112" rx="15" ry="14" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 92 98 Q 106 98 106 112 Q 92 114 78 112 Q 78 98 92 98 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 78 106 Q 92 108 106 106" stroke="#047857" stroke-width="2" fill="none"/>
+    <path d="M 140 115 L 255 168" stroke="url(#thobeFill_rk)" stroke-width="18" stroke-linecap="round"/>
+    <path d="M 140 115 L 255 168" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <circle cx="260" cy="170" r="9" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <line x1="254" y1="165" x2="247" y2="161" stroke="#b45309" stroke-width="2" stroke-linecap="round"/>
+    <line x1="254" y1="170" x2="246" y2="170" stroke="#b45309" stroke-width="2" stroke-linecap="round"/>
+    <line x1="254" y1="175" x2="247" y2="179" stroke="#b45309" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="268" cy="172" r="6" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="3,3"/>
+  </g>
+  <g transform="translate(190, 192)">
+    <rect width="165" height="24" rx="12" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="82" y="16" font-size="9.5" fill="#b45309" font-weight="900" text-anchor="middle">تفريج الأصابع كالقابض على ركبتيه</text>
+  </g>
+</svg>`,
+      itidal: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+  <defs>
+      <linearGradient id="bgPlate_it" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f8fafc"/>
+        <stop offset="100%" stop-color="#f1f5f9"/>
+      </linearGradient>
+      <linearGradient id="matGreen_it" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#064e3b"/>
+        <stop offset="50%" stop-color="#047857"/>
+        <stop offset="100%" stop-color="#064e3b"/>
+      </linearGradient>
+      <linearGradient id="thobeFill_it" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#e2e8f0"/>
+      </linearGradient>
+    </defs>
+  <rect width="400" height="280" rx="16" fill="url(#bgPlate_it)" stroke="#cbd5e1" stroke-width="1.5"/>
+    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_it)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
+  <g transform="translate(45, 15)">
+    <rect width="310" height="26" rx="13" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="155" y="18" font-size="11" fill="#065f46" font-weight="900" text-anchor="middle">الاعتدال التام والطمأنينة حتى يرجع كل عظم لموضعه</text>
+  </g>
+  <g stroke="#0f172a" stroke-linejoin="round">
+    <ellipse cx="188" cy="233" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="212" cy="233" rx="8" ry="4.5" fill="#334155" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 172 142 L 180 231 L 220 231 L 228 142 Z" fill="url(#thobeFill_it)" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="200" y1="145" x2="200" y2="230" stroke="#94a3b8" stroke-width="1.5"/>
+    <path d="M 170 78 Q 168 112 172 145 L 228 145 Q 232 112 230 78 Q 200 72 170 78 Z" fill="url(#thobeFill_it)" stroke="#0f172a" stroke-width="2.5"/>
+    <path d="M 193 78 L 193 64 L 207 64 L 207 78 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="200" cy="50" rx="15" ry="16" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 186 46 Q 200 34 214 46 Q 214 36 200 34 Q 186 36 186 46 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+    <!-- Arms calm by sides -->
+    <path d="M 172 82 C 160 105 165 135 168 155" stroke="url(#thobeFill_it)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 172 82 C 160 105 165 135 168 155" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <ellipse cx="168" cy="158" rx="6" ry="7" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 228 82 C 240 105 235 135 232 155" stroke="url(#thobeFill_it)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 228 82 C 240 105 235 135 232 155" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <ellipse cx="232" cy="158" rx="6" ry="7" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+  </g>
+</svg>`,
+      sujud: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+  <defs>
+      <linearGradient id="bgPlate_sj" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f8fafc"/>
+        <stop offset="100%" stop-color="#f1f5f9"/>
+      </linearGradient>
+      <linearGradient id="matGreen_sj" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#064e3b"/>
+        <stop offset="50%" stop-color="#047857"/>
+        <stop offset="100%" stop-color="#064e3b"/>
+      </linearGradient>
+      <linearGradient id="thobeFill_sj" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#e2e8f0"/>
+      </linearGradient>
+    </defs>
+  <rect width="400" height="280" rx="16" fill="url(#bgPlate_sj)" stroke="#cbd5e1" stroke-width="1.5"/>
+    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_sj)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
+  <g transform="translate(35, 15)">
+    <rect width="330" height="26" rx="13" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+    <text x="165" y="18" font-size="10.5" fill="#991b1b" font-weight="900" text-anchor="middle">السجود على ٧ أعضاء كاملة مع رفع الذراعين (نهي عن افتراش الكلب)</text>
+  </g>
+  <g stroke="#0f172a" stroke-linejoin="round">
+    <!-- Feet (Point 6 & 7) -->
+    <g transform="translate(325, 215)">
+      <ellipse cx="0" cy="14" rx="9" ry="4.5" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+      <path d="M -2 14 L -12 -25 L 8 -25 Z" fill="url(#thobeFill_sj)" stroke="#0f172a" stroke-width="2.5"/>
+    </g>
+    <!-- Lower leg to knees (Point 4 & 5) -->
+    <path d="M 315 190 L 240 232 L 222 232 L 290 178 Z" fill="url(#thobeFill_sj)" stroke="#0f172a" stroke-width="2.5"/>
+    <!-- Thighs and Torso with clear air gap under belly -->
+    <path d="M 290 178 C 260 115 175 115 140 162 L 152 186 C 176 148 245 148 272 188 Z" fill="url(#thobeFill_sj)" stroke="#0f172a" stroke-width="2.5"/>
+    <!-- Head: Forehead & nose touching (Point 1) -->
+    <ellipse cx="78" cy="224" rx="16" ry="14" fill="#fed7aa" stroke="#0f172a" stroke-width="2" transform="rotate(15 78 224)"/>
+    <path d="M 68 215 Q 82 208 92 217 Q 86 211 75 211 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+    <circle cx="64" cy="228" r="3.5" fill="#fed7aa" stroke="#0f172a" stroke-width="1.5"/>
+    <!-- Arms: High lifted elbows off the floor -->
+    <path d="M 140 156 Q 118 116 102 138" stroke="url(#thobeFill_sj)" stroke-width="16" stroke-linecap="round"/>
+    <path d="M 140 156 Q 118 116 102 138" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <path d="M 102 138 L 105 226" stroke="url(#thobeFill_sj)" stroke-width="14" stroke-linecap="round"/>
+    <path d="M 102 138 L 105 226" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <ellipse cx="105" cy="229" rx="9" ry="4.5" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <!-- Air gap indicator under belly -->
+    <path d="M 125 195 Q 165 170 205 200" fill="none" stroke="#059669" stroke-width="2.5" stroke-dasharray="4,4"/>
+    <g transform="translate(138, 170)">
+      <rect width="70" height="20" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+      <text x="35" y="14" font-size="8.5" fill="#065f46" font-weight="900" text-anchor="middle">تجافي البطن</text>
+    </g>
+  </g>
+  <!-- 7 NUMBERED PINS -->
+  <g transform="translate(58, 208)"><circle cx="10" cy="10" r="10" fill="#ef4444" stroke="#ffffff" stroke-width="2"/><text x="10" y="14" font-size="10" fill="#ffffff" font-weight="900" text-anchor="middle">1</text></g>
+  <g transform="translate(95, 208)"><circle cx="10" cy="10" r="10" fill="#ef4444" stroke="#ffffff" stroke-width="2"/><text x="10" y="14" font-size="9" fill="#ffffff" font-weight="900" text-anchor="middle">2,3</text></g>
+  <g transform="translate(225, 208)"><circle cx="10" cy="10" r="10" fill="#ef4444" stroke="#ffffff" stroke-width="2"/><text x="10" y="14" font-size="9" fill="#ffffff" font-weight="900" text-anchor="middle">4,5</text></g>
+  <g transform="translate(315, 208)"><circle cx="10" cy="10" r="10" fill="#ef4444" stroke="#ffffff" stroke-width="2"/><text x="10" y="14" font-size="9" fill="#ffffff" font-weight="900" text-anchor="middle">6,7</text></g>
+</svg>`,
+      iftirash: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+  <defs>
+      <linearGradient id="bgPlate_if" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f8fafc"/>
+        <stop offset="100%" stop-color="#f1f5f9"/>
+      </linearGradient>
+      <linearGradient id="matGreen_if" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#064e3b"/>
+        <stop offset="50%" stop-color="#047857"/>
+        <stop offset="100%" stop-color="#064e3b"/>
+      </linearGradient>
+      <linearGradient id="thobeFill_if" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#e2e8f0"/>
+      </linearGradient>
+    </defs>
+  <rect width="400" height="280" rx="16" fill="url(#bgPlate_if)" stroke="#cbd5e1" stroke-width="1.5"/>
+    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_if)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
+  <g transform="translate(50, 15)">
+    <rect width="300" height="26" rx="13" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="150" y="18" font-size="11" fill="#065f46" font-weight="900" text-anchor="middle">هيئة الافتراش: فرش اليسرى والجلوس عليها ونصب اليمنى</text>
+  </g>
+  <g stroke="#0f172a" stroke-linejoin="round">
+    <!-- Right foot upright on toes (نصب اليمنى) -->
+    <g transform="translate(295, 215)">
+      <path d="M 0 0 L 8 16 L -4 16 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+      <ellipse cx="3" cy="16" rx="7" ry="4" fill="#fed7aa" stroke="#0f172a" stroke-width="1.5"/>
+      <circle cx="3" cy="16" r="11" fill="none" stroke="#0284c7" stroke-width="2" stroke-dasharray="3,3"/>
+    </g>
+    <g transform="translate(265, 172)">
+      <rect width="105" height="20" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+      <text x="52" y="14" font-size="8.5" fill="#0369a1" font-weight="900" text-anchor="middle">نصب القدم اليمنى</text>
+    </g>
+    <!-- Left foot flat under buttocks (فرش اليسرى) -->
+    <g transform="translate(175, 226)">
+      <rect width="90" height="11" rx="5.5" fill="#10b981" stroke="#047857" stroke-width="2"/>
+      <circle cx="45" cy="5" r="14" fill="none" stroke="#059669" stroke-width="2" stroke-dasharray="3,3"/>
+    </g>
+    <g transform="translate(165, 246)">
+      <rect width="110" height="20" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="1.5"/>
+      <text x="55" y="14" font-size="8.5" fill="#065f46" font-weight="900" text-anchor="middle">اليسرى مفروشة تحته</text>
+    </g>
+    <!-- Legs & Thighs in Thobe -->
+    <path d="M 140 185 L 120 230 L 265 230 L 260 170 Z" fill="url(#thobeFill_if)" stroke="#0f172a" stroke-width="2.5"/>
+    <!-- Torso -->
+    <path d="M 205 95 L 190 180 L 260 180 L 245 95 Z" fill="url(#thobeFill_if)" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="222" y1="100" x2="222" y2="175" stroke="#94a3b8" stroke-width="1.5"/>
+    <!-- Head -->
+    <path d="M 218 95 L 218 78 L 232 78 L 232 95 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="225" cy="62" rx="16" ry="17" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 210 58 Q 225 44 240 58 Q 240 48 225 46 Q 210 48 210 58 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 210 54 Q 225 50 240 54" stroke="#047857" stroke-width="2" fill="none"/>
+    <!-- Arms on thighs -->
+    <path d="M 210 105 L 170 165 L 155 190" stroke="url(#thobeFill_if)" stroke-width="16" stroke-linecap="round"/>
+    <path d="M 210 105 L 170 165 L 155 190" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <ellipse cx="155" cy="192" rx="9" ry="6" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+  </g>
+</svg>`,
+      tawarruk: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+  <defs>
+      <linearGradient id="bgPlate_tw" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f8fafc"/>
+        <stop offset="100%" stop-color="#f1f5f9"/>
+      </linearGradient>
+      <linearGradient id="matGreen_tw" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#064e3b"/>
+        <stop offset="50%" stop-color="#047857"/>
+        <stop offset="100%" stop-color="#064e3b"/>
+      </linearGradient>
+      <linearGradient id="thobeFill_tw" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#e2e8f0"/>
+      </linearGradient>
+    </defs>
+  <rect width="400" height="280" rx="16" fill="url(#bgPlate_tw)" stroke="#cbd5e1" stroke-width="1.5"/>
+    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_tw)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
+  <g transform="translate(45, 15)">
+    <rect width="310" height="26" rx="13" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="155" y="18" font-size="11" fill="#1d4ed8" font-weight="900" text-anchor="middle">هيئة التَّوَرُّك: إفضاء الإلية للأرض وإخراج اليسرى للجانب الأيمن</text>
+  </g>
+  <g stroke="#0f172a" stroke-linejoin="round">
+    <!-- Right foot upright on toes (نصب اليمنى) -->
+    <g transform="translate(300, 215)">
+      <path d="M 0 0 L 8 16 L -4 16 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+      <ellipse cx="3" cy="16" rx="7" ry="4" fill="#fed7aa" stroke="#0f172a" stroke-width="1.5"/>
+    </g>
+    <!-- Left foot exiting to the right -->
+    <path d="M 220 226 Q 265 230 290 240" stroke="#0284c7" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <ellipse cx="294" cy="242" rx="8" ry="5" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <g transform="translate(250, 246)">
+      <rect width="125" height="20" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.5"/>
+      <text x="62" y="14" font-size="8.5" fill="#0369a1" font-weight="900" text-anchor="middle">إخراج اليسرى للجانب الأيمن</text>
+    </g>
+    <!-- Buttocks directly on the ground -->
+    <ellipse cx="215" cy="230" rx="35" ry="8" fill="#ef4444" opacity="0.35" stroke="#dc2626" stroke-width="2"/>
+    <g transform="translate(125, 246)">
+      <rect width="115" height="20" rx="10" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+      <text x="57" y="14" font-size="8.5" fill="#b91c1c" font-weight="900" text-anchor="middle">الجلوس بالمقعدة على الأرض</text>
+    </g>
+    <!-- Legs & Thighs in Thobe -->
+    <path d="M 135 185 L 115 230 L 260 230 L 255 170 Z" fill="url(#thobeFill_tw)" stroke="#0f172a" stroke-width="2.5"/>
+    <!-- Torso -->
+    <path d="M 205 95 L 190 180 L 260 180 L 245 95 Z" fill="url(#thobeFill_tw)" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="222" y1="100" x2="222" y2="175" stroke="#94a3b8" stroke-width="1.5"/>
+    <!-- Head -->
+    <path d="M 218 95 L 218 78 L 232 78 L 232 95 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="225" cy="62" rx="16" ry="17" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 210 58 Q 225 44 240 58 Q 240 48 225 46 Q 210 48 210 58 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 210 54 Q 225 50 240 54" stroke="#047857" stroke-width="2" fill="none"/>
+    <!-- Right Hand with Index finger pointed in Tawhid -->
+    <path d="M 210 105 L 170 165 L 145 185" stroke="url(#thobeFill_tw)" stroke-width="16" stroke-linecap="round"/>
+    <path d="M 210 105 L 170 165 L 145 185" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <circle cx="142" cy="186" r="8" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <line x1="142" y1="184" x2="120" y2="176" stroke="#b45309" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="118" cy="175" r="3.5" fill="#b45309"/>
+    <g transform="translate(65, 155)">
+      <rect width="95" height="20" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="47" y="14" font-size="8.5" fill="#b45309" font-weight="900" text-anchor="middle">الإشارة بالسبابة</text>
+    </g>
+  </g>
+</svg>`,
+      taslim: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" class="w-full h-full max-h-60 sm:max-h-64 select-none">
+  <defs>
+      <linearGradient id="bgPlate_ts" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#f8fafc"/>
+        <stop offset="100%" stop-color="#f1f5f9"/>
+      </linearGradient>
+      <linearGradient id="matGreen_ts" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#064e3b"/>
+        <stop offset="50%" stop-color="#047857"/>
+        <stop offset="100%" stop-color="#064e3b"/>
+      </linearGradient>
+      <linearGradient id="thobeFill_ts" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#ffffff"/>
+        <stop offset="100%" stop-color="#e2e8f0"/>
+      </linearGradient>
+    </defs>
+  <rect width="400" height="280" rx="16" fill="url(#bgPlate_ts)" stroke="#cbd5e1" stroke-width="1.5"/>
+    <polygon points="30,230 370,230 340,265 60,265" fill="url(#matGreen_ts)" stroke="#047857" stroke-width="2"/>
+    <polygon points="55,234 345,234 325,260 75,260" fill="#065f46" stroke="#d97706" stroke-width="1.5"/>
+    <path d="M 170 260 Q 200 240 230 260" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <line x1="60" y1="265" x2="55" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="80" y1="265" x2="75" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="320" y1="265" x2="325" y2="271" stroke="#d97706" stroke-width="2"/>
+    <line x1="340" y1="265" x2="345" y2="271" stroke="#d97706" stroke-width="2"/>
+  <g transform="translate(50, 15)">
+    <rect width="300" height="26" rx="13" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+    <text x="150" y="18" font-size="11" fill="#991b1b" font-weight="900" text-anchor="middle">التسليمة الأولى: الالتفات يميناً حتى يُرى بياض خده</text>
+  </g>
+  <g stroke="#0f172a" stroke-linejoin="round">
+    <path d="M 140 185 L 120 230 L 265 230 L 260 170 Z" fill="url(#thobeFill_ts)" stroke="#0f172a" stroke-width="2.5"/>
+    <path d="M 205 95 L 190 180 L 260 180 L 245 95 Z" fill="url(#thobeFill_ts)" stroke="#0f172a" stroke-width="2.5"/>
+    <!-- Head rotated right -->
+    <path d="M 218 95 L 218 78 L 232 78 L 232 95 Z" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <ellipse cx="242" cy="62" rx="17" ry="17" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+    <path d="M 230 54 Q 245 42 258 54 Q 258 46 245 44 Q 230 46 230 54 Z" fill="#ffffff" stroke="#0f172a" stroke-width="2"/>
+    <!-- Cheek highlight -->
+    <ellipse cx="246" cy="64" rx="7" ry="6" fill="#ffffff" stroke="#f59e0b" stroke-width="2"/>
+    <g transform="translate(262, 52)">
+      <rect width="105" height="20" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+      <text x="52" y="14" font-size="8.5" fill="#b45309" font-weight="900" text-anchor="middle">بياض خده الأيمن</text>
+    </g>
+    <!-- Rotation arrow -->
+    <path d="M 205 45 Q 228 32 250 46" fill="none" stroke="#059669" stroke-width="3"/>
+    <!-- Arms -->
+    <path d="M 210 105 L 170 165 L 155 190" stroke="url(#thobeFill_ts)" stroke-width="16" stroke-linecap="round"/>
+    <path d="M 210 105 L 170 165 L 155 190" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+    <ellipse cx="155" cy="192" rx="9" ry="6" fill="#fed7aa" stroke="#0f172a" stroke-width="2"/>
+  </g>
+</svg>`,
     };
 
 /* =========================================================================
@@ -1271,7 +1330,7 @@
         evidence: "حديث عبد الله بن بحينة في البخاري (829).",
         mistake: "الرجوع إليه بعد الشروع في قراءة ركعة جديدة.",
         cues: ["جلسة الافتراش", "تحليق الإبهام مع الوسطى", "الإشارة بالسبابة"],
-        svg: `<svg viewBox="0 0 240 200" class="w-full h-full max-h-60 sm:max-h-64"><line x1="20" y1="175" x2="220" y2="175" stroke="#94a3b8" stroke-width="2"/><line x1="120" y1="55" x2="120" y2="125" stroke="#047857" stroke-width="18" stroke-linecap="round"/><circle cx="120" cy="40" r="14" fill="#065f46"/><circle cx="70" cy="135" r="5" fill="#ef4444"/><line x1="70" y1="135" x2="60" y2="120" stroke="#ef4444" stroke-width="2.5" stroke-linecap="round"/><text x="35" y="115" font-size="8" fill="#ef4444" font-weight="bold">الإشارة بالسبابة</text></svg>`
+        svg: prayerIllustrations.iftirash
       },
       {
         id: "tashahhud_last",
