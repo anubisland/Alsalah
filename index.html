@@ -520,10 +520,20 @@
     <!-- ======================================================== -->
     <div id="tab-mistakes" class="tab-content hidden space-y-6">
       <div class="bg-white rounded-3xl p-5 sm:p-8 shadow-sm border border-slate-200/80">
-        <div class="max-w-3xl mb-6">
-          <span class="text-xs font-bold text-rose-600 bg-rose-50 border border-rose-200 px-3 py-1 rounded-full">المحاذير والمبطلات</span>
-          <h2 class="text-xl sm:text-3xl font-black text-slate-900 mt-2">مختبر تصحيح الأخطاء الشائعة في الصلاة</h2>
-          <p class="text-slate-600 text-xs sm:text-sm mt-1">جمعٌ لأشهر الأخطاء التي يقع فيها بعض المصلين مع بيان علة النهي والبديل النبوي الصحيح من الأحاديث الثابتة.</p>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div class="max-w-2xl">
+            <span class="text-xs font-bold text-rose-700 bg-rose-50 border border-rose-300 px-3 py-1 rounded-full">تصويبات فقهية ونبوية</span>
+            <h2 class="text-xl sm:text-3xl font-black text-slate-950 mt-2">مُحسّن ومُصحح الأخطاء الشائعة في الصلاة</h2>
+            <p class="text-slate-600 text-xs sm:text-sm mt-1 font-semibold">موسوعة شاملة تضم 20 خطأ شائعاً في النية، التكبير، القراءة، الركوع، السجود، والائتمام، مع بيان حكمها الفقهي ودليلها من إسلام ويب والسنة والبديل النبوي الصحيح.</p>
+          </div>
+          <!-- Filter Buttons for Mistakes -->
+          <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+            <button onclick="filterMistakes('all')" id="mstFilter_all" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-rose-700 text-white shadow-md transition scale-105">الكل (20)</button>
+            <button onclick="filterMistakes('invalidating')" id="mstFilter_invalidating" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200 transition">مبطلات ومحرمات</button>
+            <button onclick="filterMistakes('ruku_sujud')" id="mstFilter_ruku_sujud" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-slate-100 hover:bg-slate-200 text-slate-800 transition">الركوع والسجود</button>
+            <button onclick="filterMistakes('imam')" id="mstFilter_imam" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-slate-100 hover:bg-slate-200 text-slate-800 transition">مع الإمام</button>
+            <button onclick="filterMistakes('khushu')" id="mstFilter_khushu" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-slate-100 hover:bg-slate-200 text-slate-800 transition">الهيئة والخشوع</button>
+          </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="mistakesGrid"></div>
       </div>
@@ -1904,33 +1914,240 @@
     }
 
     // Common Mistakes
+        // Comprehensive 20 Common Mistakes (موسوعة تصحيح الأخطاء الشائعة في الصلاة)
     const commonMistakesList = [
-      { title: "نقر الصلاة وعدم الطمأنينة (صلاة المسيء)", tag: "مبطل للصلاة", tagColor: "bg-red-100 text-red-800", desc: "السرعة الشديدة في الركوع والسجود دون سكون المفاصل.", hadith: "«ارْجِعْ فَصَلِّ فَإِنَّكَ لَمْ تُصَلِّ» (متفق عليه).", correction: "المكث في كل ركن حتى يسكن كل عظم لموضعه." },
-      { title: "افتراش الذراعين كبساط الكلب في السجود", tag: "منهي عنه", tagColor: "bg-amber-100 text-amber-800", desc: "إلصاق الذراعين والمرفقين بالأرض في السجود.", hadith: "«وَلاَ يَبْسُطْ أَحَدُكُمْ ذِرَاعَيْهِ انْبِسَاطَ الكَلْبِ» (متفق عليه).", correction: "رفع المرفقين والذراعين عن الأرض ومجافاتهما." },
-      { title: "مسابقة الإمام أو مساواته", tag: "محرم / مبطل", tagColor: "bg-red-100 text-red-800", desc: "النزول للركوع أو السجود قبل الإمام أو معه.", hadith: "«أَمَا يَخْشَى أَحَدُكُمْ إِذَا رَفَعَ رَأْسَهُ قَبْلَ الإِمَامِ أَنْ يَجْعَلَ اللَّهُ رَأْسَهُ رَأْسَ حِمَارٍ».", correction: "المتابعة: لا تتحرك حتى ينقطع صوت تكبير الإمام." },
-      { title: "رفع البصر إلى السماء", tag: "وعيد شديد", tagColor: "bg-rose-100 text-rose-800", desc: "النظر للأعلى أثناء القيام أو الاعتدال.", hadith: "«لَيَنْتَهُنَّ عَنْ ذَلِكَ أَوْ لَتُخْطَفَنَّ أَبْصَارُهُمْ» (البخاري).", correction: "النظر دائماً إلى موضع السجود بخشوع." }
+      {
+        title: "نقر الصلاة وغياب الطمأنينة (صلاة المسيء)",
+        cat: "invalidating",
+        tag: "مبطل للصلاة بإجماع",
+        tagColor: "bg-red-100 text-red-900 border border-red-300",
+        desc: "السرعة الشديدة في الركوع والسجود والرفع منهما دون سكون واستقرار للأعضاء والمفاصل.",
+        hadith: "«ارْجِعْ فَصَلِّ فَإِنَّكَ لَمْ تُصَلِّ» قالها النبي ﷺ ثلاثاً للرجل الذي ينقر صلاته (متفق عليه).",
+        correction: "الطمأنينة ركن باتفاق الأئمة؛ وضابطها المكث في كل ركن حتى يرجع كل عظم ومفصل إلى موضعه بسكون تام."
+      },
+      {
+        title: "تكبيرة الإحرام أثناء الركوع عند إدراك الإمام راكعاً",
+        cat: "invalidating",
+        tag: "مبطل لعدم انعقاد الصلاة",
+        tagColor: "bg-red-100 text-red-900 border border-red-300",
+        desc: "الدخول مسرعاً والانحناء مباشرة للركوع والتكبير أثناء الانحناء دون التكبير من قيام تام.",
+        hadith: "تكبيرة الإحرام ركن لا تنعقد الصلاة بدونه لقوله ﷺ: «وتحريمها التكبير»، ومحلها القيام في الفريضة إجماعاً.",
+        correction: "الوقوف مستوياً تماماً وتكبيرة الإحرام قائماً بنية الصلاة، ثم تكبيرة ثانية (سنة) للهوي إلى الركوع."
+      },
+      {
+        title: "التلفظ بالنية جهراً عند الشروع في الصلاة",
+        cat: "khushu",
+        tag: "بدعة محدثة وخلاف السنة",
+        tagColor: "bg-amber-100 text-amber-900 border border-amber-300",
+        desc: "قول المصلي بلسانه: «نويت أن أصلي صلاة الظهر أربع ركعات حاضر مستقبل القبلة إماماً أو مأموماً...».",
+        hadith: "قال ﷺ: «مَنْ أَحْدَثَ فِي أَمْرِنَا هَذَا مَا لَيْسَ مِنْهُ فَهُوَ رَدٌّ» (متفق عليه)، والنية محلها القلب بإجماع العلماء.",
+        correction: "استحضار النية في القلب مباشرة بالتوجه للصلاة المعينة دون النطق بأي لفظ قبل تكبيرة الإحرام."
+      },
+      {
+        title: "القراءة بالقلب فقط دون تحريك الشفتين واللسان",
+        cat: "invalidating",
+        tag: "لا تصح به القراءة",
+        tagColor: "bg-red-100 text-red-900 border border-red-300",
+        desc: "تمرير الفاتحة والأذكار على الذهن دون أن تتحرك الشفتان أو ينطق اللسان بحروف الكلمات.",
+        hadith: "القراءة شرعاً ولغة لا تسمى قراءة إلا بنطق، فمن لم يحرك لسانه وشفتيه لم يقرأ الفاتحة وتبطل صلاته لترك الركن.",
+        correction: "تحريك اللسان والشفتين بالحروف والكلمات بحيث يسمع نفسه أو يخرج الأصوات دون أن يشوش على من بجانبه."
+      },
+      {
+        title: "مسابقة الإمام في الركوع أو السجود أو الرفع",
+        cat: "imam",
+        tag: "محرم شديد ومبطل للصلاة",
+        tagColor: "bg-red-100 text-red-900 border border-red-300",
+        desc: "الهوي إلى الركوع أو السجود أو رفع الرأس منهما قبل أن يصل الإمام للركن أو يرفع منه.",
+        hadith: "«أَمَا يَخْشَى أَحَدُكُمْ إِذَا رَفَعَ رَأْسَهُ قَبْلَ الإِمَامِ أَنْ يَجْعَلَ اللَّهُ رَأْسَهُ رَأْسَ حِمَارٍ» (متفق عليه).",
+        correction: "المتابعة الشرعية الواجبة: لا تبدأ في الانتقال إلا بعد أن ينقطع صوت تكبير الإمام ويستقر تماماً في الركن."
+      },
+      {
+        title: "مساواة الإمام والركوع والسجود معه معاً",
+        cat: "imam",
+        tag: "مكروه تحريماً يفوت الأجر",
+        tagColor: "bg-amber-100 text-amber-900 border border-amber-300",
+        desc: "موافقة الإمام في الانتقال بحيث يركع معه أو يسجد معه أو يسلم معه في آن واحد.",
+        hadith: "قال ﷺ: «إِنَّمَا جُعِلَ الإِمَامُ لِيُؤْتَمَّ بِهِ؛ فَإِذَا كَبَّرَ فَكَبِّرُوا، وَإِذَا رَكَعَ فَارْكَعُوا» وحرف (الفاء) يفيد التعقيب لا المعية.",
+        correction: "التأخر اليسير المشروع حتى يسبقك الإمام بالفعل، ثم تبدأ أنت بالهوي بعده مباشرة دون تراخٍ مفرط."
+      },
+      {
+        title: "افتراش الذراعين كبساط الكلب في السجود",
+        cat: "ruku_sujud",
+        tag: "منهي عنه شرعاً ومكروه",
+        tagColor: "bg-rose-100 text-rose-900 border border-rose-300",
+        desc: "إلصاق الساعدين والمرفقين بالأرض أثناء السجود كالسبع أو الكلب.",
+        hadith: "قال رسول الله ﷺ: «اعْتَدِلُوا فِي السُّجُودِ، وَلاَ يَبْسُطْ أَحَدُكُمْ ذِرَاعَيْهِ انْبِسَاطَ الكَلْبِ» (متفق عليه).",
+        correction: "رفع المرفقين والذراعين عن الأرض تماماً، وتجافي العضدين عن الجنبين، وتمكين الكفين فقط."
+      },
+      {
+        title: "رفع القدمين أو الأنف عن الأرض أثناء السجود",
+        cat: "ruku_sujud",
+        tag: "مخل بركن السجود",
+        tagColor: "bg-red-100 text-red-900 border border-red-300",
+        desc: "رفع أطراف أصابع القدمين في الهواء، أو السجود على الجبهة فقط مع رفع الأنف عن السجادة.",
+        hadith: "«أُمِرْتُ أَنْ أَسْجُدَ عَلَى سَبْعَةِ أَعْظُمٍ: الجَبْهَةِ -وَأَشَارَ بِيَدِهِ عَلَى أَنْفِهِ- وَاليَدَيْنِ، وَالرُّكْبَتَيْنِ، وَأَطْرَافِ القَدَمَيْنِ».",
+        correction: "تمكين الأعضاء السبعة كلها ملاصقة للأرض طوال فترة السجدة دون رفع أي عضو منها حتى يرفع رأسه."
+      },
+      {
+        title: "رفع البصر إلى السماء أثناء الصلاة",
+        cat: "khushu",
+        tag: "وعيد شديد ومحرم",
+        tagColor: "bg-red-100 text-red-900 border border-red-300",
+        desc: "النظر إلى الأعلى أو نحو السقف أثناء القيام أو عند الرفع من الركوع.",
+        hadith: "«مَا بَالُ أَقْوَامٍ يَرْفَعُونَ أَبْصَارَهُمْ إِلَى السَّمَاءِ فِي صَلاَتِهِمْ؟ لَيَنْتَهُنَّ عَنْ ذَلِكَ أَوْ لَتُخْطَفَنَّ أَبْصَارُهُمْ» (البخاري).",
+        correction: "النظر دائماً إلى موضع السجود بخشوع وتواضع، والنظر إلى السبابة المشيرة في جلسة التشهد."
+      },
+      {
+        title: "تقويس الظهر وتحديبه في الركوع وعدم استوائه",
+        cat: "ruku_sujud",
+        tag: "خلاف السنة ومخل بكمال الركن",
+        tagColor: "bg-amber-100 text-amber-900 border border-amber-300",
+        desc: "إمالة الرأس فقط أو تقويس الظهر دون مد الصلب مستوياً كالصفيحة.",
+        hadith: "كان رسول الله ﷺ إذا ركع لو صب الماء على ظهره لاستقر لاعتداله واستوائه (رواه أحمد وابن ماجه وصححه الألباني).",
+        correction: "جعل الرأس حيال الظهر (لا يشخص ولا يصوب) ومد الصلب مستوياً بزاوية 90 درجة مع قبض الركبتين وتفريج الأصابع."
+      },
+      {
+        title: "الزيادة غير المأثورة في ذكر الرفع: قول «والشكر»",
+        cat: "khushu",
+        tag: "زيادة لفظية لم تثبت",
+        tagColor: "bg-amber-100 text-amber-900 border border-amber-300",
+        desc: "قول المصلي: «ربنا ولك الحمد والشكر» بعد الرفع من الركوع والاعتدال.",
+        hadith: "فتاوى إسلام ويب: زيادة لفظ «والشكر» لم تثبت في شيء من الأحاديث الصحيحة عن النبي ﷺ.",
+        correction: "الاقتصار على الثابت: «ربنا ولك الحمد حمداً كثيراً طيباً مباركاً فيه» أو «ملء السماوات وملء الأرض وما بينهما»."
+      },
+      {
+        title: "كفت الثياب وعقص الشعر وتشمير الأكمام للصلاة",
+        cat: "khushu",
+        tag: "مكروه تنزيهاً ومنهي عنه",
+        tagColor: "bg-slate-100 text-slate-800 border border-slate-300",
+        desc: "تشديد الأكمام أو طي الثوب أو ربط الشعر متعمداً للصلاة لمنع ملامستها للأرض في السجود.",
+        hadith: "قال النبي ﷺ: «أُمِرْتُ أَنْ أَسْجُدَ عَلَى سَبْعَةِ أَعْظُمٍ، وَلاَ أَكُفَّ ثَوْباً وَلاَ شَعْراً» (متفق عليه).",
+        correction: "إرسال الثياب والشعر لتسجد مع البدن وتسجد لله خضوعاً وخشوعاً دون كفتها أو طيها للصلاة."
+      },
+      {
+        title: "التورك في الصلوات الثنائية (كالصبح والجمعة والسنن)",
+        cat: "ruku_sujud",
+        tag: "وضع الهيئة في غير موضعها",
+        tagColor: "bg-slate-100 text-slate-800 border border-slate-300",
+        desc: "القعود متورّكاً بإفضاء المقعدة للأرض في تشهد الفجر أو ركعتي السنة أو صلاة الجمعة.",
+        hadith: "ثبت في حديث أبي حميد الساعدي (البخاري) أن النبي ﷺ جلس مفترشاً في الركعتين، ولم يتورك إلا في الركعة الأخيرة من الصلاة ذات التشهدين.",
+        correction: "الافتراش (فرش اليسرى ونصب اليمنى) سنة في الثنائية والجلوس بين السجدتين، والتورك يختص بالتشهد الأخير للثلاثية والرباعية."
+      },
+      {
+        title: "تحريك السبابة بشكل دائري أو التلويح بها يمنة ويسرة",
+        cat: "ruku_sujud",
+        tag: "هيئة غير ثابتة بالسنة",
+        tagColor: "bg-slate-100 text-slate-800 border border-slate-300",
+        desc: "تدوير الإصبع في حركات دائرية عشوائية أثناء قراءة التشهد والدعاء.",
+        hadith: "السنة الإشارة بالسبابة باتجاه القبلة مع تحريكها رأسياً خفيفاً عند الدعاء وذكر الله تعالى توحيداً لله وإخلاصاً.",
+        correction: "عقد الخنصر والبنصر وتحليق الإبهام مع الوسطى، والإشارة بالسبابة تلقاء القبلة والنظر إليها وتحريكها عند الدعاء."
+      },
+      {
+        title: "الالتفات بالوجه أو بالبصر في الصلاة لغير حاجة",
+        cat: "khushu",
+        tag: "مكروه ينقص أجر الصلاة",
+        tagColor: "bg-amber-100 text-amber-900 border border-amber-300",
+        desc: "الالتفات بالعنق أو تتبع المصلين والمارين بالعينين يمنة ويسرة.",
+        hadith: "سئل رسول الله ﷺ عن الالتفات في الصلاة فقال: «هُوَ اخْتِلاَسٌ يَخْتَلِسُهُ الشَّيْطَانُ مِنْ صَلاَةِ العَبْدِ» (رواه البخاري).",
+        correction: "استحضار الوقوف بين يدي الله تعالى، ولزوم السكون التام والنظر إلى موضع السجود طوال الصلاة."
+      },
+      {
+        title: "كثرة الحركة العبثية والتململ بالهاتف أو الملابس",
+        cat: "invalidating",
+        tag: "مكروه ويبطلها إن توالى وكثر",
+        tagColor: "bg-red-100 text-red-900 border border-red-300",
+        desc: "كثرة الحركات المتتالية لغير ضرورة؛ كفحص الساعة وتعديل الثوب ومسح الوجه مراراً وهز الأقدام.",
+        hadith: "قال تعالى: ﴿الَّذِينَ هُمْ فِي صَلَاتِهِمْ خَاشِعُونَ﴾، وتوالي الحركات الكثيرة العرفية يخرج المصلي عن هيئة الصلاة ويبطلها.",
+        correction: "استحضار هيبة المقام، وإغلاق الهاتف مسبقاً، وتسكين الجوارح إلا لحاجة شرعية خفيفة كدفع مار أو سد فرجة بالصف."
+      },
+      {
+        title: "تغميض العينين في الصلاة بغير مسوغ شرعي",
+        cat: "khushu",
+        tag: "مكروه عند جمهور الفقهاء",
+        tagColor: "bg-slate-100 text-slate-800 border border-slate-300",
+        desc: "إغلاق العينين طوال الصلاة ظناً أنه يجلب الخشوع مطلقاً.",
+        hadith: "كَرِهَ جمهور الفقهاء تغميض العينين لأنه يشبه صلاة اليهود والمجوس، ومخالف لهدي النبي ﷺ في النظر لموضع السجود.",
+        correction: "فتح العينين والنظر إلى موضع السجود اتباعاً للسنة، ولا يغمضهما إلا إذا كان أمامه ما يشوش بصره بقوة كالزخارف."
+      },
+      {
+        title: "المرور بين يدي المصلي أو الصلاة لغير سترة",
+        cat: "khushu",
+        tag: "إثم عظيم ومخالفة مؤكدة",
+        tagColor: "bg-red-100 text-red-900 border border-red-300",
+        desc: "المرور في المسافة الفاصلة بين المصلي وموضع سجوده، أو صلاة المنفرد في فضاء وممر دون وضع سترة أمامه.",
+        hadith: "«لَوْ يَعْلَمُ المَارُّ بَيْنَ يَدَيِ المُصَلِّي مَاذَا عَلَيْهِ، لَكَانَ أَنْ يَقِفَ أَرْبَعِينَ خَيْراً لَهُ مِنْ أَنْ يَمُرَّ بَيْنَ يَدَيْهِ» (متفق عليه).",
+        correction: "الدنو من سترة (جدار، سارية، كرسي) عند الصلاة منفرداً، ودفع من يحاول المرور بينك وبين موضع سجودك برفق."
+      },
+      {
+        title: "الصلاة مع مدافعة الأخبثين (البول والغائط) أو بحضرة طعام",
+        cat: "khushu",
+        tag: "مكروه مذهب لروح الخشوع",
+        tagColor: "bg-amber-100 text-amber-900 border border-amber-300",
+        desc: "حبس البول أو الغائط أو الريح أثناء الصلاة، أو الصلاة ونفسه شديدة التوق لطعام حاضر أمامه.",
+        hadith: "قال رسول الله ﷺ: «لاَ صَلاَةَ بِحَضْرَةِ الطَّعَامِ، وَلاَ وَهُوَ يُدَافِعُهُ الأَخْبَثَانِ» (رواه مسلم).",
+        correction: "قضاء الحاجة في الخلاء أولاً ثم الوضوء بهدوء، وتناول ما يكسر شدة الجوع ليدخل الصلاة خالي الذهن مقبلاً على ربه."
+      },
+      {
+        title: "استباق الالتفات قبل إتمام لفظ التسليمة الأولى",
+        cat: "khushu",
+        tag: "مخالف للسنة ويؤثر على التحليل",
+        tagColor: "bg-amber-100 text-amber-900 border border-amber-300",
+        desc: "أن يبدأ في إدارة وجهه يميناً قبل أن ينطق بكلمة «السلام» أو ينهي صلاته بحركة بدنه قبل لفظ التسليم.",
+        hadith: "لقوله ﷺ: «وتحليلها التسليم»، فالخروج من الصلاة والتحلل منها منوط باللفظ الشرعي للتسليمة الأولى.",
+        correction: "البدء بالنطق بـ «السلام عليكم ورحمة الله» مواكباً لبدء الالتفات إلى اليمين حتى يرى بياض خده، ثم الثانية يساراً."
+      }
     ];
+
+    let currentMistakesFilter = 'all';
+
+    function filterMistakes(cat) {
+      currentMistakesFilter = cat;
+      ['all', 'invalidating', 'ruku_sujud', 'imam', 'khushu'].forEach(c => {
+        const btn = document.getElementById(`mstFilter_${c}`);
+        if (btn) {
+          if (c === cat) {
+            btn.className = "px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-rose-700 text-white shadow-md transition scale-105";
+          } else {
+            btn.className = "px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-slate-100 hover:bg-slate-200 text-slate-800 transition";
+          }
+        }
+      });
+      renderCommonMistakes();
+    }
 
     function renderCommonMistakes() {
       const container = document.getElementById('mistakesGrid');
-      container.innerHTML = commonMistakesList.map(m => `
-        <div class="bg-slate-50 border border-slate-200/80 rounded-3xl p-4 sm:p-5 hover:border-rose-300 transition flex flex-col justify-between">
+      if (!container) return;
+      const filtered = commonMistakesList.filter(m => currentMistakesFilter === 'all' || m.cat === currentMistakesFilter);
+
+      container.innerHTML = filtered.map((m, idx) => `
+        <div class="bg-slate-50 border border-slate-200/90 hover:border-rose-400 rounded-3xl p-4 sm:p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
           <div>
-            <div class="flex items-center justify-between mb-2">
-              <span class="font-black text-slate-900 text-xs sm:text-sm flex items-center gap-1.5"><span class="text-rose-600 font-bold">❌</span><span>${m.title}</span></span>
-              <span class="${m.tagColor} text-[10px] font-extrabold px-2 py-0.5 rounded-full">${m.tag}</span>
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <span class="font-black text-slate-950 text-sm sm:text-base flex items-center gap-2">
+                <span class="w-6 h-6 rounded-lg bg-rose-100 text-rose-800 text-xs font-black flex items-center justify-center flex-shrink-0">${idx + 1}</span>
+                <span>${m.title}</span>
+              </span>
+              <span class="${m.tagColor} text-xs font-black px-2.5 py-0.5 rounded-full whitespace-nowrap shadow-2xs">${m.tag}</span>
             </div>
-            <p class="text-sm sm:text-base text-slate-900 mb-2.5 font-medium leading-relaxed">${m.desc}</p>
-            <div class="bg-rose-50 border border-rose-200 rounded-2xl p-3 text-sm text-rose-950 font-bold mb-2.5 leading-relaxed"><strong>📖 الدليل النبوي:</strong> ${m.hadith}</div>
+            <p class="text-sm sm:text-base text-slate-900 mb-3 font-medium leading-relaxed bg-white p-3 rounded-2xl border border-slate-200/70">${m.desc}</p>
+            <div class="bg-rose-50/90 border border-rose-200/80 rounded-2xl p-3 sm:p-3.5 text-xs sm:text-sm text-rose-950 font-bold mb-3 leading-relaxed">
+              <span class="text-rose-700 font-black block mb-0.5">📖 الدليل والنهي النبوي:</span>
+              ${m.hadith}
+            </div>
           </div>
-          <div class="bg-emerald-50 border border-emerald-300 rounded-2xl p-3 text-sm text-emerald-950 font-bold flex items-center gap-2 leading-relaxed">
-            <span class="text-emerald-700">✓ البديل الصحيح:</span><span>${m.correction}</span>
+          <div class="bg-emerald-50 border border-emerald-300/80 rounded-2xl p-3 sm:p-3.5 text-xs sm:text-sm text-emerald-950 font-black flex items-start gap-2 leading-relaxed shadow-2xs">
+            <span class="text-emerald-700 text-base flex-shrink-0 mt-0.5">✓</span>
+            <div>
+              <span class="text-emerald-800 font-black block mb-0.5">التصويب النبوي الصحيح:</span>
+              <span class="font-bold text-slate-950">${m.correction}</span>
+            </div>
           </div>
         </div>
       `).join('');
     }
 
-    // Quiz
+// Quiz
         // Comprehensive 20-Question Mastery Quiz (إسلام ويب وأهل السنة والجماعة)
     const quizQuestions = [
       {
