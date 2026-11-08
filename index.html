@@ -312,12 +312,21 @@
         </div>
       </section>
 
-      <!-- SECTION: FLASHCARDS -->
+      <!-- SECTION: FLASHCARDS (36 Comprehensive Flashcards) -->
       <section id="sec-flashcards" class="bg-gradient-to-r from-amber-500 via-amber-600 to-emerald-700 rounded-3xl p-5 sm:p-8 text-white shadow-xl">
-        <div class="max-w-2xl mb-5">
-          <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full border border-white/30">تمرين العقل والقلب</span>
-          <h3 class="text-xl sm:text-2xl font-black mt-2">بطاقات التثبيت الذهني التفاعلية (Flashcards)</h3>
-          <p class="text-amber-100 text-xs sm:text-sm mt-1">اضغط على البطاقة لتقلبها في الحال وتختبر معرفتك بالحكم والأثر الشرعي.</p>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+          <div>
+            <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full border border-white/30">تمرين العقل والقلب</span>
+            <h3 class="text-xl sm:text-2xl font-black mt-2">بطاقات التثبيت الذهني التفاعلية (Flashcards)</h3>
+            <p class="text-amber-100 text-xs sm:text-sm mt-1">بطاقات تفاعلية شاملة لكافة الأركان (14) والواجبات (8) والسنن (14). انقر لقلب البطاقة ومعرفة الحكم والأثر الفقهي.</p>
+          </div>
+          <!-- Filter Buttons for Flashcards -->
+          <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+            <button onclick="filterFlashcards('all')" id="fcFilter_all" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white text-slate-900 shadow-md transition scale-105">الكل (36)</button>
+            <button onclick="filterFlashcards('arkan')" id="fcFilter_arkan" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white/20 hover:bg-white/30 text-white transition">الأركان (14)</button>
+            <button onclick="filterFlashcards('wajib')" id="fcFilter_wajib" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white/20 hover:bg-white/30 text-white transition">الواجبات (8)</button>
+            <button onclick="filterFlashcards('sunan')" id="fcFilter_sunan" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white/20 hover:bg-white/30 text-white transition">السنن (14)</button>
+          </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" id="flashcardsGrid"></div>
       </section>
@@ -528,13 +537,13 @@
         <div class="text-center mb-6">
           <span class="text-xs font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">اختبار فقه الصلاة</span>
           <h2 class="text-xl sm:text-3xl font-black text-slate-900 mt-2">اختبر إتقانك لأحكام الأركان والواجبات والسنن</h2>
-          <p class="text-slate-500 text-xs sm:text-sm mt-1">10 أسئلة فقهية عملية لقياس دقة فهمك مع التوضيح الشرعي الفوري لكل إجابة</p>
+          <p class="text-slate-600 text-xs sm:text-sm mt-1 font-bold">20 سؤالاً فقهياً شاملاً وعملياً لقياس دقة فهمك وتثبيت أحكام الأركان والواجبات والسنن مع التوضيح الشرعي الفوري لكل إجابة</p>
         </div>
 
         <div id="quizContainer">
           <div class="bg-slate-50 border border-slate-200 rounded-3xl p-4 sm:p-6 mb-5">
             <div class="flex items-center justify-between text-xs text-slate-500 font-bold mb-3 border-b border-slate-200 pb-2">
-              <span id="quizProgressText">السؤال 1 من 10</span>
+              <span id="quizProgressText">السؤال 1 من 20</span>
               <span id="quizScoreText" class="text-emerald-700 font-extrabold">الدرجة: 0</span>
             </div>
             <h3 id="quizQuestionText" class="text-sm sm:text-lg font-black text-slate-900 leading-relaxed mb-4"></h3>
@@ -746,15 +755,48 @@
       "الإشارة بالسبابة وتحريكها عند الدعاء في التشهد"
     ];
 
-    const flashcardsData = [
-      { front: "قراءة سورة الفاتحة", type: "ركن أساسي", typeClass: "bg-red-500", back: "ركن لا تصح الصلاة بدونه في كل ركعة للإمام والمنفرد. لا يسقط بالسهو." },
-      { front: "قول: (سمع الله لمن حمده)", type: "واجب للصلاة", typeClass: "bg-blue-500", back: "واجب على الإمام والمنفرد؛ يسقط بالسهو ويجبر بسجدتي السهو قبل السلام." },
-      { front: "دعاء الاستفتاح", type: "سنة قولية", typeClass: "bg-emerald-500", back: "سنة مستحبة. لا تبطل الصلاة بتركه عمداً ولا سهواً ولا يشرع له سجود سهو." },
-      { front: "التشهد الأول", type: "واجب للصلاة", typeClass: "bg-blue-500", back: "واجب؛ إذا نسيه الإمام واستتم قائماً للثالثة لا يرجع، ويجبر بسجود السهو قبل السلام." },
-      { front: "الطمأنينة في الركوع والسجود", type: "ركن مغلظ", typeClass: "bg-red-500", back: "ركن باتفاق الأئمة؛ وهي السكون حتى يرجع كل عظم لموضعه. من نقر صلاته لم يصل." },
-      { front: "جلسة التورك في التشهد الأخير", type: "سنة فعلية", typeClass: "bg-emerald-500", back: "سنة في الصلاة ذات التشهدين (المغرب، الظهر، العصر، العشاء). فواتها لا يوجب سهواً." },
-      { front: "تسبيحة واحدة في السجود", type: "واجب للصلاة", typeClass: "bg-blue-500", back: "قول (سبحان ربي الأعلى) مرة واحدة واجب، وما زاد إلى ثلاث فهو سنة." },
-      { front: "التسليمة الأولى", type: "ركن الصلاة", typeClass: "bg-red-500", back: "ركن إجماعاً لتحليل الصلاة والخروج منها لقوله ﷺ: 'وتحليلها التسليم'." }
+        const flashcardsData = [
+      // --- 14 PILLARS (الأركان الـ 14) ---
+      { front: "النية", cat: "arkan", type: "ركن قلبي", typeClass: "bg-red-600", back: "ركن أساسي محلها القلب، وتعيين الصلاة شرط لصحتها (كالظهر أو العصر). التلفظ بها بدعة لم تثبت عن النبي ﷺ ولا الصحابة." },
+      { front: "تكبيرة الإحرام (الله أكبر)", cat: "arkan", type: "ركن قولي", typeClass: "bg-red-600", back: "ركن للدخول في الصلاة، لقوله ﷺ: «وتحريمها التكبير». لا يجزئ غير لفظ «الله أكبر»، وتبطل الصلاة بتركها عمداً أو سهواً." },
+      { front: "القيام مع القدرة في الفرض", cat: "arkan", type: "ركن فعلي", typeClass: "bg-red-600", back: "ركن في صلاة الفريضة لقوله تعالى: ﴿وَقُومُوا لِلَّهِ قَانِتِينَ﴾. من صلى قاعداً وهو قادر على القيام بطلت صلاته إجماعاً." },
+      { front: "قراءة سورة الفاتحة", cat: "arkan", type: "ركن قولي", typeClass: "bg-red-600", back: "ركن في كل ركعة لقوله ﷺ: «لا صلاة لمن لم يقرأ بفاتحة الكتاب». لا تسقط عمداً ولا سهواً وتلزم الإمام والمنفرد." },
+      { front: "الركوع", cat: "arkan", type: "ركن فعلي", typeClass: "bg-red-600", back: "ركن ثابت بالقرآن والسنة: ﴿يَا أَيُّهَا الَّذِينَ آمَنُوا ارْكَعُوا وَاسْجُدُوا﴾. وأقله انحناء يتمكن به من مس ركبتيه بيديه لو كان معتدلاً." },
+      { front: "الرفع من الركوع والاعتدال", cat: "arkan", type: "ركن فعلي", typeClass: "bg-red-600", back: "ركن لصحة الصلاة، بالاعتدال قائماً حتى ينتصب الظهر، لقوله ﷺ للمسيء صلاته: «ثم ارفع حتى تعتدل قائماً»." },
+      { front: "السجود على الأعضاء السبعة", cat: "arkan", type: "ركن فعلي", typeClass: "bg-red-600", back: "ركن لقوله ﷺ: «أمرت أن أسجد على سبعة أعظم: الجبهة والأنف، والكفين، والركبتين، وأطراف القدمين». يلزم تمكينها كلها." },
+      { front: "الجلوس بين السجدتين", cat: "arkan", type: "ركن فعلي", typeClass: "bg-red-600", back: "ركن، لقوله ﷺ: «ثم ارفع حتى تطمئن جالساً». لا يجزئ مجرد رفع الرأس بدون الجلوس والاطمئنان فيه." },
+      { front: "الطمأنينة في جميع الأركان", cat: "arkan", type: "ركن مغلظ", typeClass: "bg-red-600", back: "ركن باتفاق الأئمة؛ وضابطها: سكون الأعضاء قدراً يسيراً حتى يرجع كل عظم إلى موضعه. من نقر صلاته بطلت لحديث المسيء." },
+      { front: "التشهد الأخير", cat: "arkan", type: "ركن قولي", typeClass: "bg-red-600", back: "ركن في ختام الصلاة، للحديث: «قولوا: التحيات لله والصلوات والطيبات...». لا يجبره سجود السهو بل يلزم الإتيان به." },
+      { front: "الجلوس للتشهد الأخير", cat: "arkan", type: "ركن فعلي", typeClass: "bg-red-600", back: "ركن؛ لأن التشهد ركن لا يؤدى إلا بالجلوس له، فيأخذ حكمه الشرعي." },
+      { front: "الصلاة على النبي ﷺ في التشهد الأخير", cat: "arkan", type: "ركن قولي", typeClass: "bg-red-600", back: "ركن عند الحنابلة والشافعية في التشهد الأخير: «اللهم صل على محمد وعلى آل محمد...»، ولا تصح الصلاة بدونها." },
+      { front: "التسليمة الأولى", cat: "arkan", type: "ركن قولي", typeClass: "bg-red-600", back: "ركن إجماعاً للتحلل والخروج من الصلاة لقوله ﷺ: «وتحليلها التسليم». بتركها يظل المصلي في حكم الصلاة." },
+      { front: "الترتيب بين الأركان", cat: "arkan", type: "ركن معنوي", typeClass: "bg-red-600", back: "ركن شرط؛ بأن يسبق القيام الركوع، والركوع يسبق السجود... فلو سجد قبل أن يركع عمداً بطلت صلاته، وسهواً ألغيت ركعته." },
+
+      // --- 8 OBLIGATIONS (الواجبات الـ 8) ---
+      { front: "التكبيرات الانتقالية", cat: "wajib", type: "واجب قولي", typeClass: "bg-blue-600", back: "واجبة في كل خفض ورفع وانتقال (غير تكبيرة الإحرام)، لقوله ﷺ: «فإذا كبر فكبروا»، ومواظبته ﷺ عليها. تجبر بسجود السهو." },
+      { front: "قول: «سمع الله لمن حمده»", cat: "wajib", type: "واجب قولي", typeClass: "bg-blue-600", back: "واجب على الإمام والمنفرد عند الرفع من الركوع، ويسقط عن المأموم عند جمهور العلماء ويكتفي بالتحميد." },
+      { front: "قول: «ربنا ولك الحمد»", cat: "wajib", type: "واجب قولي", typeClass: "bg-blue-600", back: "واجب على الجميع (الإمام والمأموم والمنفرد) بعد الاعتدال قائماً من الركوع." },
+      { front: "تسبيح الركوع (سبحان ربي العظيم)", cat: "wajib", type: "واجب قولي", typeClass: "bg-blue-600", back: "قول «سبحان ربي العظيم» مرة واحدة واجب أثناء الركوع، وما زاد إلى ثلاث فهو سنة مستحبة." },
+      { front: "تسبيح السجود (سبحان ربي الأعلى)", cat: "wajib", type: "واجب قولي", typeClass: "bg-blue-600", back: "قول «سبحان ربي الأعلى» مرة واحدة واجب في كل سجدة، وما زاد إلى ثلاث فهو سنة مستحبة." },
+      { front: "قول: «رب اغفر لي» بين السجدتين", cat: "wajib", type: "واجب قولي", typeClass: "bg-blue-600", back: "قول «رب اغفر لي» مرة واحدة واجب في الجلسة بين السجدتين، وسنة أن يكررها ويزيد الدعاء المأثور." },
+      { front: "التشهد الأول (ألفاظه)", cat: "wajib", type: "واجب قولي", typeClass: "bg-blue-600", back: "واجب في الصلوات الثلاثية والرباعية؛ إذا نسيه الإمام واستتم قائماً لا يرجع، ويجبره بسجود السهو قبل السلام." },
+      { front: "الجلوس للتشهد الأول", cat: "wajib", type: "واجب فعلي", typeClass: "bg-blue-600", back: "واجب في الركعة الثانية من الظهر والعصر والمغرب والعشاء، يسقط بالسهو ويُجبر بسجدتي السهو قبل السلام." },
+
+      // --- 14 SUNAN (السنن الـ 14 القولية والفعلية) ---
+      { front: "دعاء الاستفتاح", cat: "sunan", type: "سنة قولية", typeClass: "bg-emerald-600", back: "سنة مستحبة تقال بعد تكبيرة الإحرام وقبل الفاتحة. تركه لا يبطل الصلاة ولا يوجب سجود السهو." },
+      { front: "الاستعاذة والبسملة سراً", cat: "sunan", type: "سنة قولية", typeClass: "bg-emerald-600", back: "سنة قولية مستحبة قبل الشروع في قراءة الفاتحة في الركعة الأولى، والبسملة في أوائل الركعات." },
+      { front: "قول: «آمين» بعد الفاتحة", cat: "sunan", type: "سنة قولية", typeClass: "bg-emerald-600", back: "سنة قولية للإمام والمأموم والمنفرد؛ ومعناها: اللهم استجب. ويجهر بها في الجهرية لموافقة تأمين الملائكة." },
+      { front: "قراءة سورة بعد الفاتحة", cat: "sunan", type: "سنة قولية", typeClass: "bg-emerald-600", back: "سنة في الركعتين الأوليين من كل صلاة. من تركها صحت صلاته بالإجماع ولا سجود سهو عليه." },
+      { front: "الجهر والإسرار بالقراءة", cat: "sunan", type: "سنة قولية", typeClass: "bg-emerald-600", back: "سنة مؤكدة؛ يجهر الإمام والمنفرد في الصبح وأوليي المغرب والعشاء، ويسر في الظهر والعصر وسائر الركعات." },
+      { front: "رفع اليدين في المواضع الأربعة", cat: "sunan", type: "سنة فعلية", typeClass: "bg-emerald-600", back: "سنة عند: تكبيرة الإحرام، الركوع، الرفع منه، وعند القيام من التشهد الأول للركعة الثالثة." },
+      { front: "وضع اليمين على اليسار (القبض)", cat: "sunan", type: "سنة فعلية", typeClass: "bg-emerald-600", back: "سنة مستحبة أثناء القيام؛ بوضع بطن الكف الأيمن على ظهر الكف الأيسر والرسغ والساعد فوق الصدر." },
+      { front: "النظر إلى موضع السجود", cat: "sunan", type: "سنة فعلية", typeClass: "bg-emerald-600", back: "سنة تؤكد الخشوع وتمنع التشتت. ويُستثنى منها وقت التشهد فيُسن النظر إلى السبابة المشيرة." },
+      { front: "استواء الظهر وتفريج الأصابع في الركوع", cat: "sunan", type: "سنة فعلية", typeClass: "bg-emerald-600", back: "سنة؛ بأن يستوي الظهر لو صب عليه ماء لاستقر، وقبض الركبتين مفرجتي الأصابع كالقابض عليهما." },
+      { front: "مجافاة العضدين والبطن في السجود", cat: "sunan", type: "سنة فعلية", typeClass: "bg-emerald-600", back: "سنة؛ بمباعدة العضدين عن الجنبين والبطن عن الفخذين، ورفع الذراعين عن الأرض تحذيراً من افتراش الكلب." },
+      { front: "جلسة الافتراش", cat: "sunan", type: "سنة فعلية", typeClass: "bg-emerald-600", back: "سنة بين السجدتين وفي التشهد الأول؛ بفرش القدم اليسرى والجلوس عليها، ونصب القدم اليمنى متوجهاً بأصابعها للقبلة." },
+      { front: "جلسة التورّك", cat: "sunan", type: "سنة فعلية", typeClass: "bg-emerald-600", back: "سنة في التشهد الأخير للصلوات الثلاثية والرباعية؛ بإفضاء الإلية للأرض وإخراج اليسرى من الجانب الأيمن ونصب اليمنى." },
+      { front: "الإشارة بالسبابة وتحريكها في التشهد", cat: "sunan", type: "سنة فعلية", typeClass: "bg-emerald-600", back: "سنة طوال جلسة التشهد عند الدعاء وذكر الله تعالى، إشارة إلى التوحيد وإخلاص العبادة لله وحده." },
+      { front: "التسليمة الثانية", cat: "sunan", type: "سنة قولية", typeClass: "bg-emerald-600", back: "سنة عند جمهور العلماء (خلافاً للتسليمة الأولى فهي ركن)، يلتفت فيها يساراً حتى يرى من خلفه بياض خده." }
     ];
 
     
@@ -1442,32 +1484,64 @@
         </li>
       `).join('');
 
-      // Flashcards
-      document.getElementById('flashcardsGrid').innerHTML = flashcardsData.map((f, idx) => `
-        <div class="flashcard h-48 cursor-pointer select-none" onclick="toggleFlashcard(${idx})" id="flashcard_${idx}">
+      // Render Flashcards with Filter support
+      renderFlashcards();
+    }
+
+    let currentFlashcardFilter = 'all';
+
+    function filterFlashcards(cat) {
+      currentFlashcardFilter = cat;
+      ['all', 'arkan', 'wajib', 'sunan'].forEach(c => {
+        const btn = document.getElementById(`fcFilter_${c}`);
+        if (btn) {
+          if (c === cat) {
+            btn.className = "px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white text-slate-900 shadow-md transition scale-105";
+          } else {
+            btn.className = "px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white/20 hover:bg-white/30 text-white transition";
+          }
+        }
+      });
+      renderFlashcards();
+    }
+
+    function renderFlashcards() {
+      const container = document.getElementById('flashcardsGrid');
+      if (!container) return;
+      const filtered = flashcardsData.filter(f => currentFlashcardFilter === 'all' || f.cat === currentFlashcardFilter);
+
+      container.innerHTML = filtered.map((f, idx) => `
+        <div class="flashcard h-52 sm:h-56 cursor-pointer select-none" onclick="toggleFlashcard(${idx})" id="flashcard_${idx}">
           <div class="flashcard-inner relative w-full h-full shadow-lg rounded-3xl">
-            <div class="flashcard-front absolute inset-0 bg-white rounded-3xl p-4 flex flex-col justify-between text-slate-900 border-2 border-amber-300">
+            <!-- Front of Card -->
+            <div class="flashcard-front absolute inset-0 bg-white rounded-3xl p-4 sm:p-5 flex flex-col justify-between text-slate-900 border-2 border-amber-300">
               <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-slate-400">بطاقة تثبيت ${idx + 1}</span>
-                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                <span class="text-xs font-black text-slate-500">بطاقة تثبيت ${idx + 1}</span>
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping"></span>
               </div>
-              <div class="text-center py-1">
-                <span class="text-[11px] text-slate-500 font-semibold block mb-0.5">ما حكم هذا الفعل؟</span>
-                <h4 class="text-base font-black text-slate-900">${f.front}</h4>
+              <div class="text-center py-2">
+                <span class="text-xs text-slate-600 font-bold block mb-1">ما حكم هذا الفعل في الصلاة؟</span>
+                <h4 class="text-base sm:text-lg font-black text-slate-950 leading-snug">${f.front}</h4>
               </div>
               <div class="text-center">
-                <span class="text-[10px] text-amber-700 font-extrabold bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200">👆 المس لقلب البطاقة</span>
+                <span class="inline-flex items-center gap-1 text-xs text-amber-900 font-black bg-amber-100/90 px-3 py-1 rounded-full border border-amber-300 shadow-2xs">
+                  <span>👆 انقر لقلب البطاقة</span>
+                </span>
               </div>
             </div>
-            <div class="flashcard-back absolute inset-0 bg-gradient-to-br from-slate-900 to-emerald-950 text-white rounded-3xl p-4 flex flex-col justify-between border-2 border-emerald-500">
-              <div>
-                <div class="flex items-center justify-between mb-1">
-                  <span class="text-[10px] text-slate-300 font-bold">${f.front}</span>
-                  <span class="${f.typeClass} text-white font-black text-[9px] px-2 py-0.5 rounded-full">${f.type}</span>
+            <!-- Back of Card -->
+            <div class="flashcard-back absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950 text-white rounded-3xl p-4 sm:p-5 flex flex-col justify-between border-2 border-emerald-500">
+              <div class="overflow-y-auto pr-1 custom-scrollbar">
+                <div class="flex items-center justify-between gap-1 mb-2 border-b border-white/10 pb-1.5">
+                  <span class="text-xs text-amber-300 font-black line-clamp-1">${f.front}</span>
+                  <span class="${f.typeClass} text-white font-black text-[11px] px-2.5 py-0.5 rounded-full whitespace-nowrap shadow-xs">${f.type}</span>
                 </div>
-                <p class="text-xs text-slate-200 leading-relaxed mt-1">${f.back}</p>
+                <p class="text-xs sm:text-[13px] text-slate-100 font-medium leading-relaxed mt-1">${f.back}</p>
               </div>
-              <div class="text-center text-[9px] text-emerald-300 font-bold border-t border-white/10 pt-1">مرجع: إسلام ويب</div>
+              <div class="text-center text-[10px] text-emerald-300 font-black border-t border-white/15 pt-1.5 flex items-center justify-between">
+                <span>إسلام ويب وجمهور الفقهاء</span>
+                <span class="text-slate-400">انقر للعودة</span>
+              </div>
             </div>
           </div>
         </div>
@@ -1857,12 +1931,228 @@
     }
 
     // Quiz
+        // Comprehensive 20-Question Mastery Quiz (إسلام ويب وأهل السنة والجماعة)
     const quizQuestions = [
-      { q: "ما حكم من ترك قراءة سورة الفاتحة في الركعة متعمداً؟", options: ["صلاته باطلة بإجماع أهل العلم لأن الفاتحة ركن", "صلاته صحيحة ويجزئه سجود السهو", "صلاته مكروهة وعليه إعادة الاستفتاح فقط", "تسقط قراءتها ويكفيه التسبيح"], correct: 0, explanation: "الفاتحة ركن لقوله ﷺ: 'لا صلاة لمن لم يقرأ بفاتحة الكتاب' وتبطل الصلاة بتركها عمداً إجماعاً." },
-      { q: "ما الفرق الأساسي بين ركن الصلاة وواجب الصلاة إذا نُسي سهواً؟", options: ["لا فرق بينهما فكلاهما يسقط بسجود السهو", "الركن لا يسقط بالسهو بل لا بد من الإتيان به، بينما الواجب يسقط بالسهو ويُجبر بسجود السهو", "الواجب أقوى من الركن في الصلاة", "الركن يلزم فيه إعادة الصلاة دائماً"], correct: 1, explanation: "الركن لا يسقط سهواً ولا جهلاً ولابد من الإتيان به، أما الواجب فيسقط بنسيانه ويجبر بسجود السهو قبل السلام." },
-      { q: "إمام نسي التشهد الأول واستتم قائماً للركعة الثالثة وشرع في الفاتحة، ماذا يفعل؟", options: ["يرجع فوراً للجلوس والتشهد", "يستمر في صلاته ولا يرجع، ويسجد سجدتين للسهو قبل السلام", "تبطل صلاته وعليه استئنافها", "يسجد للسهو بعد السلام فقط"], correct: 1, explanation: "إذا استتم قائماً مضى في صلاته ولم يرجع وجبره بسجدتي السهو قبل السلام كما في حديث عبد الله بن بحينة." },
-      { q: "ما عدد الأعضاء التي يجب السجود عليها شرعاً؟", options: ["خمسة أعضاء فقط", "سبعة أعضاء: الجبهة والأنف، الكفان، الركبتان، وأطراف القدمين", "أربعة أعضاء فقط", "تسعة أعضاء مع المرفقين"], correct: 1, explanation: "قال ﷺ: 'أمرت أن أسجد على سبعة أعظم: على الجبهة -وأشار بيده على أنفه- واليدين، والركبتين، وأطراف القدمين'." },
-      { q: "ما حكم دعاء الاستفتاح في الصلاة؟", options: ["ركن تبطل الصلاة بتركه", "واجب يلزم بسقوطه سجود السهو", "سنة مستحبة لا تبطل الصلاة بتركها ولا يلزم لتركه سجود سهو", "مكروه إلا في صلاة الليل"], correct: 2, explanation: "دعاء الاستفتاح من السنن القولية باتفاق العلماء، يثاب فاعله ولا تبطل الصلاة بتركه." }
+      {
+        q: "ما حكم من ترك قراءة سورة الفاتحة في ركعة من ركعات الصلاة متعمداً؟",
+        options: [
+          "صلاته باطلة بإجماع العلماء لأن الفاتحة ركن",
+          "صلاته صحيحة ويجزئه سجود السهو قبل السلام",
+          "صلاته مكروهة وعليه إعادة الاستفتاح فقط",
+          "تسقط قراءتها ويكفيه التسبيح في الركعة"
+        ],
+        correct: 0,
+        explanation: "الفاتحة ركن أساسي في كل ركعة لقوله ﷺ: «لا صلاة لمن لم يقرأ بفاتحة الكتاب»، وتبطل الصلاة بترك الركن متعمداً بإجماع أهل العلم."
+      },
+      {
+        q: "ما الفرق الأساسي والعملي بين ركن الصلاة وواجب الصلاة إذا نُسي أحدهما سهواً؟",
+        options: [
+          "لا فرق بينهما فكلاهما يسقط ويجبر بسجود السهو",
+          "الركن لا يسقط بالسهو بل لا بد من الإتيان به، بينما الواجب يسقط بالسهو ويُجبر بسجود السهو",
+          "الواجب آكد وأقوى من الركن في الصلاة",
+          "الركن يلزم فيه إعادة الصلاة كاملة فور تذكره دائماً"
+        ],
+        correct: 1,
+        explanation: "الركن لا يسقط عمداً ولا سهواً ولا بد من تداركه والإتيان به، أما واجب الصلاة إذا سها عنه المصلي فإنه يسقط ويجبره بسجدتي السهو قبل السلام."
+      },
+      {
+        q: "إمام نسي التشهد الأول واستتم قائماً للركعة الثالثة وشرع في قراءة الفاتحة، فماذا يفعل شرعاً؟",
+        options: [
+          "يرجع فوراً للجلوس والتشهد ثم يكمل",
+          "يستمر في صلاته ولا يرجع، ويسجد سجدتين للسهو قبل السلام",
+          "تبطل صلاته وعليه استئنافها من الركعة الأولى",
+          "يسجد للسهو بعد السلام فقط دون إكمال"
+        ],
+        correct: 1,
+        explanation: "إذا استتم قائماً وشرع في الركن الموالي حرم عليه الرجوع، ومضى في صلاته وسجد للسهو قبل السلام لحديث عبد الله بن بحينة رضي الله عنه."
+      },
+      {
+        q: "ما عدد الأعضاء التي أمر النبي ﷺ بالسجود عليها وتمكينها على الأرض؟",
+        options: [
+          "خمسة أعضاء فقط",
+          "سبعة أعضاء: الجبهة مع الأنف، الكفان، الركبتان، وأطراف القدمين",
+          "أربعة أعضاء فقط",
+          "تسعة أعضاء مع المرفقين"
+        ],
+        correct: 1,
+        explanation: "قال رسول الله ﷺ: «أمرت أن أسجد على سبعة أعظم: على الجبهة -وأشار بيده على أنفه- واليدين، والركبتين، وأطراف القدمين» (متفق عليه)."
+      },
+      {
+        q: "ما حكم دعاء الاستفتاح في الصلاة؟",
+        options: [
+          "ركن تبطل الصلاة بتركه",
+          "واجب يلزم بسقوطه سجود السهو",
+          "سنة مستحبة لا تبطل الصلاة بتركها ولا يلزم لتركه سجود سهو",
+          "مكروه إلا في صلاة الليل والتهجد"
+        ],
+        correct: 2,
+        explanation: "دعاء الاستفتاح سنة قولية مستحبة يثاب فاعلها ولا يعاقب تاركها، ولا تبطل الصلاة بتركها عمداً أو نسياناً ولا يشرع له سجود السهو."
+      },
+      {
+        q: "ما حكم الصلاة لمن ينقرها بسرعة دون طمأنينة ولا سكون للأعضاء؟",
+        options: [
+          "صلاته باطلة شرعاً ويجب عليه إعادتها",
+          "صلاته صحيحة مع الكراهة التنزيهية",
+          "تجزئه الصلاة ويجبرها بسجود السهو",
+          "تنقص ثلث صلاته فقط وتصح"
+        ],
+        correct: 0,
+        explanation: "الطمأنينة ركن باتفاق الأئمة، وقد قال النبي ﷺ للرجل المسيء صلاته حين كان ينقرها: «ارجع فصلِّ فإنك لم تصلِّ» وكررها ثلاثاً."
+      },
+      {
+        q: "كم عدد المواضع التي يسن فيها رفع اليدين حذو المنكبين أو فروع الأذنين في الصلاة؟",
+        options: [
+          "موضع واحد فقط عند تكبيرة الإحرام",
+          "موضعان فقط: عند الإحرام وعند السلام",
+          "أربعة مواضع: عند الإحرام، وعند الركوع، والرفع منه، والقيام من التشهد الأول",
+          "في كل حركة وخفض ورفع"
+        ],
+        correct: 2,
+        explanation: "ثبت عن ابن عمر رضي الله عنهما أن رسول الله ﷺ كان يرفع يديه حذو منكبيه إذا افتتح الصلاة، وإذا كبر للركوع، وإذا رفع رأسه من الركوع، وإذا قام من الركعتين."
+      },
+      {
+        q: "عندما يقول الإمام: «سمع الله لمن حمده»، ماذا يشرع للمأموم خلفه أن يقول؟",
+        options: [
+          "يقول: «سمع الله لمن حمده ربنا ولك الحمد»",
+          "يقول: «ربنا ولك الحمد» فقط",
+          "يبقى ساكناً لا يقول شيئاً",
+          "يسبح قائلاً: سبحان ربي العظيم"
+        ],
+        correct: 1,
+        explanation: "لقوله ﷺ في الحديث المتفق عليه: «وإذا قال: سمع الله لمن حمده، فقولوا: ربنا ولك الحمد»، فالمأموم يقتصر على التحميد عند جمهور العلماء."
+      },
+      {
+        q: "ما حكم مسابقة الإمام بالركوع أو السجود قبل أن يصل الإمام للركن؟",
+        options: [
+          "محرمة وتُبطل الصلاة إن استمر عامداً",
+          "سنة لنيل فضيلة التبكير",
+          "مباحة ولا حرج فيها",
+          "مكروهة كراهة خفيفة فقط"
+        ],
+        correct: 0,
+        explanation: "مسابقة الإمام محرمة، وقد حذر النبي ﷺ منها بشدة فقال: «أما يخشى أحدكم إذا رفع رأسه قبل الإمام أن يجعل الله رأسه رأس حمار» (متفق عليه)."
+      },
+      {
+        q: "متى يكون سجود السهو قبل السلام؟",
+        options: [
+          "إذا كان السهو عن نقص (كنسيان التشهد الأول أو واجب) أو شك لم يترجح فيه شيء",
+          "إذا كان السهو عن زيادة فقط",
+          "في جميع حالات السهو بدون استثناء",
+          "لا يسجد قبل السلام إلا الإمام فقط"
+        ],
+        correct: 0,
+        explanation: "يسجد المصلي قبل السلام إذا نقص واجباً من واجبات الصلاة، أو تردد وشك في عدد الركعات وبنى على اليقين (وهو الأقل) دون ترجيح."
+      },
+      {
+        q: "متى يشرع سجود السهو بعد السلام؟",
+        options: [
+          "إذا كان السهو عن زيادة (كركعة زائدة وسلّم ثم تذكر)، أو شك مع التحري وغلبة الظن",
+          "إذا نسي قراءة الفاتحة",
+          "إذا ترك تكبيرة الإحرام",
+          "لا يشرع السجود بعد السلام أبداً"
+        ],
+        correct: 0,
+        explanation: "يسجد المصلي بعد السلام إذا كان السهو عن زيادة في الصلاة (كالزيادة في ركوع أو قيام)، أو بنى على غالب ظنه بعد التحري وسلم ثم سجد سجدتين وسلم ثانية."
+      },
+      {
+        q: "ما هي جلسة «الافتراش» المسنونة، وأين يكون موضعها في الصلاة؟",
+        options: [
+          "فرش القدم اليسرى والجلوس عليها ونصب اليمنى؛ وتسن بين السجدتين وفي التشهد الأول",
+          "إخراج القدمين معاً من الجانب الأيمن وإلصاق المقعدة بالأرض",
+          "نصب القدمين معاً والجلوس على العقبين في جميع الصلوات",
+          "التربع على الأرض أثناء القراءة"
+        ],
+        correct: 0,
+        explanation: "الافتراش سنة نبوية في الجلوس بين السجدتين وفي التشهد الأول، بفرش القدم اليسرى والقعود عليها ونصب القدم اليمنى مستقبلاً بأصابعها القبلة."
+      },
+      {
+        q: "ما هي صفة جلسة «التورّك» وأين تسن في الصلاة؟",
+        options: [
+          "إفضاء الإلية للأرض وإخراج القدم اليسرى من الجانب الأيمن ونصب اليمنى؛ في التشهد الأخير للثلاثية والرباعية",
+          "فرش القدمين معاً تحت الفخذين",
+          "الجلوس على أطراف أصابع القدمين فقط",
+          "تسن في صلاة الصبح والجمعة فقط"
+        ],
+        correct: 0,
+        explanation: "التورك سنة في التشهد الأخير للصلوات التي فيها تشهدان (الظهر، العصر، المغرب، العشاء)، بوضع المقعدة على الأرض وإخراج اليسرى من تحته."
+      },
+      {
+        q: "ما حكم الصلاة على النبي ﷺ (الصلاة الإبراهيمية) في التشهد الأخير؟",
+        options: [
+          "ركن من أركان الصلاة عند الحنابلة والشافعية",
+          "مكروهة في الفريضة ومستحبة في النوافل",
+          "ليست من أذكار الصلاة",
+          "واجبة تسقط بسجود السهو إن نسيت"
+        ],
+        correct: 0,
+        explanation: "الصلاة على النبي ﷺ ركن في التشهد الأخير عند جمع من محققي العلماء والحنابلة والشافعية، وتبطل الصلاة بتركها عمداً لمن يعلم حكمها."
+      },
+      {
+        q: "شخص شك في صلاته الرباعية فلم يدرِ هل صلى ثلاث ركعات أم أربعاً، ولم يترجح لديه شيء، فماذا يفعل؟",
+        options: [
+          "يبني على اليقين (وهو الأقل: ثلاث ركعات)، ويأتي برابعة ثم يسجد للسهو قبل السلام",
+          "يبني على الأكثر (أربع ركعات) ويسلم فوراً",
+          "يقطع صلاته ويعيدها من جديد حتماً",
+          "يسأل من بجانبه وهو يصلي"
+        ],
+        correct: 0,
+        explanation: "لقوله ﷺ: «إذا شك أحدكم في صلاته فلم يدر كم صلى أثلاثاً أم أربعاً فليطرح الشك وليبن على ما استيقن ثم يسجد سجدتين قبل أن يسلم» (رواه مسلم)."
+      },
+      {
+        q: "ما حكم بسط الذراعين والمرفقين على الأرض في السجود كافتراش الكلب؟",
+        options: [
+          "مكروه كراهة شديدة، وقد نهى النبي ﷺ عنه صراحة",
+          "مستحب للراحة والاطمئنان",
+          "ركن يلزم فعله في كل سجدة",
+          "واجب يجبر بسجود السهو إن ترك"
+        ],
+        correct: 0,
+        explanation: "نهى رسول الله ﷺ عن ذلك فقال: «اعتدلوا في السجود، ولا يبسط أحدكم ذراعيه انبساط الكلب» (متفق عليه)، بل يسن رفع المرفقين ومجافاتهما."
+      },
+      {
+        q: "رجل أدرك الإمام وهو راكع، فركع مباشرة دون أن يأتي بتكبيرة الإحرام وهو قائم، فما حكم صلاته؟",
+        options: [
+          "لم تنعقد صلاته أصلاً لأن تكبيرة الإحرام ركن لا تصح الصلاة بدونه",
+          "صلاته صحيحة وتجزئه تكبيرة الركوع",
+          "صلاته صحيحة وعليه سجدتا السهو",
+          "تتحول صلاته إلى نافلة تلقائياً"
+        ],
+        correct: 0,
+        explanation: "تكبيرة الإحرام ركن لا تنعقد الصلاة إلا بها قائماً، فإذا كبر للركوع ولم يكبر للإحرام قائماً لم تنعقد صلاته ويجب عليه إعادتها بإجماع العلماء."
+      },
+      {
+        q: "ما هو القدر الواجب المجزئ في تسبيح الركوع وتسبيح السجود؟",
+        options: [
+          "تسبيحة واحدة: قول (سبحان ربي العظيم / الأعلى) مرة واحدة، والزيادة سنة",
+          "ثلاث تسبيحات وجوباً ولا يجزئ أقل منها",
+          "عشر تسبيحات كاملة",
+          "التسبيح سنة مطلقة ليس واجباً"
+        ],
+        correct: 0,
+        explanation: "الواجب عند الحنابلة تسبيحة واحدة تصدق على جنس التسبيح، وأدنى الكمال ثلاث تسبيحات، وما زاد فهو فضل وسنة."
+      },
+      {
+        q: "ما حكم الحركة اليسيرة لحاجة في الصلاة (كحمل طفل أو فتح باب أو دفع مار بين يديه)؟",
+        options: [
+          "جائزة ولا تبطل الصلاة، وقد ثبت فعلها عن النبي ﷺ",
+          "تبطل الصلاة فوراً",
+          "توجب إعادة الركعة وسجود السهو",
+          "محرمة في الفرض ومباحة في النفل فقط"
+        ],
+        correct: 0,
+        explanation: "الحركة الخفيفة لحاجة جائزة ولا تفسد الصلاة؛ فقد حمل النبي ﷺ أمامة بنت زينب في صلاته، ومشى ليفتح الباب لعائشة رضي الله عنها."
+      },
+      {
+        q: "ما حكم الالتفات بالوجه أو بالبصر يمنة ويسرة في الصلاة لغير حاجة؟",
+        options: [
+          "مكروه ينقص أجر الصلاة، وهو اختلاس يختلسه الشيطان",
+          "مبطل للصلاة مطلقاً",
+          "مستحب للتيقن من طهارة المكان",
+          "واجب قبل السلام"
+        ],
+        correct: 0,
+        explanation: "سئل النبي ﷺ عن الالتفات في الصلاة فقال: «هو اختلاس يختلسه الشيطان من صلاة العبد» (رواه البخاري)، فإن استدار ببدنه كله عن القبلة لغير عذر بطلت صلاته."
+      }
     ];
 
     function loadQuizQuestion() {
@@ -1900,18 +2190,18 @@
       if (selectedIndex === q.correct) {
         quizScore++;
         document.getElementById('quizScoreText').textContent = `الدرجة: ${quizScore}`;
-        selectedBtn.classList.replace('border-slate-200', 'border-emerald-600');
-        selectedBtn.classList.add('bg-emerald-50', 'text-emerald-950');
+        selectedBtn.classList.remove('border-slate-300', 'border-slate-200');
+        selectedBtn.classList.add('border-emerald-600', 'bg-emerald-50', 'text-emerald-950');
 
-        feedbackBox.className = "mt-3 p-3.5 rounded-2xl text-xs font-medium border bg-emerald-50 border-emerald-300 text-emerald-950 leading-relaxed";
+        feedbackBox.className = "mt-3 p-3.5 rounded-2xl text-xs sm:text-sm font-semibold border bg-emerald-50 border-emerald-300 text-emerald-950 leading-relaxed";
         feedbackBox.innerHTML = `<strong>✓ إجابة صحيحة بارك الله فيك!</strong><br>${q.explanation}`;
       } else {
-        selectedBtn.classList.replace('border-slate-200', 'border-rose-500');
-        selectedBtn.classList.add('bg-rose-50', 'text-rose-950');
-        correctBtn.classList.replace('border-slate-200', 'border-emerald-600');
-        correctBtn.classList.add('bg-emerald-50', 'text-emerald-950');
+        selectedBtn.classList.remove('border-slate-300', 'border-slate-200');
+        selectedBtn.classList.add('border-rose-500', 'bg-rose-50', 'text-rose-950');
+        correctBtn.classList.remove('border-slate-300', 'border-slate-200');
+        correctBtn.classList.add('border-emerald-600', 'bg-emerald-50', 'text-emerald-950');
 
-        feedbackBox.className = "mt-3 p-3.5 rounded-2xl text-xs font-medium border bg-rose-50 border-rose-300 text-rose-950 leading-relaxed";
+        feedbackBox.className = "mt-3 p-3.5 rounded-2xl text-xs sm:text-sm font-semibold border bg-rose-50 border-rose-300 text-rose-950 leading-relaxed";
         feedbackBox.innerHTML = `<strong>❌ إجابة خاطئة.</strong> الجواب الصحيح هو: <em>${q.options[q.correct]}</em>.<br>${q.explanation}`;
       }
 
