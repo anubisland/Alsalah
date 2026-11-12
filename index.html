@@ -24,7 +24,7 @@
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;600;700;800&family=Noto+Naskh+Arabic:wght@400;600;700&family=Readex+Pro:wght@400;600;700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -84,6 +84,121 @@
     .flashcard-back {
       transform: rotateY(180deg);
     }
+    html {
+      font-size: 16px;
+      transition: font-size 0.15s ease;
+    }
+
+    /* =======================================================
+       DARK MODE THEME OVERRIDES (High-Contrast & Comfortable)
+       ======================================================= */
+    body.dark-mode {
+      background-color: #0b1120 !important;
+      color: #f1f5f9 !important;
+    }
+    body.dark-mode .bg-white,
+    body.dark-mode .bg-white\/95 {
+      background-color: #111827 !important;
+      color: #f1f5f9 !important;
+      border-color: #334155 !important;
+    }
+    body.dark-mode .bg-slate-50,
+    body.dark-mode .bg-slate-50\/95,
+    body.dark-mode .bg-\[\#f8faf8\] {
+      background-color: #1e293b !important;
+      color: #f1f5f9 !important;
+      border-color: #334155 !important;
+    }
+    body.dark-mode .bg-\[\#fdf6f6\] {
+      background-color: #23151a !important;
+      border-color: #7f1d1d !important;
+    }
+    body.dark-mode .bg-\[\#f0f7fc\] {
+      background-color: #0f1f33 !important;
+      border-color: #1e40af !important;
+    }
+    body.dark-mode .bg-\[\#fefce8\],
+    body.dark-mode .bg-\[\#fffdf7\] {
+      background-color: #1f1a0d !important;
+      border-color: #92400e !important;
+    }
+    body.dark-mode .bg-rose-50,
+    body.dark-mode .bg-rose-50\/90,
+    body.dark-mode .bg-rose-100\/70 {
+      background-color: rgba(159, 18, 57, 0.25) !important;
+      border-color: #be123c !important;
+      color: #fecdd3 !important;
+    }
+    body.dark-mode .bg-emerald-50,
+    body.dark-mode .bg-emerald-100\/50,
+    body.dark-mode .bg-emerald-100\/60 {
+      background-color: rgba(6, 95, 70, 0.3) !important;
+      border-color: #059669 !important;
+      color: #a7f3d0 !important;
+    }
+    body.dark-mode .bg-sky-100\/70,
+    body.dark-mode .bg-blue-50 {
+      background-color: rgba(30, 64, 175, 0.25) !important;
+      border-color: #2563eb !important;
+      color: #bfdbfe !important;
+    }
+    body.dark-mode .bg-amber-50,
+    body.dark-mode .bg-amber-100\/90 {
+      background-color: rgba(146, 64, 14, 0.3) !important;
+      border-color: #d97706 !important;
+      color: #fde68a !important;
+    }
+    body.dark-mode .bg-slate-100 {
+      background-color: #334155 !important;
+      color: #f1f5f9 !important;
+    }
+    body.dark-mode .text-slate-950,
+    body.dark-mode .text-slate-900,
+    body.dark-mode .text-slate-800 {
+      color: #f8fafc !important;
+    }
+    body.dark-mode .text-slate-700,
+    body.dark-mode .text-slate-600,
+    body.dark-mode .text-slate-500 {
+      color: #cbd5e1 !important;
+    }
+    body.dark-mode .text-emerald-950,
+    body.dark-mode .text-emerald-900,
+    body.dark-mode .text-emerald-800 {
+      color: #6ee7b7 !important;
+    }
+    body.dark-mode .text-rose-950,
+    body.dark-mode .text-rose-900,
+    body.dark-mode .text-rose-800 {
+      color: #fda4af !important;
+    }
+    body.dark-mode .text-sky-950,
+    body.dark-mode .text-sky-900,
+    body.dark-mode .text-blue-900,
+    body.dark-mode .text-blue-800 {
+      color: #93c5fd !important;
+    }
+    body.dark-mode .text-amber-950,
+    body.dark-mode .text-amber-900 {
+      color: #fcd34d !important;
+    }
+    body.dark-mode .border-slate-200,
+    body.dark-mode .border-slate-200\/80,
+    body.dark-mode .border-slate-200\/90,
+    body.dark-mode .border-slate-300 {
+      border-color: #334155 !important;
+    }
+    body.dark-mode .flashcard-front {
+      background-color: #1e293b !important;
+      color: #f8fafc !important;
+      border-color: #d97706 !important;
+    }
+    /* Keep SVG illustrations on a clean light plate so figures & strokes stay 100% sharp */
+    body.dark-mode .svg-plate,
+    body.dark-mode #postureIllustrationContainer {
+      background-color: #f8fafc !important;
+      border-color: #475569 !important;
+    }
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col selection:bg-emerald-600 selection:text-white pb-20 md:pb-6">
@@ -99,12 +214,12 @@
         <div>
           <div class="flex items-center gap-2">
             <h1 class="text-lg sm:text-2xl font-black tracking-tight text-white flex items-center gap-1.5">
-              <span>تطبيق المُصَلِّي المتقن</span>
-              <span class="text-[10px] sm:text-[11px] bg-amber-400 text-emerald-950 px-2 py-0.5 rounded-full font-extrabold">منهاج النبوة</span>
+              <span data-i18n="appTitle">تطبيق المُصَلِّي المتقن</span>
+              <span data-i18n="appBadge" class="text-[10px] sm:text-[11px] bg-amber-400 text-emerald-950 px-2 py-0.5 rounded-full font-extrabold">منهاج النبوة</span>
             </h1>
           </div>
           <div class="flex items-center gap-2 mt-0.5 text-xs">
-            <p class="text-emerald-200/90 font-medium truncate max-w-[260px] sm:max-w-none">صفة صلاة النبي ﷺ وفقه الأركان والواجبات والسنن | إسلام ويب (islamweb.net)</p>
+            <p data-i18n="appSubtitle" class="text-emerald-200/90 font-medium truncate max-w-[220px] sm:max-w-none">صفة صلاة النبي ﷺ وفقه الأركان والواجبات والسنن | إسلام ويب (islamweb.net)</p>
             <span class="text-emerald-400 hidden lg:inline">•</span>
             <span class="text-amber-300 font-bold hidden lg:inline">AnubisLand</span>
           </div>
@@ -117,11 +232,18 @@
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
           <span class="font-bold">AnubisLand</span>
         </a>
-        <button onclick="toggleAudioHelp()" id="audioBtn" class="flex items-center gap-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-3 py-1.5 rounded-xl transition shadow">
+        <button onclick="toggleAudioHelp()" id="audioBtn" class="flex items-center gap-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-2.5 sm:px-3 py-1.5 rounded-xl transition shadow">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
           </svg>
-          <span id="audioStatusText">صوت الأذكار: نشط</span>
+          <span id="audioStatusText" class="hidden sm:inline">صوت الأذكار: نشط</span>
+        </button>
+        <button onclick="openSettingsModal()" id="settingsBtn" class="flex items-center gap-1.5 bg-white/15 hover:bg-white/25 border border-white/25 text-white font-bold px-2.5 sm:px-3 py-1.5 rounded-xl transition shadow cursor-pointer" title="الإعدادات / Settings">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+          <span data-i18n="settingsBtn">الإعدادات</span>
         </button>
       </div>
     </div>
@@ -132,37 +254,37 @@
         <!-- 1. Sifah Tab (صفة صلاة النبي صلى الله عليه وسلم) -->
         <button onclick="switchTab('sifah')" class="nav-tab active-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white" data-tab="sifah">
           <svg class="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"/></svg>
-          <span class="font-black">صفة صلاة النبي ﷺ كأنك تراه</span>
+          <span class="font-black" data-i18n="tabSifah">صفة صلاة النبي ﷺ كأنك تراه</span>
         </button>
         <!-- 2. Anchoring Tab (الأركان والواجبات والسنن) -->
         <button onclick="switchTab('anchoring')" class="nav-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="anchoring">
           <svg class="w-4 h-4 text-amber-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-          <span>ترسيخ الأركان والواجبات والسنن</span>
+          <span data-i18n="tabAnchoring">ترسيخ الأركان والواجبات والسنن</span>
         </button>
         <!-- 3. Simulator Tab -->
         <button onclick="switchTab('simulator')" class="nav-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="simulator">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>المحاكي التفاعلي</span>
+          <span data-i18n="tabSimulator">المحاكي التفاعلي</span>
         </button>
         <!-- 4. Postures Gallery -->
         <button onclick="switchTab('postures')" class="nav-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="postures">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-          <span>أطلس الهيئات بالصور</span>
+          <span data-i18n="tabPostures">أطلس الهيئات بالصور</span>
         </button>
         <!-- 5. Sahw Calculator -->
         <button onclick="switchTab('sahw')" class="nav-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="sahw">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-          <span>حاسبة سجود السهو</span>
+          <span data-i18n="tabSahw">حاسبة سجود السهو</span>
         </button>
         <!-- 6. Common Mistakes -->
         <button onclick="switchTab('mistakes')" class="nav-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="mistakes">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
-          <span>مختبر الأخطاء</span>
+          <span data-i18n="tabMistakes">مختبر الأخطاء</span>
         </button>
         <!-- 7. Quiz -->
         <button onclick="switchTab('quiz')" class="nav-tab px-4 py-2 rounded-xl transition flex items-center gap-2 whitespace-nowrap text-emerald-100 hover:text-white hover:bg-emerald-800/60" data-tab="quiz">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span>اختبار الإتقان</span>
+          <span data-i18n="tabQuiz">اختبار الإتقان</span>
         </button>
       </nav>
     </div>
@@ -186,7 +308,7 @@
             <span>معتمد من فتاوى إسلام ويب</span>
           </div>
           <h2 class="text-2xl sm:text-4xl font-black leading-tight text-white">
-            صِفَةُ صَلَاةِ النَّبِيِّ ﷺ كَأَنَّكَ تَرَاهَا مَعَهُ
+            <span data-i18n="sifahTitle">صِفَةُ صَلَاةِ النَّبِيِّ ﷺ كَأَنَّكَ تَرَاهَا مَعَهُ</span>
           </h2>
           <p class="text-slate-300 text-xs sm:text-sm mt-3 leading-relaxed">
             الرحلة النبوية الحركية والقلبية الكاملة من الطهارة والسترة واستقبال القبلة إلى ختام التسليم والأذكار، مع ربط كل حركة وذكر بحكمه الفقهي:
@@ -263,10 +385,10 @@
       <!-- Quick Subnav for Anchoring -->
       <div class="flex flex-wrap items-center justify-between gap-2 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm text-xs">
         <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
-          <button onclick="scrollToAnchorSection('sec-arkan')" class="px-3 py-1.5 rounded-xl bg-red-100 hover:bg-red-200 text-red-900 font-extrabold transition">الأركان الـ 14</button>
-          <button onclick="scrollToAnchorSection('sec-wajib')" class="px-3 py-1.5 rounded-xl bg-blue-100 hover:bg-blue-200 text-blue-900 font-extrabold transition">الواجبات الـ 8</button>
-          <button onclick="scrollToAnchorSection('sec-sunan')" class="px-3 py-1.5 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-extrabold transition">السنن القولية والفعلية</button>
-          <button onclick="scrollToAnchorSection('sec-flashcards')" class="px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 font-extrabold transition">💡 بطاقات الذاكرة</button>
+          <button onclick="scrollToAnchorSection('sec-arkan')" data-i18n="anchorNavArkan" class="px-3 py-1.5 rounded-xl bg-red-100 hover:bg-red-200 text-red-900 font-extrabold transition">الأركان الـ 14</button>
+          <button onclick="scrollToAnchorSection('sec-wajib')" data-i18n="anchorNavWajib" class="px-3 py-1.5 rounded-xl bg-blue-100 hover:bg-blue-200 text-blue-900 font-extrabold transition">الواجبات الـ 8</button>
+          <button onclick="scrollToAnchorSection('sec-sunan')" data-i18n="anchorNavSunan" class="px-3 py-1.5 rounded-xl bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-extrabold transition">السنن القولية والفعلية</button>
+          <button onclick="scrollToAnchorSection('sec-flashcards')" data-i18n="anchorNavFlash" class="px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-950 font-extrabold transition">💡 بطاقات الذاكرة</button>
         </div>
       </div>
 
@@ -274,7 +396,7 @@
       <section id="sec-arkan" class="space-y-3 pt-2">
         <h3 class="text-xl sm:text-2xl font-black text-slate-900 border-b border-red-200 pb-2 flex items-center gap-2">
           <span class="w-3 h-3 rounded-full bg-red-600"></span>
-          <span>أركان الصلاة الأربعة عشر (١٤ ركناً)</span>
+          <span data-i18n="arkanSectionTitle">أركان الصلاة الأربعة عشر (١٤ ركناً)</span>
         </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4" id="arkanCardsContainer"></div>
       </section>
@@ -283,7 +405,7 @@
       <section id="sec-wajib" class="space-y-3 pt-6">
         <h3 class="text-xl sm:text-2xl font-black text-slate-900 border-b border-blue-200 pb-2 flex items-center gap-2">
           <span class="w-3 h-3 rounded-full bg-blue-600"></span>
-          <span>واجبات الصلاة الثمانية (٨ واجبات)</span>
+          <span data-i18n="wajibSectionTitle">واجبات الصلاة الثمانية (٨ واجبات)</span>
         </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" id="wajibCardsContainer"></div>
       </section>
@@ -298,14 +420,14 @@
           <div class="bg-[#fcfbf4] rounded-3xl p-5 sm:p-6 border border-amber-200/90 shadow-sm hover:shadow transition">
             <div class="inline-flex items-center gap-2 bg-amber-100/90 text-amber-950 px-3.5 py-1.5 rounded-2xl border border-amber-300/80 font-black text-xs sm:text-sm mb-4">
               <span>🗣️</span>
-              <span>السنن القولية (أدعية وأقوال مسنونة)</span>
+              <span data-i18n="sunanQawlTitle">السنن القولية (أدعية وأقوال مسنونة)</span>
             </div>
             <ul class="space-y-2.5 text-xs text-slate-800" id="sunanQawliyyahList"></ul>
           </div>
           <div class="bg-[#fcfbf4] rounded-3xl p-5 sm:p-6 border border-amber-200/90 shadow-sm hover:shadow transition">
             <div class="inline-flex items-center gap-2 bg-amber-100/90 text-amber-950 px-3.5 py-1.5 rounded-2xl border border-amber-300/80 font-black text-xs sm:text-sm mb-4">
               <span>🧍</span>
-              <span>السنن الفعلية (حركات وهيئات مسنونة)</span>
+              <span data-i18n="sunanFiilTitle">السنن الفعلية (حركات وهيئات مسنونة)</span>
             </div>
             <ul class="space-y-2.5 text-xs text-slate-800" id="sunanFiliyyahList"></ul>
           </div>
@@ -316,16 +438,16 @@
       <section id="sec-flashcards" class="bg-gradient-to-r from-amber-500 via-amber-600 to-emerald-700 rounded-3xl p-5 sm:p-8 text-white shadow-xl">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
           <div>
-            <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full border border-white/30">تمرين العقل والقلب</span>
-            <h3 class="text-xl sm:text-2xl font-black mt-2">بطاقات التثبيت الذهني التفاعلية (Flashcards)</h3>
-            <p class="text-amber-100 text-xs sm:text-sm mt-1">بطاقات تفاعلية شاملة لكافة الأركان (14) والواجبات (8) والسنن (14). انقر لقلب البطاقة ومعرفة الحكم والأثر الفقهي.</p>
+            <span data-i18n="flashBadge" class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full border border-white/30">تمرين العقل والقلب</span>
+            <h3 data-i18n="flashTitle" class="text-xl sm:text-2xl font-black mt-2">بطاقات التثبيت الذهني التفاعلية (Flashcards)</h3>
+            <p data-i18n="flashDesc" class="text-amber-100 text-xs sm:text-sm mt-1">بطاقات تفاعلية شاملة لكافة الأركان (14) والواجبات (8) والسنن (14). انقر لقلب البطاقة ومعرفة الحكم والأثر الفقهي.</p>
           </div>
           <!-- Filter Buttons for Flashcards -->
           <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
-            <button onclick="filterFlashcards('all')" id="fcFilter_all" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white text-slate-900 shadow-md transition scale-105">الكل (36)</button>
-            <button onclick="filterFlashcards('arkan')" id="fcFilter_arkan" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white/20 hover:bg-white/30 text-white transition">الأركان (14)</button>
-            <button onclick="filterFlashcards('wajib')" id="fcFilter_wajib" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white/20 hover:bg-white/30 text-white transition">الواجبات (8)</button>
-            <button onclick="filterFlashcards('sunan')" id="fcFilter_sunan" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white/20 hover:bg-white/30 text-white transition">السنن (14)</button>
+            <button onclick="filterFlashcards('all')" id="fcFilter_all" data-i18n="fcAll" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white text-slate-900 shadow-md transition scale-105">الكل (36)</button>
+            <button onclick="filterFlashcards('arkan')" id="fcFilter_arkan" data-i18n="fcArkan" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white/20 hover:bg-white/30 text-white transition">الأركان (14)</button>
+            <button onclick="filterFlashcards('wajib')" id="fcFilter_wajib" data-i18n="fcWajib" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white/20 hover:bg-white/30 text-white transition">الواجبات (8)</button>
+            <button onclick="filterFlashcards('sunan')" id="fcFilter_sunan" data-i18n="fcSunan" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-white/20 hover:bg-white/30 text-white transition">السنن (14)</button>
           </div>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4" id="flashcardsGrid"></div>
@@ -342,9 +464,9 @@
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 text-xs font-bold mb-2 border border-amber-400/30">
-              <span>المحاكي الحركي والصوتي</span>
+              <span data-i18n="simBadge">المحاكي الحركي والصوتي</span>
             </div>
-            <h2 class="text-xl sm:text-3xl font-extrabold">المحاكي العملي لصفة الصلاة خطوة بخطوة</h2>
+            <h2 data-i18n="simTitle" class="text-xl sm:text-3xl font-extrabold">المحاكي العملي لصفة الصلاة خطوة بخطوة</h2>
             <p class="text-emerald-100 text-xs sm:text-sm mt-1 max-w-2xl">
               تنقل في الصلاة ركعة بركعة مع الصوت، وتمرين الطمأنينة السكوني، وتلوين الحركات حسب أحكامها الفقهية.
             </p>
@@ -377,7 +499,7 @@
           <div class="w-full mt-3 bg-emerald-50/60 border border-emerald-100 rounded-2xl p-3.5">
             <h4 class="text-xs font-bold text-emerald-900 mb-1.5 flex items-center gap-1">
               <svg class="w-4 h-4 text-emerald-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path></svg>
-              <span>ضوابط الهيئة النبوية:</span>
+              <span data-i18n="simCuesTitle">ضوابط الهيئة النبوية:</span>
             </h4>
             <ul id="postureKeyPoints" class="space-y-2 text-sm sm:text-base text-emerald-950 font-bold leading-relaxed"></ul>
           </div>
@@ -386,12 +508,12 @@
             <div class="flex items-center gap-2">
               <span class="text-lg">⏱️</span>
               <div>
-                <p class="text-xs font-bold text-amber-900">مقياس الطمأنينة (ركن أساسي)</p>
-                <p class="text-[11px] text-amber-700">السكون حتى يرجع كل عظم لموضعه</p>
+                <p data-i18n="simTumaTitle" class="text-xs font-bold text-amber-900">مقياس الطمأنينة (ركن أساسي)</p>
+                <p data-i18n="simTumaSub" class="text-[11px] text-amber-700">السكون حتى يرجع كل عظم لموضعه</p>
               </div>
             </div>
             <button onclick="startTranquilityTimer()" id="tranquilityTimerBtn" class="bg-amber-600 hover:bg-amber-500 text-white px-3 py-1.5 rounded-xl text-xs font-bold transition">
-              <span id="timerLabel">ابدأ سكون الطمأنينة (3 ثوان)</span>
+              <span id="timerLabel" data-i18n="simTumaBtn">ابدأ سكون الطمأنينة (3 ثوان)</span>
             </button>
           </div>
         </div>
@@ -400,7 +522,7 @@
           <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-slate-200/80">
             <div class="flex items-start justify-between gap-2 mb-2">
               <div>
-                <span class="text-xs font-bold text-slate-400 block" id="stepSubheading">الحركة الحالية</span>
+                <span data-i18n="simStepLabel" class="text-xs font-bold text-slate-400 block" id="stepSubheading">الحركة الحالية</span>
                 <h3 class="text-lg sm:text-xl font-black text-slate-900 mt-0.5" id="stepTitle">تكبيرة الإحرام والقيام</h3>
               </div>
               <button onclick="playStepAudio()" class="w-10 h-10 rounded-2xl bg-emerald-100 hover:bg-emerald-200 text-emerald-800 flex items-center justify-center transition shadow-sm flex-shrink-0" title="استمع لنطق الذكر">
@@ -410,7 +532,7 @@
 
             <div class="bg-slate-50 border border-slate-200/70 rounded-2xl p-3.5 my-3">
               <div class="flex items-center justify-between text-xs text-slate-500 font-semibold mb-1">
-                <span>الذِّكْرُ المأثور:</span>
+                <span data-i18n="simZikrLabel">الذِّكْرُ المأثور:</span>
                 <span id="zikrObligationType" class="text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded font-bold text-[11px]">واجب</span>
               </div>
               <div id="stepZikrArabic" class="text-lg font-quran font-bold text-slate-900 text-center leading-relaxed py-1.5">اللهُ أَكْبَر</div>
@@ -419,7 +541,7 @@
 
             <div class="bg-blue-50/70 border border-blue-200/70 rounded-2xl p-3 text-xs">
               <div class="flex items-center gap-1.5 text-blue-900 font-extrabold mb-1">
-                <span>الحكم في إسلام ويب:</span>
+                <span data-i18n="simFiqhLabel">الحكم في إسلام ويب:</span>
               </div>
               <p id="stepFiqhRuling" class="text-blue-950 font-semibold leading-relaxed text-sm sm:text-base"></p>
               <div class="mt-2 text-[11px] text-blue-700 flex items-center justify-between border-t border-blue-100 pt-1">
@@ -429,14 +551,14 @@
             </div>
 
             <div class="mt-3 bg-rose-50 border border-rose-200 rounded-2xl p-3 text-xs">
-              <p class="font-bold text-rose-800">⚠️ خطأ شائع يجب تجنبه:</p>
+              <p data-i18n="simMistakeLabel" class="font-bold text-rose-800">⚠️ خطأ شائع يجب تجنبه:</p>
               <p id="stepMistakeWarning" class="text-rose-950 mt-1 font-bold text-sm sm:text-base leading-relaxed"></p>
             </div>
 
             <div class="flex items-center gap-2 sm:gap-3 mt-4 pt-3 border-t border-slate-100">
               <button onclick="prevStep()" id="prevBtn" class="flex-1 py-3 px-3 rounded-2xl border border-slate-300 font-bold text-slate-700 hover:bg-slate-100 transition flex items-center justify-center gap-1 text-xs sm:text-sm">
                 <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg>
-                <span>السابق</span>
+                <span data-i18n="simPrev">السابق</span>
               </button>
               
               <button onclick="nextStep()" id="nextBtn" class="flex-2 py-3 px-5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 font-extrabold text-white transition flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-600/30 text-xs sm:text-sm">
@@ -460,9 +582,9 @@
     <div id="tab-postures" class="tab-content hidden space-y-6">
       <div class="bg-white rounded-3xl p-5 sm:p-8 shadow-sm border border-slate-200/80">
         <div class="max-w-3xl mb-6">
-          <span class="text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">الأطلس البصري النبوي</span>
-          <h2 class="text-xl sm:text-3xl font-black text-slate-900 mt-2">معرض صور وتفاصيل هيئات الصلاة الصحيحة</h2>
-          <p class="text-slate-600 text-xs sm:text-sm mt-1">رسومات متجهة عالية الدقة لكافة الهيئات الجسدية الصحيحة في الصلاة مع تمييز الأعضاء السبعة وميزان الظهر.</p>
+          <span data-i18n="posturesBadge" class="text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">الأطلس البصري النبوي</span>
+          <h2 data-i18n="posturesTitle" class="text-xl sm:text-3xl font-black text-slate-900 mt-2">معرض صور وتفاصيل هيئات الصلاة الصحيحة</h2>
+          <p data-i18n="posturesDesc" class="text-slate-600 text-xs sm:text-sm mt-1">رسومات متجهة عالية الدقة لكافة الهيئات الجسدية الصحيحة في الصلاة مع تمييز الأعضاء السبعة وميزان الظهر.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="posturesCardsList"></div>
       </div>
@@ -474,8 +596,8 @@
     <div id="tab-sahw" class="tab-content hidden space-y-6">
       <div class="bg-gradient-to-br from-indigo-950 via-slate-900 to-emerald-950 rounded-3xl p-5 sm:p-8 text-white shadow-xl">
         <div class="max-w-3xl">
-          <span class="bg-indigo-500/30 text-indigo-300 border border-indigo-400/30 text-xs font-bold px-3 py-1 rounded-full">المرشد الفقهي الذكي</span>
-          <h2 class="text-xl sm:text-3xl font-black mt-2">حاسبة سجود السهو: ماذا تفعل إذا نسيت أو شككت في صلاتك؟</h2>
+          <span data-i18n="sahwBadge" class="bg-indigo-500/30 text-indigo-300 border border-indigo-400/30 text-xs font-bold px-3 py-1 rounded-full">المرشد الفقهي الذكي</span>
+          <h2 data-i18n="sahwTitle" class="text-xl sm:text-3xl font-black mt-2">حاسبة سجود السهو: ماذا تفعل إذا نسيت أو شككت في صلاتك؟</h2>
           <p class="text-slate-300 text-xs sm:text-sm mt-1.5 leading-relaxed">
             وفق ضوابط أهل السنة وفتاوى إسلام ويب، يُشرع سجود السهو لثلاثة أسباب: <strong>الزيادة</strong>، أو <strong>النقص</strong>، أو <strong>الشك</strong>.
           </p>
@@ -484,11 +606,11 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-5">
         <div class="lg:col-span-7 bg-white rounded-3xl p-5 sm:p-6 shadow-sm border border-slate-200/80 space-y-4">
-          <h3 class="text-sm sm:text-base font-black text-slate-900 border-b pb-2">حدد نوع العارض الذي حدث في صلاتك:</h3>
+          <h3 data-i18n="sahwTypeLabel" class="text-sm sm:text-base font-black text-slate-900 border-b pb-2">حدد نوع العارض الذي حدث في صلاتك:</h3>
           <div class="grid grid-cols-3 gap-2">
-            <button onclick="selectSahwType('naqs')" id="sahwTypeNaqs" class="sahw-type-btn p-3 rounded-2xl border-2 border-slate-200 text-slate-800 text-xs font-bold hover:border-emerald-500 transition text-center active-sahw-btn">نَقْص (نسيان شيء)</button>
-            <button onclick="selectSahwType('ziyadah')" id="sahwTypeZiyadah" class="sahw-type-btn p-3 rounded-2xl border-2 border-slate-200 text-slate-800 text-xs font-bold hover:border-emerald-500 transition text-center">زِيَادَة (ركوع/سجود)</button>
-            <button onclick="selectSahwType('shakk')" id="sahwTypeShakk" class="sahw-type-btn p-3 rounded-2xl border-2 border-slate-200 text-slate-800 text-xs font-bold hover:border-emerald-500 transition text-center">شَكّ في الركعات</button>
+            <button onclick="selectSahwType('naqs')" id="sahwTypeNaqs" data-i18n="sahwNaqsTitle" class="sahw-type-btn p-3 rounded-2xl border-2 border-slate-200 text-slate-800 text-xs font-bold hover:border-emerald-500 transition text-center active-sahw-btn">نَقْص (نسيان شيء)</button>
+            <button onclick="selectSahwType('ziyadah')" id="sahwTypeZiyadah" data-i18n="sahwZiyadahTitle" class="sahw-type-btn p-3 rounded-2xl border-2 border-slate-200 text-slate-800 text-xs font-bold hover:border-emerald-500 transition text-center">زِيَادَة (ركوع/سجود)</button>
+            <button onclick="selectSahwType('shakk')" id="sahwTypeShakk" data-i18n="sahwShakkTitle" class="sahw-type-btn p-3 rounded-2xl border-2 border-slate-200 text-slate-800 text-xs font-bold hover:border-emerald-500 transition text-center">شَكّ في الركعات</button>
           </div>
           <div id="sahwSubCasesContainer" class="space-y-2 pt-2"></div>
         </div>
@@ -496,7 +618,7 @@
         <div class="lg:col-span-5 bg-gradient-to-b from-slate-900 to-emerald-950 text-white rounded-3xl p-5 sm:p-6 shadow-lg border border-emerald-800/40 flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3 border-b border-emerald-800/50 pb-2">
-              <span class="text-xs font-bold text-emerald-300">الحكم والتوجيه الفقهي:</span>
+              <span data-i18n="sahwVerdictHeader" class="text-xs font-bold text-emerald-300">الحكم والتوجيه الفقهي:</span>
               <span id="sahwTimingBadge" class="bg-amber-400 text-slate-950 font-black text-xs px-2.5 py-0.5 rounded-full">سجود قبل السلام</span>
             </div>
             <h4 id="sahwVerdictTitle" class="text-base sm:text-lg font-black text-white mb-2"></h4>
@@ -522,17 +644,17 @@
       <div class="bg-white rounded-3xl p-5 sm:p-8 shadow-sm border border-slate-200/80">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
           <div class="max-w-2xl">
-            <span class="text-xs font-bold text-rose-700 bg-rose-50 border border-rose-300 px-3 py-1 rounded-full">تصويبات فقهية ونبوية</span>
-            <h2 class="text-xl sm:text-3xl font-black text-slate-950 mt-2">مُحسّن ومُصحح الأخطاء الشائعة في الصلاة</h2>
-            <p class="text-slate-600 text-xs sm:text-sm mt-1 font-semibold">موسوعة شاملة تضم 20 خطأ شائعاً في النية، التكبير، القراءة، الركوع، السجود، والائتمام، مع بيان حكمها الفقهي ودليلها من إسلام ويب والسنة والبديل النبوي الصحيح.</p>
+            <span data-i18n="mistakesBadge" class="text-xs font-bold text-rose-700 bg-rose-50 border border-rose-300 px-3 py-1 rounded-full">تصويبات فقهية ونبوية</span>
+            <h2 data-i18n="mistakesTitle" class="text-xl sm:text-3xl font-black text-slate-950 mt-2">مُحسّن ومُصحح الأخطاء الشائعة في الصلاة</h2>
+            <p data-i18n="mistakesDesc" class="text-slate-600 text-xs sm:text-sm mt-1 font-semibold">موسوعة شاملة تضم 20 خطأ شائعاً في النية، التكبير، القراءة، الركوع، السجود، والائتمام، مع بيان حكمها الفقهي ودليلها من إسلام ويب والسنة والبديل النبوي الصحيح.</p>
           </div>
           <!-- Filter Buttons for Mistakes -->
           <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
-            <button onclick="filterMistakes('all')" id="mstFilter_all" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-rose-700 text-white shadow-md transition scale-105">الكل (20)</button>
-            <button onclick="filterMistakes('invalidating')" id="mstFilter_invalidating" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200 transition">مبطلات ومحرمات</button>
-            <button onclick="filterMistakes('ruku_sujud')" id="mstFilter_ruku_sujud" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-slate-100 hover:bg-slate-200 text-slate-800 transition">الركوع والسجود</button>
-            <button onclick="filterMistakes('imam')" id="mstFilter_imam" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-slate-100 hover:bg-slate-200 text-slate-800 transition">مع الإمام</button>
-            <button onclick="filterMistakes('khushu')" id="mstFilter_khushu" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-slate-100 hover:bg-slate-200 text-slate-800 transition">الهيئة والخشوع</button>
+            <button onclick="filterMistakes('all')" id="mstFilter_all" data-i18n="mstAll" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-rose-700 text-white shadow-md transition scale-105">الكل (20)</button>
+            <button onclick="filterMistakes('invalidating')" id="mstFilter_invalidating" data-i18n="mstInv" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-rose-50 hover:bg-rose-100 text-rose-900 border border-rose-200 transition">مبطلات ومحرمات</button>
+            <button onclick="filterMistakes('ruku_sujud')" id="mstFilter_ruku_sujud" data-i18n="mstRuku" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-slate-100 hover:bg-slate-200 text-slate-800 transition">الركوع والسجود</button>
+            <button onclick="filterMistakes('imam')" id="mstFilter_imam" data-i18n="mstImam" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-slate-100 hover:bg-slate-200 text-slate-800 transition">مع الإمام</button>
+            <button onclick="filterMistakes('khushu')" id="mstFilter_khushu" data-i18n="mstKhushu" class="px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-black bg-slate-100 hover:bg-slate-200 text-slate-800 transition">الهيئة والخشوع</button>
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="mistakesGrid"></div>
@@ -545,9 +667,9 @@
     <div id="tab-quiz" class="tab-content hidden space-y-6">
       <div class="max-w-3xl mx-auto bg-white rounded-3xl p-5 sm:p-8 shadow-sm border border-slate-200/80">
         <div class="text-center mb-6">
-          <span class="text-xs font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">اختبار فقه الصلاة</span>
-          <h2 class="text-xl sm:text-3xl font-black text-slate-900 mt-2">اختبر إتقانك لأحكام الأركان والواجبات والسنن</h2>
-          <p class="text-slate-600 text-xs sm:text-sm mt-1 font-bold">20 سؤالاً فقهياً شاملاً وعملياً لقياس دقة فهمك وتثبيت أحكام الأركان والواجبات والسنن مع التوضيح الشرعي الفوري لكل إجابة</p>
+          <span data-i18n="quizBadge" class="text-xs font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">اختبار فقه الصلاة</span>
+          <h2 data-i18n="quizTitle" class="text-xl sm:text-3xl font-black text-slate-900 mt-2">اختبر إتقانك لأحكام الأركان والواجبات والسنن</h2>
+          <p data-i18n="quizDesc" class="text-slate-600 text-xs sm:text-sm mt-1 font-bold">20 سؤالاً فقهياً شاملاً وعملياً لقياس دقة فهمك وتثبيت أحكام الأركان والواجبات والسنن مع التوضيح الشرعي الفوري لكل إجابة</p>
         </div>
 
         <div id="quizContainer">
@@ -562,16 +684,16 @@
           </div>
 
           <div class="flex items-center justify-between">
-            <button onclick="resetQuiz()" class="text-xs font-bold text-slate-500 hover:text-slate-700 px-3 py-2">إعادة من البداية</button>
-            <button onclick="nextQuizQuestion()" id="quizNextBtn" class="bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs px-6 py-3 rounded-2xl transition shadow disabled:opacity-50">السؤال التالي</button>
+            <button onclick="resetQuiz()" data-i18n="quizReset" class="text-xs font-bold text-slate-500 hover:text-slate-700 px-3 py-2">إعادة من البداية</button>
+            <button onclick="nextQuizQuestion()" id="quizNextBtn" data-i18n="quizNext" class="bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs px-6 py-3 rounded-2xl transition shadow disabled:opacity-50">السؤال التالي</button>
           </div>
         </div>
 
         <div id="quizResultView" class="hidden text-center py-6">
           <div class="w-16 h-16 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl font-black">🏆</div>
-          <h3 class="text-xl font-black text-slate-900">أحسنت! أتممت الاختبار</h3>
+          <h3 data-i18n="quizDoneTitle" class="text-xl font-black text-slate-900">أحسنت! أتممت الاختبار</h3>
           <p class="text-slate-600 text-xs sm:text-sm mt-1 mb-4" id="quizFinalScoreSummary"></p>
-          <button onclick="resetQuiz()" class="bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs sm:text-sm px-6 py-2.5 rounded-2xl transition shadow-lg shadow-emerald-600/30">إعادة الاختبار لتثبيت العلم</button>
+          <button onclick="resetQuiz()" data-i18n="quizRetry" class="bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs sm:text-sm px-6 py-2.5 rounded-2xl transition shadow-lg shadow-emerald-600/30">إعادة الاختبار لتثبيت العلم</button>
         </div>
       </div>
     </div>
@@ -582,27 +704,27 @@
   <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 px-2 py-2 flex items-center justify-around text-[10px] font-bold text-slate-400">
     <button onclick="switchTab('sifah')" class="mobile-nav-btn flex flex-col items-center gap-1 active-bottom-tab" data-tab="sifah">
       <span class="text-base">🕌</span>
-      <span>صفة الصلاة</span>
+      <span data-i18n="mobSifah">صفة الصلاة</span>
     </button>
     <button onclick="switchTab('anchoring')" class="mobile-nav-btn flex flex-col items-center gap-1" data-tab="anchoring">
       <span class="text-base">✨</span>
-      <span>الأركان والسنن</span>
+      <span data-i18n="mobAnchoring">الأركان والسنن</span>
     </button>
     <button onclick="switchTab('simulator')" class="mobile-nav-btn flex flex-col items-center gap-1" data-tab="simulator">
       <span class="text-base">⏱️</span>
-      <span>المحاكي</span>
+      <span data-i18n="mobSimulator">المحاكي</span>
     </button>
     <button onclick="switchTab('postures')" class="mobile-nav-btn flex flex-col items-center gap-1" data-tab="postures">
       <span class="text-base">📐</span>
-      <span>الهيئات</span>
+      <span data-i18n="mobPostures">الهيئات</span>
     </button>
     <button onclick="switchTab('sahw')" class="mobile-nav-btn flex flex-col items-center gap-1" data-tab="sahw">
       <span class="text-base">⚖️</span>
-      <span>السهو</span>
+      <span data-i18n="mobSahw">السهو</span>
     </button>
     <button onclick="switchTab('quiz')" class="mobile-nav-btn flex flex-col items-center gap-1" data-tab="quiz">
       <span class="text-base">🏆</span>
-      <span>اختبار</span>
+      <span data-i18n="mobQuiz">اختبار</span>
     </button>
   </nav>
 
@@ -624,6 +746,86 @@
   </footer>
 
   <!-- SCRIPT LOGIC & PROPHETIC CHRONOLOGICAL SIFAH -->
+
+  <!-- ======================================================== -->
+  <!-- SETTINGS MODAL (اللغة، المظهر، حجم الخط، نوع الخط)         -->
+  <!-- ======================================================== -->
+  <div id="settingsModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm">
+    <div class="bg-white rounded-3xl max-w-lg w-full shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col">
+      <!-- Modal Header -->
+      <div class="bg-gradient-to-r from-emerald-900 to-teal-900 text-white px-6 py-4 flex items-center justify-between">
+        <div>
+          <h3 data-i18n="settingsTitle" class="text-lg sm:text-xl font-black">إعدادات العرض واللغة</h3>
+          <p data-i18n="settingsSubtitle" class="text-emerald-200 text-xs mt-0.5">خصّص تجربة القراءة بما يناسبك ويريح عينيك</p>
+        </div>
+        <button onclick="closeSettingsModal()" class="w-9 h-9 rounded-xl bg-white/15 hover:bg-white/25 flex items-center justify-center text-white font-black text-lg transition">✕</button>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="p-5 sm:p-6 space-y-5 overflow-y-auto custom-scrollbar">
+        <!-- 1. Language -->
+        <div>
+          <label data-i18n="setLangLabel" class="block text-sm font-black text-slate-900 mb-2">لغة التطبيق (Language)</label>
+          <div class="grid grid-cols-2 gap-2.5">
+            <button onclick="updateSetting('lang', 'ar')" id="setLang_ar" class="py-2.5 px-4 rounded-2xl border-2 font-black text-sm transition flex items-center justify-center gap-2">
+              <span>🇸🇦</span><span>العربية (Arabic)</span>
+            </button>
+            <button onclick="updateSetting('lang', 'en')" id="setLang_en" class="py-2.5 px-4 rounded-2xl border-2 font-black text-sm transition flex items-center justify-center gap-2">
+              <span>🇬🇧</span><span>English (الإنجليزية)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. Theme Mode -->
+        <div>
+          <label data-i18n="setThemeLabel" class="block text-sm font-black text-slate-900 mb-2">مظهر العرض (Theme)</label>
+          <div class="grid grid-cols-2 gap-2.5">
+            <button onclick="updateSetting('theme', 'light')" id="setTheme_light" data-i18n="setThemeLight" class="py-2.5 px-4 rounded-2xl border-2 font-black text-sm transition">☀️ الوضع الفاتح</button>
+            <button onclick="updateSetting('theme', 'dark')" id="setTheme_dark" data-i18n="setThemeDark" class="py-2.5 px-4 rounded-2xl border-2 font-black text-sm transition">🌙 الوضع الداكن</button>
+          </div>
+        </div>
+
+        <!-- 3. Font Size (Elderly-Friendly) -->
+        <div>
+          <div class="flex items-center justify-between mb-2">
+            <label data-i18n="setSizeLabel" class="text-sm font-black text-slate-900">حجم الخط (لتسهيل القراءة لكبار السن)</label>
+            <span id="fontSizeReadout" class="text-xs font-black px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900">16px</span>
+          </div>
+          <div class="grid grid-cols-4 gap-2">
+            <button onclick="updateSetting('fontSize', 14)" id="setSize_14" data-i18n="setSizeSmall" class="py-2 px-2 rounded-xl border-2 font-bold text-xs transition">صغير</button>
+            <button onclick="updateSetting('fontSize', 16)" id="setSize_16" data-i18n="setSizeNormal" class="py-2 px-2 rounded-xl border-2 font-bold text-xs transition">عادي</button>
+            <button onclick="updateSetting('fontSize', 18)" id="setSize_18" data-i18n="setSizeLarge" class="py-2 px-2 rounded-xl border-2 font-bold text-xs transition">كبير</button>
+            <button onclick="updateSetting('fontSize', 21)" id="setSize_21" data-i18n="setSizeXL" class="py-2 px-2 rounded-xl border-2 font-bold text-xs transition">كبير جداً</button>
+          </div>
+        </div>
+
+        <!-- 4. Font Family -->
+        <div>
+          <label data-i18n="setFontLabel" class="block text-sm font-black text-slate-900 mb-2">نوع الخط (Font Family)</label>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <button onclick="updateSetting('fontFamily', 'Tajawal')" id="setFont_Tajawal" class="py-2 px-3 rounded-xl border-2 font-bold text-xs transition" style="font-family: 'Tajawal', sans-serif;">Tajawal (تجوال)</button>
+            <button onclick="updateSetting('fontFamily', 'Cairo')" id="setFont_Cairo" class="py-2 px-3 rounded-xl border-2 font-bold text-xs transition" style="font-family: 'Cairo', sans-serif;">Cairo (كايرو)</button>
+            <button onclick="updateSetting('fontFamily', 'Amiri')" id="setFont_Amiri" class="py-2 px-3 rounded-xl border-2 font-bold text-xs transition" style="font-family: 'Amiri', serif;">Amiri (أميري)</button>
+            <button onclick="updateSetting('fontFamily', 'Noto Naskh Arabic')" id="setFont_Noto" class="py-2 px-3 rounded-xl border-2 font-bold text-xs transition" style="font-family: 'Noto Naskh Arabic', serif;">Naskh (نسخ)</button>
+            <button onclick="updateSetting('fontFamily', 'Readex Pro')" id="setFont_Readex" class="py-2 px-3 rounded-xl border-2 font-bold text-xs transition" style="font-family: 'Readex Pro', sans-serif;">Readex (واضح)</button>
+          </div>
+        </div>
+
+        <!-- Live Preview Box -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3.5 text-center">
+          <p data-i18n="setPreviewText" class="font-bold text-slate-900 leading-relaxed">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ — «صلُّوا كما رأيتموني أصلِّي»</p>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-5 sm:px-6 py-3.5 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-3">
+        <button onclick="resetSettings()" data-i18n="setResetBtn" class="px-4 py-2 rounded-xl border border-slate-300 text-slate-700 font-bold text-xs sm:text-sm hover:bg-slate-100 transition">إعادة للافتراضي</button>
+        <button onclick="closeSettingsModal()" data-i18n="setCloseBtn" class="px-6 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white font-black text-xs sm:text-sm transition shadow">حفظ وإغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="translations.js"></script>
   <script>
     /* =========================================================================
        1. SIFAH DATA: THE FULL CHRONOLOGICAL PROPHETIC STATIONS
@@ -1393,15 +1595,135 @@
     let quizScore = 0;
     let userHasAnsweredCurrent = false;
 
+    const DEFAULT_SETTINGS = {
+      lang: 'ar',
+      theme: 'light',
+      fontSize: 16,
+      fontFamily: 'Tajawal'
+    };
+    let appSettings = { ...DEFAULT_SETTINGS };
+
+    function loadSettings() {
+      try {
+        const saved = localStorage.getItem('alsalah_settings_v1');
+        if (saved) appSettings = { ...DEFAULT_SETTINGS, ...JSON.parse(saved) };
+      } catch (e) {}
+      applySettings(false);
+    }
+
+    function saveSettings() {
+      try {
+        localStorage.setItem('alsalah_settings_v1', JSON.stringify(appSettings));
+      } catch (e) {}
+    }
+
+    function updateSetting(key, value) {
+      appSettings[key] = value;
+      saveSettings();
+      applySettings(true);
+    }
+
+    function resetSettings() {
+      appSettings = { ...DEFAULT_SETTINGS };
+      saveSettings();
+      applySettings(true);
+    }
+
+    function openSettingsModal() {
+      document.getElementById('settingsModal').classList.remove('hidden');
+      syncSettingsUI();
+    }
+
+    function closeSettingsModal() {
+      document.getElementById('settingsModal').classList.add('hidden');
+    }
+
+    function getLang() {
+      return appSettings.lang || 'ar';
+    }
+
+    function t(key) {
+      const lang = getLang();
+      if (window.ALSALAH_I18N && window.ALSALAH_I18N.ui && window.ALSALAH_I18N.ui[lang]) {
+        return window.ALSALAH_I18N.ui[lang][key] || key;
+      }
+      return key;
+    }
+
+    function translateStaticUI() {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const val = t(key);
+        if (val && val !== key) el.textContent = val;
+      });
+      const audioTxt = document.getElementById('audioStatusText');
+      if (audioTxt) {
+        audioTxt.textContent = isAudioEnabled ? t('audioOn') : t('audioOff');
+      }
+    }
+
+    function syncSettingsUI() {
+      const activeBtn = "border-emerald-600 bg-emerald-50 text-emerald-950 shadow-sm";
+      const inactiveBtn = "border-slate-200 bg-white text-slate-700 hover:border-slate-300";
+
+      ['ar', 'en'].forEach(l => {
+        const b = document.getElementById(`setLang_${l}`);
+        if (b) b.className = `py-2.5 px-4 rounded-2xl border-2 font-black text-sm transition flex items-center justify-center gap-2 ${appSettings.lang === l ? activeBtn : inactiveBtn}`;
+      });
+      ['light', 'dark'].forEach(th => {
+        const b = document.getElementById(`setTheme_${th}`);
+        if (b) b.className = `py-2.5 px-4 rounded-2xl border-2 font-black text-sm transition ${appSettings.theme === th ? activeBtn : inactiveBtn}`;
+      });
+      [14, 16, 18, 21].forEach(sz => {
+        const b = document.getElementById(`setSize_${sz}`);
+        if (b) b.className = `py-2 px-2 rounded-xl border-2 font-bold text-xs transition ${appSettings.fontSize === sz ? activeBtn : inactiveBtn}`;
+      });
+      const fontMap = { 'Tajawal': 'Tajawal', 'Cairo': 'Cairo', 'Amiri': 'Amiri', 'Noto Naskh Arabic': 'Noto', 'Readex Pro': 'Readex' };
+      Object.entries(fontMap).forEach(([fname, fid]) => {
+        const b = document.getElementById(`setFont_${fid}`);
+        if (b) b.className = `py-2 px-3 rounded-xl border-2 font-bold text-xs transition ${appSettings.fontFamily === fname ? activeBtn : inactiveBtn}`;
+      });
+      const readout = document.getElementById('fontSizeReadout');
+      if (readout) readout.textContent = `${appSettings.fontSize}px`;
+    }
+
+    function applySettings(reRender) {
+      const lang = getLang();
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === 'en' ? 'ltr' : 'rtl';
+      document.documentElement.style.fontSize = `${appSettings.fontSize}px`;
+
+      const fallback = lang === 'en' ? "'Inter', -apple-system, sans-serif" : "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+      const fontVal = `'${appSettings.fontFamily}', ${fallback}`;
+      document.documentElement.style.setProperty('--font-body', fontVal);
+
+      document.body.classList.toggle('dark-mode', appSettings.theme === 'dark');
+
+      translateStaticUI();
+      syncSettingsUI();
+
+      if (reRender) {
+        renderSifahTimeline();
+        renderAnchoringContent();
+        renderSimulatorStep(false);
+        renderStepsMiniNav();
+        renderPosturesCards();
+        renderCommonMistakes();
+        initSahwSubcases();
+        loadQuizQuestion();
+      }
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
       // Register Service Worker for PWA
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./sw.js').catch(() => {});
       }
 
+      loadSettings();
       renderSifahTimeline();
       renderAnchoringContent();
-      renderSimulatorStep();
+      renderSimulatorStep(false);
       renderStepsMiniNav();
       renderPosturesCards();
       renderCommonMistakes();
@@ -1412,7 +1734,9 @@
     // Render Sifah Chronological Timeline
         function renderSifahTimeline() {
       const container = document.getElementById('sifahTimelineContainer');
-      container.innerHTML = sifahStations.map((st, i) => `
+      const data = (getLang() === 'en' && window.ALSALAH_I18N) ? window.ALSALAH_I18N.sifahStations_en : sifahStations;
+      const fiqhLabel = getLang() === 'en' ? '📌 Fiqh Classification (IslamWeb):' : '📌 التوصيف الفقهي (إسلام ويب):';
+      container.innerHTML = data.map((st, i) => `
         <div class="bg-[#f8faf8] rounded-3xl p-5 sm:p-7 border border-emerald-200/80 shadow-sm hover:border-emerald-400 hover:shadow-md transition">
           <div class="flex flex-wrap items-center justify-between gap-2.5 mb-3">
             <div class="flex items-center gap-3">
@@ -1434,7 +1758,7 @@
           </p>
 
           <div class="bg-emerald-100/50 border border-emerald-300/80 rounded-2xl p-3.5 sm:p-4 text-sm text-emerald-950 font-semibold flex items-center gap-2">
-            <span class="text-emerald-800 font-black flex-shrink-0">📌 التوصيف الفقهي (إسلام ويب):</span>
+            <span class="text-emerald-800 font-black flex-shrink-0">${fiqhLabel}</span>
             <span class="leading-relaxed">${st.fiqhBreakdown}</span>
           </div>
         </div>
@@ -1443,51 +1767,61 @@
 
     // Render Anchoring Content
         function renderAnchoringContent() {
-      // 14 Pillars - Soft Calm Rose/Blush Background (#fdf6f6) with large high-contrast readable text
-      document.getElementById('arkanCardsContainer').innerHTML = arkanData.map(a => `
+      const isEn = getLang() === 'en' && window.ALSALAH_I18N;
+      const arkanList = isEn ? window.ALSALAH_I18N.arkanData_en : arkanData;
+      const wajibList = isEn ? window.ALSALAH_I18N.wajibData_en : wajibData;
+      const sqList = isEn ? window.ALSALAH_I18N.sunanQawliyyah_en : sunanQawliyyah;
+      const sfList = isEn ? window.ALSALAH_I18N.sunanFiliyyah_en : sunanFiliyyah;
+      const badgePillar = isEn ? 'Unwaivable Pillar' : 'ركن لا يسقط';
+      const proofPrefix = isEn ? '📖 Proof:' : '📖 دليله:';
+      const badgeWajib = isEn ? 'Compensated Obligation' : 'واجب يُجبر';
+      const wajibFooter = isEn ? 'Waived by forgetfulness & compensated by Sujud Al-Sahw before Salam' : 'يسقط بالنسيان ويجبره سجود السهو قبل السلام';
+
+      // 14 Pillars
+      document.getElementById('arkanCardsContainer').innerHTML = arkanList.map(a => `
         <div class="bg-[#fdf6f6] rounded-3xl p-5 sm:p-6 border border-rose-200/90 hover:border-rose-400 shadow-sm hover:shadow-md transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="w-8 h-8 rounded-xl bg-rose-700 text-white flex items-center justify-center font-black text-sm shadow-xs">${a.num}</span>
-              <span class="bg-rose-100 text-rose-900 text-xs font-black px-3 py-1 rounded-full border border-rose-200">ركن لا يسقط</span>
+              <span class="bg-rose-100 text-rose-900 text-xs font-black px-3 py-1 rounded-full border border-rose-200">${badgePillar}</span>
             </div>
             <h4 class="text-base sm:text-lg font-black text-slate-950 mb-2">${a.title}</h4>
             <p class="text-sm sm:text-base text-slate-900 mb-3 leading-relaxed bg-white/95 p-3 sm:p-3.5 rounded-2xl border border-rose-200/70 font-medium">${a.rule}</p>
           </div>
           <div class="pt-2.5 border-t border-rose-200/80 text-xs sm:text-sm font-semibold space-y-1.5">
-            <div class="text-slate-800">📖 دليله: ${a.evidence}</div>
+            <div class="text-slate-800">${proofPrefix} ${a.evidence}</div>
             <div class="text-rose-950 font-black bg-rose-100/70 px-2.5 py-1.5 rounded-xl border border-rose-300/80">${a.sahwRule}</div>
           </div>
         </div>
       `).join('');
 
       // 8 Obligations - Soft Calm Sky/Blue Background (#f0f7fc) with large readable text
-      document.getElementById('wajibCardsContainer').innerHTML = wajibData.map(w => `
+      document.getElementById('wajibCardsContainer').innerHTML = wajibList.map(w => `
         <div class="bg-[#f0f7fc] rounded-3xl p-5 sm:p-6 border border-sky-200/90 hover:border-sky-400 shadow-sm hover:shadow-md transition flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-3">
               <span class="w-8 h-8 rounded-xl bg-sky-700 text-white flex items-center justify-center font-black text-sm shadow-xs">${w.num}</span>
-              <span class="bg-sky-100 text-sky-900 text-xs font-black px-3 py-1 rounded-full border border-sky-200">واجب يُجبر</span>
+              <span class="bg-sky-100 text-sky-900 text-xs font-black px-3 py-1 rounded-full border border-sky-200">${badgeWajib}</span>
             </div>
             <h4 class="text-base sm:text-lg font-black text-slate-950 mb-2">${w.title}</h4>
             <div class="bg-white border border-sky-300/80 rounded-2xl p-2.5 font-quran font-bold text-sky-950 text-base sm:text-lg text-center my-2 shadow-2xs">${w.text}</div>
             <p class="text-sm sm:text-base text-slate-900 mb-3 leading-relaxed bg-white/95 p-3 rounded-2xl border border-sky-200/70 font-medium">${w.rule}</p>
           </div>
           <div class="pt-2.5 border-t border-sky-200/80 text-xs sm:text-sm font-black text-sky-950 bg-sky-100/70 px-2.5 py-1.5 rounded-xl border border-sky-300/70 text-center">
-            يسقط بالنسيان ويجبره سجود السهو قبل السلام
+            ${wajibFooter}
           </div>
         </div>
       `).join('');
 
       // Sunan Lists - Calm Cream/Amber styling with large readable text
-      document.getElementById('sunanQawliyyahList').innerHTML = sunanQawliyyah.map((s, i) => `
+      document.getElementById('sunanQawliyyahList').innerHTML = sqList.map((s, i) => `
         <li class="flex items-start gap-3 p-3 rounded-2xl bg-white/95 border border-amber-200/90 shadow-2xs">
           <span class="w-6 h-6 rounded-lg bg-amber-300 text-amber-950 font-black text-xs flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
           <span class="font-bold text-slate-950 text-sm sm:text-base leading-relaxed">${s}</span>
         </li>
       `).join('');
 
-      document.getElementById('sunanFiliyyahList').innerHTML = sunanFiliyyah.map((s, i) => `
+      document.getElementById('sunanFiliyyahList').innerHTML = sfList.map((s, i) => `
         <li class="flex items-start gap-3 p-3 rounded-2xl bg-white/95 border border-amber-200/90 shadow-2xs">
           <span class="w-6 h-6 rounded-lg bg-amber-300 text-amber-950 font-black text-xs flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span>
           <span class="font-bold text-slate-950 text-sm sm:text-base leading-relaxed">${s}</span>
@@ -1518,7 +1852,14 @@
     function renderFlashcards() {
       const container = document.getElementById('flashcardsGrid');
       if (!container) return;
-      const filtered = flashcardsData.filter(f => currentFlashcardFilter === 'all' || f.cat === currentFlashcardFilter);
+      const isEn = getLang() === 'en' && window.ALSALAH_I18N;
+      const source = isEn ? window.ALSALAH_I18N.flashcardsData_en : flashcardsData;
+      const filtered = source.filter(f => currentFlashcardFilter === 'all' || f.cat === currentFlashcardFilter);
+      const lblCard = isEn ? 'Card' : 'بطاقة تثبيت';
+      const lblQ = isEn ? 'What is the ruling on this act?' : '${lblQ}';
+      const lblFlip = isEn ? '👆 Tap to flip card' : '${lblFlip}';
+      const lblSrc = isEn ? 'IslamWeb & Majority of Scholars' : 'إسلام ويب وجمهور الفقهاء';
+      const lblBack = isEn ? 'Tap to return' : 'انقر للعودة';
 
       container.innerHTML = filtered.map((f, idx) => `
         <div class="flashcard h-52 sm:h-56 cursor-pointer select-none" onclick="toggleFlashcard(${idx})" id="flashcard_${idx}">
@@ -1526,16 +1867,16 @@
             <!-- Front of Card -->
             <div class="flashcard-front absolute inset-0 bg-white rounded-3xl p-4 sm:p-5 flex flex-col justify-between text-slate-900 border-2 border-amber-300">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-black text-slate-500">بطاقة تثبيت ${idx + 1}</span>
+                <span class="text-xs font-black text-slate-500">${lblCard} ${idx + 1}</span>
                 <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping"></span>
               </div>
               <div class="text-center py-2">
-                <span class="text-xs text-slate-600 font-bold block mb-1">ما حكم هذا الفعل في الصلاة؟</span>
+                <span class="text-xs text-slate-600 font-bold block mb-1">${lblQ}</span>
                 <h4 class="text-base sm:text-lg font-black text-slate-950 leading-snug">${f.front}</h4>
               </div>
               <div class="text-center">
                 <span class="inline-flex items-center gap-1 text-xs text-amber-900 font-black bg-amber-100/90 px-3 py-1 rounded-full border border-amber-300 shadow-2xs">
-                  <span>👆 انقر لقلب البطاقة</span>
+                  <span>${lblFlip}</span>
                 </span>
               </div>
             </div>
@@ -1549,8 +1890,8 @@
                 <p class="text-xs sm:text-[13px] text-slate-100 font-medium leading-relaxed mt-1">${f.back}</p>
               </div>
               <div class="text-center text-[10px] text-emerald-300 font-black border-t border-white/15 pt-1.5 flex items-center justify-between">
-                <span>إسلام ويب وجمهور الفقهاء</span>
-                <span class="text-slate-400">انقر للعودة</span>
+                <span>${lblSrc}</span>
+                <span class="text-slate-400">${lblBack}</span>
               </div>
             </div>
           </div>
@@ -1600,6 +1941,27 @@
     // Postures Render
         function renderPosturesCards() {
       const container = document.getElementById('posturesCardsList');
+      if (getLang() === 'en' && window.ALSALAH_I18N) {
+        const pEn = window.ALSALAH_I18N.postures_en;
+        const svgs = [prayerIllustrations.takbeer, prayerIllustrations.qabd, prayerIllustrations.ruku, prayerIllustrations.sujud, prayerIllustrations.iftirash, prayerIllustrations.tawarruk, prayerIllustrations.taslim];
+        container.innerHTML = pEn.map((p, idx) => `
+          <div class="bg-white border border-slate-200/90 rounded-3xl p-5 hover:border-emerald-300 hover:shadow-lg transition flex flex-col">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-black text-slate-900 text-sm">${p.title}</span>
+              <span class="bg-emerald-100 text-emerald-800 font-extrabold text-[11px] px-2.5 py-0.5 rounded-full border border-emerald-200">${p.badge}</span>
+            </div>
+            <div class="svg-plate h-60 bg-[#fbfdfb] rounded-2xl border border-emerald-100/80 p-2 flex items-center justify-center overflow-hidden">
+              ${svgs[idx]}
+            </div>
+            <div class="mt-3.5 space-y-1.5 flex-grow bg-slate-50/95 p-4 rounded-2xl border border-slate-200 text-sm sm:text-base text-slate-950 font-semibold leading-relaxed">
+              <p>${p.p1}</p>
+              <p>${p.p2}</p>
+              ${p.p3 ? `<p>${p.p3}</p>` : ''}
+            </div>
+          </div>
+        `).join('');
+        return;
+      }
       container.innerHTML = `
         <div class="bg-white border border-slate-200/90 rounded-3xl p-5 hover:border-emerald-300 hover:shadow-lg transition flex flex-col">
           <div class="flex items-center justify-between mb-3">
@@ -1719,41 +2081,49 @@
       renderStepsMiniNav();
     }
 
-    function renderSimulatorStep() {
+    function renderSimulatorStep(playAudio = true) {
       const step = prayerSteps[currentStepIndex];
-      document.getElementById('currentStepNumber').textContent = `خطوة ${currentStepIndex + 1} من ${prayerSteps.length}`;
-      document.getElementById('currentRakaBadge').textContent = `الركعة ${step.raka}`;
-      
+      const isEn = getLang() === 'en' && window.ALSALAH_I18N;
+      const stepEn = isEn ? window.ALSALAH_I18N.prayerSteps_en[currentStepIndex] : null;
+
+      document.getElementById('currentStepNumber').textContent = isEn
+        ? `Step ${currentStepIndex + 1} of ${prayerSteps.length}`
+        : `خطوة ${currentStepIndex + 1} من ${prayerSteps.length}`;
+      document.getElementById('currentRakaBadge').textContent = isEn
+        ? `Rakah ${step.raka}`
+        : `الركعة ${step.raka}`;
+
       const badge = document.getElementById('categoryBadge');
       badge.className = `px-2.5 py-1 rounded-full text-xs font-black shadow-sm flex items-center gap-1.5 border ${step.categoryColor}`;
-      badge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-current"></span><span>${step.categoryText}</span>`;
+      badge.innerHTML = `<span class="w-1.5 h-1.5 rounded-full bg-current"></span><span>${stepEn ? stepEn.categoryText : step.categoryText}</span>`;
 
       document.getElementById('postureIllustrationContainer').innerHTML = step.svg;
 
+      const cues = stepEn ? stepEn.cues : step.cues;
       const pointsList = document.getElementById('postureKeyPoints');
-      pointsList.innerHTML = step.cues.map(c => `<li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0"></span><span>${c}</span></li>`).join('');
+      pointsList.innerHTML = cues.map(c => `<li class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0"></span><span>${c}</span></li>`).join('');
 
-      document.getElementById('stepTitle').textContent = step.title;
+      document.getElementById('stepTitle').textContent = stepEn ? stepEn.title : step.title;
       document.getElementById('stepZikrArabic').textContent = step.zikr;
-      document.getElementById('zikrObligationType').textContent = step.zikrType;
-      document.getElementById('stepZikrMeaning').textContent = step.meaning;
-      document.getElementById('stepFiqhRuling').textContent = step.fiqhRuling;
-      document.getElementById('stepEvidence').textContent = step.evidence;
-      document.getElementById('stepMistakeWarning').textContent = step.mistake;
+      document.getElementById('zikrObligationType').textContent = stepEn ? stepEn.zikrType : step.zikrType;
+      document.getElementById('stepZikrMeaning').textContent = stepEn ? stepEn.meaning : step.meaning;
+      document.getElementById('stepFiqhRuling').textContent = stepEn ? stepEn.fiqhRuling : step.fiqhRuling;
+      document.getElementById('stepEvidence').textContent = stepEn ? stepEn.evidence : step.evidence;
+      document.getElementById('stepMistakeWarning').textContent = stepEn ? stepEn.mistake : step.mistake;
 
       document.getElementById('prevBtn').disabled = (currentStepIndex === 0);
       document.getElementById('prevBtn').classList.toggle('opacity-40', currentStepIndex === 0);
 
       const nextBtn = document.getElementById('nextBtn');
       if (currentStepIndex === prayerSteps.length - 1) {
-        nextBtn.innerHTML = `<span>إتمام الصلاة</span> 🎉`;
+        nextBtn.innerHTML = `<span>${t('simDone')}</span> 🎉`;
       } else {
-        nextBtn.innerHTML = `<span>التالي</span><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>`;
+        nextBtn.innerHTML = `<span>${t('simNext')}</span><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path></svg>`;
       }
 
       updateMiniNavHighlight();
 
-      if (isAudioEnabled) {
+      if (playAudio && isAudioEnabled) {
         speakArabicText(step.zikr);
       }
     }
@@ -1888,14 +2258,18 @@
 
     function initSahwSubcases() {
       const container = document.getElementById('sahwSubCasesContainer');
-      const cases = sahwCases[activeSahwCategory];
+      const isEn = getLang() === 'en' && window.ALSALAH_I18N;
+      const source = isEn ? window.ALSALAH_I18N.sahwCases_en : sahwCases;
+      const cases = source[activeSahwCategory];
+      const chooseLbl = isEn ? 'Select your situation:' : 'اختر المسألة:';
+      const showLbl = isEn ? 'Show Ruling →' : 'عرض الحكم ←';
       container.innerHTML = `
-        <label class="text-xs font-bold text-slate-700 block">اختر المسألة:</label>
+        <label class="text-xs font-bold text-slate-700 block">${chooseLbl}</label>
         <div class="space-y-1.5">
           ${cases.map(c => `
-            <button onclick="displaySahwVerdict('${c.id}')" class="w-full text-right p-2.5 rounded-xl border border-slate-200 text-xs font-bold hover:bg-slate-50 transition flex items-center justify-between">
+            <button onclick="displaySahwVerdict('${c.id}')" class="w-full text-start p-2.5 rounded-xl border border-slate-200 text-xs font-bold hover:bg-slate-50 transition flex items-center justify-between">
               <span class="text-slate-800">${c.name}</span>
-              <span class="text-emerald-600 font-extrabold text-[11px]">عرض الحكم ←</span>
+              <span class="text-emerald-600 font-extrabold text-[11px]">${showLbl}</span>
             </button>
           `).join('')}
         </div>
@@ -1904,13 +2278,16 @@
     }
 
     function displaySahwVerdict(caseId) {
-      const allCases = [...sahwCases.naqs, ...sahwCases.ziyadah, ...sahwCases.shakk];
+      const isEn = getLang() === 'en' && window.ALSALAH_I18N;
+      const source = isEn ? window.ALSALAH_I18N.sahwCases_en : sahwCases;
+      const allCases = [...source.naqs, ...source.ziyadah, ...source.shakk];
       const selected = allCases.find(c => c.id === caseId);
       if (!selected) return;
 
+      const guideLbl = isEn ? 'Practical Guidance:' : 'التوجيه العملي:';
       document.getElementById('sahwTimingBadge').textContent = selected.timing;
       document.getElementById('sahwVerdictTitle').textContent = selected.title;
-      document.getElementById('sahwVerdictDetails').innerHTML = `<p class="font-bold text-amber-300">التوجيه العملي:</p><p>${selected.desc}</p>`;
+      document.getElementById('sahwVerdictDetails').innerHTML = `<p class="font-bold text-amber-300">${guideLbl}</p><p>${selected.desc}</p>`;
     }
 
     // Common Mistakes
@@ -2118,7 +2495,11 @@
     function renderCommonMistakes() {
       const container = document.getElementById('mistakesGrid');
       if (!container) return;
-      const filtered = commonMistakesList.filter(m => currentMistakesFilter === 'all' || m.cat === currentMistakesFilter);
+      const isEn = getLang() === 'en' && window.ALSALAH_I18N;
+      const source = isEn ? window.ALSALAH_I18N.commonMistakesList_en : commonMistakesList;
+      const filtered = source.filter(m => currentMistakesFilter === 'all' || m.cat === currentMistakesFilter);
+      const proofTitle = isEn ? '📖 Prophetic Proof & Prohibition:' : '${proofTitle}';
+      const fixTitle = isEn ? 'Correct Prophetic Practice:' : '${fixTitle}';
 
       container.innerHTML = filtered.map((m, idx) => `
         <div class="bg-slate-50 border border-slate-200/90 hover:border-rose-400 rounded-3xl p-4 sm:p-5 shadow-xs hover:shadow-md transition flex flex-col justify-between">
@@ -2132,14 +2513,14 @@
             </div>
             <p class="text-sm sm:text-base text-slate-900 mb-3 font-medium leading-relaxed bg-white p-3 rounded-2xl border border-slate-200/70">${m.desc}</p>
             <div class="bg-rose-50/90 border border-rose-200/80 rounded-2xl p-3 sm:p-3.5 text-xs sm:text-sm text-rose-950 font-bold mb-3 leading-relaxed">
-              <span class="text-rose-700 font-black block mb-0.5">📖 الدليل والنهي النبوي:</span>
+              <span class="text-rose-700 font-black block mb-0.5">${proofTitle}</span>
               ${m.hadith}
             </div>
           </div>
           <div class="bg-emerald-50 border border-emerald-300/80 rounded-2xl p-3 sm:p-3.5 text-xs sm:text-sm text-emerald-950 font-black flex items-start gap-2 leading-relaxed shadow-2xs">
             <span class="text-emerald-700 text-base flex-shrink-0 mt-0.5">✓</span>
             <div>
-              <span class="text-emerald-800 font-black block mb-0.5">التصويب النبوي الصحيح:</span>
+              <span class="text-emerald-800 font-black block mb-0.5">${fixTitle}</span>
               <span class="font-bold text-slate-950">${m.correction}</span>
             </div>
           </div>
@@ -2372,11 +2753,21 @@
       }
     ];
 
+    function getActiveQuizList() {
+      return (getLang() === 'en' && window.ALSALAH_I18N) ? window.ALSALAH_I18N.quizQuestions_en : quizQuestions;
+    }
+
     function loadQuizQuestion() {
       userHasAnsweredCurrent = false;
-      const q = quizQuestions[currentQuizIndex];
-      document.getElementById('quizProgressText').textContent = `السؤال ${currentQuizIndex + 1} من ${quizQuestions.length}`;
-      document.getElementById('quizScoreText').textContent = `الدرجة: ${quizScore}`;
+      const isEn = getLang() === 'en';
+      const list = getActiveQuizList();
+      const q = list[currentQuizIndex];
+      document.getElementById('quizProgressText').textContent = isEn
+        ? `Question ${currentQuizIndex + 1} of ${list.length}`
+        : `السؤال ${currentQuizIndex + 1} من ${list.length}`;
+      document.getElementById('quizScoreText').textContent = isEn
+        ? `Score: ${quizScore}`
+        : `الدرجة: ${quizScore}`;
       document.getElementById('quizQuestionText').textContent = q.q;
 
       const feedbackBox = document.getElementById('quizFeedbackBox');
@@ -2384,7 +2775,7 @@
 
       const optionsContainer = document.getElementById('quizOptionsContainer');
       optionsContainer.innerHTML = q.options.map((opt, i) => `
-        <button onclick="handleQuizAnswer(${i})" id="quizOptBtn_${i}" class="w-full text-right p-4 rounded-2xl border-2 border-slate-300 hover:border-emerald-600 bg-white font-black text-sm sm:text-base text-slate-950 transition flex items-center justify-between shadow-xs">
+        <button onclick="handleQuizAnswer(${i})" id="quizOptBtn_${i}" class="w-full text-start p-4 rounded-2xl border-2 border-slate-300 hover:border-emerald-600 bg-white font-black text-sm sm:text-base text-slate-950 transition flex items-center justify-between shadow-xs">
           <span>${opt}</span>
           <span class="w-6 h-6 rounded-full border-2 border-slate-400 flex items-center justify-center text-xs font-black text-slate-700 flex-shrink-0">${i + 1}</span>
         </button>
@@ -2397,7 +2788,9 @@
       if (userHasAnsweredCurrent) return;
       userHasAnsweredCurrent = true;
 
-      const q = quizQuestions[currentQuizIndex];
+      const isEn = getLang() === 'en';
+      const list = getActiveQuizList();
+      const q = list[currentQuizIndex];
       const feedbackBox = document.getElementById('quizFeedbackBox');
       feedbackBox.classList.remove('hidden');
 
@@ -2406,12 +2799,14 @@
 
       if (selectedIndex === q.correct) {
         quizScore++;
-        document.getElementById('quizScoreText').textContent = `الدرجة: ${quizScore}`;
+        document.getElementById('quizScoreText').textContent = isEn ? `Score: ${quizScore}` : `الدرجة: ${quizScore}`;
         selectedBtn.classList.remove('border-slate-300', 'border-slate-200');
         selectedBtn.classList.add('border-emerald-600', 'bg-emerald-50', 'text-emerald-950');
 
         feedbackBox.className = "mt-3 p-3.5 rounded-2xl text-xs sm:text-sm font-semibold border bg-emerald-50 border-emerald-300 text-emerald-950 leading-relaxed";
-        feedbackBox.innerHTML = `<strong>✓ إجابة صحيحة بارك الله فيك!</strong><br>${q.explanation}`;
+        feedbackBox.innerHTML = isEn
+          ? `<strong>✓ Correct Answer! May Allah bless you.</strong><br>${q.explanation}`
+          : `<strong>✓ إجابة صحيحة بارك الله فيك!</strong><br>${q.explanation}`;
       } else {
         selectedBtn.classList.remove('border-slate-300', 'border-slate-200');
         selectedBtn.classList.add('border-rose-500', 'bg-rose-50', 'text-rose-950');
@@ -2419,21 +2814,27 @@
         correctBtn.classList.add('border-emerald-600', 'bg-emerald-50', 'text-emerald-950');
 
         feedbackBox.className = "mt-3 p-3.5 rounded-2xl text-xs sm:text-sm font-semibold border bg-rose-50 border-rose-300 text-rose-950 leading-relaxed";
-        feedbackBox.innerHTML = `<strong>❌ إجابة خاطئة.</strong> الجواب الصحيح هو: <em>${q.options[q.correct]}</em>.<br>${q.explanation}`;
+        feedbackBox.innerHTML = isEn
+          ? `<strong>❌ Incorrect.</strong> The correct answer is: <em>${q.options[q.correct]}</em>.<br>${q.explanation}`
+          : `<strong>❌ إجابة خاطئة.</strong> الجواب الصحيح هو: <em>${q.options[q.correct]}</em>.<br>${q.explanation}`;
       }
 
       document.getElementById('quizNextBtn').disabled = false;
     }
 
     function nextQuizQuestion() {
-      if (currentQuizIndex < quizQuestions.length - 1) {
+      const isEn = getLang() === 'en';
+      const list = getActiveQuizList();
+      if (currentQuizIndex < list.length - 1) {
         currentQuizIndex++;
         loadQuizQuestion();
       } else {
         document.getElementById('quizContainer').classList.add('hidden');
         document.getElementById('quizResultView').classList.remove('hidden');
-        const percentage = Math.round((quizScore / quizQuestions.length) * 100);
-        document.getElementById('quizFinalScoreSummary').textContent = `درجتك النهائية: ${quizScore} من أصل ${quizQuestions.length} (${percentage}%)`;
+        const percentage = Math.round((quizScore / list.length) * 100);
+        document.getElementById('quizFinalScoreSummary').textContent = isEn
+          ? `Your Final Score: ${quizScore} out of ${list.length} (${percentage}%)`
+          : `درجتك النهائية: ${quizScore} من أصل ${list.length} (${percentage}%)`;
       }
     }
 
